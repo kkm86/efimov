@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{biblatex}
 \usepackage{multirow}
@@ -266,7 +267,7 @@ and
 \end{align*}   
 \end{subequations} 
 
-\begin{equation}
+\begin{align}
 \begin{pmatrix}
        \dot{r}_x \\
        \dot{r}_y \\
@@ -274,39 +275,44 @@ and
        \dot{R}_x \\
        \dot{R}_y \\
        \dot{R}_z\\
-     \end{pmatrix} = \begin{pmatrix}
+ \end{pmatrix} 
+ &= 
+ \begin{pmatrix*}[c]
        \partial_{\rho} r_x & \partial_{\Theta} r_x & \partial_{\Theta} r_x & 0 & r_z & -r_y\\
-       \partial_{\rho} r_y & \partial_{\Theta} r_y & \partial_{\Theta} r_y & 0 & r_z & -r_y\\
-       \partial_{\rho} r_z & \partial_{\Theta} r_z & \partial_{\Theta} r_z & 0 & r_z & -r_y\\
-       \partial_{\rho} R_x & \partial_{\Theta} R_x & \partial_{\Theta} R_x & 0 & r_z & -r_y\\
-       \partial_{\rho} R_y & \partial_{\Theta} R_y & \partial_{\Theta} R_y & 0 & r_z & -r_y\\
-       \partial_{\rho} R_z & \partial_{\Theta} R_z & \partial_{\Theta} R_z & 0 & r_z & -r_y\\
-     \end{pmatrix}
+       \partial_{\rho} r_y & \partial_{\Theta} r_y & \partial_{\Theta} r_y & -r_z & 0 & r_x\\
+       \partial_{\rho} r_z & \partial_{\Theta} r_z & \partial_{\Theta} r_z & r_y & -r_x & 0\\
+       \partial_{\rho} R_x & \partial_{\Theta} R_x & \partial_{\Theta} R_x & 0 & R_z & -R_y\\
+       \partial_{\rho} R_y & \partial_{\Theta} R_y & \partial_{\Theta} R_y & -R_z & 0 & R_x\\
+       \partial_{\rho} R_z & \partial_{\Theta} R_z & \partial_{\Theta} R_z & R_y & -R_x & 0\\
+     \end{pmatrix*}
      \begin{pmatrix}
      \dot{\rho}\\
      \dot{\Theta}\\
-     \dot{\Phi}
+     \dot{\Phi}\\
+     \omega_x\\
+     \omega_y\\
+     \omega_z\\
+     \end{pmatrix} \notag \\
+     &=
+     \begin{pmatrix*}[c]
+       cc & -sc & -cs & 0 & 0 & ss\\
+       -cc & -cs & -sc & 0 & 0 & cc\\
+       0 & 0 & 0 & -ss & -cc & 0\\
+       cs & -cc & cc & 0 & 0 & -sc\\
+       sc & cc & -ss & 0 & 0 & cs\\
+       0 & 0 & 0 & sc & -cs & 0\\
+     \end{pmatrix*}
+     \begin{pmatrix}
+     \dot{\rho}\\
+     \rho \dot{\Theta}\\
+     \rho \dot{\Phi}\\
+     \rho \omega_x\\
+     \rho \omega_y\\
+     \rho \omega_z\\
      \end{pmatrix}
-     \end{equation}
+     \end{align}
      
-\begin{equation}
-\begin{pmatrix}
-       \dot{R}_x \\
-       \dot{R}_y \\
-       \dot{R}_z
-     \end{pmatrix} = \begin{pmatrix}
-       \partial_{\rho} R_x & \partial_{\Theta} R_x & \partial_{\Theta} R_x\\
-       \partial_{\rho} R_y & \partial_{\Theta} R_y & \partial_{\Theta} R_y\\
-       \partial_{\rho} R_z & \partial_{\Theta} R_z & \partial_{\Theta} R_z\\
-     \end{pmatrix}
-     \begin{pmatrix}
-     \dot{\rho}\\
-     \dot{\Theta}\\
-     \dot{\Phi}
-\end{pmatrix}
-\end{equation}
 
-hejhejhejhejhej
 
 \subsection{Hyperradial equations}
 
