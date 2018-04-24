@@ -1,0 +1,392 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{biblatex}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{bm}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{float}
+
+\title{Efimov}
+\author{Kajsa-My Blomdahl}
+\date{Januari 2018}
+\begin{document}
+
+\maketitle
+
+\section{The hyperspherical method}
+
+\subsection{Coordinate transformations}
+
+Blabla labframe coordinates
+
+\begin{subequations}
+Jacobi vectors:
+\begin{align}
+        \vec{x} 		&= \vec{r}_2 - \vec{r}_1\\
+        \vec{y} 		&= \vec{r}_3 - \frac{1}{2}(\vec{r}_1 + \vec{r}_2)\\
+        \vec{X}_{cm} 	&= \frac{1}{3} (\vec{r}_1 + \vec{r}_2 + \vec{r}_3)
+\end{align}
+\end{subequations}
+
+Exchange of particles
+\begin{equation}
+\hat{P}_{13} = \left \{ \begin{aligned}
+        \vec{x} \, ' &= \vec{r}_2 - \vec{r}_3 &&= \frac{1}{2}\vec{x} - \vec{y} \\
+        \vec{y} \, ' &= \vec{r}_1 - \frac{1}{2}(\vec{r}_3 + \vec{r}_2) &&= -\frac{1}{2} (\frac{3}{2} \vec{x} + \vec{y})
+       \end{aligned}
+ \right.
+ \end{equation}
+ 
+\begin{equation}
+\hat{P}_{23} = \left \{ \begin{aligned}
+        \vec{x} \, '' &= \vec{r}_3 - \vec{r}_1 &&= \frac{1}{2}\vec{x} + \vec{y} \\
+        \vec{y} \, '' &= \vec{r}_2 - \frac{1}{2}(\vec{r}_1 + \vec{r}_3) &&= -\frac{1}{2} (\frac{3}{2} \vec{x} - \vec{y})
+       \end{aligned}
+ \right.
+ \end{equation}
+
+\begin{subequations}
+Introducing hyperspherical coordinates:
+\begin{align}
+        x &= \sqrt{2} \rho \sin(\alpha)\\
+        y &= \sqrt{\frac{3}{2}} \rho \cos(\alpha)\\
+\end{align}
+\end{subequations}
+
+Hyperspherical coordinates:
+\[\arraycolsep=1.4pt\def\arraystretch{2.2}
+     \left. \begin{array}{lr}
+        \rho = \displaystyle \Big( \frac{1}{2}x^2 + \frac{2}{3}y^2 \Big) ^{1/2} &,  0\leq \rho < \infty\\
+        \tan{\alpha} = \displaystyle \frac{\sqrt{3}}{2} \frac{x}{y} &,  0\leq \alpha < \frac{\pi}{2}\\
+        \cos{\theta} = \displaystyle \frac{\vec{x} \cdot \vec{y}}{xy} &,  0\leq \theta < \pi
+        \end{array}\right.
+  \]
+
+\begin{subequations}
+Jacobi vectors:
+\begin{align}
+        x' &= \frac{1}{4} x^2 +y^2 -\vec{x} \cdot \vec{y} = \frac{\rho}{\sqrt{2}} \big( \sin^2(\alpha) + 3\cos^2(\alpha) - \sqrt{3}\sin(2\alpha)\cos{\theta}\big)^{1/2}\\
+        x'' &= \frac{1}{4} x^2 +y^2 +\vec{x} \cdot \vec{y} = \frac{\rho}{\sqrt{2}} \big( \sin^2(\alpha) + 3\cos^2(\alpha) + \sqrt{3}\sin(2\alpha)\cos{\theta}\big)^{1/2}
+\end{align}
+\end{subequations}
+
+Volume element from the transformation is $dr_1dr_2dr_3=3/2dxdydX_{cm}$.\\
+
+
+(The massweighted Schr{\"o}dinger equation of a N-body system with position vectors $\bm{r}_k$ and masses $m_k$, ($k=1,...,N$), is given by)
+
+\begin{equation}
+\Bigg(-\frac{\hbar^2}{2} \sum_{k=1}^{N} m^{-1}_{k} \nabla^{2}_{\bm{r}_{k}} \Psi + V\Psi = E \Psi \Bigg)
+\end{equation}
+
+where the Laplacian is
+
+\begin{equation}
+\nabla^{2} = \Big( \frac{1}{r^2}\partial_{r} \big(r^2 \partial_{r}\big) - \frac{1}{\sin(\theta)} \partial_{\theta} \big( \sin(\theta) \partial_{\theta} \big) + \frac{1}{\sin^2{\theta}} \partial^{2}_{\phi} \Big) = \Big( \frac{1}{r^2} \partial_{r} \big( r^2 \partial_{r} \big) + \frac{L^2}{\hbar^2} \Big)
+\end{equation}
+
+The kinetic energy for three particles with identical masses is given by
+
+\begin{equation}
+\hat{T} = -\frac{\hbar^2}{2m}( \nabla^{2}_{r_1} + \nabla^{2}_{r_2} + \nabla^{2}_{r_3} )
+\end{equation}
+
+in hyperspherical coordinates this becomes 
+
+\begin{equation}
+\hat{T} = -\frac{\hbar^2}{2m}( 2\nabla^{2}_{x} + \frac{3}{2}\nabla^{2}_{y} + \frac{1}{3}\nabla^{2}_{X_{cm}} ),
+\end{equation}
+
+where
+
+\begin{subequations}
+\begin{align}
+	\nabla^2_{x} &= \frac{1}{x^2}\frac{\partial}{\partial x} \Big( x^2 \frac{\partial}{\partial x} \Big) - \frac{\hat{l}^2_{x}}{x^2} = \frac{2}{x}\frac{\partial}{\partial x} + \frac{\partial^2}{\partial x^{2}} - \frac{\hat{l}^{2}_{x}}{x^2}\\
+	\nabla^2_{y} &= \frac{1}{y^2}\frac{\partial}{\partial y} \Big( y^2 \frac{\partial}{\partial y} \Big) - \frac{\hat{l}^2_{y}}{y^2} = \frac{2}{y}\frac{\partial}{\partial y} + \frac{\partial^2}{\partial y^{2}} - \frac{\hat{l}^{2}_{y}}{y^2}
+\end{align}
+\end{subequations}
+
+If spin interactions are excluded the total orbital angular momentum is zero and we have 
+
+\begin{subequations}
+\begin{align}
+\hat{l}^{2}_{x} = \hat{l}^{2}_{y} = -\frac{1}{\sin(\theta)} \frac{\partial}{\partial{\theta}} \Big( \sin(\theta) \frac{\partial}{\partial{\theta}} \Big)
+\end{align}
+\end{subequations}
+
+
+
+\begin{subequations}
+\begin{align*}
+        \frac{\partial \alpha}{\partial x} &= \frac{1}{\sqrt{2} \rho} \cos(\alpha), \quad \frac{\partial \rho}{\partial x} = \frac{1}{\sqrt{2}} \sin(\alpha) \\
+        \frac{\partial \alpha}{\partial y} &= -\frac{\sqrt{6}}{3 \rho} \sin(\alpha), \quad \frac{\partial \rho}{\partial y} = \sqrt{\frac{2}{3}} \cos(\alpha)
+\end{align*}
+\end{subequations}
+
+\begin{subequations}
+\begin{align*}
+        \frac{\partial}{\partial x}        &= \frac{\partial\alpha}{\partial x} \frac{\partial}{\partial\alpha} +  \frac{\partial\rho}{\partial x} \frac{\partial}{\partial\rho} \\
+        \frac{\partial^2}{\partial x^2} &= \frac{1}{2} \Big( \frac{1}{\rho} \cos(\alpha) \frac{\partial}{\partial\alpha} + \sin(\alpha) \frac{\partial}{\partial\rho}\Big) \Big( \frac{1}{\rho} \cos(\alpha) \frac{\partial}{\partial\alpha} + \sin(\alpha) \frac{\partial}{\partial\rho}\Big) \\
+                                                     &= \frac{1}{2} \Big[ \frac{1}{\rho^2} \cos(\alpha) \frac{\partial}{\partial\alpha} \Big( \cos(\alpha) \frac{\partial}{\partial\alpha} \Big) + \frac{1}{\rho} \cos(\alpha) \frac{\partial}{\partial\alpha} \Big( \sin(\alpha) \frac{\partial}{\partial\rho} \Big) + \sin(\alpha) \frac{\partial}{\partial\rho} \Big( \frac{1}{\rho} \cos(\alpha) \frac{\partial}{\partial\alpha} + \sin(\alpha) \frac{\partial}{\partial\rho} \Big)   \Big] \\
+                                                     &= \frac{1}{2} \Big[ -\frac{2}{\rho^2} \cos(\alpha) \sin(\alpha) \frac{\partial}{\partial\alpha} + \frac{1}{\rho^2} \cos^2(\alpha) \frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho} \cos^2(\alpha) \frac{\partial}{\partial\rho} + \frac{2}{\rho} \cos(\alpha)\sin(\alpha) \frac{\partial^2}{\partial\alpha \partial\rho} + \sin^2(\alpha) \frac{\partial^2}{\partial\rho^{2}}\Big] \\
+                                                     &= \frac{1}{2} \Big[ \frac{1}{\rho^2} \cos^2(\alpha) \frac{\partial^2}{\partial\alpha^{2}} - \frac{1}{\rho^2} \sin(2\alpha) \frac{\partial}{\partial\alpha} + \sin^2(\alpha) \frac{\partial^2}{\partial\rho^{2}} + \frac{1}{\rho} \cos^2(\alpha) \frac{\partial}{\partial\rho} + \frac{1}{\rho} \sin(2\alpha) \frac{\partial^2}{\partial\alpha \partial\rho}\Big]
+\end{align*}
+\end{subequations}
+
+\begin{subequations}
+\begin{align*}
+        \frac{\partial}{\partial y}        &= \frac{\partial\alpha}{\partial y} \frac{\partial}{\partial\alpha} +  \frac{\partial\rho}{\partial y} \frac{\partial}{\partial\rho} \\
+        \frac{\partial^2}{\partial y^2}&= \Big( -\frac{\sqrt{6}}{3\rho} \sin(\alpha) \frac{\partial}{\partial\alpha} + \sqrt{\frac{2}{3}} \cos(\alpha) \frac{\partial}{\partial\rho}\Big)  \Big( -\frac{\sqrt{6}}{3}  \sin(\alpha) \frac{\partial}{\partial\alpha} + \sqrt{\frac{2}{3}} \cos(\alpha) \frac{\partial}{\partial\rho}\Big) \\
+                                                    &= \frac{2}{3} \Big[ \frac{1}{\rho^2} \sin(\alpha) \frac{\partial}{\partial\alpha} \Big( \sin(\alpha) \frac{\partial}{\partial\alpha}\Big) - \frac{1}{\rho} \sin(\alpha) \frac{\partial}{\partial\alpha} \Big( \cos(\alpha) \frac{\partial}{\partial\rho} \Big) - \cos(\alpha) \frac{\partial}{\partial\rho} \Big( \frac{1}{\rho} \sin(\alpha) \frac{\partial}{\partial\alpha} \Big) + \cos^2(\alpha)\frac{\partial^2}{\partial\rho^{2}} \Big] \\
+                                                    &= \frac{2}{3} \Big[ \frac{2}{\rho^2} \sin(\alpha) \cos(\alpha) \frac{\partial}{\partial\alpha} + \frac{1}{\rho^2} \sin^2(\alpha)\frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho} \sin^2(\alpha) \frac{\partial}{\partial\rho} - \frac{2}{\rho}\sin(\alpha)\cos(\alpha) \frac{\partial^2}{\partial\alpha \partial\rho} +\cos^2(\alpha)\frac{\partial^2}{\partial\rho^{2}}  \Big]\\
+                                                    &= \frac{2}{3} \Big[ \frac{1}{\rho^2} \sin^2(\alpha)\frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho^2} \sin(2\alpha)\frac{\partial}{\partial\alpha} + \cos^2(\alpha) \frac{\partial^2}{\rho^2} - \frac{1}{\rho} \sin(2\alpha) \frac{\partial^2}{\partial\alpha \partial\rho} \Big]
+\end{align*}
+\end{subequations}
+
+\begin{subequations}
+\begin{align*}
+	2\nabla^{2}_{x} + \frac{3}{2}\nabla^{2}_{y} &= \frac{4}{x}\frac{\partial}{\partial x} +  \frac{3}{y} \frac{\partial}{\partial y}  +2\frac{\partial^2}{\partial x^{2}} + \frac{3}{2} \frac{\partial^2}{\partial y^{2}} - 2\frac{\hat{l}^{2}_{x}}{x^2} - \frac{3}{2}\frac{\hat{l}^{2}_{y}}{y^2}\\
+									&= \frac{4}{\rho^2} \cot(2\alpha) \frac{\partial}{\partial\alpha} + \frac{5}{\rho} \frac{\partial}{\partial\rho} + \frac{1}{\rho^2} \frac{\partial^2}{\partial\alpha^2} + \frac{\partial^2}{\partial\rho^2} + \frac{4}{\rho^2 \sin^2(2\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial{\theta}} \Big)\\
+									&= \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \Big( \rho^5 \frac{\partial}{\partial\rho} \Big) + \frac{1}{\rho^2 \sin^2(2\alpha)}  \Big( \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} + \frac{4}{\sin(\theta)} \frac{\partial}{\partial\theta} \Big)
+\end{align*}
+\end{subequations}
+
+The kinetic energy operators expressed in Delves hypersherical coordinates is thus
+
+\begin{equation}
+\hat{T} = \hat{T}_{\rho} +  \hat{T}_{\alpha}+\hat{T}_{\theta} 
+\end{equation}
+
+where
+
+\begin{subequations}
+\begin{align*}
+\hat{T}_{\rho} &= -\frac{\hbar^2}{2m} \Big[ \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \Big( \rho^5 \frac{\partial}{\partial\rho} \Big)  \Big]\\ 
+                      &= -\frac{\hbar^2}{2m} \Big[ \rho^{-5/2} \Big( \rho^{5/2} \frac{5}{\rho} \frac{\partial}{\partial\rho} + \rho^{5/2} \frac{\partial^2}{\partial\rho^2} \Big) \rho^{-5/2} \rho^{5/2} \Big]\\
+                      &= -\frac{\hbar^2}{2m} \rho^{-5/2} \Big[  -\frac{15}{4} \frac{1}{\rho^2} + \frac{\partial^2}{\partial\rho^2} \Big] \rho^{5/2}\\ \\
+\hat{T}_{\alpha} &= -\frac{\hbar^2}{2m}  \frac{1}{\rho^2 \sin^2(2\alpha)}  \Big[ \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} \Big]\\ 
+                      &= -\frac{\hbar^2}{2m} \frac{2}{\rho^2 \sin(2\alpha)}  \Big[ \frac{\partial}{\partial\alpha} \sin(2\alpha) \frac{\partial}{\partial\alpha} \Big]\\\
+                      &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2} \Big[ \frac{\partial^2}{\partial\alpha^2} + 4\cot(2\alpha) \frac{\partial}{\partial\alpha} \Big]\\
+                      &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2} \Big[ \sin^{-1}(2\alpha) \Big(\sin(2\alpha)\frac{\partial^2}{\partial\alpha^2} + 4\cos(2\alpha) \frac{\partial}{\partial\alpha} \Big) \sin^{-1}(2\alpha) \sin(2\alpha) \Big]\\
+                      &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2}\sin^{-1}(2\alpha) \Big[ \frac{\partial^2}{\partial\alpha^2} + 4 \Big] \sin(2\alpha)\\
+                      &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2}(\sin(\alpha)\cos(\alpha))^{-1} \Big[ \frac{\partial^2}{\partial\alpha^2} + 4 \Big] \sin(\alpha)\cos(\alpha)\\ \\
+\hat{T}_{\theta} &= -\frac{\hbar^2}{2m} \Big[ \frac{4}{\rho^2 \sin^2(2\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta} \Big) \Big]\\ 
+                      	&= -\frac{\hbar^2}{2m} \Big[ \frac{1}{\rho^2 \sin^2(\alpha)\cos^2(\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta} \Big) \Big]\\ 
+\end{align*}                      		
+\end{subequations} 
+
+And we get the Hamiltonian 
+
+\begin{equation}
+H_0 = \hat{T}_{\rho} +  \hat{T}_{\alpha}+\hat{T}_{\theta} + V(\rho,\alpha,\theta)
+\end{equation}
+
+From now on $\hbar = 1$. To remove first derivatives with respect to $\rho$ and $\alpha$ we make the following transformation $\Psi = \rho^{-5/2}(\sin(\alpha)\cos(\alpha))^{-1}\psi$. This corresponds to the following transformation of the Hamiltonian 
+
+\begin{subequations}
+\begin{align*}
+	H &= \rho^{5/2}\sin(\alpha)\cos(\alpha) H_0 \rho^{-5/2}(\sin(\alpha)\cos(\alpha))^{-1}\\
+	    &= -\frac{1}{2m} \Big[ \frac{\partial^2}{\partial\rho^2} - \frac{15}{4\rho^2} + \frac{1}{\rho^2}\Big( \frac{\partial^2}{\partial\alpha^2} + 4 + \frac{1}{\sin^2(\alpha)\cos^2(\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta} \Big) \Big) \Big]\\
+	    &= -\frac{1}{2m} \Big[ \frac{\partial^2}{\partial\rho^2} + \frac{1}{\rho^2}\Big( \frac{\partial^2}{\partial\alpha^2} + \frac{1}{\sin^2(\alpha)\cos^2(\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta} \Big) \Big) + \frac{1}{4\rho^2} \Big]\\
+	    &= -\frac{1}{2m}\frac{\partial^2}{\partial\rho^2} + \frac{\Lambda^2 - 1/4}{2m\rho^2}
+\end{align*}   
+\end{subequations}
+
+Where the Grand angular momentum operator is
+
+\begin{equation}
+\Lambda^2 = -\frac{\partial^2}{\partial\alpha^2} - \frac{1}{\sin^2(\alpha)\cos^2(\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta}\Big)
+\end{equation}
+
+The volume element is proportional to $\rho^5\sin^2(\alpha)\cos^2(\alpha)\sin(\theta)d\rho d\alpha d\theta$. Boundary conditions:
+The wavefunction needs to be square-integrable, so $\Psi = 0$ at $\rho=0$ and $\alpha = 0 $ or $\pi$. Further, 
+
+\begin{subequations}
+\begin{align*}
+	\psi(0,\alpha,\theta) &= 0\\
+	\psi(\rho,0,\theta)    &= \psi(\rho,\frac{\pi}{2},\theta) = 0\\
+	\frac{\partial\psi}{\partial\theta}\bigg\rvert_{\theta = 0} &= \frac{\partial\psi}{\partial\theta}\bigg\rvert_{\theta = \pi} = 0
+\end{align*}   
+\end{subequations} 
+
+The Hamiltonian is given by 
+
+\begin{equation}
+H_{0} = -\frac{\hbar^{2}}{2 \mu} \Bigg[ \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi)
+\end{equation}
+
+To simplify the kinetic terms in the variables rho and theta, make a transform of the wave function such that
+
+\begin{equation}
+\psi = \rho^{5/2} \cos^{1/2}(\theta) \Psi
+\end{equation}
+
+The Schr{\"o}dinger equation is then
+
+\begin{equation}
+H \psi = E \psi 
+\end{equation}
+
+Where the transformed Hamiltonian operator is given by
+
+\begin{equation}
+H = \rho^{5/2} \cos^{1/2}{(\theta)} H_{0} \rho^{-5/2} \cos^{-1/2}{(\theta)}
+\end{equation}
+
+with
+
+\begin{equation}
+\rho^{5/2} \cos^{1/2}{(\theta)} \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} \Big( \rho^{-5/2} \cos^{-1/2}{(\theta)} \Big) = -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}
+\end{equation}
+
+and
+
+\subsection{from Johnson}
+
+\begin{subequations}
+\begin{align*}
+	r_x &= \rho \cos(\Theta)\cos(\Phi)\\
+	r_y &= -\rho \sin(\Theta)\sin(\Phi)\\
+	r_z &= 0\\
+	R_x &= \rho \cos(\Theta)\sin(\Phi)\\
+	R_y &= \rho \sin(\Theta)\cos(\Phi)\\
+	R_z &= 0
+\end{align*}   
+\end{subequations} 
+
+\begin{subequations}
+\begin{align*}
+	\dot{\bm{r}} &\longrightarrow \dot{\bm{r}}' = \dot{\bm{r}} + \bm{\omega} \times \bm{r}\\
+	\dot{\bm{R}}& \longrightarrow \dot{\bm{R}}' = \dot{\bm{R}} + \bm{\omega} \times \bm{R}\\
+\end{align*}   
+\end{subequations} 
+
+\begin{equation}
+\begin{pmatrix}
+       \dot{r}_x \\
+       \dot{r}_y \\
+       \dot{r}_z \\
+       \dot{R}_x \\
+       \dot{R}_y \\
+       \dot{R}_z\\
+     \end{pmatrix} = \begin{pmatrix}
+       \partial_{\rho} r_x & \partial_{\Theta} r_x & \partial_{\Theta} r_x & 0 & r_z & -r_y\\
+       \partial_{\rho} r_y & \partial_{\Theta} r_y & \partial_{\Theta} r_y & 0 & r_z & -r_y\\
+       \partial_{\rho} r_z & \partial_{\Theta} r_z & \partial_{\Theta} r_z & 0 & r_z & -r_y\\
+       \partial_{\rho} R_x & \partial_{\Theta} R_x & \partial_{\Theta} R_x & 0 & r_z & -r_y\\
+       \partial_{\rho} R_y & \partial_{\Theta} R_y & \partial_{\Theta} R_y & 0 & r_z & -r_y\\
+       \partial_{\rho} R_z & \partial_{\Theta} R_z & \partial_{\Theta} R_z & 0 & r_z & -r_y\\
+     \end{pmatrix}
+     \begin{pmatrix}
+     \dot{\rho}\\
+     \dot{\Theta}\\
+     \dot{\Phi}
+     \end{pmatrix}
+     \end{equation}
+     
+\begin{equation}
+\begin{pmatrix}
+       \dot{R}_x \\
+       \dot{R}_y \\
+       \dot{R}_z
+     \end{pmatrix} = \begin{pmatrix}
+       \partial_{\rho} R_x & \partial_{\Theta} R_x & \partial_{\Theta} R_x\\
+       \partial_{\rho} R_y & \partial_{\Theta} R_y & \partial_{\Theta} R_y\\
+       \partial_{\rho} R_z & \partial_{\Theta} R_z & \partial_{\Theta} R_z\\
+     \end{pmatrix}
+     \begin{pmatrix}
+     \dot{\rho}\\
+     \dot{\Theta}\\
+     \dot{\Phi}
+\end{pmatrix}
+\end{equation}
+
+hejhejhejhejhej
+
+\subsection{Hyperradial equations}
+
+The hyperradius is given by
+
+\begin{equation}
+\rho = (R + r)^{1/2}
+\end{equation}
+
+In hyperspherical coordinates the three-body Schr{\"o}diner equation becomes
+
+\begin{equation}
+\Bigg(-\frac{1}{2 \mu_{3}}\frac{\partial^2}{ \partial \rho^2} + \frac{\Lambda^2 + 15/4}{2 \mu_{3} \rho^2} + V \Bigg)\psi(\rho,\Omega) = E\psi(\rho,\Omega)
+\end{equation}
+
+\begin{equation}
+\psi = \sum \frac{f{\rho}}{\rho^{5/2}} \frac{\phi{(\rho,\Omega)}}{\sin(\alpha) \cos(\alpha)}
+\end{equation}
+
+The Hamiltonian
+
+\begin{equation}
+H(\rho,\Omega) = T(\rho) + H_{ad}(\rho,\Omega)
+\end{equation}
+
+\begin{equation}
+H_{ad}(\rho,\Omega) = \frac{\Lambda^2}{2 \mu_{3} \rho^2} + \sum_{i<j} V(r_{ij})
+\end{equation}
+
+\begin{equation}
+H_{ad} \Phi_{\nu}{(\rho ; \Omega)}= U_{\nu}{(\rho)} \Phi_{\nu}{(\rho ; \Omega)}
+\end{equation}
+
+
+Smith-Whitten (democratic) hyperangles
+
+\begin{equation}
+r_{ij} = \frac{d_{ij} \rho}{\sqrt{2}} \Big[1+\sin(\theta) \cos{(\varphi + \varphi_{ij})}\Big]^{1/2}
+\end{equation}
+
+\begin{align*}
+\varphi_{12} &= 2 \arctan{(m_{3} / \mu_{3})} \\
+\varphi_{23} &= 0 \\
+\varphi_{31} &= -2 \arctan{(m_{2} / \mu_{3})}
+\end{align*}
+
+\begin{equation}
+d_{ij}^{2} =  \frac{m_{k}}{\mu_{3}} \frac{m_{i} + m_{j}}{m_{i} + m_{j} + m_{k}}
+\end{equation}
+
+\begin{equation}
+\Lambda^2 = T_{\theta} + T_{\phi} + T_{rot}  
+\end{equation}
+
+\begin{equation}
+T_{\theta} = -\frac{4}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta}
+\end{equation}
+
+\begin{equation}
+T_{\phi} = \frac{2}{\sin^2{(2 \theta)}} \Big( i \frac{\partial}{\partial \phi} - \frac{\cos{\theta}}{2} J_{z}\Big)^2  
+\end{equation}
+
+\begin{equation}
+T_{rot} = \frac{2}{1-\sin(\theta)} J_{x}^{2} + \frac{2}{1+\sin(\theta)} J_{y}^{2} + J_{z}^{2}  
+\end{equation}
+
+\subsection{Three identical particles}
+\subsubsection{Permutation symmetries in Smith-Whitten coordinates}
+
+\subsection{Effective three-body interaction}
+The two-body interaction 
+
+\begin{equation}
+V(r) = d\cosh{(r/r_0)}
+\end{equation}
+
+
+
+
+
+
+
+\end{document}
