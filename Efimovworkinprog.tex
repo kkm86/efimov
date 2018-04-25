@@ -12,6 +12,7 @@
 \usepackage{siunitx}
 \usepackage{float}
 
+
 \title{Efimov}
 \author{Kajsa-My Blomdahl}
 \date{Januari 2018}
@@ -260,21 +261,75 @@ and
 \end{align*}   
 \end{subequations} 
 
+Now if the position vector $q$ given by     
+\begin{equation}
+\bm{q} =
+\begin{pmatrix}
+       {r}_x \\
+       {r}_y \\
+       {r}_z \\
+       {R}_x \\
+       {R}_y \\
+       {R}_z\\
+ \end{pmatrix} 
+\end{equation}
+transform as 
+
 \begin{subequations}
 \begin{align*}
 	\dot{\bm{r}} &\longrightarrow \dot{\bm{r}}' = \dot{\bm{r}} + \bm{\omega} \times \bm{r}\\
 	\dot{\bm{R}}& \longrightarrow \dot{\bm{R}}' = \dot{\bm{R}} + \bm{\omega} \times \bm{R}\\
 \end{align*}   
-\end{subequations} 
+\end{subequations}
+
+Now if      
+\begin{equation}
+\bm{q}' =
+\begin{pmatrix}
+       {r}'_x \\
+       {r}'_y \\
+       {r}'_z \\
+       {R}'_x \\
+       {R}'_y \\
+       {R}'_z\\
+ \end{pmatrix} 
+\end{equation}
+
+
+and
+\begin{equation}
+\bm{q}'(\bm{r}(t), \bm{R}(t))
+=
+\begin{pmatrix}
+\bm{r}(t)\\
+\bm{R}(t)\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\bm{r}(\rho(t),\Theta(t),\Phi(t))\\
+\bm{R}(\rho(t),\Theta(t),\Phi(t))\\
+\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+\dot{\bm{q}}
+\end{equation}
+
+Now, the matrix equation
+
+\begin{equation}
+\dot{\bm{q}}' = \hat{A} \dot{\bm{q}}
+\end{equation}
+which is given explicitly by
 
 \begin{align}
 \begin{pmatrix}
-       \dot{r}_x \\
-       \dot{r}_y \\
-       \dot{r}_z \\
-       \dot{R}_x \\
-       \dot{R}_y \\
-       \dot{R}_z\\
+       \dot{r}'_x \\
+       \dot{r}'_y \\
+       \dot{r}'_z \\
+       \dot{R}'_x \\
+       \dot{R}'_y \\
+       \dot{R}'_z\\
  \end{pmatrix} 
  &= 
  \begin{pmatrix*}[c]
@@ -309,10 +364,21 @@ and
      \rho \omega_x\\
      \rho \omega_y\\
      \rho \omega_z\\
-     \end{pmatrix}
+     \end{pmatrix}\\
      \end{align}
-     
 
+     
+The arclength is given by
+
+\begin{equation}
+s = \int_{a}^{b} \| \dot{\bm{q}}' \| dt = \int_{a}^{b} \sqrt{ \bm{q}'^{T} \bm{q}'}\\ dt
+\end{equation}
+
+and
+
+\begin{equation}
+(ds)^2 = d\bm{q}'^{T}
+\end{equation}
 
 \subsection{Hyperradial equations}
 
