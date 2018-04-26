@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{biblatex}
 \usepackage{multirow}
 \usepackage{graphicx}
@@ -15,18 +16,19 @@
 
 \title{Efimov}
 \author{Kajsa-My Blomdahl}
-\date{Januari 2018}
+\date{April 2018}
 \begin{document}
 
 \maketitle
 
-\section{The hyperspherical method}
+\section{The Hyperspherical Method}
 
-\subsection{Coordinate transformations}
+\subsection{Coordinate Transformations}
+\subsubsection{Delves Coordinates}
 
 Blabla labframe coordinates
 
-\begin{subequations}
+\begin{subequations} \label{eq:1}
 Jacobi vectors:
 \begin{align}
         \vec{x} 		&= \vec{r}_2 - \vec{r}_1\\
@@ -248,78 +250,60 @@ with
 
 and
 
-\subsection{from Johnson}
+\subsubsection{Modified Smith-Whitten Coordinates}
+In this section, the derivation of the Hamiltonian is described using a modified set of Smith-Whitten (democratic) coordinates.
+For a system of three particles, let $\bm{r}^i$ and $m_i$ be the position vector and mass of the $i$th particle. The set of Jacobi coordinates for the system is given by
 
 \begin{subequations}
-\begin{align*}
-	r_x &= \rho \cos(\Theta)\cos(\Phi)\\
-	r_y &= -\rho \sin(\Theta)\sin(\Phi)\\
-	r_z &= 0\\
-	R_x &= \rho \cos(\Theta)\sin(\Phi)\\
-	R_y &= \rho \sin(\Theta)\cos(\Phi)\\
-	R_z &= 0
-\end{align*}   
-\end{subequations} 
+	\begin{align}
+	\vec{x}_k 		&= \vec{r}_j - \vec{r}_i,\\
+	\vec{y}_k 		&= \vec{r}_k - \frac{1}{2}(\vec{r}_i + \vec{r}_j),\\
+	\vec{X}_{cm} 	&= \frac{1}{3} \sum_{i=1}^{3}\vec{r}_i.
+	\end{align}
+\end{subequations}
 
-Now if the position vector $q$ given by     
+The center of mass coordinate separates from the equations of motion and we will not consider it further. We can define a new set of mass normalized Jacobi coordinates. If the total mass $M$, the three particle reduced mass $\mu_3$, and the scale parameters $d_k (k=1,2,3)$ are defined as 
+
+\begin{align}
+M &= \sum_{i=1}^{3}m_i,\\
+\mu_3^2 &= \prod_{i=1}^{3}m_i/M,\\
+d_k^2 &= \frac{m_k}{\mu_3}\frac{1-m_k}{M}. 
+\end{align}
+
+The set of mass normalized Jacobi coordinates are defined by
+
+\begin{align}
+\bm{r}_k &= d^{-1}_k\bm{x}_k,\\
+\bm{R}_k &= d_k\bm{y}_k.  
+\end{align}
+From hereon we choose one set to work in and suppress all vector indices. In six dimensional space, the components of the two vectors $\bm{r}$ and $\bm{R}$ can be regarded as the Cartesian components of a point that space. The kinetic energy is then given by
+
 \begin{equation}
-\bm{q} =
-\begin{pmatrix}
-       {r}_x \\
-       {r}_y \\
-       {r}_z \\
-       {R}_x \\
-       {R}_y \\
-       {R}_z\\
- \end{pmatrix} 
-\end{equation}
-transform as 
+\hat{T} = -\frac{1}{2m}\Big(\Delta_{\bm{r}}+\Delta_{\bm{R}}\Big).
+\end{equation} 
+
+At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the x-y plane, and define the internal motion of the particles within this plane in terms of  hyperspherical coordinates, our coordinate system must rotate in this plane. That is, we use a body-fixed coordinate system $XYZ$, which rotates with respect to the space fixed axis $X'Y'Z'$. [Details]. The internal coordinates $\rho$, $\Theta$, and $\Phi$ determine the size and shape of the triangle formed by the three particle system. Smith and Whitten [ref] defined these as   
 
 \begin{subequations}
 \begin{align*}
-	\dot{\bm{r}} &\longrightarrow \dot{\bm{r}}' = \dot{\bm{r}} + \bm{\omega} \times \bm{r}\\
-	\dot{\bm{R}}& \longrightarrow \dot{\bm{R}}' = \dot{\bm{R}} + \bm{\omega} \times \bm{R}\\
+	r_x &= \rho \cos(\Theta)\cos(\Phi),\\
+	r_y &= -\rho \sin(\Theta)\sin(\Phi),\\
+	r_z &= 0\\
+	R_x &= \rho \cos(\Theta)\sin(\Phi),\\
+	R_y &= \rho \sin(\Theta)\cos(\Phi),\\
+	R_z &= 0.
 \end{align*}   
 \end{subequations}
 
-Now if      
-\begin{equation}
-\bm{q}' =
-\begin{pmatrix}
-       {r}'_x \\
-       {r}'_y \\
-       {r}'_z \\
-       {R}'_x \\
-       {R}'_y \\
-       {R}'_z\\
- \end{pmatrix} 
-\end{equation}
+To describe how rotations of the BF system affects the derivatives in the SF system, introduce the infinitesimal rotations $\bm{\omega}$. The velocities of the SF system vectors are given by    
 
+\begin{subequations}
+	\begin{align*}
+	 \dot{\bm{r}}' = \dot{\bm{r}} + \bm{\omega} \times \bm{r}\\
+	 \dot{\bm{R}}' = \dot{\bm{R}} + \bm{\omega} \times \bm{R}\\
+	\end{align*}   
+\end{subequations} 
 
-and
-\begin{equation}
-\bm{q}'(\bm{r}(t), \bm{R}(t))
-=
-\begin{pmatrix}
-\bm{r}(t)\\
-\bm{R}(t)\\
-\end{pmatrix}
-=
-\begin{pmatrix}
-\bm{r}(\rho(t),\Theta(t),\Phi(t))\\
-\bm{R}(\rho(t),\Theta(t),\Phi(t))\\
-\end{pmatrix}
-\end{equation}
-
-\begin{equation}
-\dot{\bm{q}}
-\end{equation}
-
-Now, the matrix equation
-
-\begin{equation}
-\dot{\bm{q}}' = \hat{A} \dot{\bm{q}}
-\end{equation}
 which is given explicitly by
 
 \begin{align}
@@ -365,19 +349,46 @@ which is given explicitly by
      \rho \omega_y\\
      \rho \omega_z\\
      \end{pmatrix}\\
-     \end{align}
+\end{align}
+In matrix notation:
+
+\begin{equation}
+	\dot{\bm{q}}' = \hat{A}\dot{\bm{q}},
+\end{equation} 
+where     
+     
+\begin{equation}
+\dot{\bm{q}}' =
+\begin{pmatrix}
+\dot{r}'_x \\
+\dot{r}'_y \\
+\dot{r}'_z \\
+\dot{R}'_x \\
+\dot{R}'_y \\
+\dot{R}'_z\\
+\end{pmatrix},
+\dot{\bm{q}} =
+\begin{pmatrix}
+\dot{\rho}\\
+\dot{\Theta}\\
+\dot{\Phi}\\
+\omega_x\\
+\omega_y\\
+\omega_z\\
+\end{pmatrix} \notag \\
+\end{equation}
 
      
 The arclength is given by
 
 \begin{equation}
-s = \int_{a}^{b} \| \dot{\bm{q}}' \| dt = \int_{a}^{b} \sqrt{ \bm{q}'^{T} \bm{q}'}\\ dt
+s = \int_{a}^{b} \| \dot{\bm{q}}' \| dt = \int_{a}^{b} \sqrt{ \dot{\bm{q}}'^{T} \dot{\bm{q}}'}\\ dt
 \end{equation}
 
 and
 
 \begin{equation}
-(ds)^2 = d\bm{q}'^{T}
+(ds)^2 = (d\bm{q}')^{T}(d\bm{q}') = d\bm{q}^{T} \hat{A}^{T} \hat{A}d\bm{q} = d\bm{q}^{T} \bm{g} d\bm{q}
 \end{equation}
 
 \subsection{Hyperradial equations}
