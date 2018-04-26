@@ -388,8 +388,73 @@ s = \int_{a}^{b} \| \dot{\bm{q}}' \| dt = \int_{a}^{b} \sqrt{ \dot{\bm{q}}'^{T} 
 and
 
 \begin{equation}
-(ds)^2 = (d\bm{q}')^{T}(d\bm{q}') = d\bm{q}^{T} \hat{A}^{T} \hat{A}d\bm{q} = d\bm{q}^{T} \bm{g} d\bm{q}
+(ds)^2 = (d\bm{q}')^{T}(d\bm{q}') = d\bm{q}^{T} \hat{A}^{T} \hat{A}d\bm{q} = d\bm{q}^{T} \bm{g} d\bm{q},
 \end{equation}
+where $\bm{g}$ is the metric tensor
+
+\begin{equation}
+\bm{g}=
+\begin{pmatrix}
+\bm{G} & \bm{C}\\
+\bm{C}^T & \bm{K}
+\end{pmatrix}
+\end{equation}
+where the submatrices $\bm{G}$, $\bm{K}$ and $\bm{C}$ are 
+
+\begin{align}
+\bm{G} &=
+\begin{pmatrix}
+1 & 0      & 0\\
+0 & \rho^2 & 0\\
+0 & 0      & \rho^2
+\end{pmatrix}\\
+\bm{K} &=
+\rho^2
+\begin{pmatrix}
+\sin^2\Theta & 0            & 0\\
+0            & \cos^2\Theta & 0\\
+0            & 0            & 1
+\end{pmatrix}\\
+\bm{C} &=
+-\rho^2\sin^2(2\Theta)
+\begin{pmatrix}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\end{align}
+the inverse of the metric tensor $\bm{g}^{-1}$
+\begin{equation}
+\bm{g}^{-1}=
+\begin{pmatrix}
+\bm{V} & \bm{W}\\
+\bm{W}^T & \bm{U}
+\end{pmatrix}
+\end{equation}
+where the submatrices $\bm{V}$, $\bm{W}$ and $\bm{U}$ are 
+
+\begin{align}
+\bm{V} &=
+\begin{pmatrix}
+1 & 0      & 0\\
+0 & 1/\rho^2 & 0\\
+0 & 0      & 1/\rho^2\cos^2(2\Theta)
+\end{pmatrix}\\
+\bm{U} &=
+\frac{1}{\rho^2}
+\begin{pmatrix}
+1/\sin^2\Theta & 0            & 0\\
+0            & 1/\cos^2\Theta & 0\\
+0            & 0            & 1/\cos^2(2\Theta)
+\end{pmatrix}\\
+\bm{W} &=
+\frac{\sin(2\Theta)}{\rho^2\cos^2(2\Theta)}
+\begin{pmatrix}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\end{align}
 
 \subsection{Hyperradial equations}
 
