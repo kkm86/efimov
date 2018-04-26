@@ -456,6 +456,62 @@ where the submatrices $\bm{V}$, $\bm{W}$ and $\bm{U}$ are
 \end{pmatrix}
 \end{align}
 
+The determinant of the metric tensor is given by
+
+\begin{align}
+g &=
+\mid\bm{g}\mid=
+\begin{vmatrix}
+\bm{G} & \bm{C}\\
+\bm{C}^T & \bm{K}
+\end{vmatrix}
+=
+\begin{vmatrix}
+\bm{G} & \bm{C}\\
+0 & \bm{K} - \bm{C}^T \bm{G}^{-1} \bm{C}
+\end{vmatrix}\\
+  &=
+\mid \bm{G} \mid \cdot \mid\bm{K} - \bm{C}^T \bm{G}^{-1} \bm{C} \mid
+=
+\frac{\rho^{10}}{16}\sin^2(4\Theta)
+\end{align}
+
+\begin{equation}
+	\sqrt{g}=\frac{\rho^5}{4}\sin(4\Theta)
+\end{equation}
+
+The kinetic energy operator of a particle with mass $\mu$ in a curvilinear coordinate system of $N$ dimensions is given by
+
+\begin{equation}
+	T = -\frac{\hbar^2}{2\mu} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{1}{\sqrt{g}} \frac{\partial}{\partial q^i} \Big(\sqrt{g} g^{ij} \frac{\partial}{\partial q^j}\Big)
+\end{equation}
+
+Momentum vector
+
+\begin{equation}
+	\bm{p} = i\hbar 
+	\begin{pmatrix}
+		\partial/\partial q^1\\
+		\vdots\\
+		\partial/\partial q^N\\
+	\end{pmatrix}
+\end{equation}
+
+With $\bm{\omega}$ expressed in Euler angles 
+
+\begin{equation}
+\bm{\omega} = 
+\begin{pmatrix}
+	d\Omega_x\\
+	d\Omega_y\\
+	d\Omega_z
+\end{pmatrix}
+\end{equation}
+
+we get the kinetic energy
+
+
+
 \subsection{Hyperradial equations}
 
 The hyperradius is given by
