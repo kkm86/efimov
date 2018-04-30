@@ -218,37 +218,7 @@ The wavefunction needs to be square-integrable, so $\Psi = 0$ at $\rho=0$ and $\
 \end{align*}   
 \end{subequations} 
 
-The Hamiltonian is given by 
 
-\begin{equation}
-H_{0} = -\frac{\hbar^{2}}{2 \mu} \Bigg[ \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi)
-\end{equation}
-
-To simplify the kinetic terms in the variables rho and theta, make a transform of the wave function such that
-
-\begin{equation}
-\psi = \rho^{5/2} \cos^{1/2}(\theta) \Psi
-\end{equation}
-
-The Schr{\"o}dinger equation is then
-
-\begin{equation}
-H \psi = E \psi 
-\end{equation}
-
-Where the transformed Hamiltonian operator is given by
-
-\begin{equation}
-H = \rho^{5/2} \cos^{1/2}{(\theta)} H_{0} \rho^{-5/2} \cos^{-1/2}{(\theta)}
-\end{equation}
-
-with
-
-\begin{equation}
-\rho^{5/2} \cos^{1/2}{(\theta)} \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} \Big( \rho^{-5/2} \cos^{-1/2}{(\theta)} \Big) = -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}
-\end{equation}
-
-and
 
 \subsubsection{Modified Smith-Whitten Coordinates}
 In this section, the derivation of the Hamiltonian is described using a modified set of Smith-Whitten (democratic) coordinates.
@@ -483,17 +453,16 @@ g &=
 The kinetic energy operator of a particle with mass $\mu$ in a curvilinear coordinate system of $N$ dimensions is given by
 
 \begin{equation}
-	T = -\frac{\hbar^2}{2\mu} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{1}{\sqrt{g}} \frac{\partial}{\partial q^i} \Big(\sqrt{g} g^{ij} \frac{\partial}{\partial q^j}\Big)
+	T = -\frac{\hbar^2}{2\mu} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{1}{\sqrt{g}} \frac{\partial}{\partial q_i} \Big(\sqrt{g} g^{ij} \frac{\partial}{\partial q_j}\Big)
 \end{equation}
-
-Momentum vector
+where $g^{ij}$ is the inverse metric tensor. The momentum vector is given by
 
 \begin{equation}
 	\bm{p} = i\hbar 
 	\begin{pmatrix}
-		\partial/\partial q^1\\
+		\partial/\partial q_1\\
 		\vdots\\
-		\partial/\partial q^N\\
+		\partial/\partial q_N\\
 	\end{pmatrix}
 \end{equation}
 
@@ -510,6 +479,127 @@ With $\bm{\omega}$ expressed in Euler angles
 
 we get the kinetic energy
 
+\begin{align*}
+	-\hat{T} &= -\frac{1}{2\mu \rho^5 \sin(4\Theta)} \bm{p}^T \Big(\rho^5 \sin(4\Theta) \bm{g}^{-1}\Big) \bm{p}\\
+	  &= \frac{1}{2\mu \rho^5 \sin(4\Theta)}\Bigg[ \frac{\partial}{\partial \rho} \Bigg(\rho^5 \sin(4 \Theta) \frac{\partial}{\partial \rho}\Bigg) + \frac{\partial}{\partial \Theta}\Bigg(\rho^3\sin(4\Theta)\frac{\partial}{\partial\Theta}\Bigg)\\ &+\frac{\partial}{\partial\Phi}\Bigg(2\rho^3\tan(2\Theta)\frac{\partial}{\partial\Phi} + 2\tan^2(2\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_z}\Bigg)\\
+	  &+\frac{\partial}{\partial\Omega_x}\Bigg(4\rho^3\cot(\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_x}\Bigg)\\
+	  &+\frac{\partial}{\partial\Omega_y}\Bigg(4\rho^3\tan(2\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_y}\Bigg)\\
+	  &+\frac{\partial}{\partial\Omega_z}\Bigg(2\rho^3\tan^2(2\Theta)\frac{\partial}{\partial\Phi}+2\rho^3\tan(2\Theta)\frac{\partial}{\partial\Omega_z}\Bigg)\Bigg]\\
+	  &=\frac{1}{2\mu}\Bigg[\frac{1}{\rho^5}\frac{\partial}{\partial\rho}\Bigg(\rho^5\frac{\partial}{\partial\rho}\Bigg) + \frac{1}{\rho^2\sin(4\Theta)}\frac{\partial}{\partial\Theta}\Bigg(\sin(4\Theta)\frac{\partial}{\partial\Theta}\Bigg)\\
+	  &+\frac{1}{\rho^2\cos^2(2\Theta)}\frac{\partial^2}{\partial\Phi^2} + \frac{\sin(2\Theta)}{\rho^2\cos^2(2\Theta)}\frac{\partial}{\partial\Phi}\frac{\partial}{\partial\Omega_z}\\
+	  &+\frac{1}{\rho^2\sin^2(\Theta)}\frac{\partial^2}{\partial\Omega^2_x} + \frac{1}{\rho^2\cos^2(\Theta)}\frac{\partial^2}{\partial\Omega^2_y} + \frac{\sin(2\Theta)}{\rho^2\cos^2(2\Theta)}\frac{\partial}{\partial\Omega_z}\frac{\partial}{\partial\Phi}\\
+	  &+ \frac{1}{\rho^2\cos^2(2\Theta)}\frac{\partial^2}{\partial\Omega^2_z}\Bigg]\\
+	  &=\frac{1}{2\mu\rho^5}\frac{\partial}{\partial\rho}\Bigg(\rho^5\frac{\partial}{\partial\rho}\Bigg) + \frac{1}{2\mu\rho^2}\Bigg[\frac{1}{\sin(4\Theta)}\frac{\partial}{\partial\Theta}\Bigg(\sin(4\Theta)\frac{\partial}{\partial\Theta}\Bigg)\\
+	  &+\frac{1}{\cos^2(2\Theta)}\frac{\partial^2}{\partial\Phi^2} \Bigg]+\frac{1}{2\mu\rho^2}\Bigg[\frac{1}{\sin^2(\Theta)}\frac{\partial^2}{\partial\Omega^2_x} + \frac{1}{\cos^2(\Theta)}\frac{\partial^2}{\partial\Omega^2_y} + \frac{1}{\cos^2(2\Theta)}\frac{\partial^2}{\partial\Omega^2_z}\\
+	  &+ \frac{2\sin(2\Theta)}{\cos^2(2\Theta)}\frac{\partial}{\partial\Phi}\frac{\partial}{\partial\Omega_z}\Bigg].
+\end{align*}
+
+The volume element in a general coordinate system of  N dimensions is given by
+
+\begin{equation}
+d^Nv = g^{1/2}\prod_{i=1}^{N} dq_i
+\end{equation}
+
+In our set up we thus get 
+
+\begin{equation}
+d^6v = g^{1/2}\prod_{i=1}^{6} dq_i = \frac{\rho^5}{4}\sin(4\Theta)d\rho d\Theta d\Phi
+\end{equation}
+
+Now, we make a transformation of the angles (Kuppermann)
+
+\begin{align*}
+	\Theta &= \pi/4-\theta/2\\
+	\Phi &= \pi/4-\phi/2
+\end{align*}
+
+and
+
+\begin{align*}
+	\frac{\partial}{\partial\Theta} &= -2\frac{\partial}{\partial\theta}\\ 						\frac{\partial}{\partial\Phi} &= -2\frac{\partial}{\partial\phi}\\ 		
+\end{align*}
+
+\begin{align*}
+	&\sin(4\Theta)   =\sin(2\theta)\\
+	&\cos^2(2\Theta) =\sin^2(\theta)\\
+	&\sin^2(2\Theta) =\cos^2(\theta)\\
+	&\cos^2\Theta    =\frac{1}{2}(1+\sin\theta)\\
+	&\sin^2\Theta    =\frac{1}{2}(1-\sin\theta)\\
+\end{align*}
+Now with
+
+\begin{equation}
+	\bm{P} = 
+	-i\hbar
+	\begin{pmatrix}
+	\partial/\partial\rho\\
+	\partial/\partial\theta\\
+	\partial/\partial\phi
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	P_{\rho}\\
+	P_{\theta}\\
+	P_{\phi}
+	\end{pmatrix}
+\end{equation}
+and
+
+\begin{equation}
+	\bm{J} = 
+	-i\hbar
+	\begin{pmatrix}
+	\partial/\partial\Omega_x\\
+	\partial/\partial\Omega_y\\
+	\partial/\partial\Omega_z
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	J_x\\
+	J_y\\
+	J_z
+	\end{pmatrix}
+\end{equation}
+
+The kinetic energy operator then becomes
+
+\begin{align*}
+	\hat{T} &=-\frac{\hbar^2}{2\mu}\Bigg[\frac{1}{\rho^5}\frac{\partial}{\partial\rho}\rho^5\frac{\partial}{\partial\rho} - \frac{4}{\rho^2}\Bigg(\frac{1}{\sin(2\theta)}\frac{\partial}{\partial\theta}\sin(2\theta)\frac{\partial}{\partial\theta}\\
+	&+\frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial\phi^2} \Bigg)\Bigg]-\frac{1}{\mu\rho^2}\Bigg[\frac{J^2_x}{(1-\sin\theta)} + \frac{J^2_y}{(1+\sin\theta)} +\frac{J^2_z}{2\sin^2\theta}\Bigg]\\
+	&+ \frac{4i\hbar\cos\theta J_z}{2\mu\rho^2\sin^2\theta}\frac{\partial}{\partial\phi}
+\end{align*}
+
+If we only consider $J=0$ states, the Hamiltonian reduces to 
+
+\begin{equation}
+H_{0} = -\frac{\hbar^{2}}{2 \mu} \Bigg[ \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi)
+\end{equation}
+
+To simplify the kinetic terms in the variables rho and theta, make a transform of the wave function such that
+
+\begin{equation}
+\psi = \rho^{5/2} \cos^{1/2}(\theta) \Psi
+\end{equation}
+
+The Schr{\"o}dinger equation is then
+
+\begin{equation}
+H \psi = E \psi 
+\end{equation}
+
+Where the transformed Hamiltonian operator is given by
+
+\begin{equation}
+H = \rho^{5/2} \cos^{1/2}{(\theta)} H_{0} \rho^{-5/2} \cos^{-1/2}{(\theta)}
+\end{equation}
+
+with
+
+\begin{equation}
+\rho^{5/2} \cos^{1/2}{(\theta)} \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} \Big( \rho^{-5/2} \cos^{-1/2}{(\theta)} \Big) = -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}
+\end{equation}
+
+and
 
 
 \subsection{Hyperradial equations}
