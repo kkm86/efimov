@@ -480,7 +480,7 @@ With $\bm{\omega}$ expressed in Euler angles
 we get the kinetic energy
 
 \begin{align*}
-	-\hat{T} &= -\frac{1}{2\mu \rho^5 \sin(4\Theta)} \bm{p}^T \Big(\rho^5 \sin(4\Theta) \bm{g}^{-1}\Big) \bm{p}\\
+	-\frac{1}{\hbar^2}\hat{T} &= -\frac{1}{2\mu \rho^5 \sin(4\Theta)} \bm{p}^T \Big(\rho^5 \sin(4\Theta) \bm{g}^{-1}\Big) \bm{p}\\
 	  &= \frac{1}{2\mu \rho^5 \sin(4\Theta)}\Bigg[ \frac{\partial}{\partial \rho} \Bigg(\rho^5 \sin(4 \Theta) \frac{\partial}{\partial \rho}\Bigg) + \frac{\partial}{\partial \Theta}\Bigg(\rho^3\sin(4\Theta)\frac{\partial}{\partial\Theta}\Bigg)\\ &+\frac{\partial}{\partial\Phi}\Bigg(2\rho^3\tan(2\Theta)\frac{\partial}{\partial\Phi} + 2\tan^2(2\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_z}\Bigg)\\
 	  &+\frac{\partial}{\partial\Omega_x}\Bigg(4\rho^3\cot(\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_x}\Bigg)\\
 	  &+\frac{\partial}{\partial\Omega_y}\Bigg(4\rho^3\tan(2\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_y}\Bigg)\\
@@ -499,11 +499,80 @@ The volume element in a general coordinate system of  N dimensions is given by
 \begin{equation}
 d^Nv = g^{1/2}\prod_{i=1}^{N} dq_i
 \end{equation}
+The Euler angles are given by
+
+\begin{equation}
+\begin{pmatrix}
+d\Omega_x\\
+d\Omega_y\\
+d\Omega_z
+\end{pmatrix}
+=
+\bm{A}\begin{pmatrix}
+d\alpha\\
+d\beta\\
+d\gamma
+\end{pmatrix}
+\end{equation}
+where
+
+\begin{equation}
+\bm{A}=
+	\begin{pmatrix}
+		-\sin\beta\cos\gamma & \sin\gamma & 0\\
+		\sin\beta\sin\gamma  & \cos\gamma & 0\\
+		\cos\beta 			 & 0          & 1
+	\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+d\bm{q} =
+\begin{pmatrix}
+d\rho\\
+d\Theta\\
+d\Phi\\
+d\Omega_x\\
+d\Omega_y\\
+d\Omega_z\\
+\end{pmatrix},
+d\bm{q}' =
+\begin{pmatrix}
+d\rho\\
+d\Theta\\
+d\Phi\\
+d\alpha\\
+d\beta\\
+d\gamma\\
+\end{pmatrix} \notag \\
+\end{equation}
+
+\begin{equation}
+	ds^2 = (d\bm{q})^T\bm{g}d\bm{q} = (d\bm{q}')^T\bm{g}'d\bm{q}'
+\end{equation}
+with
+
+\begin{equation}
+	\bm{B} = 
+	\begin{pmatrix}
+		\bm{I} & 0\\
+		0      & \bm{A}
+	\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+	\bm{g}'=\bm{B}^T\bm{g}\bm{B}
+\end{equation}
+and the determinant is then
+
+\begin{equation}
+g'^{1/2}=(\mid\bm{B}\mid^2 \mid\bm{g}\mid)^{1/2} = (\mid\bm{A}\mid^2 \mid\bm{g}\mid)^{1/2}
+  = \frac{\rho^5}{4}\sin(4\Theta)\sin\beta
+\end{equation}
 
 In our set up we thus get 
 
 \begin{equation}
-d^6v = g^{1/2}\prod_{i=1}^{6} dq_i = \frac{\rho^5}{4}\sin(4\Theta)d\rho d\Theta d\Phi
+d^6v = g^{1/2}\prod_{i=1}^{6} dq_i = \frac{\rho^5}{4}\sin(4\Theta)\sin\beta d\rho d\Theta d\Phi d\alpha d\beta d\gamma
 \end{equation}
 
 Now, we make a transformation of the angles (Kuppermann)
@@ -526,6 +595,12 @@ and
 	&\cos^2\Theta    =\frac{1}{2}(1+\sin\theta)\\
 	&\sin^2\Theta    =\frac{1}{2}(1-\sin\theta)\\
 \end{align*}
+The corresponding volume element is then
+
+\begin{equation}
+	d^6 v = \frac{1}{8}\rho^5 \sin\theta\cos\theta\sin\beta d\rho d\theta d\phi d\alpha d\beta d\gamma
+\end{equation}
+
 Now with
 
 \begin{equation}
