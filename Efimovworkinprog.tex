@@ -221,7 +221,8 @@ The wavefunction needs to be square-integrable, so $\Psi = 0$ at $\rho=0$ and $\
 
 
 \subsubsection{Modified Smith-Whitten Coordinates}
-In this section, the derivation of the Hamiltonian is described using a modified set of Smith-Whitten (democratic) coordinates.
+In this section, we show how the three-body system can be represented in a symmetric way. The derivation of the Hamiltonian for this representation is described using a modified set of Smith-Whitten (democratic) coordinates. 
+
 For a system of three particles, let $\mathbf{r}^i$ and $m_i$ be the position vector and mass of the $i$th particle. The set of Jacobi coordinates for the system is given by
 
 \begin{subequations}
@@ -232,12 +233,12 @@ For a system of three particles, let $\mathbf{r}^i$ and $m_i$ be the position ve
 	\end{align}
 \end{subequations}
 
-The center of mass coordinate separates from the equations of motion and we will not consider it further. We can define a new set of mass normalized Jacobi coordinates. If the total mass $M$, the three particle reduced mass $\mu_3$, and the scale parameters $d_k (k=1,2,3)$ are defined as 
+The center of mass coordinate separates from the equations of motion and we will not consider it further. We can define a new set of mass normalized Jacobi coordinates. If the total mass $M$, the three particle reduced mass $\mu_3$, and the normalizing constants $d_k (k=1,2,3)$ are defined as 
 
 \begin{align}
 M &= \sum_{i=1}^{3}m_i,\\
 \mu_3^2 &= \prod_{i=1}^{3}m_i/M,\\
-d_k^2 &= \frac{m_k}{\mu_3}\frac{1-m_k}{M}. 
+d_k^2 &= \frac{m_k}{\mu_3}\frac{(m_i+m_j)}{M}. 
 \end{align}
 
 The set of mass normalized Jacobi coordinates are defined by
@@ -246,13 +247,42 @@ The set of mass normalized Jacobi coordinates are defined by
 \mathbf{r}_k &= d^{-1}_k\mathbf{x}_k,\\
 \mathbf{R}_k &= d_k\mathbf{y}_k.  
 \end{align}
+The masses of the particles define angles that are useful to describe permutations of the system. If we consider an even permutation $(ijk)$ of the set $(123)$, then the obtuse angle $\beta_{ij}$ has the properties
+
+\begin{subequations}
+	\begin{align}
+		&\beta_{ij} = -\beta_{ji}, \quad \beta_{ii} = 0,\\
+		&\tan\beta_{ij} = -m_k/\mu,\\
+		&d_{i}d_{j} \sin\beta_{ij} = 1,\\
+		&d_{i}d_{j} m_{k} \cos\beta_{ij} = -\mu,\\
+		&\beta_{12}+\beta_{23}+\beta_{31} = 2\pi
+	\end{align}
+\end{subequations}
+Orthogonal transformations within the coordinate set are then given by 
+
+\begin{equation}
+	\begin{pmatrix}
+		\mathbf{r}_j\\
+		\mathbf{R}_j
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	\cos\beta_{ij} & \sin\beta_{ij}\\
+	-\sin\beta_{ij} & \cos\beta_{ij}
+	\end{pmatrix}
+	\begin{pmatrix}
+	\mathbf{r}_i\\
+	\mathbf{R}_i
+	\end{pmatrix}
+\end{equation}   
+
 From hereon we choose one set to work in and suppress all vector indices. In six dimensional space, the components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ can be regarded as the Cartesian components of a point that space. The kinetic energy is then given by
 
 \begin{equation}
 \hat{T} = -\frac{1}{2m}\Big(\Delta_{\mathbf{r}}+\Delta_{\mathbf{R}}\Big).
 \end{equation} 
 
-At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the x-y plane, and define the internal motion of the particles within this plane in terms of  hyperspherical coordinates, our coordinate system must rotate in this plane. That is, we use a body-fixed coordinate system $XYZ$, which rotates with respect to the space fixed axis $X'Y'Z'$. [Details]. The internal coordinates $\rho$, $\Theta$, and $\Phi$ determine the size and shape of the triangle formed by the three particle system. Smith and Whitten [ref] defined these as   
+At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the x-y plane, and define the internal motion of the particles within this plane in terms of  hyperspherical coordinates, our coordinate system must rotate in this plane. That is, we use a body-fixed coordinate system $XYZ$, which rotates with respect to the space fixed axis $X'Y'Z'$. [Details](spatial rotation). The internal coordinates $\rho$, $\Theta$, and $\Phi$ determine the size and shape of the triangle formed by the three particle system. Smith and Whitten [ref] defined these as   
 
 \begin{subequations}
 \begin{align*}
@@ -264,6 +294,84 @@ At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider t
 	R_z &= 0.
 \end{align*}   
 \end{subequations}
+The distance between the particles are given by
+
+\begin{align}
+	x_3 = d_3 \mid\mathbf{r}_{3}\mid &= \frac{\rho d_3}{2^{1/2}}\big[1+\cos(2\Theta)\cos(2\Phi_3)\big]^{1/2}\\
+	x_1 = d_1 \mid\mathbf{r}_{1}\mid &= d_1 \big[\cos^2\beta_{31}\mathbf{r}^2_{3} + \sin^2\beta_{31}\mathbf{R}^2_3 + 2\sin\beta_{31}\cos\beta_{31}\mathbf{r}_3\cdot\mathbf{R}_3\big]^{1/2}\\ \notag
+	&= \frac{d_1\rho}{2^{1/2}} \big[\cos^2\beta_{31}(1 + \cos(2\Theta)\cos(2\Phi_3))\\ \notag
+	&+ \sin^2\beta_{31}(1 - \cos(2\Theta)\cos(2\Phi_3))\\ \notag
+	&+ 2\sin\beta_{31}\cos\beta_{31}\cos(2\Theta)\sin(2\Phi_3)\big]^{1/2}\\ \notag
+	&= \frac{d_1\rho}{2^{1/2}} \big[1 + \cos(2\Theta)\big(\cos(\Phi_3)\cos(2\beta_{31}) + \sin(2\Phi_3)\sin(2\beta_{31})\big)\big]^{1/2}\\ \notag
+	&= \frac{d_1\rho}{2^{1/2}}\big[1 + \cos(2\Theta)\cos(2\Phi_3 - 2\beta_{31})\big]^{1/2}\\ \notag
+	&= \frac{d_1\rho}{2^{1/2}}\big[1 + \cos(2\Theta)\cos(2\Phi_1)\big]^{1/2}\\ \notag
+	x_2 = d_2 \mid\mathbf{r}_{2}\mid
+	&= d_2 \big[\cos^2\beta_{23}\mathbf{r}^2_{3} + \sin^2\beta_{23}\mathbf{R}^2_3 - 2\sin\beta_{23}\cos\beta_{23}\mathbf{r}_3\cdot\mathbf{R}_3\big]^{1/2}\\ \notag
+	&= \frac{d_2\rho}{2^{1/2}} \big[1 + \cos(2\Theta)\big(\cos(\Phi_3)\cos(2\beta_{23}) - \sin(2\Phi_3)\sin(2\beta_{23})\big)\big]^{1/2}\\ \notag
+	&= \frac{d_1\rho}{2^{1/2}}\big[1 + \cos(2\Theta)\cos(2\Phi_3 + 2\beta_{23})\big]^{1/2}\\ \notag
+	&= \frac{d_1\rho}{2^{1/2}}\big[1 + \cos(2\Theta)\cos(2\Phi_2)\big]^{1/2}
+\end{align}
+Thus, $\Phi_j = \Phi_i-\beta_{ij}$ and
+
+\begin{equation}
+	x_k = \frac{d_k\rho}{2^{1/2}}\big[1 + \cos(2\Theta)\cos(2\Phi_k)\big]^{1/2}.
+\end{equation}
+Now we choose $\Phi_3=\Phi$
+
+\begin{align}
+	x_3 &= \frac{\rho d_3}{2^{1/2}}\big[1+\cos(2\Theta)\cos(2\Phi)\big]^{1/2}\\
+	x_1 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \cos(2\Theta)\cos(2\Phi + \epsilon_1)\big]^{1/2}\\
+	x_2 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \cos(2\Theta)\cos(2\Phi + \epsilon_2)\big]^{1/2}
+\end{align}
+where
+
+\begin{align}
+	\epsilon_1 &= -2\tan^{-1}(-m_2/\mu)\\
+	\epsilon_2 &= 2\tan^{-1}(-m_1/\mu)
+\end{align}
+Now for three identical particles we get
+
+\begin{align}
+x_3 &= \frac{\rho}{3^{1/4}}\big[1+\cos(2\Theta)\cos(2\Phi)\big]^{1/2}\\
+x_1 &= \frac{\rho}{3^{1/4}}\big[1 + \cos(2\Theta)\cos(2\Phi - 4\pi/3)\big]^{1/2}\\
+x_2 &= \frac{\rho}{3^{1/4}}\big[1 + \cos(2\Theta)\cos(2\Phi + 4\pi/3)\big]^{1/2}
+\end{align}
+
+Now, with $\phi_k = \pi/2-2\Phi_k$, we get $\phi_j=\phi_i+2\beta_{ij}$, where $0 \leq \phi_k < 4\pi$ ($-7\pi/2 \leq \phi_k < \pi/2$). Now with $2\beta_{ij} = -2\eta_{ij}$ and
+
+\begin{align}
+	&\eta_{ij} = -\eta_{ji}, \quad \eta_{ii} = 0,\\
+	&\tan\eta_{ij} = m_k/\mu,\\
+	&\eta_{12}+\eta_{23}+\eta_{31} = \pi
+\end{align} 
+We get
+
+\begin{equation}
+x_k = \frac{d_k\rho}{2^{1/2}}\big[1 + \sin\theta\sin\phi_k\big]^{1/2}.
+\end{equation}
+
+\begin{align}
+x_3 &= \frac{d_3\rho}{2^{1/2}}\big[1+\sin\theta\sin\phi\big]^{1/2}\\
+x_1 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \sin\theta\sin(\phi-\varphi_1)\big]^{1/2}\\
+x_2 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \sin\theta\sin(\phi + \varphi_2)\big]^{1/2}
+\end{align}
+
+\begin{align}
+\varphi_1 &= 2\tan^{-1}(m_2/\mu)\\
+\varphi_2 &= 2\tan^{-1}(m_1/\mu)
+\end{align}
+
+The area of the triangle formed by the three particles is the length of the vector given by
+
+\begin{equation}
+	\mathbf{A}=\frac{1}{2} (\mathbf{r}\times \mathbf{R})
+\end{equation}
+
+\begin{align}
+&A =\frac{1}{2} (r_x R_y - r_y R_x) = \frac{1}{4}\rho^2\sin(2\Theta)\\
+&\sin2\Theta = 4A/\rho^2
+\end{align}
+Since both the area and the hyperradius are positive quantities the angle must be in the range, $0\leq \Theta \leq \pi/4$. For some reason $0\leq \Phi < 2\pi$. The transformed coordinates then have the range $0\leq \theta \leq \pi/2$ and 
 
 To describe how rotations of the BF system affects the derivatives in the SF system, introduce the infinitesimal rotations $\mathbf{\omega}$. The velocities of the SF system vectors are given by    
 
