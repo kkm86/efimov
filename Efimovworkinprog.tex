@@ -282,7 +282,7 @@ From hereon we choose one set to work in and suppress all vector indices. In six
 \hat{T} = -\frac{1}{2m}\Big(\Delta_{\mathbf{r}}+\Delta_{\mathbf{R}}\Big).
 \end{equation} 
 
-At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the x-y plane, and define the internal motion of the particles within this plane in terms of  hyperspherical coordinates, our coordinate system must rotate in this plane. That is, we use a body-fixed coordinate system $XYZ$, which rotates with respect to the space fixed axis $X'Y'Z'$. [Details](spatial rotation). The internal coordinates $\rho$, $\Theta$, and $\Phi$ determine the size and shape of the triangle formed by the three particle system. Smith and Whitten [ref] defined these as   
+At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the x-y plane, and define the internal motion of the particles within this plane in terms of  hyperspherical coordinates, our coordinate system must rotate in this plane. That is, we use a body-fixed coordinate system $XYZ$, which rotates with respect to the space fixed axis $X'Y'Z'$. [Details](spatial rotation). The internal coordinates $\rho$, $\Theta$, and $\Phi$ determine the size and shape of the triangle formed by the three particle system. With the $z$-axis perpendicular to the plane, Smith and Whitten [ref] defined these as   
 
 \begin{subequations}
 \begin{align*}
@@ -337,7 +337,7 @@ x_1 &= \frac{\rho}{3^{1/4}}\big[1 + \cos(2\Theta)\cos(2\Phi - 4\pi/3)\big]^{1/2}
 x_2 &= \frac{\rho}{3^{1/4}}\big[1 + \cos(2\Theta)\cos(2\Phi + 4\pi/3)\big]^{1/2}
 \end{align}
 
-Now, with $\phi_k = \pi/2-2\Phi_k$, we get $\phi_j=\phi_i+2\beta_{ij}$, where $0 \leq \phi_k < 4\pi$ ($-7\pi/2 \leq \phi_k < \pi/2$). Now with $2\beta_{ij} = -2\eta_{ij}$ and
+Now, with $\phi_k = \pi/2-2\Phi_k$, we get $\phi_j=\phi_i+2\beta_{ij}$, where ($-7\pi/2 \leq \phi_k < \pi/2$). Now with $2\beta_{ij} = -2\eta_{ij}$ and
 
 \begin{align}
 	&\eta_{ij} = -\eta_{ji}, \quad \eta_{ii} = 0,\\
@@ -360,6 +360,14 @@ x_2 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \sin\theta\sin(\phi + \varphi_2)\big]^{1/
 \varphi_1 &= 2\tan^{-1}(m_2/\mu)\\
 \varphi_2 &= 2\tan^{-1}(m_1/\mu)
 \end{align}
+Now we redefine $\phi'_k = \phi_k+7\pi/2$, so that the range is $0 \leq \phi'_k < 4\pi$. Then $\sin\phi_k = \cos\phi'_k$. We finally get ($2\Phi = 4\pi - \phi'$)
+
+\begin{align}
+x_3 &= \frac{d_3\rho}{2^{1/2}}\big[1+\sin\theta\cos\phi'\big]^{1/2}\\
+x_1 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \sin\theta\cos(\phi'-\varphi_1)\big]^{1/2}\\
+x_2 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \sin\theta\cos(\phi' + \varphi_2)\big]^{1/2}.
+\end{align}
+This is the same expression as Blume and Wang get, however the define there angles slightly different. Our interval is two times Blumes interval 
 
 The area of the triangle formed by the three particles is the length of the vector given by
 
