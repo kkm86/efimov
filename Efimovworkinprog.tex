@@ -174,7 +174,6 @@ where
                       &= -\frac{\hbar^2}{2m} \Big[ \rho^{-5/2} \Big( \rho^{5/2} \frac{5}{\rho} \frac{\partial}{\partial\rho} + \rho^{5/2} \frac{\partial^2}{\partial\rho^2} \Big) \rho^{-5/2} \rho^{5/2} \Big]\\
                       &= -\frac{\hbar^2}{2m} \rho^{-5/2} \Big[  -\frac{15}{4} \frac{1}{\rho^2} + \frac{\partial^2}{\partial\rho^2} \Big] \rho^{5/2}\\ \\
 \hat{T}_{\alpha} &= -\frac{\hbar^2}{2m}  \frac{1}{\rho^2 \sin^2(2\alpha)}  \Big[ \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} \Big]\\ 
-                      &= -\frac{\hbar^2}{2m} \frac{2}{\rho^2 \sin(2\alpha)}  \Big[ \frac{\partial}{\partial\alpha} \sin(2\alpha) \frac{\partial}{\partial\alpha} \Big]\\\
                       &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2} \Big[ \frac{\partial^2}{\partial\alpha^2} + 4\cot(2\alpha) \frac{\partial}{\partial\alpha} \Big]\\
                       &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2} \Big[ \sin^{-1}(2\alpha) \Big(\sin(2\alpha)\frac{\partial^2}{\partial\alpha^2} + 4\cos(2\alpha) \frac{\partial}{\partial\alpha} \Big) \sin^{-1}(2\alpha) \sin(2\alpha) \Big]\\
                       &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2}\sin^{-1}(2\alpha) \Big[ \frac{\partial^2}{\partial\alpha^2} + 4 \Big] \sin(2\alpha)\\
@@ -755,7 +754,7 @@ and
 The kinetic energy operator then becomes
 
 \begin{align*}
-	\hat{T} &=-\frac{\hbar^2}{2\mu}\Bigg[\frac{1}{\rho^5}\frac{\partial}{\partial\rho}\rho^5\frac{\partial}{\partial\rho} - \frac{4}{\rho^2}\Bigg(\frac{1}{\sin(2\theta)}\frac{\partial}{\partial\theta}\sin(2\theta)\frac{\partial}{\partial\theta}\\
+	\hat{T} &=-\frac{\hbar^2}{2\mu}\Bigg[\frac{1}{\rho^5}\frac{\partial}{\partial\rho}\rho^5\frac{\partial}{\partial\rho} + \frac{4}{\rho^2}\Bigg(\frac{1}{\sin(2\theta)}\frac{\partial}{\partial\theta}\sin(2\theta)\frac{\partial}{\partial\theta}\\
 	&+\frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial\phi^2} \Bigg)\Bigg]-\frac{1}{\mu\rho^2}\Bigg[\frac{J^2_x}{(1-\sin\theta)} + \frac{J^2_y}{(1+\sin\theta)} +\frac{J^2_z}{2\sin^2\theta}\Bigg]\\
 	&+ \frac{4i\hbar\cos\theta J_z}{2\mu\rho^2\sin^2\theta}\frac{\partial}{\partial\phi}
 \end{align*}
