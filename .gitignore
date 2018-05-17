@@ -1,0 +1,8 @@
+#only care about .tex
+
+*.aux
+*.bcf
+*.log
+*.pdf
+*.run.xml
+*.synctex.gz
