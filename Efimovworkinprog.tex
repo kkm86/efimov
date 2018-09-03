@@ -16,6 +16,8 @@
 \usepackage{tikz-3dplot}
 \usetikzlibrary{calc}
 
+\newcommand{\me}{\mathrm{e}}
+
 
 \title{Efimov}
 \author{Kajsa-My Blomdahl}
@@ -131,37 +133,6 @@ Add more softness here ....
 \draw[dashed,tdplot_rotated_coords] (\rvecb,0,0) arc (0:90:\rvecb);
 \draw[dashed] (\rvecb,0,0) arc (0:90:\rvecb);
 
-%set the rotated coordinate definition within display using a translation
-%coordinate and Euler angles in the "z(\alpha)y(\beta)z(\gamma)" euler rotation convention
-%syntax: \tdplotsetrotatedcoords{\alpha}{\beta}{\gamma}
-%\tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
-%translate the rotated coordinate system
-%syntax: \tdplotsetrotatedcoordsorigin{point}
-%\tdplotsetrotatedcoordsorigin{(P)}
-
-%use the tdplot_rotated_coords style to work in the rotated, translated coordinate frame
-%\draw[thick,tdplot_rotated_coords,->] (0,0,0) -- (.5,0,0) node[anchor=north west]{$x'$};
-%\draw[thick,tdplot_rotated_coords,->] (0,0,0) -- (0,.5,0) node[anchor=west]{$y'$};
-%\draw[thick,tdplot_rotated_coords,->] (0,0,0) -- (0,0,.5) node[anchor=south]{$z'$};
-
-%WARNING:  coordinates defined by the \coordinate command (eg. (O), (P), etc.)
-%cannot be used in rotated coordinate frames.  Use only literal coordinates.  
-
-%draw some vector, and its projection, in the rotated coordinate frame
-%\draw[-stealth,color=blue,tdplot_rotated_coords] (0,0,0) -- (.2,.2,.2);
-%\draw[dashed,color=blue,tdplot_rotated_coords] (0,0,0) -- (.2,.2,0);
-%\draw[dashed,color=blue,tdplot_rotated_coords] (.2,.2,0) -- (.2,.2,.2);
-
-%show its phi arc and label
-%\tdplotdrawarc[tdplot_rotated_coords,color=blue]{(0,0,0)}{0.2}{0}{45}{anchor=north west,color=black}{$\phi'$}
-
-%change the rotated coordinate frame so that it lies in its theta plane.
-%Note that this overwrites the original rotated coordinate frame
-%syntax: \tdplotsetrotatedthetaplanecoords{\phi'}
-%\tdplotsetrotatedthetaplanecoords{45}
-
-%draw theta arc and label
-%\tdplotdrawarc[tdplot_rotated_coords,color=blue]{(0,0,0)}{0.2}{0}{55}{anchor=south west,color=black}{$\theta'$}
 
 \end{tikzpicture}
 
@@ -932,76 +903,120 @@ If we only consider $J=0$ states, the Hamiltonian reduces to
 H_{0} = -\frac{\hbar^{2}}{2 \mu} \Bigg[ \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi)
 \end{equation}
 
-To simplify the kinetic terms in the variables rho and theta, make a transform of the wave function such that
+By making the following transformation of the wave function 
+\begin{equation}
+\psi = \rho^{5/2} \Psi,
+\end{equation}
+the Schr{\"o}dinger equation becomes
 
 \begin{equation}
-\psi = \rho^{5/2} \cos^{1/2}(\theta) \Psi
+H \psi = E \psi. 
 \end{equation}
-
-The Schr{\"o}dinger equation is then
-
-\begin{equation}
-H \psi = E \psi 
-\end{equation}
-
 Where the transformed Hamiltonian operator is given by
 
 \begin{equation}
-H = \rho^{5/2} \cos^{1/2}{(\theta)} H_{0} \rho^{-5/2} \cos^{-1/2}{(\theta)}
+H = \rho^{5/2}H_{0} \rho^{-5/2}. 
 \end{equation}
+This transformation removes the first derivative in the hyper radial kinetic-energy operator since
 
+\begin{equation}
+T_{\rho} = \rho^{5/2}T_{\rho_{0}}\rho^{-5/2} = \rho^{5/2} \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} \Big( \rho^{-5/2} \Big) = -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}
+\end{equation}
+and we get the final expression for the Hamiltonian
+
+\begin{align}
+H &= -\frac{\hbar^{2}}{2 \mu} \Bigg[ -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}+ \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi)\\
+    &= -\frac{\hbar^{2}}{2 \mu \rho^{2} }\frac{\partial^2}{\partial \rho^2} + \frac{\hbar^{2}}{2 \mu \rho^{2} } \Bigg(\Lambda^2 + \frac{15}{4}\Bigg)+ V(\rho, \theta, \phi),
+\end{align}
+where $\Lambda^2$ is the grand angular momentum operator. 
+
+\subsubsection{Symmetries}
+The Smith-Whitten coordinates $\theta$ and $\phi$ are connected to the geometry of the triangle formed by the three particles. If the three particles represent the vertecis of a triangle, $\theta$ will determine its shape, while $\phi$ determines the arrangement of the particles at its vertecis. Now lets determine the eigenvalues and eigenfunctions of the grand angular momentum operator. For the $\phi$ equation we have
+
+\begin{equation}
+\frac{\partial^{2}}{\partial \phi^{2}} \me^{ i \nu \phi} = -\nu^{2} \me^{ i \nu \phi}\\,
+\end{equation}
+so the total eigenfunction can be written
+
+\begin{equation}
+f_{\nu n}(\theta,\phi) = g_{n \nu}(\theta) \me^{ i \nu \phi}\\. 
+\end{equation}
+For a general system we have the symmetry 
+
+\begin{equation}
+f_{\nu n}(\theta,\phi = 0) = \Pi f_{\nu n}(\theta,\phi = 2\pi), \qquad \text{for} \qquad \Pi = \pm 1,\\
+\end{equation}
+the symmetry of a three identical particle system will reduce the interval of $\phi$ to $[0,2\pi/3]$. (symmetry group $C_{3v}$ with irreducible representations $A_{1}$, $A_{2}$, and $E$), we will consider bosons and states with $J=0$ so this leads to vibrational wave functions of $A_{1}$ symmetry and this will reduce the interval of $\phi$ further to $[0,\pi/3]$, so
+
+\begin{equation}
+f_{\nu n}(\theta,\phi = 0) = \Pi f_{\nu n}(\theta,\phi =2 \pi/3),  \qquad \text{for} \qquad  \Pi = \pm 1,\\
+\end{equation}
+where the parity $\Pi = 1$ for bosons. Thus
+
+\begin{equation}
+ \me^{ i \nu 2\pi/3} = 1 \quad \Leftrightarrow  \quad \nu = 3n \quad \text{for} \quad n=0,1,2,...\\
+\end{equation}
+so we get
+
+\begin{equation}
+\Lambda^{2} g_{n \nu}(\theta) = -4\Bigg(\frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} - \frac{\nu^{2}}{\sin^{2}(\theta)}\Bigg) g_{n \nu}(\theta) = \lambda_{n \nu} g_{n \nu}(\theta).\\
+\end{equation}
+The interval for $\theta$ is $[0,\pi/2]$. Lets look at the boundary as $\theta \rightarrow 0$. The small angle approximation leads to
+
+\begin{equation}
+\Lambda^{2} \rightarrow -4\Bigg(\frac{1}{\theta} \frac{\partial}{\partial \theta} + \frac{\partial^{2}}{\partial \theta^{2}} - \frac{\nu^{2}}{\theta^{2}}\Bigg) g_{n \nu}(\theta) = \lambda_{n \nu} g_{n \nu}(\theta).\\
+\end{equation}
+we thus need to solve a differential equation of the form
+
+\begin{equation}
+g_{n\nu}''(\theta) + \frac{P(\theta)}{\theta}g_{n\nu}'(\theta) + \frac{Q(\theta)}{\theta^{2}}g_{n\nu}(\theta) = 0,\\
+\end{equation}
 with
 
 \begin{equation}
-\rho^{5/2} \cos^{1/2}{(\theta)} \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} \Big( \rho^{-5/2} \cos^{-1/2}{(\theta)} \Big) = -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}
+P(\theta)=1 \quad \text{and} \quad Q(\theta)= \frac{\lambda_{n \nu}\theta^{2} - 4\nu^{2}}{4}.\\
+\end{equation}
+Since ref[the differential equation] has a regular singular point at $\theta = 0$ and both $P(\theta)$ and $Q(\theta)$ are analytic functions, we seek a power series solution of the form
+
+\begin{equation}
+g_{n\nu}(\theta) = \sum_{k=0}^{\infty} A_{k} \theta^{k+s}, \quad (A_{0} \neq 0).\\
+\end{equation}
+differentiating
+
+\begin{equation}
+g'_{n\nu}(\theta) = \sum_{k=0}^{\infty} (k+s) A_{k} \theta^{k+s-1},\\
 \end{equation}
 
-and
 
-\begin{align}
-&\frac{4}{\rho^{2}}\cos^{1/2}\theta \Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \cos^{-1/2}\theta\\
-&=\frac{4}{\rho^{2}}\Big( \frac{1}{\sin\theta} \frac{\partial}{\partial \theta} \sin\theta \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}\theta} \frac{\partial^{2}}{\partial \phi^{2}} + 1 + \frac{1}{4}\tan^2\theta \Big)
-\end{align}
+\begin{equation}
+g''_{n\nu}(\theta) = \sum_{k=0}^{\infty} (k+s)(k+s-1) A_{k} \theta^{k+s-2},\\
+\end{equation}
+and substituting into [ref] we get
 
-\begin{align}
--\frac{2\mu}{\hbar^2}\mathbf{H} &= -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}\\
-& + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin\theta} \frac{\partial}{\partial \theta} \sin\theta \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}\theta} \frac{\partial^{2}}{\partial \phi^{2}} + 1 + \frac{1}{4}\tan^2\theta \Big)\\
-&= \frac{1}{4\rho^{2}}(1 + 4\tan^2\theta) + \frac{\partial^{2}}{\partial \rho^{2}}\\
-& + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin\theta} \frac{\partial}{\partial \theta} \sin\theta \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}\theta} \frac{\partial^{2}}{\partial \phi^{2}} \Big)\\
-&= \frac{1}{\rho^{2}}\Big(\frac{1}{\cos^2\theta} - \frac{3}{4}\Big) + \frac{\partial^{2}}{\partial \rho^{2}}\\
-& + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin\theta} \frac{\partial}{\partial \theta} \sin\theta \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}\theta} \frac{\partial^{2}}{\partial \phi^{2}} \Big)\\
-\end{align}
+\begin{align*}
+&\sum_{k=0}^{\infty} \Bigg( (k+s)(k+s-1) + (k+s) - \nu^{2}\Bigg) A_{k} \theta^{k+s-2} + \Bigg(\frac{\lambda_{n\nu}}{4}  \Bigg) A_{k} \theta^{k+s} = \\
+&\big[ s(s-1) + s -\nu^{2} \big] A_{0} \theta^{s-2} + \sum_{k=1}^{\infty} \Bigg( \big[ (k+s)(k+s-1) + (k+s) - \nu^{2}  \big] A_{k} + \frac{\lambda_{n\nu}}{4} A_{k-2}\Bigg) \theta^{k+s-2}\\
+\end{align*}
+From $s^{2} - \nu^{2} = 0$ we get the two roots $s = \pm \nu$. Using these roots, we set the coefficients of $\theta^{k+s-2}$ to be zero, and we get the equations
 
-\subsubsection{Symmetries}
+\begin{equation}
+\big(k^{2} \pm 2k\nu\big)A_{k} = \frac{\lambda_{n\nu}}{4} A_{k-2}\\
+\end{equation} 
 
-The fact that each permutation only causes a
-simple translation or translation plus inversion of w is a key
-strength of these democratic angular coordinates.(Blume 02). Note that
-the restriction to L50 states, the closed-shell nature of electronic
-degrees of freedom, and the treatment of bosons with
-nuclear spin I50 only ~see below! leads to vibrational wave
-functions of A1 symmetry.4
-
-
-\subsection{Hyperradial equations}
+\subsection{Hyperangular and hyperradial equations}
 
 The hyperradius is given by
 
 \begin{equation}
-\rho = (R + r)^{1/2}
+\rho = (\mathbf{R}^{2} + \mathbf{r}^{2})^{1/2}
 \end{equation}
 
 In hyperspherical coordinates the three-body Schr{\"o}diner equation becomes
 
 \begin{equation}
-\Bigg(-\frac{1}{2 \mu_{3}}\frac{\partial^2}{ \partial \rho^2} + \frac{\Lambda^2 + 15/4}{2 \mu_{3} \rho^2} + V \Bigg)\psi(\rho,\Omega) = E\psi(\rho,\Omega)
+\Bigg(-\frac{1}{2 \mu}\frac{\partial^2}{ \partial \rho^2} + \frac{\Lambda^2 + 15/4}{2 \mu \rho^2} + V \Bigg)\psi(\rho,\Omega) = E\psi(\rho,\Omega).
 \end{equation}
-
-\begin{equation}
-\psi = \sum \frac{f{\rho}}{\rho^{5/2}} \frac{\phi{(\rho,\Omega)}}{\sin(\alpha) \cos(\alpha)}
-\end{equation}
-
-The Hamiltonian
+To solve (make ref) we expand $\psi(\rho,\theta,\phi)$ into radial wave functions $F_{\nu n}(\rho)$ and a set of complete, orthonormal channel functions $\Phi_{\nu}(\rho;\theta,\phi)$ that depend parametrically on $\rho$. The channel functions $\Phi_{\nu}$ are solutions of the hyperangular part of the Hamiltonian
 
 \begin{equation}
 H(\rho,\Omega) = T(\rho) + H_{ad}(\rho,\Omega)
@@ -1014,6 +1029,14 @@ H_{ad}(\rho,\Omega) = \frac{\Lambda^2}{2 \mu_{3} \rho^2} + \sum_{i<j} V(r_{ij})
 \begin{equation}
 H_{ad} \Phi_{\nu}{(\rho ; \Omega)}= U_{\nu}{(\rho)} \Phi_{\nu}{(\rho ; \Omega)}
 \end{equation}
+
+
+\begin{equation}
+\psi_{n} = \sum_{\nu} \frac{F_{\nu n}(\rho)}{\rho^{5/2}} \Phi_{\nu}{(\rho;\theta,\phi)}
+\end{equation}
+
+
+
 
 
 Smith-Whitten (democratic) hyperangles
