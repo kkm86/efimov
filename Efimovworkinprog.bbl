@@ -1,0 +1,29 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Efimov%
+}{%
+Efimov%
+}{%
+{\protect \APACyear {1970}}%
+}]{%
+Efimov:1970zz}
+\APACinsertmetastar {%
+Efimov:1970zz}%
+\begin{APACrefauthors}%
+Efimov, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1970}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Energy levels arising form the resonant two-body forces
+  in a three-body system}} {{Energy levels arising form the resonant two-body
+  forces in a three-body system}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Phys. Lett.}{33B}{}{563-564}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/0370-2693(70)90349-7} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

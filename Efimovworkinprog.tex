@@ -1,10 +1,11 @@
 \documentclass{article}
 
+
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{biblatex}
+\usepackage{apacite}
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -27,115 +28,16 @@
 \maketitle
 
 \section{Background}
+\subsection{Efimov Physics}
+
+Some claim \cite{Efimov:1970zz}
+
 \subsection{The Three-body Problem}
 The $N$-body problem is a class of problems in physics which, in a most general sense, consists of modelling the motion of $N$ objects, interacting through some physical force. In classical mechanics the general equations of motion for point masses are derived from Newton's second law of motion, which states that the rate of change of momentum for an object equals the force acting on it. The problem can be defined as follows. Consider a system of $N$ point-like particles in $\mathbb{R}^{3}$ with masses $m_{i}$, position vectors $\mathbf{q}_{i}$, and momenta $\mathbf{p}_{i} = m_{i} \frac{d \mathbf{q}_{i}}{dt}$ where $i = 1, \ldots , N$ respectively.  
 
 
   
-  %Angle Definitions
-%-----------------
 
-%set the plot display orientation
-%synatax: \tdplotsetdisplay{\theta_d}{\phi_d}
-\tdplotsetmaincoords{60}{110}
-
-%define polar coordinates for some vector
-%TODO: look into using 3d spherical coordinate system
-\pgfmathsetmacro{\rvec}{.8}
-\pgfmathsetmacro{\thetavec}{30}
-\pgfmathsetmacro{\phivec}{80}
-
-\pgfmathsetmacro{\rveca}{.8}
-\pgfmathsetmacro{\thetaveca}{50}
-\pgfmathsetmacro{\phiveca}{320}
-
-\pgfmathsetmacro{\rvecb}{.8}
-\pgfmathsetmacro{\thetavecb}{50}
-\pgfmathsetmacro{\phivecb}{40}
-
-
-%start tikz picture, and use the tdplot_main_coords style to implement the display 
-%coordinate transformation provided by 3dplot
-\begin{tikzpicture}[scale=5,tdplot_main_coords]
-
-%set up some coordinates 
-%-----------------------
-\coordinate (O) at (0,0,0);
-
-%determine a coordinate (P) using (r,\theta,\phi) coordinates.  This command
-%also determines (Pxy), (Pxz), and (Pyz): the xy-, xz-, and yz-projections
-%of the point (P).
-%syntax: \tdplotsetcoord{Coordinate name without parentheses}{r}{\theta}{\phi}
-\tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec}
-\tdplotsetcoord{F}{\rveca}{\thetaveca}{\phiveca}
-\tdplotsetcoord{R}{\rvecb}{\thetavecb}{\phivecb}
-\coordinate (M) at ($ (P) !.5! (R) $);
-
-
-%draw figure contents
-%--------------------
-
-%draw the main coordinate system axes
-\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
-\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
-%draw a vector from origin to point (P) 
-\draw[-stealth,color=red] (O) -- (P) node[pos=0.5, right]{$x_{i}$};
-\draw[-stealth,color=red] (O) -- (F) node[pos=0.5, right]{$x_{k}$};
-\draw[-stealth,color=red] (O) -- (R) node[pos=0.5, right]{$x_{j}$};
-
-\draw[thick,->,color=blue] (P) -- (R) node[pos=0.5, right]{$x_{ij}$};
-\draw[thick,->,color=blue] (M) -- (F) node[pos=0.5, below]{$x_{ij,k}$};
-%\draw[-stealth,color=red] (O) -- (R);
-
-%draw projection on xy plane, and a connecting line
-\draw[dashed, color=red] (O) -- (Pxy);
-\draw[dashed, color=red] (P) -- (Pxy);
-
-\draw[dashed, color=red] (O) -- (Fxy);
-\draw[dashed, color=red] (F) -- (Fxy);
-
-\draw[dashed, color=red] (O) -- (Rxy);
-\draw[dashed, color=red] (R) -- (Rxy);
-
-%draw the angle \phi, and label it
-%syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{angle}{label options}{label}
-\tdplotdrawarc{(O)}{0.8}{0}{\phivec}{anchor=north}{$\phi_i$}
-\tdplotdrawarc{(O)}{0.2}{0}{\phiveca}{anchor=north}{$\phi_j$}
-\tdplotdrawarc{(O)}{0.4}{0}{\phivecb}{anchor=north}{$\phi_k$}
-
-
-%set the rotated coordinate system so the x'-y' plane lies within the
-%"theta plane" of the main coordinate system
-%syntax: \tdplotsetthetaplanecoords{\phi}
-\tdplotsetthetaplanecoords{\phivec}
-
-%draw theta arc and label, using rotated coordinate system
-\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.8}{0}{\thetavec}{anchor=south west}{$\theta_i$}
-
-%draw some dashed arcs, demonstrating direct arc drawing
-\draw[dashed,tdplot_rotated_coords] (\rvec,0,0) arc (0:90:\rvec);
-\draw[dashed] (\rvec,0,0) arc (0:90:\rvec);
-
-
-\tdplotsetthetaplanecoords{\phiveca}
-\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.8}{0}{\thetaveca}{anchor=south east}{$\theta_k$}
-
-
-%draw some dashed arcs, demonstrating direct arc drawing
-\draw[dashed,tdplot_rotated_coords] (\rveca,0,0) arc (0:90:\rveca);
-\draw[dashed] (\rveca,0,0) arc (0:\phiveca:\rveca);
-
-\tdplotsetthetaplanecoords{\phivecb}
-\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.8}{0}{\thetavecb}{anchor=south east}{$\theta_j$}
-
-
-%draw some dashed arcs, demonstrating direct arc drawing
-\draw[dashed,tdplot_rotated_coords] (\rvecb,0,0) arc (0:90:\rvecb);
-\draw[dashed] (\rvecb,0,0) arc (0:90:\rvecb);
-
-
-\end{tikzpicture}
 
 \subsection{Normalized Center-of-Mass Coordinates}
 The spatial position of three particles are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$, and $\alpha(=1,2,3)$ labels the particles, and their Cartesian space coordinates, respectively. Let $\mathbf{x}^i$ and $m_{i}$ be the position vector and mass of the $i$th particle. If the total mass $M$, the three particle reduced mass $\mu_{3}$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are defined as
@@ -1083,10 +985,6 @@ V(r) = d\cosh{(r/r_0)}
 \end{equation}
 
 
-
-
-\bibliographystyle{plain}
-\bibliography{sample1}
-
-
+\bibliographystyle{apacite}
+\bibliography{References}
 \end{document}
