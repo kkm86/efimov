@@ -1,0 +1,26 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\contentsline {section}{\numberline {1}Background}{1}
+\contentsline {subsection}{\numberline {1.1}The Three-body Problem}{1}
+\contentsline {subsection}{\numberline {1.2}The Birth of Efimov Physics}{2}
+\contentsline {section}{\numberline {2}Introduction}{3}
+\contentsline {subsection}{\numberline {2.1}Three-body Theory}{3}
+\contentsline {paragraph}{Entering the quantum regime}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Two-body Interactions}{3}
+\contentsline {subsubsection}{\numberline {2.1.2}The Three-body Problem}{4}
+\contentsline {subsection}{\numberline {2.2}Experimental Evidence}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Efimov Trimers in Atomic Systems}{4}
+\contentsline {paragraph}{Alkali atomic gases}{4}
+\contentsline {paragraph}{Helium trimers}{4}
+\contentsline {subsubsection}{\numberline {2.2.2}Efimov States in Nuclei }{4}
+\contentsline {subsubsection}{\numberline {2.2.3}Four-body Recombination connected to Efimov Trimers}{4}
+\contentsline {section}{\numberline {3}Theoretical Methods}{5}
+\contentsline {subsection}{\numberline {3.1}Normalized Center-of-Mass Coordinates}{5}
+\contentsline {subsection}{\numberline {3.2}The Hyperspherical Method}{5}
+\contentsline {subsection}{\numberline {3.3}Coordinate Transformations}{6}
+\contentsline {subsubsection}{\numberline {3.3.1}Delves Coordinates}{6}
+\contentsline {subsubsection}{\numberline {3.3.2}Modified Smith-Whitten Coordinates}{10}
+\contentsline {subsubsection}{\numberline {3.3.3}Symmetries}{20}
+\contentsline {subsection}{\numberline {3.4}Hyperangular and hyperradial equations}{22}
+\contentsline {subsection}{\numberline {3.5}Three identical particles}{23}
+\contentsline {subsubsection}{\numberline {3.5.1}Permutation symmetries in Smith-Whitten coordinates}{23}
+\contentsline {subsection}{\numberline {3.6}Effective three-body interaction}{23}

@@ -23,9 +23,11 @@
 \usetikzlibrary{calc}
 
 \newcommand{\me}{\mathrm{e}}
+\providecommand{\abs}[1]{\lvert#1\rvert} \providecommand{\norm}[1]{\lVert#1\rVert}
 
 
-\title{Efimov}
+
+\title{Licenciate}
 \author{Kajsa-My Blomdahl}
 \date{October 2018}
 \begin{document}
@@ -59,68 +61,40 @@ All particles of matter exhibit wave-like properties. The wave length of a parti
 \begin{equation} \label{eq:1}
 \lambda = \frac{h}{p} = \frac{h}{mv}
 \end{equation}
-where $h$ is the Planck constant. The wave characteristics of matter grows with increasing de Broglie wave length. When the wave length is sufficently large, classical physics no longer applies and the system has reached the quantum regime. From \eqref{eq:1} it is evident that this is true for particles that are either very small or very slow.
+where $h$ is the Planck constant. The wave characteristics of matter grows with increasing de Broglie wavelength. When the wavelength is sufficently large, classical physics no longer applies and the system has reached the quantum regime. From \eqref{eq:1} it is evident that this is true for particles that are either very small or very slow. In an ultracold quantum gas, the atoms are cooled down to a point where they move so slowly that the increased uncertainty in position for the individual atoms eventually becomes so large that they start to overlap and the atoms cannot be viewed as individual particles but as a correlated wave. In this ultracold regime, when the de Broglie wavelength is larger than the average space between the atoms their behaviour are governed by quantum mechanics. 
  
-
-\paragraph{Scattering theory}
- In the low energy limit two 
-In the ultracold regime, the behavoir of atoms are governed by quantum mechanics. 
-
-\subsubsection{Two-body interactions}
-When atoms are cooled down to a point where the uncertainty  
-In an ultracold quantum gas atoms move so slowly that the uncertainty in position becomes so large overlap  behave as matter waves and quantum mechanics governs their behavoir 
-
-vad är spridningslängd:
-Consider a system consisting of a few particles such as dilute gas  At sufficently low energies 
-In low energy scattering processes where the particle wave length is larger than  
-
-The scattering length $a$ is defined as
+\subsubsection{Two-body Interactions}
+Atomic interactions are short ranged and in the ultracold regime their de Broglie wavelength is larger than the typical range of interaction. Consequentely, their interactions can no longer be described as pointlike collisions. Instead, scattering process in this regime is governed by the scattering length, which intuitively can be described as the length for which a hard sphere of the same radius would scatter off. The scattering length $a$ is defined as
 
 \begin{equation} \label{eq:2}
 \lim_{k \to 0} k \cot \delta(k) = -\frac{1}{a}
 \end{equation}
+where $k$ is the wave number and $\delta(k)$ is the phase shift.
+
+\subsubsection{The Three-body Problem}
+The three-body scattering problem can be solved by the three-body Schr{\"o}dinger equation or by the Faddeev equation. Solving the Faddeev equation is equivalent to solving the Schr{\"o}dinger equation 
+There are two main approaches for the three-body scattering problem. Either by solving the three-body Schr{\"o}dinger equation means of the Faddeev equation, which is equivalent to solving the three-body Schr{\"o}dinger equation in configuration space   
 
 
 \subsection{Experimental Evidence}
 \subsubsection{Efimov Trimers in Atomic Systems}
-Ultracold atomic clouds provided the first staging ground for exploring Efimov physics and related few-body phenomena because of the ability to control atom-atom interactions by an external field. In experiments with trapped ultracold atomic and molecular gases of alkali atoms with tunable two-body interactions, the existance of Efimov trimers have been inferred from resonantly enhanced loss rates 
-\paragraph{$\prescript{133}{}{\mathrm{Cs}}$} 
+Ultracold atomic clouds provided the first staging ground for exploring Efimov physics and related few-body phenomena because of the ability to control atom-atom interactions by an external field. In these extremely dilute gases, with densities $n$, the probability for collisions can reach unity by tuning the s-wave scattering length to the unitary regime $n\abs{a^3}\gg1$. In experiments with trapped ultracold atomic and molecular gases of alkali atoms with tunable two-body interactions, the existance of Efimov trimers have been inferred from resonantly enhanced loss rates, either in atomic three-body recombination processes at negative $a$, when the Efimov state couples to the triatomic threshold, or in atom-dimer relaxation processes. 
+\paragraph{Alkali atomic gases} 
+The first observations of an Efimov state was in an ultracold gas of $\prescript{133}{}{\mathrm{Cs}}$ was reported in 2006 by the group of Grimm and coworkers \cite{Grimm:2006}. Later experiments have strengthen the evidence of these elusive states and in 2014 observations of the first exited Efimov state confirmed the theoretically predicted universal scaling properties of two succesive Efimov states \cite{Huang2014}. Efimov resonances in homogenic gases with other atomic species have been observed including $\prescript{85}{}{\mathrm{Rb}}$, $\prescript{39}{}{\mathrm{K}}$, $\prescript{7}{}{\mathrm{Li}}$, and three component fermi gases of $\prescript{6}{}{\mathrm{Li}}$. Also mixtures mixtures of $\prescript{41}{}{\mathrm{K}}$ and $\prescript{87}{}{\mathrm{Rb}}$ has been investigated.
 
-
-
-1) Efimov states have been observed in ultracold atomic and molecular gases of cesiumatoms
-
-2) in three-component Fermi gases of6Li
-
-3) Bose gas of39K atoms
-
-4) mixturesof41K and87Rb atoms
-
-5) In all these experiments, Efimovstates manifest themselves as resonantly enhanced losses,ei-ther in atomic three-body recombination or in atom-dimer re-laxation processes. 
-
-Indirect signatures:
-
-The first observations of an Efimov state was reported in 2006 by the Innsbruck-group of Grimm and coworkers, \cite{Grimm:2006}. In experiments with ultracold gases of caesium atoms, with magnetically tunable two-body interactions, they found the first signatures of the exotic three-body state consisting of three-body recombination resonances emerging when an Efi- mov state couples to the triatomic threshold at distinct negative s-wave scattering lengths a.
-
-Direct  approach:
-a prime candidate to study Efimov physics
- the ground state of the helium trimer is not an
-Efimov state
- Coulomb explosion imaging
-Helium \cite{Kunitski:2015qth}
-
-\subsubsection{Four-body Recombination connected to Efimov Trimers} 
-6) four-body recombination in the particu-lar region of interest near a triatomic Efimov resonance \cite{Grimm:2009}. 
-
-"Our resultsobtained with an ultracold sample of cesium atoms at negative scattering lengths show a resonant enhancementof losses and provide strong evidence for the existence of a pair of four-body states, which is strictly connectedto Efimov trimers via universal relations.  Our findings confirm recent theoretical predictions and demonstratethe enrichment of the Efimov scenario when a fourth particle is added to the generic three-body problem "
+\paragraph{Helium trimers}
+Helium is a prime candidate to study Efimov physics with a more direct approach. The ground state of the helium trimer is not an Efimov state. However the first and second exited trimer have Efimov characteristics. Coulomb explosion imaging of helium trimers have revealed the geometric form of the trimers. \cite{Kunitski:2015qth}
 
 \subsubsection{Efimov States in Nuclei }
 
+\subsubsection{Four-body Recombination connected to Efimov Trimers} 
+The Efimov scenario is even richer. In connection to an Efimov trimer, a pair of four-body states can form when a fourth atom approach. In accordance with the theoretical predictions, strong evidence for the existance of a pair of four-body states was provided in 2009 \cite{Grimm:2009}. 
 
 
 
+\section{Theoretical Methods} 
+Two-body scattering processes concern two differnt situations, elastic (1+1) and inelastic (2) collisions. The enhanced complexity that arise in three-body systems, when solving the three-body Schr{\"o}dinger equation, are mainly due to the increased number of fragmentation channels for these scattering processes. There are one triatomic fragmentation channel (1+1+1) and three different atom-dimer fragmenation channels (1+2).   
   
-
 
 \subsection{Normalized Center-of-Mass Coordinates}
 The spatial position of three particles are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$, and $\alpha(=1,2,3)$ labels the particles, and their Cartesian space coordinates, respectively. Let $\mathbf{x}^i$ and $m_{i}$ be the position vector and mass of the $i$th particle. If the total mass $M$, the three particle reduced mass $\mu_{3}$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are defined as
@@ -152,7 +126,7 @@ The theoretical framework to describe systems of three particles
 
 Blabla labframe coordinates
 
-\begin{subequations} \label{eq:1}
+\begin{subequations}
 Jacobi vectors:
 \begin{align}
         \vec{x} 		&= \vec{r}_2 - \vec{r}_1\\
