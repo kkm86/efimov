@@ -14,15 +14,15 @@
 
 %define polar coordinates for some vector
 %TODO: look into using 3d spherical coordinate system
-\pgfmathsetmacro{\rvec}{.8}
+\pgfmathsetmacro{\rvec}{0.9}
 \pgfmathsetmacro{\thetavec}{30}
 \pgfmathsetmacro{\phivec}{80}
 
-\pgfmathsetmacro{\rveca}{.8}
+\pgfmathsetmacro{\rveca}{0.9}
 \pgfmathsetmacro{\thetaveca}{50}
 \pgfmathsetmacro{\phiveca}{320}
 
-\pgfmathsetmacro{\rvecb}{.8}
+\pgfmathsetmacro{\rvecb}{0.9}
 \pgfmathsetmacro{\thetavecb}{50}
 \pgfmathsetmacro{\phivecb}{40}
 
@@ -53,12 +53,12 @@
 \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
 \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
 %draw a vector from origin to point (P) 
-\draw[-stealth,color=red] (O) -- (P) node[pos=0.5, right]{$x_{i}$};
-\draw[-stealth,color=red] (O) -- (F) node[pos=0.5, right]{$x_{k}$};
-\draw[-stealth,color=red] (O) -- (R) node[pos=0.5, right]{$x_{j}$};
+\draw[-stealth,color=red] (O) -- (P) node[pos=0.5, left]{$\mathbf{x}_{i}$};
+\draw[-stealth,color=red] (O) -- (F) node[pos=0.5, right]{$\mathbf{x}_{k}$};
+\draw[-stealth,color=red] (O) -- (R) node[pos=0.57, below]{$\mathbf{x}_{j}$};
 
-\draw[thick,->,color=blue] (P) -- (R) node[pos=0.5, right]{$x_{ij}$};
-\draw[thick,->,color=blue] (M) -- (F) node[pos=0.5, below]{$x_{ij,k}$};
+\draw[thick,-stealth,color=blue] (P) -- (R) node[pos=0.5, right]{$\mathbf{r}_{k}$};
+\draw[thick,-stealth,color=blue] (M) -- (F) node[pos=0.5, below]{$\mathbf{R}_{k}$};
 %\draw[-stealth,color=red] (O) -- (R);
 
 %draw projection on xy plane, and a connecting line
@@ -73,9 +73,9 @@
 
 %draw the angle \phi, and label it
 %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{angle}{label options}{label}
-\tdplotdrawarc{(O)}{0.8}{0}{\phivec}{anchor=north}{$\phi_i$}
-\tdplotdrawarc{(O)}{0.2}{0}{\phiveca}{anchor=north}{$\phi_j$}
-\tdplotdrawarc{(O)}{0.4}{0}{\phivecb}{anchor=north}{$\phi_k$}
+\tdplotdrawarc{(O)}{0.45}{0}{\phivec}{anchor=north}{$\phi_i$}
+\tdplotdrawarc{(O)}{0.25}{0}{\phiveca}{anchor=south east}{$\phi_k$}
+\tdplotdrawarc{(O)}{0.7}{0}{\phivecb}{anchor=north}{$\phi_j$}
 
 
 %set the rotated coordinate system so the x'-y' plane lies within the
@@ -84,7 +84,7 @@
 \tdplotsetthetaplanecoords{\phivec}
 
 %draw theta arc and label, using rotated coordinate system
-\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.8}{0}{\thetavec}{anchor=south west}{$\theta_i$}
+\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.9}{0}{\thetavec}{anchor=south west}{$\theta_i$}
 
 %draw some dashed arcs, demonstrating direct arc drawing
 \draw[dashed,tdplot_rotated_coords] (\rvec,0,0) arc (0:90:\rvec);
@@ -92,7 +92,7 @@
 
 
 \tdplotsetthetaplanecoords{\phiveca}
-\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.8}{0}{\thetaveca}{anchor=south east}{$\theta_k$}
+\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.9}{0}{\thetaveca}{anchor=south east}{$\theta_k$}
 
 
 %draw some dashed arcs, demonstrating direct arc drawing
@@ -100,7 +100,7 @@
 \draw[dashed] (\rveca,0,0) arc (0:\phiveca:\rveca);
 
 \tdplotsetthetaplanecoords{\phivecb}
-\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.8}{0}{\thetavecb}{anchor=south east}{$\theta_j$}
+\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.9}{0}{\thetavecb}{anchor=south east}{$\theta_j$}
 
 
 %draw some dashed arcs, demonstrating direct arc drawing

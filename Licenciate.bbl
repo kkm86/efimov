@@ -212,6 +212,37 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.112.190401
       \endverb
     \endentry
+    \entry{Johnson1980}{article}{}
+      \name{author}{1}{}{%
+        {{hash=91a94b5f3bbb223ee5e42867a8533d39}{%
+           family={Johnson},
+           family_i={J\bibinitperiod},
+           given={B.\bibnamedelimi R.},
+           given_i={B\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{91a94b5f3bbb223ee5e42867a8533d39}
+      \strng{fullhash}{91a94b5f3bbb223ee5e42867a8533d39}
+      \field{sortinit}{J}
+      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Chemical Physics}
+      \field{number}{10}
+      \field{title}{On hyperspherical coordinates and mapping the internal configurations of a three body system}
+      \field{volume}{73}
+      \field{year}{1980}
+      \field{pages}{5051\bibrangedash 5058}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1063/1.439983
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1063/1.439983
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1063/1.439983
+      \endverb
+    \endentry
     \entry{Grimm:2006}{article}{}
       \name{author}{11}{}{%
         {{hash=79b4143b76de6194ce6fac487e501773}{%
@@ -321,6 +352,37 @@
       \endverb
       \verb{eprint}
       \verb 1512.02036
+      \endverb
+    \endentry
+    \entry{Smith1962}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e5f1eb84f51d1effd6633cfc72484e42}{%
+           family={Smith},
+           family_i={S\bibinitperiod},
+           given={Felix\bibnamedelima T.},
+           given_i={F\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{e5f1eb84f51d1effd6633cfc72484e42}
+      \strng{fullhash}{e5f1eb84f51d1effd6633cfc72484e42}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Physics}
+      \field{number}{4}
+      \field{title}{A Symmetric Representation for Three Body Problems. I. Motion in a Plane}
+      \field{volume}{3}
+      \field{year}{1962}
+      \field{pages}{735\bibrangedash 748}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1063/1.1724275
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1063/1.1724275
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1063/1.1724275
       \endverb
     \endentry
     \entry{Zubarev:1994}{article}{}

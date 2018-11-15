@@ -10,7 +10,7 @@
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-
+\usepackage{standalone}
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -74,7 +74,7 @@ where $k$ is the wave number and $\delta(k)$ is the phase shift.
 \subsubsection{The Three-body Problem}
 The three-body scattering problem can be solved by the three-body Schr{\"o}dinger equation or by the Faddeev equation. Solving the Faddeev equation is equivalent to solving the Schr{\"o}dinger equation 
 There are two main approaches for the three-body scattering problem. Either by solving the three-body Schr{\"o}dinger equation means of the Faddeev equation, which is equivalent to solving the three-body Schr{\"o}dinger equation in configuration space   
-
+There are two general approaches for solving the three-body Schr{\"o}dinger equation, either by treating the particles collectively as a whole, or to treat them idependently. The hyperspherical collective coordinate method. The adiabatic hyperspherical method.
 
 \subsection{Experimental Evidence}
 \subsubsection{Efimov Trimers in Atomic Systems}
@@ -90,67 +90,122 @@ Helium is a prime candidate to study Efimov physics with a more direct approach.
 \subsubsection{Four-body Recombination connected to Efimov Trimers} 
 The Efimov scenario is even richer. In connection to an Efimov trimer, a pair of four-body states can form when a fourth atom approach. In accordance with the theoretical predictions, strong evidence for the existance of a pair of four-body states was provided in 2009 \cite{Grimm:2009}. 
 
-
-
 \section{Theoretical Methods} 
-Two-body scattering processes concern two differnt situations, elastic (1+1) and inelastic (2) collisions. The enhanced complexity that arise in three-body systems, when solving the three-body Schr{\"o}dinger equation, are mainly due to the increased number of fragmentation channels for these scattering processes. There are one triatomic fragmentation channel (1+1+1) and three different atom-dimer fragmenation channels (1+2).   
-  
+Two-body scattering processes concern two differnt situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmenation channels (1+2). There are different routes of solving the three-body problem. However, most approaches start with the same steps. This includes separating out the  center of mass motion and then defining a set of relative  coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since it removes the mass factors in the kinetic energy operator.     
 
-\subsection{Normalized Center-of-Mass Coordinates}
-The spatial position of three particles are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$, and $\alpha(=1,2,3)$ labels the particles, and their Cartesian space coordinates, respectively. Let $\mathbf{x}^i$ and $m_{i}$ be the position vector and mass of the $i$th particle. If the total mass $M$, the three particle reduced mass $\mu_{3}$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are defined as
+\begin{figure}
+	\centering
+	\input{img01.tex}
+	\caption{Spatial positions of three particles.}
+	\label{fig:1}
+\end{figure}
+
+\subsection{Mass Normalized Jacobi Coordinates}
+The spatial position of three particles in $\mathbb{R}^3$ are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$ labels the particles, and $\alpha(=1,2,3)$ their Cartesian space coordinates, respectively. Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu_{3}$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are given by 
 
 \begin{align}
-M &= \sum_{i=1}^{3}m_i,\\
-\mu_3^2 &= \prod_{i=1}^{3}m_i/M,\\
-d_k^2 &= \frac{m_k}{\mu_3}\frac{(m_i+m_j)}{M}, 
+M &= \sum_{i=1}^{3}m_i,  \label{eq:3,1} \\
+\mu^2 &= \prod_{i=1}^{3}m_i/M,  \label{eq:3,2}\\
+d_k^2 &= \frac{m_k}{\mu}\frac{(m_i+m_j)}{M}.  \label{eq:3,3}
 \end{align}
-then the set of mass normalized Jacobi coordinates are defined by
+Then a set of mass scaled Jacobi coordinates and the center of mass coordinate can be defined as
 
 \begin{align}
-\mathbf{r}^k &= d^{-1}_k(\mathbf{x}^{j}-\mathbf{x}^{i}),\\
-\mathbf{R}^k &= d_k\Big[\mathbf{x}^{k}-\frac{(m_{i}\mathbf{x}^{i}+m_{i}\mathbf{x}^{j})}{m_{i}+m_{j}}\Big],\\
-\mathbf{X} &= \frac{1}{M} \sum_{i=1}^{3} m_{i} \mathbf{x}^{i},
+\mathbf{r}_k &= d^{-1}_k(\mathbf{x}_{j}-\mathbf{x}_{i}),  \label{eq:4,1} \\
+\mathbf{R}_k &= d_k\Big[\mathbf{x}_{k}-\frac{(m_{i}\mathbf{x}_{i}+m_{j}\mathbf{x}_{j})}{m_{i}+m_{j}}\Big],  \label{eq:4,2}\\
+\mathbf{X}_{cm} &= \frac{1}{M} \sum_{i=1}^{3} m_{i} \mathbf{x}_{i},  \label{eq:4,3}
 \end{align}   
-where, the indices $i,j,k$ are cyclic permutations of $(1,2,3)$. The kinetic energy for three particles is given by
+where, the indices $i,j,k$ are cyclic permutations of $(1,2,3)$. Subsequently, the kinetic energy operator for the three particles in the laboratory frame, as given by 
 
-\begin{equation}
-T = -\frac{\hbar^2}{2} \sum_{i=1}^{3} m_{i}^{-1} \nabla^{2}_{\mathbf{x}^{i}}
+\begin{equation}\label{eq:5}
+\hat{T} = -\frac{\hbar^2}{2} \sum_{i=1}^{3} m_{i}^{-1} \nabla^{2}_{\mathbf{x}_{i}}, 
 \end{equation}
+will transform into
 
-\subsection{The Hyperspherical Method}
+\begin{equation}\label{eq:6}
+\hat{T} = -\frac{\hbar^2}{2\mu} \Big(\nabla^{2}_{\mathbf{r}_{k}}+\nabla^{2}_{\mathbf{R}_{k}}\Big) - \frac{\hbar^2}{2 M}\nabla^{2}_{\mathbf{X}_{cm}}. 
+\end{equation}
+The center of mass motion decouples from the internal equations of motion and thus will not be considered further. There are three possible ways to construct the Jacobi coordinates described above, see Figure \ref{fig:2}. Each set transforms into one of the other by exchange of particles. In cases with non-mass-scaled coordinates we define the particle permutations operators as 
 
-The theoretical framework to describe systems of three particles 
+\begin{figure}
+	\includegraphics[width=\linewidth]{jacobii.pdf}
+	\caption{Three different Jacobi coordinates.}
+	\label{fig:2}
+\end{figure}
 
-\subsection{Coordinate Transformations}
-\subsubsection{Delves Coordinates}
-
-Blabla labframe coordinates
-
-\begin{subequations}
-Jacobi vectors:
-\begin{align}
-        \vec{x} 		&= \vec{r}_2 - \vec{r}_1\\
-        \vec{y} 		&= \vec{r}_3 - \frac{1}{2}(\vec{r}_1 + \vec{r}_2)\\
-        \vec{X}_{cm} 	&= \frac{1}{3} (\vec{r}_1 + \vec{r}_2 + \vec{r}_3)
-\end{align}
-\end{subequations}
-
-Exchange of particles
 \begin{equation}
 \hat{P}_{13} = \left \{ \begin{aligned}
-        \vec{x} \, ' &= \vec{r}_2 - \vec{r}_3 &&= \frac{1}{2}\vec{x} - \vec{y} \\
-        \vec{y} \, ' &= \vec{r}_1 - \frac{1}{2}(\vec{r}_3 + \vec{r}_2) &&= -\frac{1}{2} (\frac{3}{2} \vec{x} + \vec{y})
-       \end{aligned}
- \right.
- \end{equation}
- 
+\mathbf{r} \, ' &= \mathbf{x}_2 - \mathbf{x}_3 &&= \frac{1}{2}\mathbf{r} - \mathbf{R} \\
+\mathbf{R} \, ' &= \mathbf{x}_1 - \frac{1}{2}(\mathbf{x}_3 + \mathbf{x}_2) &&= -\frac{1}{2}(\frac{3}{2} \mathbf{r} + \mathbf{R}) 
+\end{aligned}
+\right.
+\end{equation}
+
 \begin{equation}
 \hat{P}_{23} = \left \{ \begin{aligned}
-        \vec{x} \, '' &= \vec{r}_3 - \vec{r}_1 &&= \frac{1}{2}\vec{x} + \vec{y} \\
-        \vec{y} \, '' &= \vec{r}_2 - \frac{1}{2}(\vec{r}_1 + \vec{r}_3) &&= -\frac{1}{2} (\frac{3}{2} \vec{x} - \vec{y})
-       \end{aligned}
- \right.
- \end{equation}
+\mathbf{r} \, '' &= \mathbf{x}_3 - \mathbf{x}_1 &&= \frac{1}{2}\mathbf{r} + \mathbf{R} \\
+\mathbf{R} \, '' &= \mathbf{x}_2 - \frac{1}{2}(\mathbf{x}_1 + \mathbf{x}_3) &&= -\frac{1}{2} (\frac{3}{2} \mathbf{r} - \mathbf{R})
+\end{aligned}
+\right.
+\end{equation}
+For describing permutations in a system with mass-scaled coordinates it is useful to introduce angles defined by the particle masses \cite{Smith1962}\cite{Johnson1980}. If an even permutation $(ijk)$ of the set $(123)$ is considered, then the obtuse angle $\beta_{ij}$ has the properties
+
+\begin{subequations}
+	\begin{align}
+	&\beta_{ij} = -\beta_{ji}, \quad \beta_{ii} = 0,\\
+	&\tan\beta_{ij} = -m_k/\mu,\\
+	&d_{i}d_{j} \sin\beta_{ij} = 1,\\
+	&d_{i}d_{j} m_{k} \cos\beta_{ij} = -\mu,\\
+	&\beta_{12}+\beta_{23}+\beta_{31} = 2\pi
+	\end{align}
+\end{subequations}
+Orthogonal transformations within the coordinate set are then given by 
+
+\begin{equation}
+\begin{pmatrix}
+\mathbf{r}_j\\
+\mathbf{R}_j
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos\beta_{ij} & \sin\beta_{ij}\\
+-\sin\beta_{ij} & \cos\beta_{ij}
+\end{pmatrix}
+\begin{pmatrix}
+\mathbf{r}_i\\
+\mathbf{R}_i
+\end{pmatrix}
+\end{equation}   
+From hereon we choose one set to work in and suppress all vector indices.
+
+\subsection{The Hyperspherical Method}
+The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of the three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate, $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these hyperangles are the Euler angles associated with the orientation of the body fixed frame (i.e., the triangle formed by the three particles) in three-dimensional space, these are called external coordinates. The remaing two hyperangles describe the shape of the triangle, and the hyperradius describes the overall size of the system, these coordinates are the internal coordinates of the system. For the three-body problem, the hyperradius is defined by
+
+\begin{equation}
+\rho = \Big(\mathbf{r}^{2} + \mathbf{R}^{2}\Big)^{1/2}, \quad 0\leq \rho < \infty.
+\end{equation} 
+Hyperspherical coordinates are useful for describing fragmentation problems. Fragmentations processes of the system into any one of the possible channels are described by the hyperradius becoming very large $(\rho \rightarrow \infty)$, while the hyperangles distinguishes between the different fragmentation channels. The hyperradius invariant under both rotations and particle permutation. However, there are various ways to define the hyperangles and they are not in general invariant under particle permutations. The most common choises of parametrizing this hypersphere fall into two distinct categories: Delves coordinates, and (democratic) Smith-Whitten coordinates. 
+
+\subsubsection{Delves Coordinates}
+Delves coordinates where originally developed to treat nuclear three-body problems. Delves coordinates are adapted to collinear atom-diatom collisions and they are regular polar coordinates, where
+
+\begin{subequations}
+	\begin{align}
+		r_{k} &= \rho \sin(\alpha_{k})\\
+		R_{k} &= \rho \cos(\alpha_{k}).
+	\end{align}
+\end{subequations}
+The Delves hyperangle $\alpha_{k}$ is then defined by
+
+\begin{equation}
+	\alpha_{k} = \arctan\bigg(\frac{r_{k}}{R_{k}}\bigg), \quad 0\leq \alpha_{k} < \frac{\pi}{2}.
+\end{equation}
+This coordinate set corresponds to the reactant arrangement when particle $k$ scatters of the weakly bound particles $i-j$. These
+Numerical difficulties arise with Delves hyper angles when permutation symmetries for three identical particles is considered.
+
+\subsubsection{Smith-Whitten Coordinates}
+Principel axis methods are characterized by the use of a single hyperspherical coordinate system that treats all three arragements of particles equivalently. 
+
 
 \begin{subequations}
 Introducing hyperspherical coordinates:
@@ -320,64 +375,8 @@ The wavefunction needs to be square-integrable, so $\Psi = 0$ at $\rho=0$ and $\
 \subsubsection{Modified Smith-Whitten Coordinates}
 In this section, we show how the three-body system can be represented in a symmetric way. The derivation of the Hamiltonian for this representation is described using a modified set of Smith-Whitten (democratic) coordinates. 
 
-For a system of three particles, let $\mathbf{r}^i$ and $m_i$ be the position vector and mass of the $i$th particle. The set of Jacobi coordinates for the system is given by
 
-\begin{subequations}
-	\begin{align}
-	\mathbf{x}^k 		&= \mathbf{r}^{j}_0 - \mathbf{r}^{i}_0,\\
-	\vec{y}_k 		&= \vec{r}_k - \frac{1}{2}(\vec{r}_i + \vec{r}_j),\\
-	\vec{X}_{cm} 	&= \frac{1}{3} \sum_{i=1}^{3}\vec{r}_i.
-	\end{align}
-\end{subequations}
 
-The center of mass coordinate separates from the equations of motion and we will not consider it further. We can define a new set of mass normalized Jacobi coordinates. If the total mass $M$, the three particle reduced mass $\mu_3$, and the normalizing constants $d_k (k=1,2,3)$ are defined as 
-
-\begin{align}
-M &= \sum_{i=1}^{3}m_i,\\
-\mu_3^2 &= \prod_{i=1}^{3}m_i/M,\\
-d_k^2 &= \frac{m_k}{\mu_3}\frac{(m_i+m_j)}{M}. 
-\end{align}
-
-The set of mass normalized Jacobi coordinates are defined by
-
-\begin{align}
-\mathbf{r}_k &= d^{-1}_k\mathbf{x}_k,\\
-\mathbf{R}_k &= d_k\mathbf{y}_k.  
-\end{align}
-The masses of the particles define angles that are useful to describe permutations of the system. If we consider an even permutation $(ijk)$ of the set $(123)$, then the obtuse angle $\beta_{ij}$ has the properties
-
-\begin{subequations}
-	\begin{align}
-		&\beta_{ij} = -\beta_{ji}, \quad \beta_{ii} = 0,\\
-		&\tan\beta_{ij} = -m_k/\mu,\\
-		&d_{i}d_{j} \sin\beta_{ij} = 1,\\
-		&d_{i}d_{j} m_{k} \cos\beta_{ij} = -\mu,\\
-		&\beta_{12}+\beta_{23}+\beta_{31} = 2\pi
-	\end{align}
-\end{subequations}
-Orthogonal transformations within the coordinate set are then given by 
-
-\begin{equation}
-	\begin{pmatrix}
-		\mathbf{r}_j\\
-		\mathbf{R}_j
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-	\cos\beta_{ij} & \sin\beta_{ij}\\
-	-\sin\beta_{ij} & \cos\beta_{ij}
-	\end{pmatrix}
-	\begin{pmatrix}
-	\mathbf{r}_i\\
-	\mathbf{R}_i
-	\end{pmatrix}
-\end{equation}   
-
-From hereon we choose one set to work in and suppress all vector indices. In six dimensional space, the components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ can be regarded as the Cartesian components of a point that space. The kinetic energy is then given by
-
-\begin{equation}
-\hat{T} = -\frac{1}{2m}\Big(\Delta_{\mathbf{r}}+\Delta_{\mathbf{R}}\Big).
-\end{equation} 
 
 At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the x-y plane, and define the internal motion of the particles within this plane in terms of  hyperspherical coordinates, our coordinate system must rotate in this plane. That is, we use a body-fixed coordinate system $XYZ$, which rotates with respect to the space fixed axis $X'Y'Z'$. [Details](spatial rotation). The internal coordinates $\rho$, $\Theta$, and $\Phi$ determine the size and shape of the triangle formed by the three particle system. With the $z$-axis perpendicular to the plane, Smith and Whitten [ref] defined these as   
 

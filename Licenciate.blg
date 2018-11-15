@@ -1,21 +1,21 @@
 [0] Config.pm:343> INFO - This is Biber 2.5
 [0] Config.pm:346> INFO - Logfile is 'Licenciate.blg'
-[42] biber-darwin:290> INFO - === Fri Nov  9, 2018, 08:27:53
-[62] Biber.pm:351> INFO - Reading 'Licenciate.bcf'
-[148] Biber.pm:776> INFO - Found 8 citekeys in bib section 0
-[160] Biber.pm:3493> INFO - Processing section 0
-[172] Biber.pm:3657> INFO - Looking for bibtex format file 'References.bib' for section 0
-[175] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[178] bibtex.pm:1048> INFO - Found BibTeX data source 'References.bib'
+[43] biber-darwin:290> INFO - === Wed Nov 14, 2018, 10:46:52
+[64] Biber.pm:351> INFO - Reading 'Licenciate.bcf'
+[151] Biber.pm:776> INFO - Found 10 citekeys in bib section 0
+[162] Biber.pm:3493> INFO - Processing section 0
+[175] Biber.pm:3657> INFO - Looking for bibtex format file 'References.bib' for section 0
+[178] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[180] bibtex.pm:1048> INFO - Found BibTeX data source 'References.bib'
 [209] Utils.pm:149> WARN - Datamodel: Entry 'Grimm:2006' (References.bib): Invalid format '2006/03/16/online' of date field 'date' - ignoring
 [209] Utils.pm:149> WARN - Range field 'pages' in entry 'Grimm:2006' is malformed, skipping
-[229] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[229] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[229] Biber.pm:3306> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
-[229] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
-[237] bbl.pm:526> INFO - Writing 'Licenciate.bbl' with encoding 'ascii'
-[240] Utils.pm:149> WARN - The entry 'Chenciner2015' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[241] Utils.pm:149> WARN - The entry 'Grimm:2009' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[244] Utils.pm:149> WARN - The entry 'Grimm:2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[244] bbl.pm:619> INFO - Output to Licenciate.bbl
-[245] Biber.pm:108> INFO - WARNINGS: 5
+[232] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[233] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[233] Biber.pm:3306> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
+[233] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
+[243] bbl.pm:526> INFO - Writing 'Licenciate.bbl' with encoding 'ascii'
+[245] Utils.pm:149> WARN - The entry 'Chenciner2015' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[247] Utils.pm:149> WARN - The entry 'Grimm:2009' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[249] Utils.pm:149> WARN - The entry 'Grimm:2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[250] bbl.pm:619> INFO - Output to Licenciate.bbl
+[250] Biber.pm:108> INFO - WARNINGS: 5
