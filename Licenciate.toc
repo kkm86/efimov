@@ -17,10 +17,10 @@
 \contentsline {subsection}{\numberline {3.1}Mass Normalized Jacobi Coordinates}{6}
 \contentsline {subsection}{\numberline {3.2}The Hyperspherical Method}{7}
 \contentsline {subsubsection}{\numberline {3.2.1}Delves Coordinates}{8}
-\contentsline {subsubsection}{\numberline {3.2.2}Smith-Whitten Coordinates}{8}
-\contentsline {subsubsection}{\numberline {3.2.3}Modified Smith-Whitten Coordinates}{12}
-\contentsline {subsubsection}{\numberline {3.2.4}Symmetries}{21}
+\contentsline {subsubsection}{\numberline {3.2.2}Smith-Whitten Coordinates}{12}
+\contentsline {subsubsection}{\numberline {3.2.3}Symmetries}{21}
 \contentsline {subsection}{\numberline {3.3}Hyperangular and hyperradial equations}{23}
 \contentsline {subsection}{\numberline {3.4}Three identical particles}{24}
 \contentsline {subsubsection}{\numberline {3.4.1}Permutation symmetries in Smith-Whitten coordinates}{24}
 \contentsline {subsection}{\numberline {3.5}Effective three-body interaction}{24}
+\contentsline {subsection}{\numberline {3.6}Generalized Hellmann-Feynman teorem}{24}

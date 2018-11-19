@@ -91,7 +91,7 @@ Helium is a prime candidate to study Efimov physics with a more direct approach.
 The Efimov scenario is even richer. In connection to an Efimov trimer, a pair of four-body states can form when a fourth atom approach. In accordance with the theoretical predictions, strong evidence for the existance of a pair of four-body states was provided in 2009 \cite{Grimm:2009}. 
 
 \section{Theoretical Methods} 
-Two-body scattering processes concern two differnt situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmenation channels (1+2). There are different routes of solving the three-body problem. However, most approaches start with the same steps. This includes separating out the  center of mass motion and then defining a set of relative  coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since it removes the mass factors in the kinetic energy operator.     
+Two-body scattering processes basically concern two different situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmenation channels (1+2). This makes the construction of permutation symmetric wavefunctions highly non trivial. There are different routes of solving the three-body problem. However, most approaches start with the same steps. This includes separating out the  center of mass motion and then defining a set of relative  coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since it removes the mass factors in the kinetic energy operator.     
 
 \begin{figure}
 	\centering
@@ -125,7 +125,7 @@ will transform into
 \begin{equation}\label{eq:6}
 \hat{T} = -\frac{\hbar^2}{2\mu} \Big(\nabla^{2}_{\mathbf{r}_{k}}+\nabla^{2}_{\mathbf{R}_{k}}\Big) - \frac{\hbar^2}{2 M}\nabla^{2}_{\mathbf{X}_{cm}}. 
 \end{equation}
-The center of mass motion decouples from the internal equations of motion and thus will not be considered further. There are three possible ways to construct the Jacobi coordinates described above, see Figure \ref{fig:2}. Each set transforms into one of the other by exchange of particles. In cases with non-mass-scaled coordinates we define the particle permutations operators as 
+The center of mass motion decouples from the internal equations of motion and thus will not be considered further. There are three possible ways to construct the Jacobi coordinates described above, see Figure \ref{fig:2}. Each set transforms into one of the other by exchange of particles. For convenience, indices will often be surpressed in the following text, in these cases $(\mathbf{r}_{k}, \mathbf{r}_{i}, \mathbf{r}_{j})$ correspond to $(\mathbf{r}, \mathbf{r}', \mathbf{r}'')$. Ignoring the mass scale factors in the coordinates we define the permutation operator for exchange of particles $(1 \rightarrow 3)$ as 
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{jacobii.pdf}
@@ -135,16 +135,17 @@ The center of mass motion decouples from the internal equations of motion and th
 
 \begin{equation}
 \hat{P}_{13} = \left \{ \begin{aligned}
-\mathbf{r} \, ' &= \mathbf{x}_2 - \mathbf{x}_3 &&= \frac{1}{2}\mathbf{r} - \mathbf{R} \\
-\mathbf{R} \, ' &= \mathbf{x}_1 - \frac{1}{2}(\mathbf{x}_3 + \mathbf{x}_2) &&= -\frac{1}{2}(\frac{3}{2} \mathbf{r} + \mathbf{R}) 
+\mathbf{r}' &= \mathbf{x}_2 - \mathbf{x}_3 = \frac{1}{2}\mathbf{r} - \mathbf{R}, \\
+\mathbf{R}' &= \mathbf{x}_1 - \frac{1}{2}(\mathbf{x}_3 + \mathbf{x}_2) = -\frac{1}{2}(\frac{3}{2} \mathbf{r} + \mathbf{R}). 
 \end{aligned}
 \right.
 \end{equation}
+Similarly, the permutation operator for exchange of particles $(2 \rightarrow 3)$ are defined as
 
 \begin{equation}
 \hat{P}_{23} = \left \{ \begin{aligned}
-\mathbf{r} \, '' &= \mathbf{x}_3 - \mathbf{x}_1 &&= \frac{1}{2}\mathbf{r} + \mathbf{R} \\
-\mathbf{R} \, '' &= \mathbf{x}_2 - \frac{1}{2}(\mathbf{x}_1 + \mathbf{x}_3) &&= -\frac{1}{2} (\frac{3}{2} \mathbf{r} - \mathbf{R})
+\mathbf{r}'' &= \mathbf{x}_3 - \mathbf{x}_1 = \frac{1}{2}\mathbf{r} + \mathbf{R}, \\
+\mathbf{R}'' &= \mathbf{x}_2 - \frac{1}{2}(\mathbf{x}_1 + \mathbf{x}_3) = -\frac{1}{2} (\frac{3}{2} \mathbf{r} - \mathbf{R}).
 \end{aligned}
 \right.
 \end{equation}
@@ -174,9 +175,9 @@ Orthogonal transformations within the coordinate set are then given by
 \begin{pmatrix}
 \mathbf{r}_i\\
 \mathbf{R}_i
-\end{pmatrix}
+\end{pmatrix}.
 \end{equation}   
-From hereon we choose one set to work in and suppress all vector indices.
+
 
 \subsection{The Hyperspherical Method}
 The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of the three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate, $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these hyperangles are the Euler angles associated with the orientation of the body fixed frame (i.e., the triangle formed by the three particles) in three-dimensional space, these are called external coordinates. The remaing two hyperangles describe the shape of the triangle, and the hyperradius describes the overall size of the system, these coordinates are the internal coordinates of the system. For the three-body problem, the hyperradius is defined by
@@ -187,179 +188,127 @@ The next common step in the theoretical framework to describe systems of three p
 Hyperspherical coordinates are useful for describing fragmentation problems. Fragmentations processes of the system into any one of the possible channels are described by the hyperradius becoming very large $(\rho \rightarrow \infty)$, while the hyperangles distinguishes between the different fragmentation channels. The hyperradius invariant under both rotations and particle permutation. However, there are various ways to define the hyperangles and they are not in general invariant under particle permutations. The most common choises of parametrizing this hypersphere fall into two distinct categories: Delves coordinates, and (democratic) Smith-Whitten coordinates. 
 
 \subsubsection{Delves Coordinates}
-Delves coordinates where originally developed to treat nuclear three-body problems. Delves coordinates are adapted to collinear atom-diatom collisions and they are regular polar coordinates, where
+Delves coordinates where originally developed to treat nuclear three-body problems. Numerical difficulties arise with Delves hyper angles when permutation symmetries for three identical particles is considered. Delves coordinates are adapted to collinear atom-diatom collisions and they are regular polar coordinates, where
 
 \begin{subequations}
 	\begin{align}
-		r_{k} &= \rho \sin(\alpha_{k})\\
-		R_{k} &= \rho \cos(\alpha_{k}).
+		r_{k} &= \rho \sin{\alpha_{k}}\\
+		R_{k} &= \rho \cos{\alpha_{k}}.
 	\end{align}
 \end{subequations}
 The Delves hyperangle $\alpha_{k}$ is then defined by
 
 \begin{equation}
-	\alpha_{k} = \arctan\bigg(\frac{r_{k}}{R_{k}}\bigg), \quad 0\leq \alpha_{k} < \frac{\pi}{2}.
+	\alpha_{k} = \arctan\bigg(\frac{r_{k}}{R_{k}}\bigg), \quad 0\leq \alpha_{k} \leq \frac{\pi}{2}.
 \end{equation}
-This coordinate set corresponds to the reactant arrangement when particle $k$ scatters of the weakly bound particles $i-j$. These
-Numerical difficulties arise with Delves hyper angles when permutation symmetries for three identical particles is considered.
-
-\subsubsection{Smith-Whitten Coordinates}
-Principel axis methods are characterized by the use of a single hyperspherical coordinate system that treats all three arragements of particles equivalently. 
-
-
-\begin{subequations}
-Introducing hyperspherical coordinates:
-\begin{align}
-        x &= \sqrt{2} \rho \sin(\alpha)\\
-        y &= \sqrt{\frac{3}{2}} \rho \cos(\alpha)\\
-\end{align}
-\end{subequations}
-
-Hyperspherical coordinates:
-\[\arraycolsep=1.4pt\def\arraystretch{2.2}
-     \left. \begin{array}{lr}
-        \rho = \displaystyle \Big( \frac{1}{2}x^2 + \frac{2}{3}y^2 \Big) ^{1/2} &,  0\leq \rho < \infty\\
-        \tan{\alpha} = \displaystyle \frac{\sqrt{3}}{2} \frac{x}{y} &,  0\leq \alpha < \frac{\pi}{2}\\
-        \cos{\theta} = \displaystyle \frac{\vec{x} \cdot \vec{y}}{xy} &,  0\leq \theta < \pi
-        \end{array}\right.
-  \]
-
-\begin{subequations}
-Jacobi vectors:
-\begin{align}
-        x' &= \Big(\frac{1}{4} x^2 +y^2 -\vec{x} \cdot \vec{y}\Big)^{1/2} = \frac{\rho}{\sqrt{2}} \big( \sin^2(\alpha) + 3\cos^2(\alpha) - \sqrt{3}\sin(2\alpha)\cos{\theta}\big)^{1/2}\\
-        x'' &= \Big(\frac{1}{4} x^2 +y^2 +\vec{x} \cdot \vec{y}\Big)^{1/2} = \frac{\rho}{\sqrt{2}} \big( \sin^2(\alpha) + 3\cos^2(\alpha) + \sqrt{3}\sin(2\alpha)\cos{\theta}\big)^{1/2}
-\end{align}
-\end{subequations}
-
-Volume element from the transformation is $dr_1dr_2dr_3=3/2dxdydX_{cm}$.\\
-
-
-(The massweighted Schr{\"o}dinger equation of a N-body system with position vectors $\mathbf{r}_k$ and masses $m_k$, ($k=1,...,N$), is given by)
+This coordinate set corresponds to the reactant arrangement when particle $k$ scatters of the weakly bound particles $i-j$. The other angle in this coordinate set is the angle between the two vectors $\mathbf{r}_{k}$ and $\mathbf{R}_{k}$. It is given by
 
 \begin{equation}
-\Bigg(-\frac{\hbar^2}{2} \sum_{k=1}^{N} m^{-1}_{k} \nabla^{2}_{\mathbf{r}_{k}} \Psi + V\Psi = E \Psi \Bigg)
+\cos{\theta_{k}} = \frac{\mathbf{r}_{k} \cdot \mathbf{R}_{k}}{r_{k} R_{k}}, \quad  0\leq \theta \leq \pi.
 \end{equation}
-
-where the Laplacian is
+Now, the massweighted Schr{\"o}dinger equation for the stationary wavefunction $\Psi$ of an n-body system with position vectors $\mathbf{x}_i$ and masses $m_i$, ($i=1,...,N$), interacting pairwise through a potential $V$, is given by
 
 \begin{equation}
-\nabla^{2} = \Big( \frac{1}{r^2}\partial_{r} \big(r^2 \partial_{r}\big) - \frac{1}{\sin(\theta)} \partial_{\theta} \big( \sin(\theta) \partial_{\theta} \big) + \frac{1}{\sin^2{\theta}} \partial^{2}_{\phi} \Big) = \Big( \frac{1}{r^2} \partial_{r} \big( r^2 \partial_{r} \big) + \frac{L^2}{\hbar^2} \Big)
+-\frac{\hbar^2}{2} \sum_{i=1}^{N} m^{-1}_{i} \nabla^{2}_{\mathbf{x}_{i}} \Psi + V\Psi = E \Psi. 
 \end{equation}
-
-The kinetic energy for three particles with identical masses is given by
+Where $\nabla^{2}=\Delta$ is the Laplace operator, which in spherical coordinates reads
 
 \begin{equation}
-\hat{T} = -\frac{\hbar^2}{2m}( \nabla^{2}_{r_1} + \nabla^{2}_{r_2} + \nabla^{2}_{r_3} )
+\Delta = \frac{1}{r^{2}}\frac{\partial}{\partial r} \bigg(r^{2} \frac{\partial}{\partial r}\bigg) - \frac{\hat{L}^{2}}{\hbar^2 r^{2}},
 \end{equation}
-
-in hyperspherical coordinates this becomes 
+where $\hat{L}$ is the angular momentum operator associated with the vector $\mathbf{r}$. And
 
 \begin{equation}
-\hat{T} = -\frac{\hbar^2}{2m}( 2\nabla^{2}_{x} + \frac{3}{2}\nabla^{2}_{y} + \frac{1}{3}\nabla^{2}_{X_{cm}} ),
+\hat{L}^{2} = -\hbar^{2}\Bigg(\frac{1}{\sin{\theta}}\frac{\partial}{\partial \theta} \bigg(\sin{\theta}\frac{\partial}{\partial \theta}\bigg) + \frac{1}{\sin^{2}{\theta}} \frac{\partial^{2}}{\partial \phi^{2}}\Bigg)
 \end{equation}
-
-where
+From now on $\hbar = 1$. The kinetic energy for three particles in the mass normalized Jacobi coordinates was given in \eqref{eq:6}. Next follows a derivation the kinetic energy operator in Delves hyperspherical coordinates. The Laplacians for the mass scaled Jacobi vectors are given by
 
 \begin{subequations}
 \begin{align}
-	\nabla^2_{x} &= \frac{1}{x^2}\frac{\partial}{\partial x} \Big( x^2 \frac{\partial}{\partial x} \Big) - \frac{\hat{l}^2_{x}}{x^2} = \frac{2}{x}\frac{\partial}{\partial x} + \frac{\partial^2}{\partial x^{2}} - \frac{\hat{l}^{2}_{x}}{x^2}\\
-	\nabla^2_{y} &= \frac{1}{y^2}\frac{\partial}{\partial y} \Big( y^2 \frac{\partial}{\partial y} \Big) - \frac{\hat{l}^2_{y}}{y^2} = \frac{2}{y}\frac{\partial}{\partial y} + \frac{\partial^2}{\partial y^{2}} - \frac{\hat{l}^{2}_{y}}{y^2}
+	\Delta_{r_{k}} &= \frac{1}{r_{k}^2}\frac{\partial}{\partial r_{k}} \bigg( r_{k}^2 \frac{\partial}{\partial r_{k}} \bigg) - \frac{\hat{l}^2_{r_k}}{r_{k}^2} = \frac{2}{r_{k}}\frac{\partial}{\partial r_{k}} + \frac{\partial^2}{\partial r_{k}^{2}} - \frac{\hat{l}^{2}_{r_k}}{r_{k}^2}\\
+	\Delta_{R_{k}} &= \frac{1}{R_{k}^2}\frac{\partial}{\partial R_{k}} \bigg( R_{k}^2 \frac{\partial}{\partial R_{k}} \bigg) - \frac{\hat{l}^2_{R_k}}{R_{k}^2} = \frac{2}{R_{k}}\frac{\partial}{\partial R_{k}} + \frac{\partial^2}{\partial R_{k}^{2}} - \frac{\hat{l}^{2}_{R_k}}{R_{k}^2}
 \end{align}
 \end{subequations}
-
 If spin interactions are excluded the total orbital angular momentum is zero and we have 
 
+\begin{equation}
+\hat{l}^{2}_{r_k} = \hat{l}^{2}_{R_k} = -\frac{1}{\sin{\theta}} \frac{\partial}{\partial{\theta}} \bigg( \sin{\theta} \frac{\partial}{\partial{\theta}} \bigg).
+\end{equation}
+Change of coordinates into Delves polar coordinates results in the following transformations for the partial derivatives of the vector $\mathbf{r}$
+
 \begin{subequations}
 \begin{align}
-\hat{l}^{2}_{x} = \hat{l}^{2}_{y} = -\frac{1}{\sin(\theta)} \frac{\partial}{\partial{\theta}} \Big( \sin(\theta) \frac{\partial}{\partial{\theta}} \Big)
+        \frac{\partial}{\partial r}        &= \frac{\partial\alpha}{\partial r} \frac{\partial}{\partial\alpha} +  \frac{\partial\rho}{\partial r} \frac{\partial}{\partial\rho} = \frac{1}{\rho}\cos{\alpha}\frac{\partial}{\partial \alpha} + \sin{\alpha}\frac{\partial}{\partial \rho}, \\
+        \frac{\partial^2}{\partial r^2} &= \bigg( \frac{1}{\rho} \cos\alpha \frac{\partial}{\partial\alpha} + \sin\alpha \frac{\partial}{\partial\rho}\bigg) \bigg( \frac{1}{\rho} \cos\alpha \frac{\partial}{\partial\alpha} + \sin\alpha \frac{\partial}{\partial\rho}\bigg) \nonumber \\
+                                                     &= \frac{1}{\rho^2} \cos^2\alpha \frac{\partial^2}{\partial\alpha^{2}} - \frac{1}{\rho^2} \sin(2\alpha) \frac{\partial}{\partial\alpha} + \sin^2\alpha \frac{\partial^2}{\partial\rho^{2}} \nonumber \\
+                                                     &+ \frac{1}{\rho} \cos^2\alpha \frac{\partial}{\partial\rho} + \frac{1}{\rho} \sin(2\alpha) \frac{\partial^2}{\partial\alpha \partial\rho}.
 \end{align}
 \end{subequations}
-
-
-
-\begin{subequations}
-\begin{align*}
-        \frac{\partial \alpha}{\partial x} &= \frac{1}{\sqrt{2} \rho} \cos(\alpha), \quad \frac{\partial \rho}{\partial x} = \frac{1}{\sqrt{2}} \sin(\alpha) \\
-        \frac{\partial \alpha}{\partial y} &= -\frac{\sqrt{6}}{3 \rho} \sin(\alpha), \quad \frac{\partial \rho}{\partial y} = \sqrt{\frac{2}{3}} \cos(\alpha)
-\end{align*}
-\end{subequations}
+Similarly, the partial derivatives with respect to the vector $\mathbf{R}$ transform as
 
 \begin{subequations}
-\begin{align*}
-        \frac{\partial}{\partial x}        &= \frac{\partial\alpha}{\partial x} \frac{\partial}{\partial\alpha} +  \frac{\partial\rho}{\partial x} \frac{\partial}{\partial\rho} \\
-        \frac{\partial^2}{\partial x^2} &= \frac{1}{2} \Big( \frac{1}{\rho} \cos(\alpha) \frac{\partial}{\partial\alpha} + \sin(\alpha) \frac{\partial}{\partial\rho}\Big) \Big( \frac{1}{\rho} \cos(\alpha) \frac{\partial}{\partial\alpha} + \sin(\alpha) \frac{\partial}{\partial\rho}\Big) \\
-                                                     &= \frac{1}{2} \Big[ \frac{1}{\rho^2} \cos(\alpha) \frac{\partial}{\partial\alpha} \Big( \cos(\alpha) \frac{\partial}{\partial\alpha} \Big) + \frac{1}{\rho} \cos(\alpha) \frac{\partial}{\partial\alpha} \Big( \sin(\alpha) \frac{\partial}{\partial\rho} \Big) + \sin(\alpha) \frac{\partial}{\partial\rho} \Big( \frac{1}{\rho} \cos(\alpha) \frac{\partial}{\partial\alpha} + \sin(\alpha) \frac{\partial}{\partial\rho} \Big)   \Big] \\
-                                                     &= \frac{1}{2} \Big[ -\frac{2}{\rho^2} \cos(\alpha) \sin(\alpha) \frac{\partial}{\partial\alpha} + \frac{1}{\rho^2} \cos^2(\alpha) \frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho} \cos^2(\alpha) \frac{\partial}{\partial\rho} + \frac{2}{\rho} \cos(\alpha)\sin(\alpha) \frac{\partial^2}{\partial\alpha \partial\rho} + \sin^2(\alpha) \frac{\partial^2}{\partial\rho^{2}}\Big] \\
-                                                     &= \frac{1}{2} \Big[ \frac{1}{\rho^2} \cos^2(\alpha) \frac{\partial^2}{\partial\alpha^{2}} - \frac{1}{\rho^2} \sin(2\alpha) \frac{\partial}{\partial\alpha} + \sin^2(\alpha) \frac{\partial^2}{\partial\rho^{2}} + \frac{1}{\rho} \cos^2(\alpha) \frac{\partial}{\partial\rho} + \frac{1}{\rho} \sin(2\alpha) \frac{\partial^2}{\partial\alpha \partial\rho}\Big]
-\end{align*}
+\begin{align}
+        \frac{\partial}{\partial R}        &= \frac{\partial\alpha}{\partial R} \frac{\partial}{\partial\alpha} +  \frac{\partial\rho}{\partial R} \frac{\partial}{\partial\rho} = -\frac{1}{\rho}\sin{\alpha}\frac{\partial}{\partial \alpha} + \cos{\alpha}\frac{\partial}{\partial \rho},  \\
+        \frac{\partial^2}{\partial R^2}&= \bigg( -\frac{1}{\rho} \sin\alpha \frac{\partial}{\partial\alpha} + \cos\alpha \frac{\partial}{\partial\rho}\bigg)  \bigg( -  \sin\alpha \frac{\partial}{\partial\alpha} + \cos\alpha \frac{\partial}{\partial\rho}\bigg) \nonumber \\
+                                                    &= \frac{1}{\rho^2} \sin^2\alpha\frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho^2} \sin(2\alpha)\frac{\partial}{\partial\alpha} + \cos^2\alpha \frac{\partial^2}{\partial \rho^2} \nonumber \\
+                                                    &+\frac{1}{\rho}\sin^2\alpha\frac{\partial}{\partial \rho}- \frac{1}{\rho} \sin(2\alpha) \frac{\partial^2}{\partial\alpha \partial\rho}.
+\end{align}
 \end{subequations}
+Finally, the sum of the two Laplacian operators now reads 
 
-\begin{subequations}
-\begin{align*}
-        \frac{\partial}{\partial y}        &= \frac{\partial\alpha}{\partial y} \frac{\partial}{\partial\alpha} +  \frac{\partial\rho}{\partial y} \frac{\partial}{\partial\rho} \\
-        \frac{\partial^2}{\partial y^2}&= \Big( -\frac{\sqrt{6}}{3\rho} \sin(\alpha) \frac{\partial}{\partial\alpha} + \sqrt{\frac{2}{3}} \cos(\alpha) \frac{\partial}{\partial\rho}\Big)  \Big( -\frac{\sqrt{6}}{3}  \sin(\alpha) \frac{\partial}{\partial\alpha} + \sqrt{\frac{2}{3}} \cos(\alpha) \frac{\partial}{\partial\rho}\Big) \\
-                                                    &= \frac{2}{3} \Big[ \frac{1}{\rho^2} \sin(\alpha) \frac{\partial}{\partial\alpha} \Big( \sin(\alpha) \frac{\partial}{\partial\alpha}\Big) - \frac{1}{\rho} \sin(\alpha) \frac{\partial}{\partial\alpha} \Big( \cos(\alpha) \frac{\partial}{\partial\rho} \Big) - \cos(\alpha) \frac{\partial}{\partial\rho} \Big( \frac{1}{\rho} \sin(\alpha) \frac{\partial}{\partial\alpha} \Big) + \cos^2(\alpha)\frac{\partial^2}{\partial\rho^{2}} \Big] \\
-                                                    &= \frac{2}{3} \Big[ \frac{2}{\rho^2} \sin(\alpha) \cos(\alpha) \frac{\partial}{\partial\alpha} + \frac{1}{\rho^2} \sin^2(\alpha)\frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho} \sin^2(\alpha) \frac{\partial}{\partial\rho} - \frac{2}{\rho}\sin(\alpha)\cos(\alpha) \frac{\partial^2}{\partial\alpha \partial\rho} +\cos^2(\alpha)\frac{\partial^2}{\partial\rho^{2}}  \Big]\\
-                                                    &= \frac{2}{3} \Big[ \frac{1}{\rho^2} \sin^2(\alpha)\frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho^2} \sin(2\alpha)\frac{\partial}{\partial\alpha} + \cos^2(\alpha) \frac{\partial^2}{\rho^2} - \frac{1}{\rho} \sin(2\alpha) \frac{\partial^2}{\partial\alpha \partial\rho} \Big]
-\end{align*}
-\end{subequations}
-
-\begin{subequations}
-\begin{align*}
-	2\nabla^{2}_{x} + \frac{3}{2}\nabla^{2}_{y} &= \frac{4}{x}\frac{\partial}{\partial x} +  \frac{3}{y} \frac{\partial}{\partial y}  +2\frac{\partial^2}{\partial x^{2}} + \frac{3}{2} \frac{\partial^2}{\partial y^{2}} - 2\frac{\hat{l}^{2}_{x}}{x^2} - \frac{3}{2}\frac{\hat{l}^{2}_{y}}{y^2}\\
-									&= \frac{4}{\rho^2} \cot(2\alpha) \frac{\partial}{\partial\alpha} + \frac{5}{\rho} \frac{\partial}{\partial\rho} + \frac{1}{\rho^2} \frac{\partial^2}{\partial\alpha^2} + \frac{\partial^2}{\partial\rho^2} + \frac{4}{\rho^2 \sin^2(2\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial{\theta}} \Big)\\
-									&= \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \Big( \rho^5 \frac{\partial}{\partial\rho} \Big) + \frac{1}{\rho^2 \sin^2(2\alpha)}  \Big( \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} + \frac{4}{\sin(\theta)} \frac{\partial}{\partial\theta} \Big)
-\end{align*}
-\end{subequations}
-
-The kinetic energy operators expressed in Delves hypersherical coordinates is thus
+\begin{align}
+	\Delta_{r} + \Delta_{R} &= \frac{2}{r}\frac{\partial}{\partial r} +  \frac{2}{R} \frac{\partial}{\partial R}  +\frac{\partial^2}{\partial r^{2}} + \frac{\partial^2}{\partial R^{2}} - \frac{\hat{l}^{2}_{r}}{r^2} - \frac{\hat{l}^{2}_{R}}{R^2} \nonumber \\
+									&= \frac{4}{\rho^2} \cot(2\alpha) \frac{\partial}{\partial\alpha} + \frac{5}{\rho} \frac{\partial}{\partial\rho} + \frac{1}{\rho^2} \frac{\partial^2}{\partial\alpha^2} + \frac{\partial^2}{\partial\rho^2} \nonumber \\
+									&+ \frac{4}{\rho^2 \sin^2(2\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \bigg( \sin(\theta) \frac{\partial}{\partial{\theta}} \bigg) \nonumber \\
+									&= \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \bigg( \rho^5 \frac{\partial}{\partial\rho} \bigg) + \frac{1}{\rho^2 \sin^2(2\alpha)}  \bigg( \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} + \frac{4}{\sin\theta} \frac{\partial}{\partial\theta} \bigg).
+\end{align}
+Thus in Delves hypersherical coordinates the Schr{\"o}dinger equation is given by 
 
 \begin{equation}
-\hat{T} = \hat{T}_{\rho} +  \hat{T}_{\alpha}+\hat{T}_{\theta} 
+\big(\hat{T}_{\rho} + \hat{T}_{\alpha_{k}} + \hat{T}_{\theta} + V(\rho,\Omega)\big) \Psi = E\Psi, 
 \end{equation}
+where $\hat{T}_{\rho}$ is the hyperradial kinetic energy operator,
 
-where
+\begin{align}
+\hat{T}_{\rho} &= -\frac{\hbar^2}{2m} \Big[ \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \Big( \rho^5 \frac{\partial}{\partial\rho} \Big)  \Big] \nonumber\\ 
+&= -\frac{\hbar^2}{2m} \Big[ \rho^{-5/2} \Big( \rho^{5/2} \frac{5}{\rho} \frac{\partial}{\partial\rho} + \rho^{5/2} \frac{\partial^2}{\partial\rho^2} \Big) \rho^{-5/2} \rho^{5/2} \Big]\nonumber\\
+&= -\frac{\hbar^2}{2m} \rho^{-5/2} \Big[  -\frac{15}{4} \frac{1}{\rho^2} + \frac{\partial^2}{\partial\rho^2} \Big] \rho^{5/2},
+\end{align}
+$\hat{T}_{\alpha}$ is the kinetic energy operator for the Delves angle $\alpha$,
 
-\begin{subequations}
-\begin{align*}
-\hat{T}_{\rho} &= -\frac{\hbar^2}{2m} \Big[ \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \Big( \rho^5 \frac{\partial}{\partial\rho} \Big)  \Big]\\ 
-                      &= -\frac{\hbar^2}{2m} \Big[ \rho^{-5/2} \Big( \rho^{5/2} \frac{5}{\rho} \frac{\partial}{\partial\rho} + \rho^{5/2} \frac{\partial^2}{\partial\rho^2} \Big) \rho^{-5/2} \rho^{5/2} \Big]\\
-                      &= -\frac{\hbar^2}{2m} \rho^{-5/2} \Big[  -\frac{15}{4} \frac{1}{\rho^2} + \frac{\partial^2}{\partial\rho^2} \Big] \rho^{5/2}\\ \\
-\hat{T}_{\alpha} &= -\frac{\hbar^2}{2m}  \frac{1}{\rho^2 \sin^2(2\alpha)}  \Big[ \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} \Big]\\ 
-                      &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2} \Big[ \frac{\partial^2}{\partial\alpha^2} + 4\cot(2\alpha) \frac{\partial}{\partial\alpha} \Big]\\
-                      &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2} \Big[ \sin^{-1}(2\alpha) \Big(\sin(2\alpha)\frac{\partial^2}{\partial\alpha^2} + 4\cos(2\alpha) \frac{\partial}{\partial\alpha} \Big) \sin^{-1}(2\alpha) \sin(2\alpha) \Big]\\
-                      &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2}\sin^{-1}(2\alpha) \Big[ \frac{\partial^2}{\partial\alpha^2} + 4 \Big] \sin(2\alpha)\\
-                      &= -\frac{\hbar^2}{2m} \frac{1}{\rho^2}(\sin(\alpha)\cos(\alpha))^{-1} \Big[ \frac{\partial^2}{\partial\alpha^2} + 4 \Big] \sin(\alpha)\cos(\alpha)\\ \\
-\hat{T}_{\theta} &= -\frac{\hbar^2}{2m} \Big[ \frac{4}{\rho^2 \sin^2(2\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta} \Big) \Big]\\ 
-                      	&= -\frac{\hbar^2}{2m} \Big[ \frac{1}{\rho^2 \sin^2(\alpha)\cos^2(\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta} \Big) \Big]\\ 
-\end{align*}                      		
-\end{subequations} 
+\begin{align}
+\hat{T}_{\alpha} &= -\frac{1}{2\mu}  \frac{1}{\rho^2 \sin^2(2\alpha)}  \bigg[ \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} \bigg]\nonumber\\ 
+&= -\frac{1}{2\mu} \frac{1}{\rho^2} \bigg[ \frac{\partial^2}{\partial\alpha^2} + 4\cot(2\alpha) \frac{\partial}{\partial\alpha} \bigg]\nonumber\\
+&= -\frac{1}{2\mu} \frac{1}{\rho^2} \bigg[ \sin^{-1}(2\alpha) \bigg(\sin(2\alpha)\frac{\partial^2}{\partial\alpha^2} + 4\cos(2\alpha) \frac{\partial}{\partial\alpha} \bigg) \sin^{-1}(2\alpha) \sin(2\alpha) \bigg]\nonumber\\
+&= -\frac{1}{2\mu} \frac{1}{\rho^2}\sin^{-1}(2\alpha) \bigg[ \frac{\partial^2}{\partial\alpha^2} + 4 \bigg] \sin(2\alpha),
+\end{align} 
+and $\hat{T}_{\theta}$ is the kinetic energy operator containing the angular momentum operators for the Jacobi vectors,
 
-And we get the Hamiltonian 
+\begin{align}                  
+\hat{T}_{\theta} &= -\frac{1}{2\mu} \bigg[ \frac{4}{\rho^2 \sin^2(2\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \bigg( \sin(\theta) \frac{\partial}{\partial\theta} \bigg) \bigg]\nonumber\\ 
+                      	&= -\frac{1}{2\mu} \bigg[ \frac{1}{\rho^2 \sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg]
+\end{align}
+The Hamiltonian operator is given by
 
 \begin{equation}
-H_0 = \hat{T}_{\rho} +  \hat{T}_{\alpha}+\hat{T}_{\theta} + V(\rho,\alpha,\theta)
-\end{equation}
+H_0 = \hat{T}_{\rho} + \hat{T}_{\alpha} + \hat{T}_{\theta} + V(\rho,\Omega).
+\end{equation}                      		
+Removal of first derivatives with respect to $\rho$ and $\alpha$ is possible by writing the wavefunction as $\Psi = \rho^{-5/2}(\sin(2\alpha))^{-1}\psi$. The coresponding transformation of the Hamiltonian is then
 
-From now on $\hbar = 1$. To remove first derivatives with respect to $\rho$ and $\alpha$ we make the following transformation $\Psi = \rho^{-5/2}(\sin(\alpha)\cos(\alpha))^{-1}\psi$. This corresponds to the following transformation of the Hamiltonian 
 
-\begin{subequations}
-\begin{align*}
-	H &= \rho^{5/2}\sin(\alpha)\cos(\alpha) H_0 \rho^{-5/2}(\sin(\alpha)\cos(\alpha))^{-1}\\
-	    &= -\frac{1}{2m} \Big[ \frac{\partial^2}{\partial\rho^2} - \frac{15}{4\rho^2} + \frac{1}{\rho^2}\Big( \frac{\partial^2}{\partial\alpha^2} + 4 + \frac{1}{\sin^2(\alpha)\cos^2(\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta} \Big) \Big) \Big]\\
-	    &= -\frac{1}{2m} \Big[ \frac{\partial^2}{\partial\rho^2} + \frac{1}{\rho^2}\Big( \frac{\partial^2}{\partial\alpha^2} + \frac{1}{\sin^2(\alpha)\cos^2(\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta} \Big) \Big) + \frac{1}{4\rho^2} \Big]\\
-	    &= -\frac{1}{2m}\frac{\partial^2}{\partial\rho^2} + \frac{\Lambda^2 - 1/4}{2m\rho^2}
-\end{align*}   
-\end{subequations}
-
-Where the Grand angular momentum operator is
+\begin{align}
+	H-V &= \rho^{5/2}\sin(2\alpha) (H_0-V) \rho^{-5/2}(\sin(2\alpha))^{-1}\nonumber\\
+	    &= -\frac{1}{2\mu} \bigg[ \frac{\partial^2}{\partial\rho^2} - \frac{15}{4\rho^2} + \frac{1}{\rho^2}\bigg( \frac{\partial^2}{\partial\alpha^2} + 4 + \frac{1}{\sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg) \bigg]\nonumber\\
+	    &= -\frac{1}{2\mu} \bigg[ \frac{\partial^2}{\partial\rho^2} + \frac{1}{\rho^2}\bigg( \frac{\partial^2}{\partial\alpha^2} + \frac{1}{\sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg) + \frac{1}{4\rho^2} \bigg]\nonumber\\
+	    &= -\frac{1}{2\mu}\frac{\partial^2}{\partial\rho^2} + \frac{\Lambda^2 - 1/4}{2\mu\rho^2},
+\end{align}   
+where $\Lambda^2$ is the hyperangular kinetic energy, also called the grand angular momentum operator since it is the angular momentum in this six dimensional space, it is in this case given by 
 
 \begin{equation}
-\Lambda^2 = -\frac{\partial^2}{\partial\alpha^2} - \frac{1}{\sin^2(\alpha)\cos^2(\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \Big( \sin(\theta) \frac{\partial}{\partial\theta}\Big)
+\Lambda^2 = -\frac{\partial^2}{\partial\alpha^2} - \frac{1}{\sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta}\bigg).
 \end{equation}
-
-The volume element is proportional to $\rho^5\sin^2(\alpha)\cos^2(\alpha)\sin(\theta)d\rho d\alpha d\theta$. Boundary conditions:
+The volume element is proportional to $\rho^5\sin^2\alpha\cos^2\alpha\sin\theta d\rho d\alpha d\theta$. 
+%TODO Boundary conditions:
 The wavefunction needs to be square-integrable, so $\Psi = 0$ at $\rho=0$ and $\alpha = 0 $ or $\pi$. Further, 
 
 \begin{subequations}
@@ -370,13 +319,10 @@ The wavefunction needs to be square-integrable, so $\Psi = 0$ at $\rho=0$ and $\
 \end{align*}   
 \end{subequations} 
 
+\subsubsection{Smith-Whitten Coordinates}
+%TODO Principel axis methods are characterized by the use of a single hyperspherical coordinate system that treats all three arragements of particles equivalently. 
 
-
-\subsubsection{Modified Smith-Whitten Coordinates}
-In this section, we show how the three-body system can be represented in a symmetric way. The derivation of the Hamiltonian for this representation is described using a modified set of Smith-Whitten (democratic) coordinates. 
-
-
-
+In this section, we show how the three-body system can be represented in a symmetric way. The derivation of the Hamiltonian for this representation is described using a modified set of Smith-Whitten -- or democratic -- coordinates. 
 
 At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the x-y plane, and define the internal motion of the particles within this plane in terms of  hyperspherical coordinates, our coordinate system must rotate in this plane. That is, we use a body-fixed coordinate system $XYZ$, which rotates with respect to the space fixed axis $X'Y'Z'$. [Details](spatial rotation). The internal coordinates $\rho$, $\Theta$, and $\Phi$ determine the size and shape of the triangle formed by the three particle system. With the $z$-axis perpendicular to the plane, Smith and Whitten [ref] defined these as   
 
@@ -1039,6 +985,18 @@ The two-body interaction
 \begin{equation}
 V(r) = d\cosh{(r/r_0)}
 \end{equation}
+
+\subsection{Generalized Hellmann-Feynman teorem}
+Consider $\nu$ adiabatic eigenstates $\Phi_{\nu}$, which are obtained by
+\begin{equation}
+H_{ad}\Phi_{\nu} = U_{\nu}(\rho)\Phi_{\nu},
+\end{equation}
+where the eigenvalues $U_{\nu}(\rho)$ are the effective adiabatic three-body potential curves. The eigenfunctions are represented in a basis set as 
+
+\begin{equation}
+\Phi_{\nu} = \sum_{m}T_{\nu}^m \varphi_m
+\end{equation}  
+
 
 \printbibliography
 
