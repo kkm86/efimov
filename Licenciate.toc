@@ -1,6 +1,6 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\contentsline {section}{\numberline {1}Background}{1}
-\contentsline {subsection}{\numberline {1.1}The Three-body Problem}{1}
+\contentsline {section}{\numberline {1}Background}{2}
+\contentsline {subsection}{\numberline {1.1}The Three-body Problem}{2}
 \contentsline {subsection}{\numberline {1.2}The Birth of Efimov Physics}{2}
 \contentsline {section}{\numberline {2}Introduction}{3}
 \contentsline {subsection}{\numberline {2.1}Three-body Theory}{3}
@@ -14,13 +14,14 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Efimov States in Nuclei }{5}
 \contentsline {subsubsection}{\numberline {2.2.3}Four-body Recombination connected to Efimov Trimers}{5}
 \contentsline {section}{\numberline {3}Theoretical Methods}{5}
-\contentsline {subsection}{\numberline {3.1}Mass Normalized Jacobi Coordinates}{6}
-\contentsline {subsection}{\numberline {3.2}The Hyperspherical Method}{7}
+\contentsline {subsection}{\numberline {3.1}Mass Normalized Jacobi Coordinates}{5}
+\contentsline {subsection}{\numberline {3.2}The Hyperspherical Method}{8}
 \contentsline {subsubsection}{\numberline {3.2.1}Delves Coordinates}{8}
 \contentsline {subsubsection}{\numberline {3.2.2}Smith-Whitten Coordinates}{12}
 \contentsline {subsubsection}{\numberline {3.2.3}Symmetries}{21}
-\contentsline {subsection}{\numberline {3.3}Hyperangular and hyperradial equations}{23}
-\contentsline {subsection}{\numberline {3.4}Three identical particles}{24}
-\contentsline {subsubsection}{\numberline {3.4.1}Permutation symmetries in Smith-Whitten coordinates}{24}
-\contentsline {subsection}{\numberline {3.5}Effective three-body interaction}{24}
-\contentsline {subsection}{\numberline {3.6}Generalized Hellmann-Feynman teorem}{24}
+\contentsline {subsection}{\numberline {3.3}Adiabatic hyperspherical method}{23}
+\contentsline {subsection}{\numberline {3.4}Generalized Hellmann-Feynman theorem}{25}
+\contentsline {section}{\numberline {4}Numerical Approach}{27}
+\contentsline {subsection}{\numberline {4.1}Basis splines expansion}{27}
+\contentsline {subsection}{\numberline {4.2}Gauss-Legendre Quadrature}{28}
+\contentsline {section}{\numberline {A}Basis splines}{28}

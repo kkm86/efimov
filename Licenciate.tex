@@ -12,6 +12,7 @@
 \usepackage{amssymb}
 \usepackage{standalone}
 \usepackage{multirow}
+\usepackage{subfigure}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{bm}
@@ -22,8 +23,17 @@
 \usepackage{tikz-3dplot}
 \usetikzlibrary{calc}
 
+
 \newcommand{\me}{\mathrm{e}}
 \providecommand{\abs}[1]{\lvert#1\rvert} \providecommand{\norm}[1]{\lVert#1\rVert}
+
+\makeatletter
+\newsavebox{\@brx}
+\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}%
+	\mathopen{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
+\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
+	\mathclose{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
+\makeatother
 
 
 
@@ -125,7 +135,19 @@ will transform into
 \begin{equation}\label{eq:6}
 \hat{T} = -\frac{\hbar^2}{2\mu} \Big(\nabla^{2}_{\mathbf{r}_{k}}+\nabla^{2}_{\mathbf{R}_{k}}\Big) - \frac{\hbar^2}{2 M}\nabla^{2}_{\mathbf{X}_{cm}}. 
 \end{equation}
-The center of mass motion decouples from the internal equations of motion and thus will not be considered further. There are three possible ways to construct the Jacobi coordinates described above, see Figure \ref{fig:2}. Each set transforms into one of the other by exchange of particles. For convenience, indices will often be surpressed in the following text, in these cases $(\mathbf{r}_{k}, \mathbf{r}_{i}, \mathbf{r}_{j})$ correspond to $(\mathbf{r}, \mathbf{r}', \mathbf{r}'')$. Ignoring the mass scale factors in the coordinates we define the permutation operator for exchange of particles $(1 \rightarrow 3)$ as 
+Now, since the interaction $V(\mathbf{r}_k,\mathbf{R}_k)$ do not depend on $\mathbf{X}_{cm}$, the center of mass motion decouples from the internal motion in the Schr{\"o}dinger equation if we write the wavefunction as
+
+\begin{equation}
+\Psi(\mathbf{r}_k,\mathbf{R}_k,\mathbf{X}_{cm}) = \varphi(\mathbf{X}_{cm})\psi(\mathbf{r}_k,\mathbf{R}_k),
+\end{equation}
+so that
+
+\begin{equation}
+(H_{cm} + H_{int})\varphi_{k}(\mathbf{X}_{cm})\psi_{n}(\mathbf{r}_k,\mathbf{R}_k) = (E_k^{cm} + E_n^{int})\varphi_{k}(\mathbf{X}_{cm})\psi_{n}(\mathbf{r}_k,\mathbf{R}_k).
+\end{equation}
+In the following text we will only consider the internal motion part of the  Schr{\"o}diner equation. To clarify the notions in the following text, wavefunctions and energies labelled $\Psi$ and $E$ refers to the internal eigenstates and eigenenergies, which was labelled $\psi$ and $E^{int}$ previously. 
+
+There are three possible ways to construct the Jacobi coordinates described above, see Figure \ref{fig:2}. Each set transforms into one of the other by exchange of particles. For convenience, indices will often be surpressed in the following text, in these cases $(\mathbf{r}_{k}, \mathbf{r}_{i}, \mathbf{r}_{j})$ correspond to $(\mathbf{r}, \mathbf{r}', \mathbf{r}'')$. Ignoring the mass scale factors in the coordinates we define the permutation operator for exchange of particles $(1 \rightarrow 3)$ as 
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{jacobii.pdf}
@@ -319,7 +341,7 @@ The wavefunction needs to be square-integrable, so $\Psi = 0$ at $\rho=0$ and $\
 \end{align*}   
 \end{subequations} 
 
-\subsubsection{Smith-Whitten Coordinates}
+\subsubsection{Smith-Whitten Coordinates}\label{smith}
 %TODO Principel axis methods are characterized by the use of a single hyperspherical coordinate system that treats all three arragements of particles equivalently. 
 
 In this section, we show how the three-body system can be represented in a symmetric way. The derivation of the Hamiltonian for this representation is described using a modified set of Smith-Whitten -- or democratic -- coordinates. 
@@ -908,95 +930,219 @@ From $s^{2} - \nu^{2} = 0$ we get the two roots $s = \pm \nu$. Using these roots
 \big(k^{2} \pm 2k\nu\big)A_{k} = \frac{\lambda_{n\nu}}{4} A_{k-2}\\
 \end{equation} 
 
-\subsection{Hyperangular and hyperradial equations}
+The table \ref{table:1} shows the analytically derived eigenvalues in SW-coordinates.
 
-The hyperradius is given by
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{||c c c c c c||} 
+		\hline
+		$\nu=0$ & $\nu=3$ & $\nu=6$ & Total & $\lambda(\lambda+4)$& multiplicity \\ [0.5ex] 
+		\hline\hline
+		0		& 60     & 192 & 0 & 0 & 1  \\ 
+		32	   & 140   & 320 & 32 & 4 & 1  \\
+		96     & 252  & 480 & 60 & 6 & 1  \\
+		192   & 396  & 672  & 96 & 8 & 1  \\
+		320   & 572  & 896  & 140 & 10 & 1  \\
+		480   & 780  & 1152 & 192 & 12 & 2  \\  
+		672   & 1020 & 1440 & 252 & 14 & 1  \\ [1ex] 
+		\hline
+	\end{tabular}
+	\caption{Analytically derived eigenvalues}
+	\label{table:1}
+\end{table}
+
+\subsection{Adiabatic hyperspherical method}\label{sec:AHM}
+In the following sections we have chosen to work in the set of democratic hyperangles described in \ref{smith}. With these coordinates, the Schr{\"o}dinger equation for the internal coordinates was derived as  
+
+\begin{equation}\label{schrodinger}
+\Bigg(-\frac{1}{2 \mu}\frac{\partial^2}{ \partial \rho^2} + \frac{\Lambda^2 + 15/4}{2 \mu \rho^2} + V(\rho,\theta,\phi) \Bigg)\psi(\rho,\theta,\phi) = E\psi(\rho,\theta,\phi),
+\end{equation}
+with boundary conditions
+
+\begin{align}
+\frac{\partial\Phi_{\nu}(\rho;0,\phi)}{\partial \theta} = \frac{\partial\Phi_{\nu}(\rho;\frac{\pi}{2},\phi)}{\partial \theta},\\
+\frac{\partial\Phi_{\nu}(\rho;\theta,0)}{\partial \phi} = \frac{\partial\Phi_{\nu}(\rho;\theta,\frac{2\pi}{3})}{\partial \phi},
+\end{align}
+reflecting three identical particle symmetry. We assume that the interactions $V$ can be written as a sum of pairwise two-body potentials   
 
 \begin{equation}
-\rho = (\mathbf{R}^{2} + \mathbf{r}^{2})^{1/2}
+V(\rho,\theta,\psi) = v(r_{k}) + v(r_{i}) + v(r_{j}).
 \end{equation}
-
-In hyperspherical coordinates the three-body Schr{\"o}diner equation becomes
-
-\begin{equation}
-\Bigg(-\frac{1}{2 \mu}\frac{\partial^2}{ \partial \rho^2} + \frac{\Lambda^2 + 15/4}{2 \mu \rho^2} + V \Bigg)\psi(\rho,\Omega) = E\psi(\rho,\Omega).
-\end{equation}
-To solve (make ref) we expand $\psi(\rho,\theta,\phi)$ into radial wave functions $F_{\nu n}(\rho)$ and a set of complete, orthonormal channel functions $\Phi_{\nu}(\rho;\theta,\phi)$ that depend parametrically on $\rho$. The channel functions $\Phi_{\nu}$ are solutions of the hyperangular part of the Hamiltonian
-
-\begin{equation}
-H(\rho,\Omega) = T(\rho) + H_{ad}(\rho,\Omega)
-\end{equation}
-
-\begin{equation}
-H_{ad}(\rho,\Omega) = \frac{\Lambda^2}{2 \mu_{3} \rho^2} + \sum_{i<j} V(r_{ij})
-\end{equation}
-
-\begin{equation}
-H_{ad} \Phi_{\nu}{(\rho ; \Omega)}= U_{\nu}{(\rho)} \Phi_{\nu}{(\rho ; \Omega)}
-\end{equation}
-
-
-\begin{equation}
-\psi_{n} = \sum_{\nu} \frac{F_{\nu n}(\rho)}{\rho^{5/2}} \Phi_{\nu}{(\rho;\theta,\phi)}
-\end{equation}
-
-
-
-
-
-Smith-Whitten (democratic) hyperangles
-
-\begin{equation}
-r_{ij} = \frac{d_{ij} \rho}{\sqrt{2}} \Big[1+\sin(\theta) \cos{(\varphi + \varphi_{ij})}\Big]^{1/2}
-\end{equation}
-
-\begin{align*}
-\varphi_{12} &= 2 \arctan{(m_{3} / \mu_{3})} \\
-\varphi_{23} &= 0 \\
-\varphi_{31} &= -2 \arctan{(m_{2} / \mu_{3})}
-\end{align*}
-
-\begin{equation}
-d_{ij}^{2} =  \frac{m_{k}}{\mu_{3}} \frac{m_{i} + m_{j}}{m_{i} + m_{j} + m_{k}}
-\end{equation}
-
-\begin{equation}
-\Lambda^2 = T_{\theta} + T_{\phi} + T_{rot}  
-\end{equation}
-
-\begin{equation}
-T_{\theta} = -\frac{4}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta}
-\end{equation}
-
-\begin{equation}
-T_{\phi} = \frac{2}{\sin^2{(2 \theta)}} \Big( i \frac{\partial}{\partial \phi} - \frac{\cos{\theta}}{2} J_{z}\Big)^2  
-\end{equation}
-
-\begin{equation}
-T_{rot} = \frac{2}{1-\sin(\theta)} J_{x}^{2} + \frac{2}{1+\sin(\theta)} J_{y}^{2} + J_{z}^{2}  
-\end{equation}
-
-\subsection{Three identical particles}
-\subsubsection{Permutation symmetries in Smith-Whitten coordinates}
-
-\subsection{Effective three-body interaction}
 The two-body interaction 
 
 \begin{equation}
-V(r) = d\cosh{(r/r_0)}
+v(r) = d\cosh^{-2}{(r/r_0)}.
+\end{equation}
+The exact solution to \eqref{schrodinger} can be found by first writing $\psi_{n}(\rho,\theta,\phi)$ as an expansion of radial wavefunctions $F_{\nu n}(\rho)$ and a set of complete, orthonormal channel functions $\Phi_{\nu}(\rho;\theta,\phi)$ that depend parametrically on $\rho$,
+
+\begin{equation}\label{wave}
+\psi_{n}(\rho,\theta,\phi) = \sum_{\nu=0}^{\infty} F_{n\nu}(\rho)\Phi_{\nu}(\rho;\theta,\phi).
+\end{equation}
+The channel functions $\Phi_{\nu}$ are solutions to the hyperangular part of \eqref{schrodinger}
+
+\begin{equation}\label{adiabatic}
+ \bigg(\frac{\Lambda^2+15/4}{2 \mu_{3} \rho^2} + V(\rho,\theta,\phi)\bigg) \Phi_{\nu}{(\rho;\theta,\phi)}= U_{\nu}{(\rho)} \Phi_{\nu}(\rho;\theta,\phi),
+\end{equation}
+and $U_{\nu}(\rho)$ are the resulting effective potental curves obtained by solving this eigenvalue equation at a number of different hyperradii. Substituting \eqref{wave} into \eqref{schrodinger} and projecting out $\Phi_{\nu'}$ by multiplying the conjugate transpose $\Phi_{\nu}^{\dagger}$ to the left and integrating over the hyperanglular coordinates results in an infinite set of coupled differential equation in $\rho$, which reads
+
+\begin{align}\label{fullhamiltonian}
+\bigg(-\frac{1}{2 \mu}\frac{\partial^2}{ \partial \rho^2} + U_{\mu}(\rho) - \frac{1}{2\mu}Q_{\mu\mu}(\rho) \bigg)F_{n\mu}(\rho)&\nonumber\\ -\frac{1}{2\mu}\bigg(\sum_{\nu\neq\mu}2P_{\mu\nu}(\rho)\frac{\partial}{\partial\rho} + Q_{\mu\nu}(\rho) \bigg)F_{n\nu}(\rho)& = E_nF_{n\mu}(\rho),
+\end{align}
+where the nonadiabatic coupling terms $P_{\mu\nu}$ and $Q_{\mu\nu}$ involve partial first and second derivative of the channel functions with respect to $\rho$. They are generated by the $\rho$ dependence of the channel functions and are defined as 
+
+\begin{equation}\label{couplingP}
+P_{\mu\nu}(\rho) = \llangle[\Big]  \Phi_{\mu}(\rho) \Big\lvert \frac{\partial}{\partial\rho} \Big\rvert  \Phi_{\nu}(\rho)  \rrangle[\Big],
+\end{equation}
+and
+
+\begin{equation}\label{couplingQ}
+Q_{\mu\nu}(\rho) = \llangle[\Big]  \Phi_{\mu}(\rho) \Big\lvert \frac{\partial^2}{\partial\rho^2} \Big\rvert  \Phi_{\nu}(\rho)  \rrangle[\Big],
+\end{equation}
+where the double brackets denote integration over the two angular coordinates. The completeness of the channelfunctions leads to the following relationship between $P_{\mu \nu}$ and $Q_{\mu \nu}$
+
+\begin{equation}
+Q_{\mu \nu} = \frac{dP_{\mu \nu}(\rho)}{d\rho} + P^2_{\mu \nu},
+\end{equation}
+where the square of the coupling matrix $P_{\mu \nu}$ is given by
+
+\begin{equation}
+P^2_{\mu \nu} = \sum_{\sigma}P_{\mu \sigma}P_{\sigma \nu} = - \llangle[\Big] \frac{\partial \Phi_{\mu}(\rho)}{\partial \rho}  \Big\lvert \frac{\partial \Phi_{\nu}(\rho)}{\partial\rho}  \rrangle[\Big].
+\end{equation}
+The coupling matrix $P_{\mu \nu}$ is antisymmetric, i.e. $P_{\mu \nu}= - P_{\nu \mu}$.
+
+\subsection{Generalized Hellmann-Feynman theorem}
+The following subsection concerns the mathematical description of the nonadiabatic coupling matrices that was defined in subsection \ref{sec:AHM}. To obtain an expression for the coupling term $P_{\mu \nu}$ given in \eqref{couplingP}, a generalized Hellmann-Feynman (HF) approach can be used. Consider $\nu$ adiabatic eigenstates $\Phi_{\nu}(\rho;\theta,\phi)=\Phi_{\nu}(\rho;\Omega)$, which are obtained by
+\begin{equation}\label{HA}
+H_{a}(\rho,\Omega)\Phi_{\nu}(\rho;\Omega) = U_{\nu}(\rho)\Phi_{\nu}(\rho;\Omega),
+\end{equation}
+where the adiabatic Hamiltonian $H_a$ is just the hyperangular part of the Schr{\"o}dinger equation given in \eqref{adiabatic}, the eigenvalues $U_{\nu}(\rho)$ are the effective adiabatic three-body potential curves and $\Phi_{\nu}$. Using the identities 
+
+\begin{equation}
+\llangle[\big]  \Phi_{\mu}(\rho;\Omega)  \big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\big] = \delta_{\mu \nu}
+\end{equation}
+and 
+
+\begin{equation}
+\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu}(\rho;\Omega)  \big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\big] = 0,
+\end{equation}
+we start by deriving the diagonal part of the HF theorem. Multiply with $\Phi_{\nu}^{\dagger}(\rho;\Omega)$ to the left on both sides of \eqref{HA} and integrate over the two hyperangles $\Omega$. Differentiating with respect to the hyperradius then gives
+
+\begin{align}
+\frac{\partial U_{\nu}(\rho)}{\partial \rho}&=\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu}(\rho;\Omega)  \big\lvert H_a(\rho,\Omega) \big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\big]\nonumber\\
+&=\llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] +  \llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert H_a(\rho,\Omega)\Big\rvert  \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}  \rrangle[\Big] \nonumber \\
+&+\llangle[\Big] \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}    \Big\lvert H_a(\rho,\Omega)\Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] + U_{\nu}(\rho)\llangle[\Big]  \Phi_{\nu}(\rho;\Omega) \Big\rvert  \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}  \rrangle[\Big] \nonumber \\
+&+\llangle[\Big] \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}\Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] + U_{\nu}(\rho) \frac{\partial}{\partial \rho}\llangle[\Big]  \Phi_{\nu}(\rho;\Omega) \Big\rvert \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big].
+\end{align}
+The generalized HF theorem also includes the nondiagonal terms. Multiplying with $\Phi_{\mu}^{\dagger}(\rho;\Omega)$ to the left on both sides of \eqref{HA} and integrate over the two hyperangles $\Omega$, followed by differentiation with respect to the hyperradius now gives
+
+\begin{align}
+&\frac{\partial U_{\nu}(\rho)}{\partial \rho}\llangle[\Big]  \Phi_{\mu}(\rho;\Omega)  \Big\lvert \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] + U_{\nu}\llangle[\Big]  \Phi_{\mu}(\rho;\Omega)  \Big\lvert \frac{\partial \Phi_{\nu}(\rho;\Omega) }{\partial \rho} \rrangle[\Big]\nonumber\\
+&+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}(\rho;\Omega) }{\partial \rho}  \Big\lvert \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] = \llangle[\Big]  \Phi_{\mu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] \nonumber \\
+&+ U_{\mu}(\rho)\llangle[\Big]  \Phi_{\mu}(\rho;\Omega) \Big\rvert  \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}  \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}(\rho;\Omega)}{\partial \rho}\Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big]. 
+\end{align}
+The first term on the left side of this equation i zero by the orthogonality of the channel functions. By removing the last term on both sides we finally obtain the expression
+
+\begin{equation}\label{derivaham}
+\llangle[\bigg]  \Phi_{\mu}(\rho) \bigg\lvert \frac{\partial H_{ad}(\rho,\Omega)}{\partial \rho} \bigg\rvert \Phi_{\nu}(\rho) \rrangle[\bigg]= \big(U_{\nu}(\rho)-U_{\mu}(\rho)\big) \llangle[\bigg]  \Phi_{\mu}(\rho) \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu}(\rho) \rrangle[\bigg],
+\end{equation}
+and we can express the nonadiabatic coupling terms $P_{\mu \nu}$ as
+
+\begin{equation}
+P_{\mu \nu} = \frac{1}{\big(U_{\nu}(\rho)-U_{\mu}(\rho)\big)}\llangle[\bigg]  \Phi_{\mu}(\rho) \bigg\lvert \frac{\partial H_{ad}(\rho,\Omega)}{\partial \rho} \bigg\rvert \Phi_{\nu}(\rho) \rrangle[\bigg].
+\end{equation}
+Assume that the channel functions can be expressed as a series of basis functions
+
+\begin{equation}
+\Phi_{\nu} = \sum_{j}C_{\nu}^j \varphi_j,
+\end{equation} 
+Where $C_{\nu}^{j}$ are the expansion coeffients given in TODO(make reference). Anticipating that the Hamiltonian operator will take the matricial form of elements $H_{ij}$. From the results of the diagonal case discussed in, we obtain the following matrical expression 
+
+\begin{equation}
+\frac{\partial U_{\nu}(\rho)}{\partial \rho} = \sum_{ij}(C_{\nu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
+\end{equation}
+In the non-diagonal case the result in matrical form reads 
+
+\begin{equation}
+\llangle[\bigg]  \Phi_{\mu}(\rho) \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu}(\rho) \rrangle[\bigg] = P_{\mu \nu} = \sum_{ij}(C_{\mu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
 \end{equation}
 
-\subsection{Generalized Hellmann-Feynman teorem}
-Consider $\nu$ adiabatic eigenstates $\Phi_{\nu}$, which are obtained by
-\begin{equation}
-H_{ad}\Phi_{\nu} = U_{\nu}(\rho)\Phi_{\nu},
+\section{Numerical Approach}
+We are going to implement a 2D B-spline collocation to solve the adiabatic part of the Hamiltonian given in \eqref{adiabatic}. The outline of this method is described in APPENDIX.
+
+The spatial discretization is based on B-spline collocation at Gauss points
+
+
+
+\subsection{Basis splines expansion}
+The first step in solving the adiabatic Hamiltonian given by \eqref{adiabatic}, is to expand the solution, i.e. the channel functions $\Phi_{\nu}$, in a suitable basis, such as B-splines. Make the ansatz
+
+\begin{equation}\label{expansion}
+\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m}^{L,M} c^{l,m}_{\nu}B_{l,k_l}(\theta)B_{m,k_m}(\phi)).
 \end{equation}
-where the eigenvalues $U_{\nu}(\rho)$ are the effective adiabatic three-body potential curves. The eigenfunctions are represented in a basis set as 
+The channelfunctions are now characterized by the $LM$ expansion coefficients. The upper limits of this sum is determined by the number of mesh points, the order of the  B-splines and the number of conditions (n.o.c.) on the coordinate in question. If we construct a mesh containing our physical points with $N_{\theta}$ points in the $\theta$-direction and $N_{\phi}$ points in the $\phi$-direction, then the number of B-splines needed for each coordinate is given by $L = N_{\theta}+k-\text{n.o.c}$ and $M = N_{\phi}+k-\text{n.o.c}$. For a second order partial differential equation the B-splines must be twice differentiable everywhere on the knot sequence and have continuous second order derivatives. With the B-spline definitions given in \ref{B-splines}, the above requirements is fullfilled for B-splines of order $k\geq 4$. The second step in this approach is \textit{collocation}. Collocation means that we require the equation, in this case equation \eqref{adiabatic}, to be fullfilled in specific points. The endpoints for each coordinate interval cointans $(k-1)$ ghost points. dimensions with $N$ physical points is considered, we will put $k$ knotpoints in the first  and last physical point. there will be   
+
+\begin{equation}\label{expansion}
+\Phi_{\nu}(\rho;\theta_i,\phi_i) = \sum_{l_i}^{L_i}\sum_{m_i}^{M_i} c^{l_i,m_i}_{\nu}B_{l_i,k_l}(\theta_i)B_{m_i,k_m}(\phi_i)).
+\end{equation} 
+
+substituting $\Phi_{\nu}$ from equation \eqref{expansion} into \eqref{adiabatic} and projecting out $B_{l_i,k_l}(\theta_i)B_{m_i,k_m}(\phi_i))$
+\begin{equation}
+N
+\end{equation}
+
+\subsection{Gauss-Legendre Quadrature}
+
+\appendix
+\section{Basis splines}\label{B-splines}
+A basis spline, or B-spline, of order $k$ is a piecewise polynomial function of degree $(k-1)$ defined on a collection of points, $t_i$, called \textit{knotpoints}. The array formed by these knotpoints are refered to as \textit{knot sequence}, or knot vector, where $t_i\leq t_{i+1}$. B-splines of order $k$ can be defined recursively by the Cox-de Boor formula. With a given knot sequence, the B-splines of order $k=1$ is defined as
 
 \begin{equation}
-\Phi_{\nu} = \sum_{m}T_{\nu}^m \varphi_m
-\end{equation}  
+B_{i,k=1}(x) \doteq
+\begin{cases}
+1, \quad \text{if} \quad & t_i \leq x < t_{i+1}\\
+0,& \text{otherwise} 
+\end{cases}
+\end{equation}
+and if $k>1$
 
+\begin{equation}
+B_{i,k}(x) \doteq \frac{x-t_i}{t_{i+k-1}-t_i}B_{i,k-1}(x) + \frac{t_{i+k}-x}{t_{i+k}-t_{i+1}}B_{i+1,k-1}(x).
+\end{equation}
+The B-splines are local in the sense that they will be non-zero only in a limited region of space. If the numbering is such that the first knot point is $t_1$ and the first  B-spline is $B_{1,k}$, then the B-spline $B_{i,k}$ is non-zero within the region $t_i \leq x \leq t_{i+k}$. On a given knot sequence $(t_1,\ldots , t_N)$ the B-splines form a complete set
+
+\begin{equation}
+\sum_{i=1}^{N} B_{i,k}(x_i) = 1.
+\end{equation}
+By placing $(k-1)$ additional points, called \text{ghost points}, at the endpoints, the B-splines will be confined within the region $t_1 \leq x \leq t_N$, $(k-1)$. This means that $N$ knot points in one dimension correspond to $N-2(k-1)$ physical points in that coordinate dimension. This is a common choice because consequentially, this makes only the first B-spline non-zero at the first physical point. 
+
+\begin{figure}
+	\centering  
+	\subfigure[$k=1$]{\includegraphics[width=0.45\linewidth]{Bsp1.pdf}}
+	\subfigure[$k=2$]{\includegraphics[width=0.45\linewidth]{Bsp2.pdf}}
+	\subfigure[ $k=3$]{\includegraphics[width=0.45\linewidth]{Bsp3.pdf}}
+	\subfigure[ $k=4$]{\includegraphics[width=0.45\linewidth]{Bsp4.pdf}}
+	\caption{The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.}
+\end{figure}
+
+The first derivative of a B-spline of order $k$ is given by
+
+\begin{equation}
+\frac{\partial}{\partial x}B_{i,k}(x) = (k-1)\bigg(\frac{B_{i,k-1}(x)}{t_{i+k-1}-t_i} + \frac{B_{i+1,k-1}(x)}{t_{i+k}-t_{i+1}}\bigg),
+\end{equation}
+and the second derivative
+
+\begin{align}
+\frac{\partial^2}{\partial x^2}B_{i,k}(x) &= \frac{(k-1)(k-2)B_{i,k-2}(x)}{(t_{i+k-1}-t_i)(t_{i+k-2}-t_i)} - \frac{(k-1)(k-2)B_{i+1,k-2}(x)}{(t_{i+k-1}-t_i)(t_{i+k-1}-t_{i+1})}\nonumber\\
+&- \frac{(k-1)(k-2)B_{i+1,k-2}(x)}{(t_{i+k}-t_{i+1})(t_{i+k-1}-t_{i+1})} +  \frac{(k-1)(k-2)B_{i+2,k-2}(x)}{(t_{i+k}-t_{i+1})(t_{i+k}-t_{i+2})}.
+\end{align}
+B-splines can be used to form basis functions. 
+
+\begin{equation}
+f(x_i) = \sum_{n=i-k+1}^{i-1} c_n B_{n,k}(x_i).
+\end{equation}
 
 \printbibliography
 
