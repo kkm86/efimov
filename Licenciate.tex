@@ -7,6 +7,7 @@
 
 
 \usepackage{amsmath}
+\usepackage{cleveref}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -48,7 +49,7 @@
 
 \section{Background}
 \subsection{The Three-body Problem}
-The $n$-body problem is a class of problems in physics which, in a highly general sense, consists of modelling the motion of $n$ objects, interacting through some physical force. In classical mechanics the equations of motion for $n$ point particles can be derived from Newton's second law of motion, which states that the rate of change in momentum for an object equals the force acting on it, or from analytical formulations such as Lagrangian and Hamiltonian mechanics, which consider scalar properties of motion like kinetic and potential energies. In the quantum regime, where the wave-like property of matter has to be taken into account, the state of an $n$-body system of is described by a total wave function, where the Hamiltonian operator generates the time evolution of the state as given by Schr{\"o}dinger's differential equation.
+The $n$-body problem is a class of problems in physics which, in a highly general sense, consists of modelling the motion of $n$ objects, interacting through some physical force. In classical mechanics the equations of motion for $n$ point particles can be derived from Newton's second law of motion, which states that the rate of change in momentum for an object equals the force acting on it, or from analytical formulations such as Lagrangian and Hamiltonian mechanics, which consider scalar properties of motion like kinetic and potential energies. In the quantum regime, where the wave-like property of matter has to be taken into account, the state of an $n$-body system is described by a total wave function, where the Hamiltonian operator generates the time evolution of the state as given by Schr{\"o}dinger's differential equation.
 
 The core of the $n$-body problem is that the classical equations of motion and the Schr{\"o}dinger equation are not analytically solvable for more than two interacting particles. Consider the case where $n=3$. Albeit apparently simple, the configuration space for the three-body problem is six dimensional after separating out the center of mass motion. Three additional constants of motion can be provided by conservation of total angular momentum, which effectively reduces the problem to that of three coupled second order non-linear differential equations in the classical case and a three dimensional Schr{\"o}dinger equation for the quantum problem. The quest for a general solution to the classical three-body problem is renowned. As a recurrent muse to a number of great mathematicans during the past centuries, dating back to Newton himself, the three-body problem has been a catalysator for the development of analysis and the modern theory of dynamical systems \cite{Chenciner2015}. Although there are a number of special cases that have explicit solutions, nonlinear dynamical systems often display highly unpredictable behavoir due to sensitive dependence on initial conditions, i.e. they are chaotic. Different numerical approaches are used to solve this kind of problems nowadays but the computational load can be substantial. However, the quantum three-body problem is amenable to an analytic solution. 
 
@@ -59,27 +60,75 @@ Within the quantum realm of few-body systems the Faddeev and the Faddeev-Yakubov
  
  Efimov proposed that attractive three-body interaction appearing in systems with resonant short-ranged interactions and repulsive Coulomb forces could explain the binding of three particle nuclei such as the three nucleon triton $\prescript{3}{}{\mathrm{H}}$ and the triple-alpha Hoyl state of $\prescript{12}{}{\mathrm{C}}$.
 
-The notion of Efimov physics comprise a range of universal phenomena that occurs in few-body systems exibiting the Efimov effect. Short-ranged forces are commonly occuring in nature and few-body effects are expected to appear in a broad range of physical sytems. Developments in the theory of few-body quantum systems is important since it would bridge existing well developed models of treating one- and two-body sytems with the statistical methods used to describe many-body systems, and it may give insight... 
+The notion of Efimov physics comprise a range of universal phenomena that occurs in few-body systems exibiting the Efimov effect. Short-ranged forces are commonly occuring in nature and few-body effects are expected to appear in a broad range of physical sytems. Developments in the theory of few-body quantum systems is important since it would bridge existing well developed models of treating one- and two-body sytems with the statistical methods used to describe many-body systems.
 
 \section{Introduction} 
 \subsection{Three-body Theory}
 A short reveiw concerning some important aspects of quantum mechanical systems and two-body scattering will follow in order to set the stage for a discussion of quantum effects in few-body systems in general and Efimov states in three-body systems in particular. 
 
 \paragraph{Entering the quantum regime}
-All particles of matter exhibit wave-like properties. The wave length of a particle with momentum $p$ is given by the de Broglie equation
+All particles of matter exhibit wave-like properties. The wavelength of a particle with momentum $p$ is given by the de Broglie equation
 
 \begin{equation} \label{eq:1}
 \lambda = \frac{h}{p} = \frac{h}{mv}
 \end{equation}
-where $h$ is the Planck constant. The wave characteristics of matter grows with increasing de Broglie wavelength. When the wavelength is sufficently large, classical physics no longer applies and the system has reached the quantum regime. From \eqref{eq:1} it is evident that this is true for particles that are either very small or very slow. In an ultracold quantum gas, the atoms are cooled down to a point where they move so slowly that the increased uncertainty in position for the individual atoms eventually becomes so large that they start to overlap and the atoms cannot be viewed as individual particles but as a correlated wave. In this ultracold regime, when the de Broglie wavelength is larger than the average space between the atoms their behaviour are governed by quantum mechanics. 
+where $h$ is the Planck constant. The wave characteristics of matter grow with increasing de Broglie wavelength. When the wavelength is sufficently large, classical physics no longer applies and the system has reached the quantum regime. From \eqref{eq:1} it is evident that this is true for particles that are very small or very slow. In an ultracold quantum gas, the atoms are cooled down to a point where they move so slowly that the increased uncertainty in position for the individual atoms eventually becomes so large that they start to overlap and the atoms cannot be viewed as individual particles but as a correlated wave. In this ultracold regime, when the de Broglie wavelength is larger than the average spacing between the atoms their behaviour are governed by quantum mechanics. 
  
 \subsubsection{Two-body Interactions}
-Atomic interactions are short ranged and in the ultracold regime their de Broglie wavelength is larger than the typical range of interaction. Consequentely, their interactions can no longer be described as pointlike collisions. Instead, scattering process in this regime is governed by the scattering length, which intuitively can be described as the length for which a hard sphere of the same radius would scatter off. The scattering length $a$ is defined as
+Atomic interactions are pair-wise and short ranged, which means that they interact when they are close to eachother. In the ultracold regime, the de Broglie wavelength of an atom is larger than the typical range $r_0$ of the pair-wise interactions. Consequentely, details of the short-range interactions cannot be resolved by the scattering particles, since the wavelength of their defining wavefunctions are larger than the pair-wise interaction range. Collision processes can no longer be described as pointlike processes. Instead, two-body scattering in this regime are solely governed by the s-wave scattering length $a$. At sufficently low energies, atoms behave like point particles and have quantized orbital angular momenta $l$. In scattering theory, the partial wave expansion is used to decompose the scattering process into that of incoming waves, with definite angular momentum quantum number, which scatters of a potential. The quantum numbers $l=0,1,2$ correspond to s-waves, p-waves, and d-waves respectively. For low energy scattering, only the first few $l$-quantum numbers contribute to the process and in the ultracold regime, s-wave collisions dominate. Intuitively, the s-wave scattering length of a particular scatterer can be interpreted as the length of the radius of a hard sphere with the same low energy scattering properties as the scatterer. The scattering length is defined in the low-energy limit as
 
 \begin{equation} \label{eq:2}
-\lim_{k \to 0} k \cot \delta(k) = -\frac{1}{a}
+a = -\lim_{k \to 0} \frac{\tan \delta(k)}{k},
 \end{equation}
-where $k$ is the wave number and $\delta(k)$ is the phase shift.
+where $k$ is the wave number ($k=p/\hbar = \sqrt{2\mu E}/\hbar$) and $\delta(k)$ is the s-wave phase shift of the outgoing wave. For small $k$, the phase shift will behave as $\delta(k)=-ka$. 
+The scattering length characterizes the strength of the short-range interparticle interaction. Even though the depth of the potential is not determined by the scattering length, $a>0$  corresponds to a repulsive effective interaction because an increase of a positive scattering length will cause the underlying attractive potential in a two-body bound state to become less attractive until it reaches a constant depth at $a\to \pm \infty$. On the other hand, $a<0$ corresponds to an attractive effective interaction since an increasing magnitude of a negative scattering length will increase the potential depth, thus making the interaction more attractive. However, at negative scattering lengths the interaction will always be to weak to support a two-body bound state. \cite{Kajsa_my}
+
+While the scattering length completely governs the low energy two-body collision problem, it is also the main parameter for describing the interaction of particles at very low collision energies in general. 
+
+\subsubsection{Universality}
+Particles with large scattering lengths (i.e. $\abs{a}\gg r_0$) in the low-energy regime have universal properties. The properties are universal in the sense that they only depend on the scattering length and not on the details of the short-range interaction. For atoms interacting via short-ranged interactions the scattering length is considered large if its magnitude ($\abs{a}$) is much larger than the typical van der Waal length of the atomic species
+
+\begin{equation}
+l_{vdW} = \bigg(\frac{2\mu C_6}{\hbar^2}\bigg)^{1/4},
+\end{equation}
+in which $C_6$ is the van der Waal coefficient of the $r^{-6}$ term of the potental. For a system of two identical bosons with $a>0$, there is a universal shallow two-body bound state near the scattering threshold, with binding energy 
+\begin{equation}\label{shallowdimer}
+E_D = -\frac{\hbar^2}{2 \mu a^2}.
+\end{equation}
+For $a<0$ there is no such bound state. Outside the universal range the natural binding energy for two particles should be approximately $1/mr_0^2$. The cross section for elastic scattering of two identical bosons in this regime is also universal and so is the mean square radius, each given by
+
+\begin{equation}\label{elasticcross}
+\sigma_e = \frac{8\pi a^2}{1 + a^2k^2}
+\end{equation}
+and
+
+\begin{equation}\label{meanradius}
+\langle r^2\rangle = \frac{a^2}{2},
+\end{equation}
+respectively. The universal quantities given in \crefrange{shallowdimer}{meanradius} are exact for $a=\pm \infty$ and approximate for $\abs{a}\gg r_0$. The unique dependence on this one length parameter also leads to continuous scaling symmetries in these quantities. If the scattering length is scaled with some real factor $\lambda$ such that $a \to \lambda a$, the shallow dimer energy will scale as 
+
+\begin{equation}
+E_D(\lambda a) = \lambda^{-2}E_D(a),
+\end{equation}    
+while the elastic cross section and the mean square radius scale as 
+
+\begin{equation}
+\sigma_e(\lambda^{-2}k,\lambda a) = \lambda^2 \sigma_e(k,a)
+\end{equation}
+and
+
+\begin{equation}
+\langle r^2(\lambda a)\rangle = \lambda^2 \langle r^2(a)\rangle ,
+\end{equation}
+respectively. Similarly to the universal quantities found in the two-body sector, three-body systems also exhibit universal properties when at least two of the three two-body subsystems are at resonance. A two-body system is said to be at resonance when...Universality in systems of three identical bosons is realized in low-energy regime when the magnitude of the two-body scattering length is much larger than the typical range of the pairwise interaction ($\abs{a} \gg r_0$). Consider a collision between the shallow dimer and a third particle in this regime. The third particle will start to "feel" the dimer when it comes close to the two-body scattering length $a$, which is also the size of the dimer. At this point the third particle could tug off any of the particles in the dimer to form a new pair. It is this process of particle exchange which results in the effective three-body interaction that Vitaly Efimov found when he was studying the quantum three-body problem. This effective long-range attraction is universal in the sense that it emerges irrespective of the underlying two-body short-range interaction. The scaling in this sector is discrete. The infinite ladder of energy levels that appear in the asymptotic limit when $a \to \pm \infty$ have a discrete geometric scaling symmetry. The size of an excited state is larger than the previous state by a factor of $\lambda = e^{\pi/s_0} \simeq 22.7$. The scaling law applies radially see figure bla bla %TODO. The energy of the excited state scale like
+
+\begin{equation}
+\frac{E_T^{n+1}}{E_T^{n}} = 
+\end{equation}
+
+\begin{equation}
+N \approx \pi^{-1} \ln(\abs{a}/r_0)
+\end{equation}
 
 \subsubsection{The Three-body Problem}
 The three-body scattering problem can be solved by the three-body Schr{\"o}dinger equation or by the Faddeev equation. Solving the Faddeev equation is equivalent to solving the Schr{\"o}dinger equation 
@@ -973,6 +1022,12 @@ The two-body interaction
 \begin{equation}
 v(r) = d\cosh^{-2}{(r/r_0)}.
 \end{equation}
+
+\begin{align}
+r_3 &= 3^{-1/4}\rho [1+\sin \theta \cos \phi]^{1/2} \\
+r_1 &= 3^{-1/4}\rho [1+\sin \theta \cos (\phi - 2\pi/3)]^{1/2} \\
+r_2 &= 3^{-1/4}\rho [1+\sin \theta \cos (\phi + 2\pi/3)]^{1/2} 
+\end{align}
 The exact solution to \eqref{schrodinger} can be found by first writing $\psi_{n}(\rho,\theta,\phi)$ as an expansion of radial wavefunctions $F_{\nu n}(\rho)$ and a set of complete, orthonormal channel functions $\Phi_{\nu}(\rho;\theta,\phi)$ that depend parametrically on $\rho$,
 
 \begin{equation}\label{wave}
@@ -991,67 +1046,62 @@ and $U_{\nu}(\rho)$ are the resulting effective potental curves obtained by solv
 where the nonadiabatic coupling terms $P_{\mu\nu}$ and $Q_{\mu\nu}$ involve partial first and second derivative of the channel functions with respect to $\rho$. They are generated by the $\rho$ dependence of the channel functions and are defined as 
 
 \begin{equation}\label{couplingP}
-P_{\mu\nu}(\rho) = \llangle[\Big]  \Phi_{\mu}(\rho) \Big\lvert \frac{\partial}{\partial\rho} \Big\rvert  \Phi_{\nu}(\rho)  \rrangle[\Big],
+P_{\mu\nu}(\rho) = \llangle[\Big]  \Phi_{\mu} \Big\lvert \frac{\partial}{\partial\rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big],
 \end{equation}
 and
 
 \begin{equation}\label{couplingQ}
-Q_{\mu\nu}(\rho) = \llangle[\Big]  \Phi_{\mu}(\rho) \Big\lvert \frac{\partial^2}{\partial\rho^2} \Big\rvert  \Phi_{\nu}(\rho)  \rrangle[\Big],
+Q_{\mu\nu}(\rho) = \llangle[\Big]  \Phi_{\mu} \Big\lvert \frac{\partial^2}{\partial\rho^2} \Big\rvert  \Phi_{\nu} \rrangle[\Big],
 \end{equation}
-where the double brackets denote integration over the two angular coordinates. The completeness of the channelfunctions leads to the following relationship between $P_{\mu \nu}$ and $Q_{\mu \nu}$
+where the double brackets denote integration over the two angular coordinates. Integration by parts, the completeness requirement of the channelfunctions together with the antisymmetric properties of the coupling matrix $P_{\mu \nu}$,  i.e. $P_{\mu \nu}= - P_{\nu \mu}$, are used to derive the following relation 
 
 \begin{equation}
-Q_{\mu \nu} = \frac{dP_{\mu \nu}(\rho)}{d\rho} + P^2_{\mu \nu},
+Q_{\mu \nu} = \frac{dP_{\mu \nu}}{d\rho} + P^2_{\mu \nu},
 \end{equation}
-where the square of the coupling matrix $P_{\mu \nu}$ is given by
+where the square of the coupling matrix $P_{\mu \nu}$ relates to $Q_{\mu \nu}$ through 
 
-\begin{equation}
-P^2_{\mu \nu} = \sum_{\sigma}P_{\mu \sigma}P_{\sigma \nu} = - \llangle[\Big] \frac{\partial \Phi_{\mu}(\rho)}{\partial \rho}  \Big\lvert \frac{\partial \Phi_{\nu}(\rho)}{\partial\rho}  \rrangle[\Big].
-\end{equation}
-The coupling matrix $P_{\mu \nu}$ is antisymmetric, i.e. $P_{\mu \nu}= - P_{\nu \mu}$.
+\begin{align}
+P^2_{\mu \nu} &= \sum_{\sigma}P_{\mu \sigma}P_{\sigma \nu} = \sum_{\sigma}\llangle[\Big] \Phi_{\mu} \Big\lvert \frac{\partial \Phi_{\sigma}}{\partial\rho}  \rrangle[\Big]\llangle[\Big] \Phi_{\sigma} \Big\lvert \frac{\partial \Phi_{\nu}}{\partial\rho}  \rrangle[\Big]\nonumber\\
+&=\sum_{\sigma}-\llangle[\Big]\frac{\partial \Phi_{\mu}}{\partial\rho} \Big\lvert  \Phi_{\sigma} \rrangle[\Big]\llangle[\Big] \Phi_{\sigma} \Big\lvert \frac{\partial \Phi_{\nu}}{\partial\rho}  \rrangle[\Big]=- \llangle[\Big] \frac{\partial \Phi_{\mu}}{\partial \rho}  \Big\lvert \frac{\partial \Phi_{\nu}}{\partial\rho}  \rrangle[\Big].
+\end{align}
+
 
 \subsection{Generalized Hellmann-Feynman theorem}
-The following subsection concerns the mathematical description of the nonadiabatic coupling matrices that was defined in subsection \ref{sec:AHM}. To obtain an expression for the coupling term $P_{\mu \nu}$ given in \eqref{couplingP}, a generalized Hellmann-Feynman (HF) approach can be used. Consider $\nu$ adiabatic eigenstates $\Phi_{\nu}(\rho;\theta,\phi)=\Phi_{\nu}(\rho;\Omega)$, which are obtained by
+The following subsection concerns the mathematical description of the non-adiabatic coupling matrices that was defined in subsection \ref{sec:AHM}. To obtain an expression for the coupling term $P_{\mu \nu}$ given in \eqref{couplingP}, a generalized Hellmann-Feynman (HF) approach can be used. Consider $\nu$ adiabatic eigenstates $\Phi_{\nu}$, which are obtained by
 \begin{equation}\label{HA}
-H_{a}(\rho,\Omega)\Phi_{\nu}(\rho;\Omega) = U_{\nu}(\rho)\Phi_{\nu}(\rho;\Omega),
+H_{ad}\Phi_{\nu} = U_{\nu}\Phi_{\nu},
 \end{equation}
-where the adiabatic Hamiltonian $H_a$ is just the hyperangular part of the Schr{\"o}dinger equation given in \eqref{adiabatic}, the eigenvalues $U_{\nu}(\rho)$ are the effective adiabatic three-body potential curves and $\Phi_{\nu}$. Using the identities 
-
-\begin{equation}
-\llangle[\big]  \Phi_{\mu}(\rho;\Omega)  \big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\big] = \delta_{\mu \nu}
-\end{equation}
-and 
-
-\begin{equation}
-\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu}(\rho;\Omega)  \big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\big] = 0,
-\end{equation}
-we start by deriving the diagonal part of the HF theorem. Multiply with $\Phi_{\nu}^{\dagger}(\rho;\Omega)$ to the left on both sides of \eqref{HA} and integrate over the two hyperangles $\Omega$. Differentiating with respect to the hyperradius then gives
+where the adiabatic Hamiltonian $H_{ad}$ is just the hyperangular part of the Schr{\"o}dinger equation given in \eqref{adiabatic}, and the eigenvalues $U_{\nu}(\rho)$ are the effective adiabatic three-body potential curves. Using the identities 
 
 \begin{align}
-\frac{\partial U_{\nu}(\rho)}{\partial \rho}&=\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu}(\rho;\Omega)  \big\lvert H_a(\rho,\Omega) \big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\big]\nonumber\\
-&=\llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] +  \llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert H_a(\rho,\Omega)\Big\rvert  \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}  \rrangle[\Big] \nonumber \\
-&+\llangle[\Big] \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}    \Big\lvert H_a(\rho,\Omega)\Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] \nonumber \\
-&=\llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] + U_{\nu}(\rho)\llangle[\Big]  \Phi_{\nu}(\rho;\Omega) \Big\rvert  \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}  \rrangle[\Big] \nonumber \\
-&+\llangle[\Big] \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}\Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] \nonumber \\
-&=\llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] + U_{\nu}(\rho) \frac{\partial}{\partial \rho}\llangle[\Big]  \Phi_{\nu}(\rho;\Omega) \Big\rvert \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] \nonumber \\
-&=\llangle[\Big]  \Phi_{\nu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big].
+\llangle[\big]  \Phi_{\mu} \big\rvert  \Phi_{\nu}  \rrangle[\big] &\equiv \delta_{\mu \nu}\\
+\intertext{and}
+\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu}  \big\rvert  \Phi_{\nu} \rrangle[\big] &\equiv 0,
 \end{align}
-The generalized HF theorem also includes the nondiagonal terms. Multiplying with $\Phi_{\mu}^{\dagger}(\rho;\Omega)$ to the left on both sides of \eqref{HA} and integrate over the two hyperangles $\Omega$, followed by differentiation with respect to the hyperradius now gives
+we start by deriving the diagonal part of the HF theorem. Projecting $\Phi_{\nu}$ out from equation \eqref{HA}, and differentiating with respect to the hyperradius gives
 
 \begin{align}
-&\frac{\partial U_{\nu}(\rho)}{\partial \rho}\llangle[\Big]  \Phi_{\mu}(\rho;\Omega)  \Big\lvert \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] + U_{\nu}\llangle[\Big]  \Phi_{\mu}(\rho;\Omega)  \Big\lvert \frac{\partial \Phi_{\nu}(\rho;\Omega) }{\partial \rho} \rrangle[\Big]\nonumber\\
-&+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}(\rho;\Omega) }{\partial \rho}  \Big\lvert \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] = \llangle[\Big]  \Phi_{\mu}(\rho;\Omega)  \Big\lvert \frac{\partial H_a(\rho,\Omega)}{\partial \rho} \Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big] \nonumber \\
-&+ U_{\mu}(\rho)\llangle[\Big]  \Phi_{\mu}(\rho;\Omega) \Big\rvert  \frac{\partial \Phi_{\nu}(\rho;\Omega)}{\partial \rho}  \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}(\rho;\Omega)}{\partial \rho}\Big\rvert  \Phi_{\nu}(\rho;\Omega)  \rrangle[\Big]. 
+\frac{\partial U_{\nu}}{\partial \rho}&=\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu} \big\lvert H_{ad} \big\rvert  \Phi_{\nu} \rrangle[\big]\nonumber\\
+&=\llangle[\Big]  \Phi_{\nu}  \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] +  \llangle[\Big]  \Phi_{\nu} \Big\lvert H_{ad}\Big\rvert  \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big] +\llangle[\Big] \frac{\partial \Phi_{\nu}}{\partial \rho}    \Big\lvert H_{ad}\Big\rvert  \Phi_{\nu}  \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu} \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\nu}\llangle[\Big]  \Phi_{\nu} \Big\rvert \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\nu}}{\partial \rho}\Big\rvert  \Phi_{\nu} \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu} \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\nu} \frac{\partial}{\partial \rho}\llangle[\Big]  \Phi_{\nu} \Big\rvert \Phi_{\nu} \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu}\Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big].
 \end{align}
-The first term on the left side of this equation i zero by the orthogonality of the channel functions. By removing the last term on both sides we finally obtain the expression
+The generalized HF theorem also includes the nondiagonal terms. Multiplying with $\Phi_{\mu}^{\dagger}$ to the left of \eqref{HA} and integrating over the two hyperangles, followed by differentiation with respect to the hyperradius gives
+
+\begin{align}
+&\frac{\partial U_{\nu}}{\partial \rho}\llangle[\Big]  \Phi_{\mu} \Big\lvert \Phi_{\nu} \rrangle[\Big] + U_{\nu}\llangle[\Big]  \Phi_{\mu} \Big\lvert \frac{\partial \Phi_{\nu}}{\partial \rho} \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}}{\partial \rho} \Big\lvert \Phi_{\nu} \rrangle[\Big] \nonumber \\
+&= \llangle[\Big]  \Phi_{\mu}\Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\mu}\llangle[\Big]  \Phi_{\mu} \Big\rvert  \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}}{\partial \rho}\Big\rvert  \Phi_{\nu} \rrangle[\Big]. 
+\end{align}
+The first term on the left side of this equation i zero by the orthogonality of the channel functions. By removing the last term on both sides we obtain the final expression
 
 \begin{equation}\label{derivaham}
-\llangle[\bigg]  \Phi_{\mu}(\rho) \bigg\lvert \frac{\partial H_{ad}(\rho,\Omega)}{\partial \rho} \bigg\rvert \Phi_{\nu}(\rho) \rrangle[\bigg]= \big(U_{\nu}(\rho)-U_{\mu}(\rho)\big) \llangle[\bigg]  \Phi_{\mu}(\rho) \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu}(\rho) \rrangle[\bigg],
+\llangle[\bigg]  \Phi_{\mu}\bigg\lvert \frac{\partial H_{ad}}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg]= \big(U_{\nu}-U_{\mu}\big) \llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg],
 \end{equation}
 and we can express the nonadiabatic coupling terms $P_{\mu \nu}$ as
 
 \begin{equation}
-P_{\mu \nu} = \frac{1}{\big(U_{\nu}(\rho)-U_{\mu}(\rho)\big)}\llangle[\bigg]  \Phi_{\mu}(\rho) \bigg\lvert \frac{\partial H_{ad}(\rho,\Omega)}{\partial \rho} \bigg\rvert \Phi_{\nu}(\rho) \rrangle[\bigg].
+P_{\mu \nu} = \frac{1}{\big(U_{\nu}-U_{\mu}\big)}\llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial H_{ad}}{\partial \rho} \bigg\rvert \Phi_{\nu}\rrangle[\bigg].
 \end{equation}
 Assume that the channel functions can be expressed as a series of basis functions
 
@@ -1061,12 +1111,12 @@ Assume that the channel functions can be expressed as a series of basis function
 Where $C_{\nu}^{j}$ are the expansion coeffients given in TODO(make reference). Anticipating that the Hamiltonian operator will take the matricial form of elements $H_{ij}$. From the results of the diagonal case discussed in, we obtain the following matrical expression 
 
 \begin{equation}
-\frac{\partial U_{\nu}(\rho)}{\partial \rho} = \sum_{ij}(C_{\nu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
+\frac{\partial U_{\nu}}{\partial \rho} = \sum_{ij}(C_{\nu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
 \end{equation}
 In the non-diagonal case the result in matrical form reads 
 
 \begin{equation}
-\llangle[\bigg]  \Phi_{\mu}(\rho) \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu}(\rho) \rrangle[\bigg] = P_{\mu \nu} = \sum_{ij}(C_{\mu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
+\llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg] = P_{\mu \nu} = \sum_{ij}(C_{\mu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
 \end{equation}
 
 \section{Numerical Approach}
@@ -1077,23 +1127,82 @@ The spatial discretization is based on B-spline collocation at Gauss points
 
 
 \subsection{Basis splines expansion}
-The first step in solving the adiabatic Hamiltonian given by \eqref{adiabatic}, is to expand the solution, i.e. the channel functions $\Phi_{\nu}$, in a suitable basis, such as B-splines. Make the ansatz
+The first step in solving the adiabatic Hamiltonian given by \eqref{adiabatic}, is to expand the solution, i.e. the channel functions $\Phi_{\nu}$, in a suitable basis, such as B-splines. For setting up the expansion in the two hyperangular coordinates I followed the description given in \cite{Esry_thesis}, which I will describe shortly in the following text. Start by making the ansatz
 
 \begin{equation}\label{expansion}
-\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m}^{L,M} c^{l,m}_{\nu}B_{l,k_l}(\theta)B_{m,k_m}(\phi)).
+\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m}^{L,M} c^{l,m}_{\nu}B_{l,k}(\theta)B_{m,k}(\phi)).
 \end{equation}
-The channelfunctions are now characterized by the $LM$ expansion coefficients. The upper limits of this sum is determined by the number of mesh points, the order of the  B-splines and the number of conditions (n.o.c.) on the coordinate in question. If we construct a mesh containing our physical points with $N_{\theta}$ points in the $\theta$-direction and $N_{\phi}$ points in the $\phi$-direction, then the number of B-splines needed for each coordinate is given by $L = N_{\theta}+k-\text{n.o.c}$ and $M = N_{\phi}+k-\text{n.o.c}$. For a second order partial differential equation the B-splines must be twice differentiable everywhere on the knot sequence and have continuous second order derivatives. With the B-spline definitions given in \ref{B-splines}, the above requirements is fullfilled for B-splines of order $k\geq 4$. The second step in this approach is \textit{collocation}. Collocation means that we require the equation, in this case equation \eqref{adiabatic}, to be fullfilled in specific points. The endpoints for each coordinate interval cointans $(k-1)$ ghost points. dimensions with $N$ physical points is considered, we will put $k$ knotpoints in the first  and last physical point. there will be   
+The channelfunctions are now characterized by the $LM$ expansion coefficients. The upper limits of this sum is determined by the number of mesh points, the order of the  B-splines and the number of conditions ($n_c$) on the boundaries for the coordinate in question. If we construct a mesh containing $N_{\theta}$ points in the $\theta$-direction and $N_{\phi}$ points in the $\phi$-direction, then the number of B-splines needed for each coordinate is given by
 
-\begin{equation}\label{expansion}
-\Phi_{\nu}(\rho;\theta_i,\phi_i) = \sum_{l_i}^{L_i}\sum_{m_i}^{M_i} c^{l_i,m_i}_{\nu}B_{l_i,k_l}(\theta_i)B_{m_i,k_m}(\phi_i)).
-\end{equation} 
+\begin{align}
+L = N_{\theta}+k-n_c,\\
+M = N_{\phi}+k-n_c.
+\end{align}
+Boundary conditions are implemented by For a second order partial differential equation the B-splines must be twice differentiable everywhere on the knot sequence and have continuous second order derivatives. With the B-spline definitions given in \ref{B-splines}, the above requirements is fullfilled for B-splines of order $k\geq 4$. Next, substituting \eqref{expansion} into the adiabatic Hamiltonian \eqref{adiabatic} and projecting out $B_{l',k}(\theta)B_{m',k}(\phi))$ gives the matrix equation
 
-substituting $\Phi_{\nu}$ from equation \eqref{expansion} into \eqref{adiabatic} and projecting out $B_{l_i,k_l}(\theta_i)B_{m_i,k_m}(\phi_i))$
+\begin{equation}\label{generalized}
+\mathbf{H}\mathbf{c} = U\mathbf{B}\mathbf{c},
+\end{equation}
+where $\mathbf{c}$ is the column vector with the coefficients $c_{\nu}^{l,m}$. Mapping the two indices $l$ and $m$ into a single index $i$ gives 
+
 \begin{equation}
-N
+i=(l-1)M+m.
+\end{equation} 
+The matrix elements of the Hamiltonian now reads
+
+\begin{equation}\label{ham_mat}
+H_{i'i} = \iint d\theta d\phi B_{l',k}(\theta)B_{m',k}(\phi)H_{ad}(\rho;\theta,\phi)B_{l,k}(\theta)B_{m,k}(\phi),
 \end{equation}
+and the overlap matrix elements are given by
+
+\begin{equation}\label{over_mat}
+B_{i'i} = \iint d\theta d\phi B_{l',k}(\theta)B_{m',k}(\phi)B_{l,k}(\theta)B_{m,k}(\phi).
+\end{equation}
+The potential term in the adiabatic Hamiltonian cannot be separated into a product of two one-dimensional integral and must thus be integrated in two angular dimensions. Since the basis functions used in the expansion are B-splines, which are piecewise polynomial functions of degree $k-1$, the overlap matrix and the kinetic terms in the Hamiltonian can be evaluated exactly, within machine epsilon, using Gauss-Legendre quadrature.  
 
 \subsection{Gauss-Legendre Quadrature}
+All integrals are calculated with Gaussian quadrature. A k-point Gaussian quadrature rule is constructed to give an exact result for polynomials of degree $2k-1$ or less by a suitable choice of the abscissas
+
+\begin{align}
+ \int_{t_{i}}^{t_{i+1}} \int_{u_{i}}^{u_{i+1}} d\theta d\phi B_{l',k}(\theta)B_{m',k}(\phi)f(\theta,\phi)B_{l,k}(\theta)B_{m,k}(\phi)\nonumber\\
+ =\sum_{n=1}^{k} \sum_{p=1}^{k}w_n w_p B_{l',k}(\theta_n)B_{m',k}(\phi_p)f(\theta_n,\phi_p)B_{l,k}(\theta_n)B_{m,k}(\phi_p)
+\end{align}
+
+\section{Results}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{||c c c c c c||} 
+		\hline
+		$N_{\theta}$ & $\lambda_{0 0}$ & $\lambda_{1 3}$ & $\lambda_{2 6}$ & array(s) & dsygvd(s)
+		\\ [0.5ex] 
+		\hline\hline
+		5	   & 0.000 000 000 0214   & 32.000 000 071 3015 & 60.000 002 031 0135 & 0.66 & 0.00  \\
+		10     & -0.000 000 000 0417  & 32.000 000 000 1003 & 60.000 000 000 2154  & 4.58 & 0.00 \\
+		15 & 0.000 000 000 0007 & 32.000 000 000 1309 & 59.999 999 999 8871& 12.32& 0.02 \\  [1ex] 
+		\hline
+	\end{tabular}
+	\caption{Analytically derived eigenvalues}
+	\label{table:2}
+\end{table}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{scatteringlength.pdf}
+	\caption{Adiabatic potential curves $U_{\nu}$ as a function of the hyperradius $\rho$ for $a=228 $ .}
+	\label{fig:3}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{potential.pdf}
+	\caption{Adiabatic potential curves $U_{\nu}$ as a function of the hyperradius $\rho$ for $a=228 $ .}
+	\label{fig:3}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{adiabatic.pdf}
+	\caption{Adiabatic potential curves $U_{\nu}$ as a function of the hyperradius $\rho$ for $a=228 $ .}
+	\label{fig:3}
+\end{figure}
 
 \appendix
 \section{Basis splines}\label{B-splines}

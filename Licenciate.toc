@@ -6,22 +6,24 @@
 \contentsline {subsection}{\numberline {2.1}Three-body Theory}{3}
 \contentsline {paragraph}{Entering the quantum regime}{3}
 \contentsline {subsubsection}{\numberline {2.1.1}Two-body Interactions}{3}
-\contentsline {subsubsection}{\numberline {2.1.2}The Three-body Problem}{4}
-\contentsline {subsection}{\numberline {2.2}Experimental Evidence}{4}
-\contentsline {subsubsection}{\numberline {2.2.1}Efimov Trimers in Atomic Systems}{4}
-\contentsline {paragraph}{Alkali atomic gases}{4}
-\contentsline {paragraph}{Helium trimers}{4}
-\contentsline {subsubsection}{\numberline {2.2.2}Efimov States in Nuclei }{5}
-\contentsline {subsubsection}{\numberline {2.2.3}Four-body Recombination connected to Efimov Trimers}{5}
-\contentsline {section}{\numberline {3}Theoretical Methods}{5}
-\contentsline {subsection}{\numberline {3.1}Mass Normalized Jacobi Coordinates}{5}
-\contentsline {subsection}{\numberline {3.2}The Hyperspherical Method}{8}
-\contentsline {subsubsection}{\numberline {3.2.1}Delves Coordinates}{8}
-\contentsline {subsubsection}{\numberline {3.2.2}Smith-Whitten Coordinates}{12}
-\contentsline {subsubsection}{\numberline {3.2.3}Symmetries}{21}
-\contentsline {subsection}{\numberline {3.3}Adiabatic hyperspherical method}{23}
-\contentsline {subsection}{\numberline {3.4}Generalized Hellmann-Feynman theorem}{25}
-\contentsline {section}{\numberline {4}Numerical Approach}{27}
-\contentsline {subsection}{\numberline {4.1}Basis splines expansion}{27}
-\contentsline {subsection}{\numberline {4.2}Gauss-Legendre Quadrature}{28}
-\contentsline {section}{\numberline {A}Basis splines}{28}
+\contentsline {subsubsection}{\numberline {2.1.2}Universality}{4}
+\contentsline {subsubsection}{\numberline {2.1.3}The Three-body Problem}{6}
+\contentsline {subsection}{\numberline {2.2}Experimental Evidence}{6}
+\contentsline {subsubsection}{\numberline {2.2.1}Efimov Trimers in Atomic Systems}{6}
+\contentsline {paragraph}{Alkali atomic gases}{6}
+\contentsline {paragraph}{Helium trimers}{7}
+\contentsline {subsubsection}{\numberline {2.2.2}Efimov States in Nuclei }{7}
+\contentsline {subsubsection}{\numberline {2.2.3}Four-body Recombination connected to Efimov Trimers}{7}
+\contentsline {section}{\numberline {3}Theoretical Methods}{7}
+\contentsline {subsection}{\numberline {3.1}Mass Normalized Jacobi Coordinates}{7}
+\contentsline {subsection}{\numberline {3.2}The Hyperspherical Method}{10}
+\contentsline {subsubsection}{\numberline {3.2.1}Delves Coordinates}{10}
+\contentsline {subsubsection}{\numberline {3.2.2}Smith-Whitten Coordinates}{14}
+\contentsline {subsubsection}{\numberline {3.2.3}Symmetries}{23}
+\contentsline {subsection}{\numberline {3.3}Adiabatic hyperspherical method}{25}
+\contentsline {subsection}{\numberline {3.4}Generalized Hellmann-Feynman theorem}{27}
+\contentsline {section}{\numberline {4}Numerical Approach}{29}
+\contentsline {subsection}{\numberline {4.1}Basis splines expansion}{29}
+\contentsline {subsection}{\numberline {4.2}Gauss-Legendre Quadrature}{30}
+\contentsline {section}{\numberline {5}Results}{30}
+\contentsline {section}{\numberline {A}Basis splines}{30}
