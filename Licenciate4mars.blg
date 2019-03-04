@@ -1,0 +1,21 @@
+[0] Config.pm:343> INFO - This is Biber 2.5
+[0] Config.pm:346> INFO - Logfile is 'Licenciate4mars.blg'
+[52] biber-darwin:290> INFO - === Mon Mar  4, 2019, 09:52:15
+[72] Biber.pm:351> INFO - Reading 'Licenciate4mars.bcf'
+[164] Biber.pm:776> INFO - Found 13 citekeys in bib section 0
+[176] Biber.pm:3493> INFO - Processing section 0
+[190] Biber.pm:3657> INFO - Looking for bibtex format file 'References.bib' for section 0
+[194] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[196] bibtex.pm:1048> INFO - Found BibTeX data source 'References.bib'
+[228] Utils.pm:149> WARN - Datamodel: Entry 'Grimm:2006' (References.bib): Invalid format '2006/03/16/online' of date field 'date' - ignoring
+[228] Utils.pm:149> WARN - Range field 'pages' in entry 'Grimm:2006' is malformed, skipping
+[256] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[256] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[256] Biber.pm:3306> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
+[256] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
+[269] bbl.pm:526> INFO - Writing 'Licenciate4mars.bbl' with encoding 'ascii'
+[272] Utils.pm:149> WARN - The entry 'Chenciner2015' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[275] Utils.pm:149> WARN - The entry 'Grimm:2009' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[277] Utils.pm:149> WARN - The entry 'Grimm:2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[278] bbl.pm:619> INFO - Output to Licenciate4mars.bbl
+[279] Biber.pm:108> INFO - WARNINGS: 5
