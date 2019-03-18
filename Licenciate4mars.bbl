@@ -43,6 +43,47 @@
       \field{type}{mathesis}
       \field{year}{2016}
     \endentry
+    \entry{2008AnPhy.323.1770B}{article}{}
+      \name{author}{3}{}{%
+        {{hash=fa96bca49e8ea68fb5bce2da11ba52bf}{%
+           family={{Braaten}},
+           family_i={B\bibinitperiod},
+           given={Eric},
+           given_i={E\bibinitperiod}}}%
+        {{hash=318cf8ed3aecf2e2cedea21f7d13331c}{%
+           family={{Kusunoki}},
+           family_i={K\bibinitperiod},
+           given={Masaoki},
+           given_i={M\bibinitperiod}}}%
+        {{hash=69d38c6fe2a3b0743c5e5d9c7fdf1470}{%
+           family={{Zhang}},
+           family_i={Z\bibinitperiod},
+           given={Dongqing},
+           given_i={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{cec769b4266152f9a88b5cfea81eb5c1}
+      \strng{fullhash}{cec769b4266152f9a88b5cfea81eb5c1}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cond-mat.other}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Annals of Physics}
+      \field{month}{07}
+      \field{title}{{Scattering models for ultracold atoms}}
+      \field{volume}{323}
+      \field{year}{2008}
+      \field{pages}{1770\bibrangedash 1815}
+      \range{pages}{46}
+      \verb{doi}
+      \verb 10.1016/j.aop.2007.12.004
+      \endverb
+      \verb{eprint}
+      \verb 0709.0499
+      \endverb
+      \keyw{Condensed Matter - Other,High Energy Physics - Phenomenology,Nuclear Theory}
+    \endentry
     \entry{Chenciner2015}{inbook}{}
       \name{author}{1}{}{%
         {{hash=9ab75b50eb87cc35521c51f02129f8dd}{%
@@ -418,6 +459,143 @@
       \endverb
       \verb{eprint}
       \verb 1512.02036
+      \endverb
+    \endentry
+    \entry{Landau1965Quantum}{book}{}
+      \name{author}{2}{}{%
+        {{hash=11164eda9020f4c4c3286028c51b927b}{%
+           family={Landau},
+           family_i={L\bibinitperiod},
+           given={L.\bibnamedelimi D.},
+           given_i={L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=8eba796cc668ad107008f13d2ec3dc12}{%
+           family={Lifshitz},
+           family_i={L\bibinitperiod},
+           given={L.\bibnamedelimi M.},
+           given_i={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon Press}%
+      }
+      \strng{namehash}{7f6452508f89c7c1f1ae77ff45c5fbba}
+      \strng{fullhash}{7f6452508f89c7c1f1ae77ff45c5fbba}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{howpublished}{Paperback}
+      \field{isbn}{0750635398}
+      \field{title}{Quantum Mechanics Non-Relativistic Theory, Second Edition: Volume 3}
+      \field{year}{1965}
+      \keyw{book}
+    \endentry
+    \entry{Sadeghpour_2000}{article}{}
+      \name{author}{7}{}{%
+        {{hash=fab116f82b7aa465ce29ea946d0f0bbc}{%
+           family={Sadeghpour},
+           family_i={S\bibinitperiod},
+           given={H\bibnamedelima R},
+           given_i={H\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=3bd1cfec7ff28b35febe52df91c8ceea}{%
+           family={Bohn},
+           family_i={B\bibinitperiod},
+           given={J\bibnamedelima L},
+           given_i={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=26b1a6543ea5a4dfd18b18086ea52dc2}{%
+           family={Cavagnero},
+           family_i={C\bibinitperiod},
+           given={M\bibnamedelima J},
+           given_i={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=cb5a73af5c74deeefc8acfa77680d9e7}{%
+           family={Esry},
+           family_i={E\bibinitperiod},
+           given={B\bibnamedelima D},
+           given_i={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=b7c9d809d319c38c377ea447dff58fad}{%
+           family={Fabrikant},
+           family_i={F\bibinitperiod},
+           given={I\bibnamedelima I},
+           given_i={I\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=c36a36ce6695d80d3274d72c810047ae}{%
+           family={Macek},
+           family_i={M\bibinitperiod},
+           given={J\bibnamedelima H},
+           given_i={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=6e277eafb6a21be8fd8aefa57f6434f2}{%
+           family={Rau},
+           family_i={R\bibinitperiod},
+           given={A\bibnamedelima R\bibnamedelima P},
+           given_i={A\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{IOP} Publishing}%
+      }
+      \strng{namehash}{7ccea3d072def32e032f77028d2fa89a}
+      \strng{fullhash}{cb4afcf57d9d0f55f3aadf99457ecf4f}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Physics B: Atomic, Molecular and Optical Physics}
+      \field{month}{02}
+      \field{number}{5}
+      \field{title}{Collisions near threshold in atomic and molecular physics}
+      \field{volume}{33}
+      \field{year}{2000}
+      \field{pages}{R93\bibrangedash R140}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1088/0953-4075/33/5/201
+      \endverb
+      \verb{url}
+      \verb https://www.cfa.harvard.edu/~hrs/PubList/JPBThresholdReviw2000.pdhttps://doi.org/10.1088%2F0953-4075%2F33%2F5%2F201
+      \endverb
+    \endentry
+    \entry{Sanz-Sanz}{article}{}
+      \name{author}{4}{}{%
+        {{hash=1f24034d874470624f43e37eac17f1ae}{%
+           family={Sanz-Sanz},
+           family_i={S\bibinithyphendelim S\bibinitperiod},
+           given={Cristina},
+           given_i={C\bibinitperiod}}}%
+        {{hash=3ea9465b99a051dae8eb3f432d07d94b}{%
+           family={Aguado},
+           family_i={A\bibinitperiod},
+           given={Alfredo},
+           given_i={A\bibinitperiod}}}%
+        {{hash=afeaf3ff5834bdfc8bcf207e9c019514}{%
+           family={Roncero},
+           family_i={R\bibinitperiod},
+           given={Octavio},
+           given_i={O\bibinitperiod}}}%
+        {{hash=5efd63f641d4f0c8e986b30d06851d03}{%
+           family={Naumkin},
+           family_i={N\bibinitperiod},
+           given={Fedor},
+           given_i={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{cece0399a37a4b31b3a51e76661ceada}
+      \strng{fullhash}{987806930dab9691d229bb160794a438}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Chemical Physics}
+      \field{number}{23}
+      \field{title}{Non-adiabatic couplings and dynamics in proton transfer reactions of Hn+ systems: Application to H2+H2+ $\rightarrow$ H+H3+ collisions}
+      \field{volume}{143}
+      \field{year}{2015}
+      \field{pages}{234303}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1063/1.4937138
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1063/1.4937138
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1063/1.4937138
       \endverb
     \endentry
     \entry{Smith1962}{article}{}
