@@ -3,7 +3,7 @@
 \contentsline {subsection}{\numberline {1.1}Background}{2}
 \contentsline {subsection}{\numberline {1.2}The Birth of Efimov Physics}{3}
 \contentsline {subsection}{\numberline {1.3}Theoretical Introduction}{3}
-\contentsline {subsubsection}{\numberline {1.3.1}Entering the quantum realm}{3}
+\contentsline {subsubsection}{\numberline {1.3.1}Entering the Quantum Realm}{3}
 \contentsline {subsubsection}{\numberline {1.3.2}Two-body Interactions}{4}
 \contentsline {subsubsection}{\numberline {1.3.3}Universality}{5}
 \contentsline {section}{\numberline {2}Experimental Evidence}{7}
@@ -17,17 +17,18 @@
 \contentsline {subsection}{\numberline {3.2}The low energy limit}{13}
 \contentsline {subsection}{\numberline {3.3}Zero-Energy Scattering}{14}
 \contentsline {section}{\numberline {4}The Three-body Problem}{15}
-\contentsline {subsection}{\numberline {4.1}Mass Normalized Jacobi Coordinates}{15}
+\contentsline {subsection}{\numberline {4.1}Mass Normalized Jacobi Coordinates}{17}
 \contentsline {subsection}{\numberline {4.2}The Hyperspherical Method}{19}
 \contentsline {subsubsection}{\numberline {4.2.1}Delves Coordinates}{20}
 \contentsline {subsubsection}{\numberline {4.2.2}Smith-Whitten Coordinates}{21}
-\contentsline {subsection}{\numberline {4.3}Adiabatic hyperspherical method}{21}
+\contentsline {subsection}{\numberline {4.3}Adiabatic Hyperspherical Method}{21}
 \contentsline {subsection}{\numberline {4.4}Generalized Hellmann-Feynman theorem}{23}
 \contentsline {section}{\numberline {5}Numerical Approach}{25}
 \contentsline {subsection}{\numberline {5.1}Basis splines expansion}{25}
 \contentsline {subsection}{\numberline {5.2}Gauss-Legendre Quadrature}{26}
 \contentsline {section}{\numberline {6}Results}{26}
-\contentsline {section}{\numberline {A}Basis splines}{26}
+\contentsline {section}{\numberline {A}Basis Splines}{26}
 \contentsline {section}{\numberline {B}Delves Coordinates}{31}
 \contentsline {section}{\numberline {C}Smith-Whitten Coordinates}{34}
-\contentsline {subsubsection}{\numberline {C.0.1}Symmetries}{45}
+\contentsline {subsection}{\numberline {C.1}Transformation of the Kinetic Energy Operator}{38}
+\contentsline {subsubsection}{\numberline {C.1.1}Symmetries}{46}

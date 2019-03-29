@@ -469,6 +469,31 @@
       \field{year}{1965}
       \keyw{book}
     \endentry
+    \entry{podolsky_1928}{article}{}
+      \name{author}{1}{}{%
+        {{hash=19dc919856626ef90dab285f889c3b78}{%
+           family={Podolsky},
+           family_i={P\bibinitperiod},
+           given={Boris},
+           given_i={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{19dc919856626ef90dab285f889c3b78}
+      \strng{fullhash}{19dc919856626ef90dab285f889c3b78}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review}
+      \field{number}{5}
+      \field{title}{Quantum-Mechanically Correct Form of Hamiltonian Function for Conservative Systems}
+      \field{volume}{32}
+      \field{year}{1928}
+      \field{pages}{812\bibrangedash 816}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1103/physrev.32.812
+      \endverb
+    \endentry
     \entry{Sadeghpour_2000}{article}{}
       \name{author}{7}{}{%
         {{hash=fab116f82b7aa465ce29ea946d0f0bbc}{%

@@ -27,6 +27,7 @@
 
 
 
+
 \newcommand{\me}{\mathrm{e}}
 \providecommand{\abs}[1]{\lvert#1\rvert} \providecommand{\norm}[1]{\lVert#1\rVert}
 
@@ -72,7 +73,7 @@ The notion of Efimov physics comprises a range of universal phenomena that occur
 \subsection{Theoretical Introduction}
 A short reveiw concerning some important aspects of quantum mechanical systems and two-body scattering, in particlular the concept of \emph{scattering length}, will follow in order to set the stage for a discussion of quantum effects in few-body systems in general and Efimov states in three-body systems in particular. 
 
-\subsubsection{Entering the quantum realm}
+\subsubsection{Entering the Quantum Realm}
 All particles of matter exhibit wave-like properties. The wavelength of a particle with momentum $p$ is given by the de Broglie equation
 
 \begin{equation} \label{eq:1}
@@ -86,9 +87,9 @@ where $h$ is the Planck constant. The wave characteristics of matter grow with i
 in which $k_B$ is the Boltzmann constant, it means there is a critical temperature for when the quantum effects becomes dominant. For a dilute atomic gas this critical temperature are in the microkelvin to nanokelvin range.
  
 \subsubsection{Two-body Interactions}
-Atomic interactions are pair-wise and short ranged, which means that they interact when they are close to eachother. At sufficently low energies, atoms behave like point particles and have quantized orbital angular momenta $l$. In analogy with electronic orbitals, the quantum numbers $l=0,1,2,$ associated with an atom are referred to as $s$-waves, $p$-waves, and $d$-waves respectively. 
+Atomic interactions are pair-wise and short ranged, which means that they interact when they are close to eachother. At sufficently low energies, atoms behave like point particles and have quantized orbital angular momenta $l$. In analogy with atomic orbitals, the quantum numbers $l=0,1,2,$ associated with an atom are referred to as $s$-waves, $p$-waves, and $d$-waves respectively. 
 
-The scattering processes of two particles can be decomposed into that of an incoming plane wave -- expanded into a sum of partial waves with definite angular momenta -- which scatters of a potential placed at the origin. For low energy scattering, only the first few $l$-quantum numbers contribute to the scattering process and in the ultracold regime s-wave collisions dominate. Scattering becomes isotropic when the wavelength of the relative particle is much larger than the typical interparticle interaction range $r_0$ because the wave is then too large to resolve the details of the short-range interaction. In other words, the colliding atoms cannot resolve each other's internal structure provided by their electronic configurations. This makes scattering in the low energy limit indistinguishable from that of point particles. Furthermore, only spherical waves will come close enough to be scattered by the potential. Higher partial waves ($l>0$) will not "feel" the potential since they will be reflected by a centrifugal barrier at separations greater then the interaction range. Two-body scattering in this regime are solely governed by a single parameter called the s-wave scattering length $a$. The s-wave scattering length, referred to as the scattering length from here on, is defined in the low-energy limit as
+The scattering processes of two particles can be decomposed into that of an incoming plane wave -- expanded into a sum of partial waves with definite angular momenta -- which scatters of a potential placed at the origin. For low energy scattering, only the first few $l$-quantum numbers contribute to the scattering process and in the ultracold regime s-wave collisions dominate. Scattering becomes isotropic when the wavelength of the relative particle is much larger than the typical interparticle interaction range $r_0$ because the wave is then too large to resolve the details of the short-range interaction. In other words, the colliding atoms cannot resolve each other's internal structure provided by their electron configurations. This makes scattering in the low energy limit indistinguishable from that of point particles. Furthermore, only spherical waves will come close enough to be scattered by the potential. Higher partial waves ($l>0$) will not "feel" the potential since they will be reflected by a centrifugal barrier at separations greater then the interaction range. Two-body scattering in this regime are solely governed by a single parameter called the s-wave scattering length $a$. The s-wave scattering length, referred to as the scattering length from here on, is defined in the low-energy limit as
 
 \begin{equation} \label{eq:2}
 a = \lim_{k \to 0} -\frac{\tan\delta_0(k)}{k},
@@ -379,45 +380,45 @@ in which $r_c$ and $c_w$ are tuning parameters for the distance to the nadir and
 Positive scattering lengths thus correspond to replusive effective interactions, which means that the interaction can appear replusive even in the case of an underlying attractive two-body interaction.
 
 \section{The Three-body Problem} 
-Two-body scattering processes basically concern two different situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmenation channels (1+2). This makes the construction of permutation symmetric wavefunctions highly non trivial. 
+Two-body scattering processes basically concern two different situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmenation channels (1+2). This makes the construction of permutation symmetric wavefunctions highly non-trivial. 
 
-There are different routes of solving the three-body problem, it involves either solving the three-body Schr{\"o}dinger equation or solving the Faddeev equation, which is equivalent to solving the three-body Schr{\"o}dinger equation in configuration space. However, most approaches start with the same steps. This includes separating out the center of mass motion and then defining a set of relative  coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since it removes the mass factors in the kinetic energy operator. 
+There are different routes for solving the three-body problem and they involve either solving the three-body Schr{\"o}dinger equation or solving the Faddeev equation, which is equivalent to solving the three-body Schr{\"o}dinger equation in configuration space. Irrespective of the specific method of choice for solving the three-body system, most approaches start with the same steps. This includes separating out the center-of-mass motion and then defining a set of relative coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since it removes the mass factors in the kinetic energy operator. 
 
-Atomic units will be used in this theisis. They are defined from $m_e = e = \hbar = 1$.    
+Atomic units (a.u.) will be used throughout this theisis. There are four fundamental atomic units -- the electron rest mass $m_e$, the elementary charge $e$, the reduced Planck's constant $\hbar$, and the Coulomb force constant $k_e$ -- which numerical values are unity by definition, i.e. $m_e = e = \hbar = k_e = 1$. Derived atomic units include dimensions of length and energy, which are expressed in terms of the Bohr radius $a_0$ and the Hartree $E_h$.    
 
-\begin{figure}
-	\centering
-	\input{img01.tex}
-	\caption{Spatial positions of three particles.}
-	\label{fig:1}
-\end{figure}
-
-\subsection{Mass Normalized Jacobi Coordinates}
-The spatial position of three particles in $\mathbb{R}^3$ are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$ labels the particles, and $\alpha(=1,2,3)$ their Cartesian space coordinates, respectively. Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are given by
+\subsection{Mass Normalized Jacobi Coordinates}\label{MNJC}
+The spatial position of three particles in $\mathbb{R}^3$ are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$ labels the particles, and $\alpha(=1,2,3)$ their Cartesian space coordinates, respectively. Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are defined by
 
 \begin{align}
 M &= \sum_{i=1}^{3}m_i,  \label{eq:3,1} \\
 \mu^2 &= \prod_{i=1}^{3}m_i/M,  \label{eq:3,2}\\
 d_k^2 &= \frac{m_k}{\mu}\frac{(m_i+m_j)}{M}.  \label{eq:3,3}
 \end{align}
-Then a set of mass scaled Jacobi coordinates and the center of mass coordinate can be defined as
+Then a set of mass scaled Jacobi coordinates and the center-of-mass coordinate can be defined as
 
 \begin{align}
 \mathbf{r}_k &= d^{-1}_k(\mathbf{x}_{j}-\mathbf{x}_{i}),  \label{eq:4,1} \\
 \mathbf{R}_k &= d_k\Big[\mathbf{x}_{k}-\frac{(m_{i}\mathbf{x}_{i}+m_{j}\mathbf{x}_{j})}{m_{i}+m_{j}}\Big],  \label{eq:4,2}\\
-\mathbf{X}_{CM} &= \frac{1}{M} \sum_{i=1}^{3} m_{i} \mathbf{x}_{i}.  \label{eq:4,3}
+\mathbf{X}_{cm} &= \frac{1}{M} \sum_{i=1}^{3} m_{i} \mathbf{x}_{i},  \label{eq:4,3}
 \end{align}   
-In which, the indices $i,j,k$ are cyclic permutations of $(1,2,3)$. Subsequently, the kinetic energy operator for the three particles in the laboratory frame, as given by 
+ in which the indices $i,j,k$ are cyclic permutations of $(1,2,3)$ and where $\mathbf{r}_k$ is the scaled vector from particle $i$ to $j$, and $\mathbf{R}_k$ is the scaled vector from the centre-of-mass of the pair $ij$ to particle $k$, see \cref{fig:1}.
+ \begin{figure}
+ 	\centering
+ 	\input{img01.tex}
+ 	\caption{Spatial positions of three particles.}
+ 	\label{fig:1}
+ \end{figure}
+ The kinetic energy operator for the three particles in the laboratory frame, as given by 
 
 \begin{equation}\label{eq:5}
 \hat{T} = -\frac{1}{2} \sum_{i=1}^{3} m_{i}^{-1} \nabla^{2}_{\mathbf{x}_{i}}, 
 \end{equation}
-will transform into
+will subsequently transform into
 
 \begin{equation}\label{eq:6}
-\hat{T} = -\frac{1}{2\mu} \Big(\nabla^{2}_{\mathbf{r}_{k}}+\nabla^{2}_{\mathbf{R}_{k}}\Big) - \frac{1}{2 M}\nabla^{2}_{\mathbf{X}_{CM}}. 
+\hat{T} = -\frac{1}{2\mu} \Big(\nabla^{2}_{\mathbf{r}_{k}}+\nabla^{2}_{\mathbf{R}_{k}}\Big) - \frac{1}{2 M}\nabla^{2}_{\mathbf{X}_{cm}}. 
 \end{equation}
-Now, since the interaction $V(\mathbf{r}_k,\mathbf{R}_k)$ do not depend on $\mathbf{X}_{cm}$, the center of mass motion decouples from the internal motion in the Schr{\"o}dinger equation if we write the wavefunction as
+Now, since the interaction $V(\mathbf{r}_k,\mathbf{R}_k)$ do not depend on $\mathbf{X}_{cm}$, the center-of-mass motion decouples from the internal motion in the Schr{\"o}dinger equation if we write the wavefunction as
 
 \begin{equation}
 \Psi(\mathbf{r}_k,\mathbf{R}_k,\mathbf{X}_{cm}) = \varphi(\mathbf{X}_{cm})\psi(\mathbf{r}_k,\mathbf{R}_k),
@@ -431,11 +432,11 @@ In the following text we will only consider the internal motion part of the  Sch
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{jacobii.pdf}
-	\caption{Three different Jacobi coordinates.}
+	\caption{Illustration of the three different Jacobi coordinate sets.}
 	\label{fig:2}
 \end{figure}
 
-There are three possible ways to construct the Jacobi coordinates described above, see Figure \ref{fig:2}. Each set transforms into one of the other by exchange of particles. For convenience, indices will often be surpressed in the following text, in these cases $(\mathbf{r}_{k}, \mathbf{r}_{i}, \mathbf{r}_{j})$ correspond to $(\mathbf{r}, \mathbf{r}', \mathbf{r}'')$. To be able to describe permutations in a system with mass-scaled coordinates it is useful to introduce angles defined by the particle masses \cite{Smith1962}. If an even permutation $(ijk)$ of the set $(123)$ is considered, then the obtuse angle $\beta_{ij}$ has the properties
+There are three possible ways to construct the Jacobi coordinates described above, see Figure \ref{fig:2}. Each set transforms into one of the other by exchange of particles. To be able to describe permutations in a system with mass-scaled coordinates it is useful to introduce angles defined by the particle masses \cite{Smith1962}. If an even permutation $(ijk)$ of the set $(123)$ is considered, then the obtuse angle $\beta_{ij}$ has the properties
 
 \begin{subequations}
 	\begin{align}
@@ -466,7 +467,7 @@ Orthogonal transformations within the coordinate set are then given by
 
 
 \subsection{The Hyperspherical Method}
-The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these hyperangles are the Euler angles associated with the orientation of the body fixed frame -- i.e., the triangle formed by the three particles -- in three-dimensional space. These are the external coordinates of the system. The internal coordinates are the hyperradius -- which describes the overall size of the system-- and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
+The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these angles $\alpha, \beta, \gamma$ are usually chosen the Euler angles that specify the  orientation of the body-fixed axis system -- i.e. the triangle formed by the three particles -- relative to a space-fixed coordinate frame. These are the external coordinates of the system. The internal coordinates are the hyperradius -- which describes the overall size of the system -- and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
 
 Hyperspherical coordinates are useful for describing fragmentation problems. Fragmentations processes of the system into any one of the possible channels are described by the hyperradius becoming very large $(\rho \rightarrow \infty)$, while the hyperangles distinguishes between the different fragmentation channels. The hyperradius is invariant under both rotations and particle permutation and for the three-body problem it is defined by
 
@@ -475,13 +476,6 @@ Hyperspherical coordinates are useful for describing fragmentation problems. Fra
 \end{equation} 
 
 In contrast to the hyperradius there is no unique way to define the hyperangles and the various definitions are not in general invariant under particle permutations. The most common choises of parametrizing the hypersphere fall into two distinct categories: Delves coordinates, and (democratic) Smith-Whitten coordinates. 
-
-The general form of the three-body Schr{\"o}dinger equation -- written in hyperspherical coordinates -- is the same irrespective of the specific choice of hyperangles. In terms of the rescaled total wave function $\psi = \rho^{-5/2}\Psi$, it is given by
-
-\begin{equation}
-\bigg(-\frac{1}{2\mu} \frac{\partial^2}{\partial \rho^2} + \frac{\Lambda^2 + 15/4}{2\mu \rho^2} + V\bigg)\psi(\rho,\Omega) = E \psi(\rho,\Omega),
-\end{equation}
-where $\Lambda^2$ is the squared grand angular momentum operator, which contains all angular variables. The specific form of $\Lambda^2$ depends on the choice of coordinates.
 
 \subsubsection{Delves Coordinates}\label{delvescoord}
 Delves coordinates are adapted to collinear atom-diatom collisions and are regular polar coordinates. They where originally developed to treat nuclear three-body problems. Each coordinate set is defined by the Jacobi vectors
@@ -502,12 +496,12 @@ This coordinate set corresponds to the reactant arrangement when particle $k$ sc
 \end{equation}
 For simplicity, the indicies labelling each coordinate set will be surpressed from hereon. 
 
-The full derivation of the three-body Schr{\"o}dinger equation written in Delves coordinates is given in \cref{delves}, here we simply state the results. After rescaling the total wave function by a factor $\rho^{5/2}\sin(2\alpha)$, the Schr{\"o}dinger equation can be written in terms of $\psi = \rho^{5/2}\sin(2\alpha)\Psi$. It is then given by 
+The full derivation of the three-body Schr{\"o}dinger equation written in Delves coordinates is given in \cref{delves}, here we simply state the results. After rescaling the total wave function, $\psi = \rho^{5/2}\sin2\alpha\Psi$, the Schr{\"o}dinger equation can be written
 
 \begin{equation}
 \bigg(-\frac{1}{2\mu}\frac{\partial^2}{\partial\rho^2} + \frac{\Lambda^2 - 1/4}{2\mu\rho^2} + V(\rho,\alpha,\theta)\bigg) \psi(\rho,\alpha,\theta) = E \psi(\rho,\alpha,\theta),
 \end{equation}
-where $E$ is the internal energy and the squared grand angular momentum is in this case given by 
+in which $E$ is the internal energy and where the squared grand angular momentum operator $\Lambda^2$, which contains all angular variables, is given by
 
 \begin{equation}
 \Lambda^2 = -\frac{\partial^2}{\partial\alpha^2} - \frac{1}{\sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta}\bigg).
@@ -527,12 +521,19 @@ Numerical difficulties arise with these coordinates when permutation symmetries 
 \subsubsection{Smith-Whitten Coordinates}\label{smith_whitten}
 %TODO Principel axis methods are characterized by the use of a single hyperspherical coordinate system that treats all three arragements of particles equivalently. 
 
-The motion of three particles can be represented in a symmetric way by using so called democratic coordinates. The main advantage with these kind of coordinates is that permutation symmetries for three identical particles can be imposed exactly by using a modified set of the coordinates introduced by Smith and Whitten \cite{Smith_Whitten1968}. 
+The motion of three particles can be represented in a symmetric way by using so called democratic coordinates. The main advantage with these kind of coordinates is that permutation symmetries for three identical particles can be imposed exactly. To define the two hyperangles $\theta$ and $\phi$ we use a modified set of the coordinates first introduced by Smith and Whitten \cite{Smith_Whitten1968}. The 
 
-In the coordinates introduced by Smith and Whitten, three Euler angles labels the orientation of body-fixed axes, while the internal coordinates consist of and two hyperangular coordinates     
+\begin{align}
+\varphi_1 &= 2\tan^{-1}(m_2/\mu)\\
+\varphi_2 &= 2\tan^{-1}(m_1/\mu)
+\end{align}
+Now we redefine $\phi'_k = \phi_k+7\pi/2$, so that the range is $0 \leq \phi'_k < 4\pi$. Then $\sin\phi_k = \cos\phi'_k$. We finally get ($2\Phi = 4\pi - \phi'$)
 
-This can be acheived by  by choosing the right kind of  using a modified set of Smith-Whitten coordinates.
-
+\begin{align}
+r_3 &= \frac{d_3\rho}{2^{1/2}}\big[1+\sin\theta\cos\phi'\big]^{1/2}\\
+r_1 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \sin\theta\cos(\phi'-\varphi_1)\big]^{1/2}\\
+r_2 &= \frac{d_1\rho}{2^{1/2}}\big[1 + \sin\theta\cos(\phi' + \varphi_2)\big]^{1/2}.
+\end{align}
 
 
 Now, we make a transformation of the angles (Kuppermann)
@@ -548,7 +549,7 @@ where $\Lambda^2$ is the grand angular momentum operator.
 
 
 
-\subsection{Adiabatic hyperspherical method}\label{sec:AHM}
+\subsection{Adiabatic Hyperspherical Method}\label{sec:AHM}
 In the following sections we have chosen to work in the set of democratic hyperangles described in \ref{smith}. With these coordinates, the Schr{\"o}dinger equation for the internal coordinates was derived as  
 
 \begin{equation}\label{schrodinger}
@@ -753,7 +754,7 @@ All integrals are calculated with Gaussian quadrature. A k-point Gaussian quadra
 \end{figure}
 
 \appendix
-\section{Basis splines}\label{B-splines}
+\section{Basis Splines}\label{B-splines}
 A basis spline, or B-spline, of order $k$ is a piecewise polynomial function of degree $(k-1)$ defined on a collection of points, $t_i$, called \textit{knotpoints}. The array formed by these knotpoints are refered to as \textit{knot sequence}, or knot vector, where $t_i\leq t_{i+1}$. B-splines of order $k$ can be defined recursively by the Cox-de Boor formula. With a given knot sequence, the B-splines of order $k=1$ is defined as
 
 \begin{equation}
@@ -929,9 +930,11 @@ where $E$ is the internal energy. The corresponding volume element is proportion
 %TODO: Recheck boundary conditions.
 
 \section{Smith-Whitten Coordinates}\label{smith}
-In this section, we show how the three-body system can be represented in a symmetric way. The derivation of the Hamiltonian for this representation is described using a modified set of Smith-Whitten coordinates. 
+In this section, we show how the three-body system can be represented in a symmetric way. The derivation of the Hamiltonian for this representation is described using a modified set of Smith-Whitten coordinates. Some of the definitions presented in section \cref{MNJC} will be repeated.
 
-The spatial position of three particles in $\mathbb{R}^3$ are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$ labels the particles, and $\alpha(=1,2,3)$ their Cartesian space coordinates, respectively. Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are given by
+The mass-scaled Jacobi vectors $\mathbf{r}_k$ and $\mathbf{R}_k$ defined in section \cref{MNJC}. 
+
+Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are given by
 
 \begin{align}
 M &= \sum_{i=1}^{3}m_i, \\
@@ -1073,25 +1076,89 @@ The area of the triangle formed by the three particles is the length of the vect
 \end{align}
 Since both the area and the hyperradius are positive quantities the angle must be in the range, $0\leq \Theta \leq \pi/4$. For some reason $0\leq \Phi < 2\pi$. The transformed coordinates then have the range $0\leq \theta \leq \pi/2$ and 
 
-To describe how rotations of the BF system affects the derivatives in the SF system, introduce the infinitesimal rotations $\mathbf{\omega}$. The velocities of the SF system vectors are given by    
+\subsection{Transformation of the Kinetic Energy Operator}
+The kinetic energy operator of a particle with mass $\mu$ in a curvilinear coordinate system of $N$ dimensions is given by \cite{podolsky_1928}
+
+\begin{equation}\label{eq:kinetic_e_op}
+\hat{\mathrm{T}} = -\frac{1}{2\mu} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{1}{\sqrt{g}} \frac{\partial}{\partial q_i} \bigg(\sqrt{g} g^{ij} \frac{\partial}{\partial q_j}\bigg),
+\end{equation}
+where $g^{ij}$ is the inverse, or contravariant, metric tensor and $g$ is the determinant of the covariant metric tensor $g = \det(g_{ij}) \neq 0$. The metric tensor $g_{ij}$ describes the relationship between the set of curvilinear coordinates $\mathbf{q}$ and the set of regular Cartesian coordinates $\mathbf{x}$ through
+
+\begin{equation}
+g_{ij} = \sum_{\lambda = 1}^{N} \frac{\partial x_{\lambda}}{\partial q_{i}} \frac{\partial x_{\lambda}}{\partial q_{j}},
+\end{equation}
+where $x_{\lambda} = x_{\lambda}(q_1,\ldots,q_N)$. The metric is usefull for generalizing the concept of distance to general curvilinear coordinate frames and hence maintain the invariance of distance in different coordinate systems. Invariance of the square of the line element $ds^2$ under coordinate transformations can also be considered to define the metric itself since
+
+\begin{equation}
+ds^2 = d\mathbf{x} \cdot d\mathbf{x} = \sum_{i,j}^{N} g_{ij} dq_{i} dq_{j} = g.
+\end{equation}
+Here the displacement differential vector is given by
+
+\begin{equation}
+d\mathbf{x} = \frac{\partial \mathbf{x}}{\partial q_{i}} dq_{i},
+\end{equation} 
+where $\mathbf{x}$ is the position vector.
+
+The tranformation of interest for us is that from the mass weighted Jacobi coordinates $\mathbf{r}_k$ and $\mathbf{R}_k$ to a set of symmetric coordinates. Here we choose to work with one of the pair of the Jacobi coordinate sets $(i,j,k)=(1,2,3)$ and surpress the subscript $3$. Since the three-body system has $N=6$ dimensions after separating out the center-of-mass we collect the Cartesian components of the mass-weighted Jacobian vectors into the $6$-position
+
+\begin{equation}
+\mathbf{x} = 
+\begin{pmatrix} 
+\mathbf{r} \\
+\mathbf{R} \\
+\end{pmatrix} = 
+\begin{pmatrix}
+r_x \\
+r_y \\
+r_z \\
+R_x \\
+R_y \\
+R_z\\
+\end{pmatrix}.
+\end{equation}
+
+At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the $xy$-plane -- and define the internal motion of the particles within this plane in terms of hyperspherical coordinates $(\rho, \Theta, \Phi)$ -- our coordinate system must rotate in this plane. That is, we use a body-fixed axis system $xyz$, which rotates with respect to the space-fixed axis system $x'y'z'$. The orientation of the body-fixed frame is related to the space-fixed frame by the Euler angles. With the $z$-axis perpendicular to the plane and with the positive axis in the direction of the vector $\mathbf{r} \times \mathbf{R}$, Smith and Whitten \cite{Smith_Whitten1968} defined these as   
+
+\begin{equation}
+\begin{aligned}
+	r_x &= \rho \cos\Theta\cos\Phi,\\
+	r_y &= -\rho \sin\Theta\sin\Phi,\\
+	r_z &= 0\\
+	R_x &= \rho \cos\Theta\sin\Phi,\\
+	R_y &= \rho \sin\Theta\cos\Phi,\\
+	R_z &= 0.
+\end{aligned}   
+\end{equation}
+
+To describe how rotations of the body-fixed frame affects the derivatives in the space-fixed frame it is enough to consider infinitesimal rotations.  Let $\mathbf{\Omega}$ be the angular displacement differential vector of the rotating axes $xyz$ with respect to the fixed axes $x'y'z'$
+
+\begin{equation}
+\mathbf{\Omega} =
+\begin{pmatrix}
+d\Omega_x\\
+d\Omega_y\\
+d\Omega_z\\
+\end{pmatrix}.
+\end{equation}
+Then the displacement differential vectors in the space-fixed frame transform like
+
 
 \begin{subequations}
-	\begin{align*}
-	\dot{\mathbf{r}}' = \dot{\mathbf{r}} + \mathbf{\omega} \times \mathbf{r}\\
-	\dot{\mathbf{R}}' = \dot{\mathbf{R}} + \mathbf{\omega} \times \mathbf{R}\\
-	\end{align*}   
-\end{subequations} 
-
+\begin{align}
+	d{\mathbf{r}}' &= d\mathbf{r} + \mathbf{\Omega} \times \mathbf{r},\\
+	d{\mathbf{R}}' &= d\mathbf{R} + \mathbf{\Omega} \times \mathbf{R},
+\end{align}
+\end{subequations}   
 which is given explicitly by
 
 \begin{align}
 \begin{pmatrix}
-\dot{r}'_x \\
-\dot{r}'_y \\
-\dot{r}'_z \\
-\dot{R}'_x \\
-\dot{R}'_y \\
-\dot{R}'_z\\
+dr'_x \\
+dr'_y \\
+dr'_z \\
+dR'_x \\
+dR'_y \\
+dR'_z\\
 \end{pmatrix} 
 &= 
 \begin{pmatrix*}[c]
@@ -1103,81 +1170,64 @@ which is given explicitly by
 \partial_{\rho} R_z & \partial_{\Theta} R_z & \partial_{\Theta} R_z & R_y & -R_x & 0\\
 \end{pmatrix*}
 \begin{pmatrix}
-\dot{\rho}\\
-\dot{\Theta}\\
-\dot{\Phi}\\
-\omega_x\\
-\omega_y\\
-\omega_z\\
+d\rho\\
+d\Theta\\
+d\Phi\\
+d\Omega_x\\
+d\Omega_y\\
+d\Omega_z\\
 \end{pmatrix} \notag \\
 &=
 \begin{pmatrix*}[c]
-cc & -sc & -cs & 0 & 0 & ss\\
--ss & -cs & -sc & 0 & 0 & cc\\
-0 & 0 & 0 & -ss & -cc & 0\\
-cs & -ss & cc & 0 & 0 & -sc\\
-sc & cc & -ss & 0 & 0 & cs\\
-0 & 0 & 0 & sc & -cs & 0\\
+\mathrm{cc} & \mathrm{-sc} & \mathrm{-cs} & 0 & 0 & \mathrm{ss}\\
+\mathrm{-ss} & \mathrm{-cs} & \mathrm{-sc} & 0 & 0 & \mathrm{cc}\\
+0 & 0 & 0 & \mathrm{-ss} & \mathrm{-cc} & 0\\
+\mathrm{cs} & \mathrm{-ss} & \mathrm{cc} & 0 & 0 & \mathrm{-sc}\\
+\mathrm{sc} & \mathrm{cc} & \mathrm{-ss} & 0 & 0 & \mathrm{cs}\\
+0 & 0 & 0 & \mathrm{sc} & \mathrm{-cs} & 0\\
 \end{pmatrix*}
 \begin{pmatrix}
-\dot{\rho}\\
-\rho \dot{\Theta}\\
-\rho \dot{\Phi}\\
-\rho \omega_x\\
-\rho \omega_y\\
-\rho \omega_z\\
-\end{pmatrix}\\
+d\rho\\
+\rho d\Theta\\
+\rho d\Phi\\
+\rho d\Omega_x\\
+\rho d\Omega_y\\
+\rho d\Omega_z\\
+\end{pmatrix},\label{eq:matrix}
 \end{align}
-In matrix notation:
+where the abbreviations are $\mathrm{cc} = \cos\Theta\cos\Phi$, $\mathrm{ss} = \sin\Theta\sin\Phi$, $\mathrm{cs} = \cos\Theta\sin\Phi$ and $\mathrm{sc} = \sin\Theta\cos\Phi$. In matrix notation \eqref{eq:matrix} may be expressed as
 
 \begin{equation}
-\dot{\mathbf{q}}' = \hat{A}\dot{\mathbf{q}},
+d\mathbf{x}' = \mathbf{A}d\mathbf{q},
 \end{equation} 
-where     
+in which      
 
 \begin{equation}
-\dot{\mathbf{q}}' =
+d\mathbf{q} =
 \begin{pmatrix}
-\dot{r}'_x \\
-\dot{r}'_y \\
-\dot{r}'_z \\
-\dot{R}'_x \\
-\dot{R}'_y \\
-\dot{R}'_z\\
-\end{pmatrix},
-\dot{\mathbf{q}} =
-\begin{pmatrix}
-\dot{\rho}\\
-\dot{\Theta}\\
-\dot{\Phi}\\
-\omega_x\\
-\omega_y\\
-\omega_z\\
-\end{pmatrix} \notag \\
+d\rho\\
+d\Theta\\
+d\Phi\\
+d\Omega_x\\
+d\Omega_y\\
+d\Omega_z\\
+\end{pmatrix}.
 \end{equation}
-
-
-The arclength is given by
+The squared line segment $ds^2$ is then given by 
 
 \begin{equation}
-s = \int_{a}^{b} \| \dot{\mathbf{q}}' \| dt = \int_{a}^{b} \sqrt{ \dot{\mathbf{q}}'^{T} \dot{\mathbf{q}}'}\\ dt
+ds^2 = d\mathbf{x}' \cdot d\mathbf{x}' = d\mathbf{q}^{\mathrm{T}} \mathbf{A}^{\mathrm{T}} \mathbf{A}d\mathbf{q} = d\mathbf{q}^{\mathrm{T}} \mathbf{g} d\mathbf{q}.
 \end{equation}
-
-and
-
-\begin{equation}
-(ds)^2 = (d\mathbf{q}')^{T}(d\mathbf{q}') = d\mathbf{q}^{T} \hat{A}^{T} \hat{A}d\mathbf{q} = d\mathbf{q}^{T} \mathbf{g} d\mathbf{q},
-\end{equation}
-where $\mathbf{g}$ is the metric tensor
+Here the metric tensor
 
 \begin{equation}
 \mathbf{g}=
 \begin{pmatrix}
 \mathbf{G} & \mathbf{C}\\
-\mathbf{C}^T & \mathbf{K}
+\mathbf{C}^\mathrm{T} & \mathbf{K}
 \end{pmatrix}
 \end{equation}
-where the submatrices $\mathbf{G}$, $\mathbf{K}$ and $\mathbf{C}$ are 
+is partitioned into the submatrices $\mathbf{G}$, $\mathbf{K}$ and $\mathbf{C}$, which are given by 
 
 \begin{align}
 \mathbf{G} &=
@@ -1185,31 +1235,33 @@ where the submatrices $\mathbf{G}$, $\mathbf{K}$ and $\mathbf{C}$ are
 1 & 0      & 0\\
 0 & \rho^2 & 0\\
 0 & 0      & \rho^2
-\end{pmatrix}\\
+\end{pmatrix},\\
 \mathbf{K} &=
 \rho^2
 \begin{pmatrix}
 \sin^2\Theta & 0            & 0\\
 0            & \cos^2\Theta & 0\\
 0            & 0            & 1
-\end{pmatrix}\\
+\end{pmatrix},\\
+\intertext{and}
 \mathbf{C} &=
 -\rho^2\sin^2(2\Theta)
 \begin{pmatrix}
 0 & 0 & 0\\
 0 & 0 & 0\\
 0 & 0 & 1
-\end{pmatrix}
+\end{pmatrix},
 \end{align}
-the inverse of the metric tensor $\mathbf{g}^{-1}$
+respectively. The inverse of the metric tensor $\mathbf{g}^{-1}$ is the given by
+
 \begin{equation}
 \mathbf{g}^{-1}=
 \begin{pmatrix}
 \mathbf{V} & \mathbf{W}\\
-\mathbf{W}^T & \mathbf{U}
-\end{pmatrix}
+\mathbf{W}^\mathrm{T} & \mathbf{U}
+\end{pmatrix},
 \end{equation}
-where the submatrices $\mathbf{V}$, $\mathbf{W}$ and $\mathbf{U}$ are 
+where the submatrices $\mathbf{V}$, $\mathbf{W}$ and $\mathbf{U}$ are given by
 
 \begin{align}
 \mathbf{V} &=
@@ -1217,24 +1269,24 @@ where the submatrices $\mathbf{V}$, $\mathbf{W}$ and $\mathbf{U}$ are
 1 & 0      & 0\\
 0 & 1/\rho^2 & 0\\
 0 & 0      & 1/\rho^2\cos^2(2\Theta)
-\end{pmatrix}\\
+\end{pmatrix},\\
 \mathbf{U} &=
 \frac{1}{\rho^2}
 \begin{pmatrix}
 1/\sin^2\Theta & 0            & 0\\
 0            & 1/\cos^2\Theta & 0\\
 0            & 0            & 1/\cos^2(2\Theta)
-\end{pmatrix}\\
+\end{pmatrix},\\
+\intertext{and}
 \mathbf{W} &=
 \frac{\sin(2\Theta)}{\rho^2\cos^2(2\Theta)}
 \begin{pmatrix}
 0 & 0 & 0\\
 0 & 0 & 0\\
 0 & 0 & 1
-\end{pmatrix}
+\end{pmatrix},
 \end{align}
-
-The determinant of the metric tensor is given by
+respectively. The determinant of the metric tensor is then
 
 \begin{align}
 g &=
@@ -1253,42 +1305,25 @@ g &=
 =
 \frac{\rho^{10}}{16}\sin^2(4\Theta)
 \end{align}
-
+and subsequently the square root of the metric reads
 \begin{equation}
-\sqrt{g}=\frac{\rho^5}{4}\sin(4\Theta)
+\sqrt{g}=\frac{\rho^5}{4}\sin(4\Theta).
 \end{equation}
-
-The kinetic energy operator of a particle with mass $\mu$ in a curvilinear coordinate system of $N$ dimensions is given by
-
-\begin{equation}
-T = -\frac{\hbar^2}{2\mu} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{1}{\sqrt{g}} \frac{\partial}{\partial q_i} \Big(\sqrt{g} g^{ij} \frac{\partial}{\partial q_j}\Big)
-\end{equation}
-where $g^{ij}$ is the inverse metric tensor. The momentum vector is given by
+Now, if the momentum vector is given by
 
 \begin{equation}
-\mathbf{p} = i\hbar 
+\mathbf{p} = i 
 \begin{pmatrix}
 \partial/\partial q_1\\
 \vdots\\
 \partial/\partial q_N\\
 \end{pmatrix}
 \end{equation}
-
-With $\mathbf{\omega}$ expressed in Euler angles 
+we can express the kinetic energy operator given in \eqref{eq:kinetic_e_op} in terms of this vector and the metric
 
 \begin{equation}
-\mathbf{\omega} = 
-\begin{pmatrix}
-d\Omega_x\\
-d\Omega_y\\
-d\Omega_z
-\end{pmatrix}
-\end{equation}
-
-we get the kinetic energy
-
-\begin{align*}
--\frac{1}{\hbar^2}\hat{T} &= -\frac{1}{2\mu \rho^5 \sin(4\Theta)} \mathbf{p}^T \Big(\rho^5 \sin(4\Theta) \mathbf{g}^{-1}\Big) \mathbf{p}\\
+\begin{aligned}
+-\hat{\mathrm{T}} &= -\frac{1}{2\mu \sqrt{g}} \mathbf{p}^\mathrm{T} \sqrt{g} \mathbf{g}^{-1} \mathbf{p}\\
 &= \frac{1}{2\mu \rho^5 \sin(4\Theta)}\Bigg[ \frac{\partial}{\partial \rho} \Bigg(\rho^5 \sin(4 \Theta) \frac{\partial}{\partial \rho}\Bigg) + \frac{\partial}{\partial \Theta}\Bigg(\rho^3\sin(4\Theta)\frac{\partial}{\partial\Theta}\Bigg)\\ &+\frac{\partial}{\partial\Phi}\Bigg(2\rho^3\tan(2\Theta)\frac{\partial}{\partial\Phi} + 2\tan^2(2\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_z}\Bigg)\\
 &+\frac{\partial}{\partial\Omega_x}\Bigg(4\rho^3\cot(\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_x}\Bigg)\\
 &+\frac{\partial}{\partial\Omega_y}\Bigg(4\rho^3\tan(2\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_y}\Bigg)\\
@@ -1300,14 +1335,10 @@ we get the kinetic energy
 &=\frac{1}{2\mu\rho^5}\frac{\partial}{\partial\rho}\Bigg(\rho^5\frac{\partial}{\partial\rho}\Bigg) + \frac{1}{2\mu\rho^2}\Bigg[\frac{1}{\sin(4\Theta)}\frac{\partial}{\partial\Theta}\Bigg(\sin(4\Theta)\frac{\partial}{\partial\Theta}\Bigg)\\
 &+\frac{1}{\cos^2(2\Theta)}\frac{\partial^2}{\partial\Phi^2} \Bigg]+\frac{1}{2\mu\rho^2}\Bigg[\frac{1}{\sin^2(\Theta)}\frac{\partial^2}{\partial\Omega^2_x} + \frac{1}{\cos^2(\Theta)}\frac{\partial^2}{\partial\Omega^2_y} + \frac{1}{\cos^2(2\Theta)}\frac{\partial^2}{\partial\Omega^2_z}\\
 &+ \frac{2\sin(2\Theta)}{\cos^2(2\Theta)}\frac{\partial}{\partial\Phi}\frac{\partial}{\partial\Omega_z}\Bigg].
-\end{align*}
-
-The volume element in a general coordinate system of  N dimensions is given by
-
-\begin{equation}
-d^Nv = g^{1/2}\prod_{i=1}^{N} dq_i
+\end{aligned}
 \end{equation}
-The Euler angles are given by
+
+Now, as have been mentioned previously, we use the Euler angles $\alpha,\beta,\gamma$ to relate the body-fixed axes $xyz$ with the space-fixed axes $x'y'z'$. The Euler angles can be defined in the following way. If the line of nodes are the intersection of the planes $x'y'$ and $xy$, then $\alpha$ is the angle between the $x'$-axis and the line of nodes  Any coordinate frame the coincide with the space-fixed frame can be made to coincide with the body-fixed frame by performing a series of three elementary rotations. Starting by a rotation of $\alpha$ $(0 \leq \alpha \leq 2\pi)$ around the $z'$-axis, followed by a rotation $\beta$ $(0 \leq \alpha \leq \pi)$ around the   
 
 \begin{equation}
 \begin{pmatrix}
@@ -1375,6 +1406,12 @@ and the determinant is then
 \begin{equation}
 g'^{1/2}=(\mid\mathbf{B}\mid^2 \mid\mathbf{g}\mid)^{1/2} = (\mid\mathbf{A}\mid^2 \mid\mathbf{g}\mid)^{1/2}
 = \frac{\rho^5}{4}\sin(4\Theta)\sin\beta
+\end{equation}
+
+A general curvilinear coordinate system of $N$ dimensions have a volume element, which is given by
+
+\begin{equation}
+d^Nv = g^{1/2}\prod_{i=1}^{N} dq_i
 \end{equation}
 
 In our set up we thus get 
