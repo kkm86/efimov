@@ -1,0 +1,29 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustration of the phase shifts causing the effective interaction and how it depend of the sign and magnitude of $a$.\relax }}{5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {The wave function is pushed outwards when the magnitude of a positive scattering length is increased.}}}{5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The wave is pulled inwards when the magnitude of a negative scattering length is increased.}}}{5}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The energies of the three first Efimov states are plotted as a function of the inverse scattering length $a$. Three different regions can be identified in the figure. The three atom continuum is the region above the zero-energy threshold. The atom-dimer region is the region enclosed by the horisontal axis and the atom-dimer threshold and the trimer region shown in gray, in which Efimov states are represented by the blue lines.\cite {Kajsa_my}\relax }}{7}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot of $u(r)$ versus $r$ for the model potential \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces 3.35\hbox {}\unskip \@@italiccorr )}} at three different depths. The radius at which the tangent intercept the $r$-axis gives the value of $a$.\relax }}{18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The three lowest curves correspond to the potentials used in \cref {fig:intercept}. As the magnitude of a negative $a$ increases, the potential becomes more attractive until it reaches a constant depth at $a=\pm \infty $. After the change in sign, a further increase of $a$ will instead have a repulsive effect on the interaction.\relax }}{18}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustration of three potentials and their coorsponding radial wave functions\relax }}{18}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Spatial positions of three particles.\relax }}{21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration of the three different Jacobi coordinate sets.\relax }}{21}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm {I},\mathrm {II},\mathrm {III}$. At each pole a new two-body bound state is formed. The first bound state is formed as $a$ passes through $\mathrm {I}$, followed by a second a two-body bound state is formed. At each pole a new two-body bound state is formed, so when $\delimiter 69640972 d\delimiter 86418188 $ is increased so that $a$ passes through $\mathrm {II}$ a second two-body bound state is formed, while a third state is formed as $a$ passes through $\mathrm {III}$.\relax }}{34}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Adiabatic potential curves $U_{\nu }$ as a function of the hyperradius $\rho $ for $a=228 $ .\relax }}{35}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces ..\relax }}{36}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces ..\relax }}{36}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Potential surface for three identical particles. Symmetries due to translations and reflections are seen at $\phi = n\pi /3, \ (n = 1-5)$.\relax }}{47}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.\relax }}{62}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=1$}}}{62}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=2$}}}{62}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces { $k=3$}}}{62}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces { $k=4$}}}{62}

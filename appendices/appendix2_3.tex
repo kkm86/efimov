@@ -1,0 +1,93 @@
+\section{Symmetries}
+The Smith-Whitten coordinates $\theta$ and $\phi$ are connected to the geometry of the triangle formed by the three particles. If the three particles represent the vertecis of a triangle, $\theta$ will determine its shape, while $\phi$ determines the arrangement of the particles at its vertecis. Now lets determine the eigenvalues and eigenfunctions of the grand angular momentum operator. For the $\phi$ equation we have
+
+\begin{equation}
+\frac{\partial^{2}}{\partial \phi^{2}} \me^{ i \nu \phi} = -\nu^{2} \me^{ i \nu \phi}\\,
+\end{equation}
+so the total eigenfunction can be written
+
+\begin{equation}
+f_{\nu n}(\theta,\phi) = g_{n \nu}(\theta) \me^{ i \nu \phi}\\. 
+\end{equation}
+For a general system we have the symmetry 
+
+\begin{equation}
+f_{\nu n}(\theta,\phi = 0) = \Pi f_{\nu n}(\theta,\phi = 2\pi), \qquad \text{for} \qquad \Pi = \pm 1,\\
+\end{equation}
+the symmetry of a three identical particle system will reduce the interval of $\phi$ to $[0,2\pi/3]$. (symmetry group $C_{3v}$ with irreducible representations $A_{1}$, $A_{2}$, and $E$), we will consider bosons and states with $J=0$ so this leads to vibrational wave functions of $A_{1}$ symmetry and this will reduce the interval of $\phi$ further to $[0,\pi/3]$, so
+
+\begin{equation}
+f_{\nu n}(\theta,\phi = 0) = \Pi f_{\nu n}(\theta,\phi =2 \pi/3),  \qquad \text{for} \qquad  \Pi = \pm 1,\\
+\end{equation}
+where the parity $\Pi = 1$ for bosons. Thus
+
+\begin{equation}
+\me^{ i \nu 2\pi/3} = 1 \quad \Leftrightarrow  \quad \nu = 3n \quad \text{for} \quad n=0,1,2,...\\
+\end{equation}
+so we get
+
+\begin{equation}
+\Lambda^{2} g_{n \nu}(\theta) = -4\Bigg(\frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} - \frac{\nu^{2}}{\sin^{2}(\theta)}\Bigg) g_{n \nu}(\theta) = \lambda_{n \nu} g_{n \nu}(\theta).\\
+\end{equation}
+The interval for $\theta$ is $[0,\pi/2]$. Lets look at the boundary as $\theta \rightarrow 0$. The small angle approximation leads to
+
+\begin{equation}
+\Lambda^{2} \rightarrow -4\Bigg(\frac{1}{\theta} \frac{\partial}{\partial \theta} + \frac{\partial^{2}}{\partial \theta^{2}} - \frac{\nu^{2}}{\theta^{2}}\Bigg) g_{n \nu}(\theta) = \lambda_{n \nu} g_{n \nu}(\theta).\\
+\end{equation}
+we thus need to solve a differential equation of the form
+
+\begin{equation}
+g_{n\nu}''(\theta) + \frac{P(\theta)}{\theta}g_{n\nu}'(\theta) + \frac{Q(\theta)}{\theta^{2}}g_{n\nu}(\theta) = 0,\\
+\end{equation}
+with
+
+\begin{equation}
+P(\theta)=1 \quad \text{and} \quad Q(\theta)= \frac{\lambda_{n \nu}\theta^{2} - 4\nu^{2}}{4}.\\
+\end{equation}
+Since ref[the differential equation] has a regular singular point at $\theta = 0$ and both $P(\theta)$ and $Q(\theta)$ are analytic functions, we seek a power series solution of the form
+
+\begin{equation}
+g_{n\nu}(\theta) = \sum_{k=0}^{\infty} A_{k} \theta^{k+s}, \quad (A_{0} \neq 0).\\
+\end{equation}
+differentiating
+
+\begin{equation}
+g'_{n\nu}(\theta) = \sum_{k=0}^{\infty} (k+s) A_{k} \theta^{k+s-1},\\
+\end{equation}
+
+
+\begin{equation}
+g''_{n\nu}(\theta) = \sum_{k=0}^{\infty} (k+s)(k+s-1) A_{k} \theta^{k+s-2},\\
+\end{equation}
+and substituting into [ref] we get
+
+\begin{align*}
+&\sum_{k=0}^{\infty} \Bigg( (k+s)(k+s-1) + (k+s) - \nu^{2}\Bigg) A_{k} \theta^{k+s-2} + \Bigg(\frac{\lambda_{n\nu}}{4}  \Bigg) A_{k} \theta^{k+s} = \\
+&\big[ s(s-1) + s -\nu^{2} \big] A_{0} \theta^{s-2} + \sum_{k=1}^{\infty} \Bigg( \big[ (k+s)(k+s-1) + (k+s) - \nu^{2}  \big] A_{k} + \frac{\lambda_{n\nu}}{4} A_{k-2}\Bigg) \theta^{k+s-2}\\
+\end{align*}
+From $s^{2} - \nu^{2} = 0$ we get the two roots $s = \pm \nu$. Using these roots, we set the coefficients of $\theta^{k+s-2}$ to be zero, and we get the equations
+
+\begin{equation}
+\big(k^{2} \pm 2k\nu\big)A_{k} = \frac{\lambda_{n\nu}}{4} A_{k-2}\\
+\end{equation} 
+
+The table \ref{table:1} shows the analytically derived eigenvalues in SW-coordinates.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{||c c c c c c||} 
+		\hline
+		$\nu=0$ & $\nu=3$ & $\nu=6$ & Total & $\lambda(\lambda+4)$& multiplicity \\ [0.5ex] 
+		\hline\hline
+		0		& 60     & 192 & 0 & 0 & 1  \\ 
+		32	   & 140   & 320 & 32 & 4 & 1  \\
+		96     & 252  & 480 & 60 & 6 & 1  \\
+		192   & 396  & 672  & 96 & 8 & 1  \\
+		320   & 572  & 896  & 140 & 10 & 1  \\
+		480   & 780  & 1152 & 192 & 12 & 2  \\  
+		672   & 1020 & 1440 & 252 & 14 & 1  \\ [1ex] 
+		\hline
+	\end{tabular}
+	\caption{Analytically derived eigenvalues}
+	\label{table:1}
+\end{table} 

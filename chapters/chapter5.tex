@@ -1,0 +1,74 @@
+\chapter{Numerical Approach}
+In this thesis, the B-spline collocation method, with spatial discretization at Gauss points in each subinterval of the mesh with integration using Gauss-Legendre quadrature rule, is implemented to find the numerical solution of the adiabatic equation given in \eqref{adiabatic}. The outline of this method is described in the following sections.
+
+\subsection{Basis splines expansion}
+The first step in solving the adiabatic equation, is to expand the solution, i.e. the channel functions $\Phi_{\nu}$, in a suitable basis, such as B-splines. The B-spline basis functions are piecewise polynomial functions which are defined using the \emph{Cox-de Boor recursion formula}, see \cref{B-splines}. 
+
+Basis functions in two dimensions can be generated from one-dimensional B-splines. If $\varphi_{1l}, \ l= 1,\ldots,L$ is a basis for representing the functional dependency on $\theta$ and $\varphi_{2m}, \ m= 1,\ldots,M$ is a basis for $\phi$, then the tensor product basis is defined by
+
+\begin{equation}
+\varphi_{lm} (\theta,\phi) = \varphi_{1l}(\theta)\varphi_{2m}(\phi).
+\end{equation}
+The two-dimensional basis can thus be built as a product of one-dimensional B-splines. The channel functions are then represented by
+
+\begin{equation}\label{expansion}
+\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m} c_{lm}\varphi_{lm} (\theta,\phi),
+\end{equation}
+in which $c_{lm}$ are $LM$ unknown expansion coefficients. We then choose collocation at the knot points and require that \eqref{expansion} is a solution to \eqref{adiabatic} at those points.  If we use B-splines of order $k$, defined as piecewise polynomials of order $(k-1)$ and define a mesh containing $N_{\theta}$ physical points in the $\theta$-direction and $N_{\phi}$ physical points in the $\phi$-direction, then we need to construct two knot point sequences, where $k$ ghost points are put in the first and last physical point. The number of knot points in each grid are thus
+
+\begin{equation}
+\begin{aligned}
+P_{\theta}=N_{\theta}+2(k-1),\\
+P_{\theta}=N_{\phi}+2(k-1).
+\end{aligned}
+\end{equation}
+This means that the number of B-splines in each dimension are
+
+\begin{equation}
+\begin{aligned}
+L = P_{\theta}-k=N_{\theta}+k-2,\\
+M = P_{\phi}-k = N_{\phi}+k-2.
+\end{aligned}
+\end{equation}
+Thus we have $LM$ B-splines and thus $LM$ unknown coefficents but only $N_{\theta}N_{\phi}$ equations. Only $(k-1)^2$ B-splines are non-zero at the knot points, which means each equation involves $(k-1)^2$ B-splines
+
+\begin{equation}\label{expansion}
+\Phi_{\nu}(\rho;\theta_{l+k-1},\phi_{m+k-1}) = \sum_{l=1}^L\sum_{m=1}^M c_{lm}\varphi_{lm} (\theta_{l+k-1},\phi_{m+k-1}).
+\end{equation}
+The limits $L$ and $M$ can be reduced by placing boundary conditions on $\Phi_{\nu}(\rho;\theta,\phi)$. For each boundary condition on the coordinate in question, we get an additional equation and reduce the number of B-splines in that dimension by one. Thus, if $k=6$ we need two boundary conditions for each dimension. The upper limits $L$ and $M$ are thus determined from 
+
+\begin{align}
+L = N_{\theta}+k-2-c_L,\\
+M = N_{\phi}+k-2-c_M,
+\end{align}
+where $c_{L/M}$ denotes the number of boundary conditions for each coordinate. The number of unknowns are thus $(N_{\theta}+k-2-c_L)(N_{\phi}+k-2-c_M)$ and the number of equations are $(N_{\theta}+c_L)(N_{\phi}+c_M)$.
+
+Boundary conditions are implemented by For a second order partial differential equation the B-splines must be twice differentiable everywhere on the knot sequence and have continuous second order derivatives. With the B-spline definitions given in \ref{B-splines}, the above requirements is fullfilled for B-splines of order $k\geq 4$. Next, substituting \eqref{expansion} into the adiabatic Hamiltonian \eqref{adiabatic} and projecting out $B_{l',k}(\theta)B_{m',k}(\phi))$ gives the matrix equation
+
+\begin{equation}\label{generalized}
+\mathbf{H}\mathbf{c} = U\mathbf{B}\mathbf{c},
+\end{equation}
+where $\mathbf{c}$ is the column vector with the coefficients $c_{\nu}^{l,m}$. Mapping the two indices $l$ and $m$ into a single index $i$ gives 
+
+\begin{equation}
+i=(l-1)M+m.
+\end{equation} 
+The matrix elements of the Hamiltonian now reads
+
+\begin{equation}\label{ham_mat}
+H_{i'i} = \iint d\theta d\phi B_{l',k}(\theta)B_{m',k}(\phi)H_{ad}(\rho;\theta,\phi)B_{l,k}(\theta)B_{m,k}(\phi),
+\end{equation}
+and the overlap matrix elements are given by
+
+\begin{equation}\label{over_mat}
+B_{i'i} = \iint d\theta d\phi B_{l',k}(\theta)B_{m',k}(\phi)B_{l,k}(\theta)B_{m,k}(\phi).
+\end{equation}
+The potential term in the adiabatic Hamiltonian cannot be separated into a product of two one-dimensional integral and must thus be integrated in two angular dimensions. Since the basis functions used in the expansion are B-splines, which are piecewise polynomial functions of degree $k-1$, the overlap matrix and the kinetic terms in the Hamiltonian can be evaluated exactly, within machine epsilon, using Gauss-Legendre quadrature.  
+
+\subsection{Gauss-Legendre Quadrature}
+All integrals are calculated with Gaussian quadrature. A k-point Gaussian quadrature rule is constructed to give an exact result for polynomials of degree $2k-1$ or less by a suitable choice of the abscissas
+
+\begin{align}
+\int_{t_{i}}^{t_{i+1}} \int_{u_{i}}^{u_{i+1}} d\theta d\phi B_{l',k}(\theta)B_{m',k}(\phi)f(\theta,\phi)B_{l,k}(\theta)B_{m,k}(\phi)\nonumber\\
+=\sum_{n=1}^{k} \sum_{p=1}^{k}w_n w_p B_{l',k}(\theta_n)B_{m',k}(\phi_p)f(\theta_n,\phi_p)B_{l,k}(\theta_n)B_{m,k}(\phi_p)
+\end{align}

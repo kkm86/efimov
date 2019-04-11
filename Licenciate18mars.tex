@@ -24,9 +24,7 @@
 \usepackage{tikz-3dplot}
 \usetikzlibrary{calc}
 \usepackage{revsymb}
-
-
-
+\usepackage{enumerate}
 
 \newcommand{\me}{\mathrm{e}}
 \providecommand{\abs}[1]{\lvert#1\rvert} \providecommand{\norm}[1]{\lVert#1\rVert}
@@ -210,7 +208,7 @@ By requiring the wave function to be finite  everywhere it is implied that $u_l(
 \begin{equation}\label{eq:zero}
 u_l(r) \propto r j_l(kr),
 \end{equation}
-where $j_l(kr)$ are the spherical Bessel functions. In the case of a non-zero potential the solutions needs to be regular at the origin, while at large distances $r \gg r_0$ they have the form
+where $j_l(kr)$ are the spherical Bessel functions. In the case of a non-zero potential the solutions need to be regular at the origin, while at large distances $r \gg r_0$ they have the form
 
 \begin{equation}\label{eq:25}
 u_l(r) = r(a_l j_l(kr)+b_l y_l(kr)),
@@ -233,22 +231,22 @@ u_l(r) \xrightarrow{r \to \infty} &\frac{1}{k}\big(\sin(kr - l\frac{\pi}{2} + \d
 =&\frac{e^{-i\delta_l(k)}}{2ik}\big((-1)^{l+1}e^{-ikr} + e^{2i\delta_l(k)}e^{ikr}\big).
 \end{split}
 \end{equation}
-Since the incident plane wave \eqref{eq:26} is aligned with the $z$-axis, it is an eigenfunction of $L_z$ with eigenvalue $m=0$. The plane wave expansion is thus independent of the azimuthal angle around the $z$-axis and can therefore be expressed as
+Since the incident plane wave \eqref{eq:26} is aligned with the $z$-axis, it is an eigenfunction of $L_z$ with an eigenvalue $m=0$. The plane wave expansion is thus independent of the azimuthal angle around the $z$-axis and can therefore be expressed as
 
 \begin{equation}\label{eq:27}
 e^{ikz} = \sum_{l=0}^{\infty} (2l+1)i^l j_l(kr)P_l(\cos\theta),
 \end{equation}
-where $P_l(\cos\theta)$ are Legendre polynomials. It is evident that this plane wave is a solution to \eqref{eq:22} for $V(r) = 0$. Asymptotically the solutions \eqref{eq:27} behave like
+where $P_l(\cos\theta)$ are the Legendre polynomials. It is evident that this plane wave is a solution to \eqref{eq:22} for $V(r) = 0$. Asymptotically the solutions \eqref{eq:27} behave like
 
 \begin{equation}\label{eq:29}
 e^{ikz} \xrightarrow{r \to \infty} \frac{1}{2ikr} \sum_{l=0}^{\infty} (2l+1)P_l(\cos\theta)\big((-1)^{l+1}e^{-ikr} + e^{ikr}\big).
 \end{equation}
-The incident plane wave can thus be resolved into that of incoming ($e^{-ikr}$) and outgoing ($e^{ikr}$) spherical waves with a relative phase of $0$ for $l$ with odd parity and $\pi$ otherwise. The scattering amplitude is Substituting \eqref{eq:29} into \eqref{eq:26} results in an asymptotic wave function of the form
+The incident plane wave can thus be resolved into that of incoming ($e^{-ikr}$) and outgoing ($e^{ikr}$) spherical waves with a relative phase of $0$ for $l$ with odd parity and $\pi$ otherwise. Substituting \eqref{eq:29} into \eqref{eq:26} results in an asymptotic wave function of the form
 
 \begin{equation}\label{eq:30}
 \psi(\mathbf{r}) \xrightarrow{r \to \infty} \frac{1}{2ikr}\sum_{l=0}^{\infty} (2l+1)P_l(\cos\theta))\big((-1)^{l+1}e^{-ikr} + e^{ikr}\big) + f(k, \theta) \frac{e^{ikr}}{r},
 \end{equation} 
-where $f(k,\theta,\phi)=f(k,\theta)$ because the scattering potential is spherically symmetric. Since the system is rotationally invariant about the $z$-axis, the scattered wave function must be azimuthally symmetric, i.e. have magnetic quantum number $m=0$, wherefore the general solution \eqref{eq:32} becomes
+where the scattering amplitude $f(k,\theta,\phi)=f(k,\theta)$ because the scattering potential is spherically symmetric. Since the system is rotationally invariant about the $z$-axis, the scattered wave function must be azimuthally symmetric, i.e. have a magnetic quantum number $m=0$, wherefore the general solution \eqref{eq:32} becomes
 
 \begin{equation}\label{eq:28}
 \psi(\mathbf{r}) = \sum_{l=0}^{\infty} c_l \frac{u_l(r)}{r} P_l(\cos\theta),
@@ -283,7 +281,7 @@ and
 \begin{equation}
 \sigma(k)= \sum_{l=0}^{\infty} \sigma_l(k) = \frac{4\pi}{k^2}\sum_{l=0}^{\infty}(2l+1)\sin^2\delta_l(k),
 \end{equation}
-in which $\sigma_l$ is the scattering cross-section for each partial wave. So far, we have assumed that the particles are distinguishable and that scattering in the direction $\theta$ could be discriminated from that of scattering in the direction $\pi-\theta$. However, for identical particles these collisional processes will lead to the same final state. Interchaning the spatial coordinates of the particles $\mathbf{r}_1 \leftrightarrow \mathbf{r}_2$ corresponds to replacing the relative position vector $\mathbf{r}$ by $-\mathbf{r}$, which in polar coordinates corresponds to replacing ($r,\theta,\phi$) by ($r,\pi-\theta,\phi+\pi$). Thus, to accurately describe scattering of identical particles the quantum statistics of the particles must be taken into account to assure that the wave function of the total system has the correct symmetry properties. The wave function given in \eqref{eq:26} does not fulfill this reqiurement. Instead, the correct two-body wave function in the center-of-mass frame for indistinguishable particles is retreived by symmetrization (bosons, $\epsilon = 1$) or antisymmetrization (fermions, $\epsilon = -1$), leading to
+in which $\sigma_l$ is the scattering cross-section for each partial wave. So far, we have assumed that the particles are distinguishable and that scattering in the direction $\theta$ could be discriminated from that of scattering in the direction $\pi-\theta$. However, for identical particles these collisional processes will lead to the same final state. Interchaning the spatial coordinates of the particles $\mathbf{r}_1 \leftrightarrow \mathbf{r}_2$ corresponds to replacing the relative position vector $\mathbf{r}$ by $-\mathbf{r}$, which in polar coordinates corresponds to replacing ($r,\theta,\phi$) by ($r,\pi-\theta,\phi+\pi$). Thus, to accurately describe scattering of identical particles the quantum statistics of the particles must be taken into account to assure that the wave function of the total system has the correct symmetry properties. The wave function given in \eqref{eq:26} does not fulfill this requirement. Instead, the correct two-body wave function in the center-of-mass frame for indistinguishable particles is retreived by symmetrization (bosons, $\epsilon = 1$) or antisymmetrization (fermions, $\epsilon = -1$), leading to
 
 \begin{equation}
 \psi(\mathbf{r}) \xrightarrow{r \to \infty} \frac{e^{ikz} + \epsilon e^{-ikz}}{\sqrt{2}} + \frac{f(k,\theta)+\epsilon f(k,(\pi-\theta))}{\sqrt{2}}\frac{e^{ikr}}{r}.
@@ -298,16 +296,16 @@ where the sum of probability amplitudes is
 \begin{equation}
 f(k,\theta) \pm f(k,(\pi-\theta)) = \frac{1}{2ik}\sum_{l=0}^{\infty} \big[1 \pm (-1)^l\big](2l+1)P_l(\cos\theta)(e^{2i\delta_l(k)} - 1).
 \end{equation}
-Note that the total cross section is obtained by integrating over half of the solid angle $\Omega =4\pi$ in the case of identical particles. The expression for the total cross section for elastic scattering after integration is then
+Note that the total cross-section is obtained by integrating over half of the solid angle $\Omega =4\pi$ in the case of identical particles. The expression for the total cross-section for elastic scattering after integration is then
 
 \begin{equation}\label{eq:34}
 \sigma(k)=
 \frac{8\pi}{k^2}\sum_{l=0}^{\infty} (2l+1)\sin^2\delta_l(k). 
 \end{equation}
-In the case of bosons (fermions), only even (odd) values of $l$ will contribute to the total cross section \eqref{eq:34}.
+In the case of bosons (fermions), only even (odd) values of $l$ will contribute to the total cross-section \eqref{eq:34}.
 
-\subsection{The low energy limit}
-At very low energies --  i.e. when the angular de Broglie wavelength $\lambdabar = 1/k$ is much larger than the interparticle interaction range $kr_0 \ll 1$ -- higher partial waves becomes unimportant except for potentials that are strong enough to form $l\neq 0$ bound states near threshold ($E \simeq 0$). This can be understood classically by considering that particles with angular momentum $l$ and energies much lower than the height of the centrifugal barrier -- i.e. the angular momentum term in the effective potential $V_{eff} = V(r) + \hbar^2l(+1)/2\mu r^2$ -- will simply be reflected by the barrier and only the lowest partial wave $l=0$ will be able to come close enough to be scattered by the potential $V(r)$. For short-ranged two-body interactions -- i.e. potentials that fall off faster than $r^{-2}$ -- the angular momentum term is the potential of longest range and will thus largely govern the threshold behaviour ($E=0$) of the radial wave function. Since the potential and the $k^2$ term can be neglected in the radial equation \eqref{eq:24} for separations larger than the interaction range $r \gg r_0$, the general solution $R_l = u_l/r$ at threshold is given by
+\subsection{The Low Energy Limit}
+At very low energies --  i.e. when the angular de Broglie wavelength $\lambdabar = 1/k$ is much larger than the interparticle interaction range $kr_0 \ll 1$ -- higher partial waves become unimportant except for potentials that are strong enough to form $l\neq 0$ bound states near threshold ($E \simeq 0$). This can be understood classically by considering that particles with angular momentum $l$ and energies much lower than the height of the centrifugal barrier -- i.e. the angular momentum term in the effective potential $V_{eff} = V(r) + \hbar^2l(+1)/2\mu r^2$ -- will simply be reflected by the barrier and only the lowest partial wave $l=0$ will be able to come close enough to be scattered by the potential $V(r)$. For short-ranged two-body interactions -- i.e. potentials that fall off faster than $r^{-2}$ -- the angular momentum term is the potential of longest range and will thus largely govern the threshold behaviour ($E=0$) of the radial wave function. Since the potential and the $k^2$ term can be neglected in the radial equation \eqref{eq:24} for separations larger than the interaction range $r \gg r_0$, the general solution $R_l = u_l/r$ at threshold is given by
 
 \begin{equation}\label{eq:35}
 R_l(E=0) = c_1r^l + c_2r^{-(l+1)}.
@@ -317,7 +315,7 @@ By joining this solution to the asymptotic solution for $E>0$, given in \eqref{e
 \begin{equation}
 \tan\delta_l(k) \simeq \delta_l(k) = \frac{c_2}{c_1}\frac{k^{2l+1}}{(2l-1)!!(2l+1)!!} = (-a_lk)^{2l+1},
 \end{equation}
-in which $a_l$ is the scattering length for the $l$'th partial wave. The arguments above form the basis of the Wigner threshold law \cite{Landau1965Quantum,Sadeghpour_2000}, which states that at near thershold, the phase shift goes to zero like
+in which $a_l$ is the scattering length for the $l$th partial wave. The arguments above form the basis of the Wigner threshold law \cite{Landau1965Quantum,Sadeghpour_2000}, which states that at near thershold, the phase shift goes to zero like
 
 \begin{equation}
 \delta_l(k) \propto k^{2l+1} \pmod{\pi} \quad \text{when} \quad k \rightarrow 0.
@@ -355,12 +353,12 @@ In the limit $kr \ll 1$, the scattering length is obtained as
 \begin{equation}
 a = -\lim_{k \to 0} \frac{\tan \delta_0 }{k} = \lim_{k,r \to 0,\infty}\Bigg(r-  \frac{u(r)}{u'(r)}\Bigg).
 \end{equation}
-From equation \eqref{eq:radzero} it is evident that the scattering length is simply the radius at which the tangent to the radial wave intercept the $r$-axis. This concept can be illustrated by using a short-ranged attractive model potential given by
+From equation \eqref{eq:radzero} it is evident that the scattering length is simply the radius at which the tangent to the radial wave intercepts the $r$-axis. This concept can be illustrated by using a short-ranged attractive model potential given by
 
 \begin{equation}\label{modelpotential}
 V(r) = -\frac{c_w\bigg[1-\Big(1 + \frac{r^2}{r_c^2}\Big)e^{-\frac{r^2}{r_c^2}}\bigg]}{r^6},
 \end{equation}
-in which $r_c$ and $c_w$ are tuning parameters for the distance to the nadir and the depth of the potential, respectively. The scattering length can be varied by fine-tuning the potential depth, see \cref{fig:potential_depth}. Starting with an attractive potential with negative scattering length, i.e. with a tangent intercept on the negative side, when increasing the potential depth, the magnitude of the scattering length will increase and as $a \rightarrow -\infty$ the radial wave function will become flat. A further increase in potential depth will cause $a$ to change sign $a \rightarrow \infty$. The sign shift of $a$ is associated with the forming of a bound state. After the change in sign, a further increase in depth will insead corresponds to decreasing $a$ since the radial wave function now crosses the $r$-axis on the positive side, with the intercept subsequently approaching the origin, see \cref{fig:intercept}. This behavior is then repeated in the same way until a new bound state is formed, see \cref{fig:scattapp}.
+in which $r_c$ and $c_w$ are tuning parameters for the distance to the nadir and the depth of the potential, respectively. The scattering length can be varied by fine-tuning the potential depth, see \cref{fig:potential_depth}. Starting with an attractive potential with negative scattering length, i.e. with a tangent intercept on the negative side, when increasing the potential depth, the magnitude of the scattering length will increase and as $a \rightarrow -\infty$ the radial wave function will become flat. A further increase in potential depth will cause $a$ to change sign $a \rightarrow \infty$. The sign shift of $a$ is associated with the forming of a bound state. After the change in sign, a further increase in depth will instead correspond to decreasing $a$ since the radial wave function now crosses the $r$-axis on the positive side, with the intercept subsequently approaching the origin, see \cref{fig:intercept}. This behavior is then repeated in the same way until a new bound state is formed, see \cref{fig:scattapp}.
 
 \begin{figure}
 	\centering
@@ -382,7 +380,7 @@ Positive scattering lengths thus correspond to replusive effective interactions,
 \section{The Three-body Problem} 
 Two-body scattering processes basically concern two different situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmenation channels (1+2). This makes the construction of permutation symmetric wavefunctions highly non-trivial. 
 
-There are different routes for solving the three-body problem and they involve either solving the three-body Schr{\"o}dinger equation or solving the Faddeev equation, which is equivalent to solving the three-body Schr{\"o}dinger equation in configuration space. Irrespective of the specific method of choice for solving the three-body system, most approaches start with the same steps. This includes separating out the center-of-mass motion and then defining a set of relative coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since it removes the mass factors in the kinetic energy operator. 
+There are different routes for solving the three-body problem and they involve either solving the three-body Schr{\"o}dinger equation or solving the Faddeev equation, which is equivalent to solving the three-body Schr{\"o}dinger equation in configuration space. Irrespective of the specific method of choice for solving the three-body system, most approaches start with the same steps. This includes separating out the center-of-mass motion and then defining a set of relative coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since this removes the mass factors in the kinetic energy operator. 
 
 Atomic units (a.u.) will be used throughout this theisis. There are four fundamental atomic units -- the electron rest mass $m_e$, the elementary charge $e$, the reduced Planck's constant $\hbar$, and the Coulomb force constant $k_e$ -- which numerical values are unity by definition, i.e. $m_e = e = \hbar = k_e = 1$. Derived atomic units include dimensions of length and energy, which are expressed in terms of the Bohr radius $a_0$ and the Hartree $E_h$.    
 
@@ -392,9 +390,9 @@ The spatial position of three particles in $\mathbb{R}^3$ are fixed by nine coor
 \begin{align}
 M &= \sum_{i=1}^{3}m_i,  \label{eq:3,1} \\
 \mu^2 &= \prod_{i=1}^{3}m_i/M,  \label{eq:3,2}\\
-d_k^2 &= \frac{m_k}{\mu}\frac{(m_i+m_j)}{M}.  \label{eq:3,3}
+d_k^2 &= \frac{m_k}{\mu}\frac{(m_i+m_j)}{M},  \label{eq:3,3}
 \end{align}
-Then a set of mass scaled Jacobi coordinates and the center-of-mass coordinate can be defined as
+then a set of mass scaled Jacobi coordinates and the center-of-mass coordinate can be defined as
 
 \begin{align}
 \mathbf{r}_k &= d^{-1}_k(\mathbf{x}_{j}-\mathbf{x}_{i}),  \label{eq:4,1} \\
@@ -411,14 +409,14 @@ Then a set of mass scaled Jacobi coordinates and the center-of-mass coordinate c
  The kinetic energy operator for the three particles in the laboratory frame, as given by 
 
 \begin{equation}\label{eq:5}
-\hat{T} = -\frac{1}{2} \sum_{i=1}^{3} m_{i}^{-1} \nabla^{2}_{\mathbf{x}_{i}}, 
+T = -\frac{1}{2} \sum_{i=1}^{3} m_{i}^{-1} \nabla^{2}_{\mathbf{x}_{i}}, 
 \end{equation}
 will subsequently transform into
 
 \begin{equation}\label{eq:6}
-\hat{T} = -\frac{1}{2\mu} \Big(\nabla^{2}_{\mathbf{r}_{k}}+\nabla^{2}_{\mathbf{R}_{k}}\Big) - \frac{1}{2 M}\nabla^{2}_{\mathbf{X}_{cm}}. 
+T = -\frac{1}{2\mu} \Big(\nabla^{2}_{\mathbf{r}_{k}}+\nabla^{2}_{\mathbf{R}_{k}}\Big) - \frac{1}{2 M}\nabla^{2}_{\mathbf{X}_{cm}}. 
 \end{equation}
-Now, since the interaction $V(\mathbf{r}_k,\mathbf{R}_k)$ do not depend on $\mathbf{X}_{cm}$, the center-of-mass motion decouples from the internal motion in the Schr{\"o}dinger equation if we write the wavefunction as
+Now, since the interaction $V(\mathbf{r}_k,\mathbf{R}_k)$ does not depend on $\mathbf{X}_{cm}$, the center-of-mass motion decouples from the internal motion in the Schr{\"o}dinger equation if we write the wavefunction as
 
 \begin{equation}
 \Psi(\mathbf{r}_k,\mathbf{R}_k,\mathbf{X}_{cm}) = \varphi(\mathbf{X}_{cm})\psi(\mathbf{r}_k,\mathbf{R}_k),
@@ -428,7 +426,7 @@ so that
 \begin{equation}
 (H_{cm} + H_{int})\varphi_{k}(\mathbf{X}_{cm})\psi_{n}(\mathbf{r}_k,\mathbf{R}_k) = (E_k^{cm} + E_n^{int})\varphi_{k}(\mathbf{X}_{cm})\psi_{n}(\mathbf{r}_k,\mathbf{R}_k).
 \end{equation}
-In the following text we will only consider the internal motion part of the  Schr{\"o}diner equation. To clarify the notions in the following text, wavefunctions and energies labelled $\Psi$ and $E$ refers to the internal eigenstates and eigenenergies, which was labelled $\psi$ and $E^{int}$ previously. 
+Henceforth, we will only consider the internal motion part of the  Schr{\"o}dinger equation. To clarify the notations, from now on wavefunctions and energies labelled $\Psi$ and $E$ refers to the internal eigenstates and eigenenergies, which were labelled $\psi$ and $E^{int}$ previously. 
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{jacobii.pdf}
@@ -467,9 +465,9 @@ Orthogonal transformations within the coordinate set are then given by
 
 
 \subsection{The Hyperspherical Method}
-The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these angles $\alpha, \beta, \gamma$ are usually chosen the Euler angles that specify the  orientation of the body-fixed axis system -- i.e. the triangle formed by the three particles -- relative to a space-fixed coordinate frame. These are the external coordinates of the system. The internal coordinates are the hyperradius -- which describes the overall size of the system -- and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
+The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these angles $\alpha, \beta, \gamma$ are usually chosen as the Euler angles that specify the  orientation of the body-fixed axis system -- i.e. the triangle formed by the three particles -- relative to a space-fixed coordinate frame. These are the external coordinates of the system. The internal coordinates are the hyperradius -- which describes the overall size of the system -- and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
 
-Hyperspherical coordinates are useful for describing fragmentation problems. Fragmentations processes of the system into any one of the possible channels are described by the hyperradius becoming very large $(\rho \rightarrow \infty)$, while the hyperangles distinguishes between the different fragmentation channels. The hyperradius is invariant under both rotations and particle permutation and for the three-body problem it is defined by
+Hyperspherical coordinates are useful for describing fragmentation problems. Fragmentation processes of the system into any one of the possible channels are described by the hyperradius becoming very large $(\rho \rightarrow \infty)$, while the hyperangles distinguish between the different fragmentation channels. The hyperradius is invariant under both rotations and particle permutations, and for the three-body problem it is defined by
 
 \begin{equation}
 \rho = \Big(\mathbf{r}^{2} + \mathbf{R}^{2}\Big)^{1/2}, \quad 0\leq \rho < \infty.
@@ -484,12 +482,12 @@ Delves coordinates are adapted to collinear atom-diatom collisions and are regul
 	r_{k} &= \rho \sin{\alpha_{k}},\\
 	R_{k} &= \rho \cos{\alpha_{k}},
 \end{align}
-where the Delves hyperangle $\alpha_{k}$, which correlates the lengths of these vectors is defined by
+where the Delves hyperangle $\alpha_{k}$, which correlates to the lengths of these vectors, is defined by
 
 \begin{equation}
 	\alpha_{k} = \arctan\bigg(\frac{r_{k}}{R_{k}}\bigg), \quad 0\leq \alpha_{k} \leq \frac{\pi}{2}.
 \end{equation}
-This coordinate set corresponds to the reactant arrangement when particle $k$ scatters of the weakly bound particles $i-j$. The other angle in this set is the angle between the two vectors $\mathbf{r}_{k}$ and $\mathbf{R}_{k}$. It is given by
+This coordinate set corresponds to the reactant arrangement when particle $k$ scatters off the weakly bound particles $ij$. The other angle in this set is the angle between the two vectors $\mathbf{r}_{k}$ and $\mathbf{R}_{k}$. It is given by
 
 \begin{equation}
 \cos{\theta_{k}} = \frac{\mathbf{r}_{k} \cdot \mathbf{R}_{k}}{r_{k} R_{k}}, \quad  0\leq \theta \leq \pi.
@@ -506,7 +504,7 @@ in which $E$ is the internal energy and where the squared grand angular momentum
 \begin{equation}
 \Lambda^2 = -\frac{\partial^2}{\partial\alpha^2} - \frac{1}{\sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta}\bigg).
 \end{equation}
-The corresponding volume element is proportional to $\rho^5\sin^2\alpha\cos^2\alpha\sin\theta d\rho d\alpha d\theta$. The rescaled wavefunction must further to be square-integrable for a bound state and it has to obey the boundary conditions
+The corresponding volume element is proportional to $\rho^5\sin^2\alpha\cos^2\alpha\sin\theta d\rho d\alpha d\theta$. To be square-integrable, the rescaled wavefunction for a bound state must obey the boundary conditions
 
 \begin{align}
 \psi(0,\alpha,\theta) &= 0,\\
@@ -521,7 +519,7 @@ Numerical difficulties arise with these coordinates when permutation symmetries 
 \subsubsection{Smith-Whitten Coordinates}\label{smith_whitten}
 %TODO Principel axis methods are characterized by the use of a single hyperspherical coordinate system that treats all three arragements of particles equivalently. 
 
-The motion of three particles can be represented in a symmetric way by using so called democratic coordinates. The main advantage with these kind of coordinates is that permutation symmetries for three identical particles can be imposed exactly. To define the two hyperangles $\theta$ and $\phi$ we use a modified set of the coordinates first introduced by Smith and Whitten \cite{Smith_Whitten1968}. The 
+The motion of three particles can be represented in a symmetric way by using so called democratic coordinates. The main advantage with these kind of coordinates is that permutation symmetries for three identical particles can be imposed exactly. To define the two hyperangles $\theta$ and $\phi$ we use Kuppermann's mapping  procedure to produce a modified set of the coordinates first introduced by Smith and Whitten \cite{Smith_Whitten1968,KUPPERMANN1975374}. The 
 
 \begin{align}
 \varphi_1 &= 2\tan^{-1}(m_2/\mu)\\
@@ -572,6 +570,8 @@ The two-body interaction
 v(r) = d\cosh^{-2}{(r/r_0)}.
 \end{equation}
 
+The general feature of the Efimov effect is that it is insensitive to the details of the interatomic interaction. Describe why it is okey to use model potentials, controlling the number of bound two-body systems, controlling the scattering length, tuning trough poles in the scattering matrix.
+
 \begin{align}
 r_3 &= 3^{-1/4}\rho [1+\sin \theta \cos \phi]^{1/2} \\
 r_1 &= 3^{-1/4}\rho [1+\sin \theta \cos (\phi - 2\pi/3)]^{1/2} \\
@@ -613,6 +613,18 @@ where the square of the coupling matrix $P_{\mu \nu}$ relates to $Q_{\mu \nu}$ t
 P^2_{\mu \nu} &= \sum_{\sigma}P_{\mu \sigma}P_{\sigma \nu} = \sum_{\sigma}\llangle[\Big] \Phi_{\mu} \Big\lvert \frac{\partial \Phi_{\sigma}}{\partial\rho}  \rrangle[\Big]\llangle[\Big] \Phi_{\sigma} \Big\lvert \frac{\partial \Phi_{\nu}}{\partial\rho}  \rrangle[\Big]\nonumber\\
 &=\sum_{\sigma}-\llangle[\Big]\frac{\partial \Phi_{\mu}}{\partial\rho} \Big\lvert  \Phi_{\sigma} \rrangle[\Big]\llangle[\Big] \Phi_{\sigma} \Big\lvert \frac{\partial \Phi_{\nu}}{\partial\rho}  \rrangle[\Big]=- \llangle[\Big] \frac{\partial \Phi_{\mu}}{\partial \rho}  \Big\lvert \frac{\partial \Phi_{\nu}}{\partial\rho}  \rrangle[\Big].
 \end{align}
+The antisymmetry of $P_{\mu\nu}$ together with $P_{\mu\nu}^2 = P_{\nu\mu}^2$ leads to $P_{\nu\nu} = 0$ and $Q_{\nu \nu} = P_{\nu\nu}^2$. 
+
+In the adiabatic hyperspherical approximation the diagonal elements are neglected and the effective potentials are defined as
+
+\begin{equation}
+W_{\nu}(\rho) = U_{\nu}(\rho)-\frac{1}{2\mu}Q_{\nu \nu}(\rho) = U_{\nu}(\rho)-\frac{1}{2\mu}P_{\nu \nu}^2(\rho).
+\end{equation} 
+The hyperspherical Born-Oppenheimer approximation, the effective potentials are simply $U_{\nu}(\rho)$, thus neglecting the diagonal terms. 
+
+\begin{equation}
+W_{\nu}(\rho) = -\frac{s_0^2+1/4}{2\mu \rho^2}.
+\end{equation} 
 
 
 \subsection{Generalized Hellmann-Feynman theorem}
@@ -731,13 +743,13 @@ All integrals are calculated with Gaussian quadrature. A k-point Gaussian quadra
 		15 & 0.000 000 000 0007 & 32.000 000 000 1309 & 59.999 999 999 8871& 12.32& 0.02 \\  [1ex] 
 		\hline
 	\end{tabular}
-	\caption{Analytically derived eigenvalues}
+	\caption{Numerically calculated eigenvalues}
 	\label{table:2}
 \end{table}
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{scatteringlength.pdf}
-	\caption{Adiabatic potential curves $U_{\nu}$ as a function of the hyperradius $\rho$ for $a=228 $ .}
+	\caption{The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm{I},\mathrm{II},\mathrm{III}$. At each pole a new two-body bound state is formed. The first bound state is formed as $a$ passes through $\mathrm{I}$, followed by a second a two-body bound state is formed. At each pole a new two-body bound state is formed, so when $\abs{d}$ is increased so that $a$ passes through $\mathrm{II}$ a second two-body bound state is formed, while a third state is formed as $a$ passes through $\mathrm{III}$.}
 	\label{fig:3}
 \end{figure}
 
@@ -751,6 +763,18 @@ All integrals are calculated with Gaussian quadrature. A k-point Gaussian quadra
 	\includegraphics[width=\linewidth]{adiabatic.pdf}
 	\caption{Adiabatic potential curves $U_{\nu}$ as a function of the hyperradius $\rho$ for $a=228 $ .}
 	\label{fig:3}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{negativ_a.pdf}
+	\caption{..}
+	\label{fig:5}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{positive_a.pdf}
+	\caption{..}
+	\label{fig:6}
 \end{figure}
 
 \appendix
@@ -829,12 +853,12 @@ The indices $k$ will be suppressed from hereon. The mass weighted Schr{\"o}dinge
 Where $\nabla^{2}$ is the Laplace operator, which in spherical coordinates reads
 
 \begin{equation}
-\Delta = \frac{1}{r^{2}}\frac{\partial}{\partial r} \bigg(r^{2} \frac{\partial}{\partial r}\bigg) - \frac{\hat{L}^{2}}{r^{2}},
+\Delta = \frac{1}{r^{2}}\frac{\partial}{\partial r} \bigg(r^{2} \frac{\partial}{\partial r}\bigg) - \frac{L^{2}}{r^{2}},
 \end{equation}
-in which $\hat{L}$ is the angular momentum operator associated with the vector $\mathbf{r}$ and
+in which $L$ is the angular momentum operator associated with the vector $\mathbf{r}$ and
 
 \begin{equation}
-\hat{L}^{2} = -\frac{1}{\sin{\theta}}\frac{\partial}{\partial \theta} \bigg(\sin{\theta}\frac{\partial}{\partial \theta}\bigg) - \frac{1}{\sin^{2}{\theta}} \frac{\partial^{2}}{\partial \phi^{2}}.
+L^{2} = -\frac{1}{\sin{\theta}}\frac{\partial}{\partial \theta} \bigg(\sin{\theta}\frac{\partial}{\partial \theta}\bigg) - \frac{1}{\sin^{2}{\theta}} \frac{\partial^{2}}{\partial \phi^{2}}.
 \end{equation}
 The kinetic energy for three particles in the mass normalized Jacobi coordinates was given in \eqref{eq:6}. Thus, after separating out the center-of-mass coordinate, the Schr{\"o}dinger equation for the internal motion is simply 
 
@@ -844,13 +868,13 @@ The kinetic energy for three particles in the mass normalized Jacobi coordinates
 With the Laplacians for the mass scaled Jacobi vectors given by
 
 \begin{align}
-	\nabla^2_{\mathbf{r}} &= \frac{1}{r^2}\frac{\partial}{\partial r} \bigg( r^2 \frac{\partial}{\partial r} \bigg) - \frac{\hat{l}^2_{r}}{r^2} = \frac{2}{r}\frac{\partial}{\partial r} + \frac{\partial^2}{\partial r^{2}} - \frac{\hat{l}^{2}_{r}}{r^2},\\
-	\nabla^2_{\mathbf{R}} &= \frac{1}{R^2}\frac{\partial}{\partial R} \bigg( R^2 \frac{\partial}{\partial R} \bigg) - \frac{\hat{l}^2_{R}}{R^2} = \frac{2}{R}\frac{\partial}{\partial R} + \frac{\partial^2}{\partial R^{2}} - \frac{\hat{l}^{2}_{R}}{R^2}.
+	\nabla^2_{\mathbf{r}} &= \frac{1}{r^2}\frac{\partial}{\partial r} \bigg( r^2 \frac{\partial}{\partial r} \bigg) - \frac{L^2_{r}}{r^2} = \frac{2}{r}\frac{\partial}{\partial r} + \frac{\partial^2}{\partial r^{2}} - \frac{L^{2}_{r}}{r^2},\\
+	\nabla^2_{\mathbf{R}} &= \frac{1}{R^2}\frac{\partial}{\partial R} \bigg( R^2 \frac{\partial}{\partial R} \bigg) - \frac{L^2_{R}}{R^2} = \frac{2}{R}\frac{\partial}{\partial R} + \frac{\partial^2}{\partial R^{2}} - \frac{L^{2}_{R}}{R^2}.
 \end{align}
 If spin interactions are excluded the total orbital angular momentum is zero and we have 
 
 \begin{equation}
-\hat{l}^{2}_r = \hat{l}^{2}_{R} = -\frac{1}{\sin{\theta}} \frac{\partial}{\partial{\theta}} \bigg( \sin{\theta} \frac{\partial}{\partial{\theta}} \bigg).
+L^{2}_r = L^{2}_{R} = -\frac{1}{\sin{\theta}} \frac{\partial}{\partial{\theta}} \bigg( \sin{\theta} \frac{\partial}{\partial{\theta}} \bigg).
 \end{equation}
 Change of coordinates subsequently results in the following transformations for the partial derivatives of the vector $\mathbf{r}$
 
@@ -871,7 +895,7 @@ Similarly, the partial derivatives with respect to the vector $\mathbf{R}$ trans
 Finally, the sum of the two Laplacian operators now reads 
 
 \begin{align}
-\nabla^2_{\mathbf{r}} + \nabla^2_{\mathbf{R}} &= \frac{2}{r}\frac{\partial}{\partial r} +  \frac{2}{R} \frac{\partial}{\partial R}  +\frac{\partial^2}{\partial r^{2}} + \frac{\partial^2}{\partial R^{2}} - \frac{\hat{l}^{2}_{r}}{r^2} - \frac{\hat{l}^{2}_{R}}{R^2} \nonumber \\
+\nabla^2_{\mathbf{r}} + \nabla^2_{\mathbf{R}} &= \frac{2}{r}\frac{\partial}{\partial r} +  \frac{2}{R} \frac{\partial}{\partial R}  +\frac{\partial^2}{\partial r^{2}} + \frac{\partial^2}{\partial R^{2}} - \frac{L^{2}_{r}}{r^2} - \frac{L^{2}_{R}}{R^2} \nonumber \\
 &= \frac{4}{\rho^2} \cot(2\alpha) \frac{\partial}{\partial\alpha} + \frac{5}{\rho} \frac{\partial}{\partial\rho} + \frac{1}{\rho^2} \frac{\partial^2}{\partial\alpha^2} + \frac{\partial^2}{\partial\rho^2} \nonumber \\
 &+ \frac{4}{\rho^2 \sin^2(2\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \bigg( \sin(\theta) \frac{\partial}{\partial{\theta}} \bigg) \nonumber \\
 &= \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \bigg( \rho^5 \frac{\partial}{\partial\rho} \bigg) + \frac{1}{\rho^2 \sin^2(2\alpha)}  \bigg( \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} + \frac{4}{\sin\theta} \frac{\partial}{\partial\theta} \bigg).
@@ -879,19 +903,19 @@ Finally, the sum of the two Laplacian operators now reads
 The original Hamiltonian operator written in Delves coordinates can thus be expressed as 
 
 \begin{equation}
-H_0 = \hat{T}_{\rho} + \hat{T}_{\alpha} + \hat{T}_{\theta} + V(\rho,\Omega).
+H_0 = T_{\rho} + T_{\alpha} + T_{\theta} + V(\rho,\Omega).
 \end{equation}  
-Anticipating a rescaling of the wave function for subsequent removal of first derivatives with respect to $\rho$ and $\alpha$ warrants us to write the kinetic energy operators in the original Hamiltonian in the following ways: Let the hyperradial kinetic energy operator $\hat{T}_{\rho}$ be expressed as
+Anticipating a rescaling of the wave function for subsequent removal of first derivatives with respect to $\rho$ and $\alpha$ warrants us to write the kinetic energy operators in the original Hamiltonian in the following ways: Let the hyperradial kinetic energy operator $T_{\rho}$ be expressed as
 
 \begin{align}
-\hat{T}_{\rho} &= -\frac{1}{2\mu} \Big[ \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \Big( \rho^5 \frac{\partial}{\partial\rho} \Big)  \Big] \nonumber\\ 
+T_{\rho} &= -\frac{1}{2\mu} \Big[ \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \Big( \rho^5 \frac{\partial}{\partial\rho} \Big)  \Big] \nonumber\\ 
 &= -\frac{1}{2\mu} \Big[ \rho^{-5/2} \Big( \rho^{5/2} \frac{5}{\rho} \frac{\partial}{\partial\rho} + \rho^{5/2} \frac{\partial^2}{\partial\rho^2} \Big) \rho^{-5/2} \rho^{5/2} \Big]\nonumber\\
 &= -\frac{1}{2\mu} \rho^{-5/2} \Big[  -\frac{15}{4} \frac{1}{\rho^2} + \frac{\partial^2}{\partial\rho^2} \Big] \rho^{5/2}
 \end{align}
-and let the kinetic energy operators for the hyperangles -- that is, the kinetic energy operator for the Delves angle $\hat{T}_{\alpha}$ and the kinetic energy operator for the angular momentum of the Jacobi vectors $\hat{T}_{\theta}$ -- be expressed as 
+and let the kinetic energy operators for the hyperangles -- that is, the kinetic energy operator for the Delves angle $T_{\alpha}$ and the kinetic energy operator for the angular momentum of the Jacobi vectors $T_{\theta}$ -- be expressed as 
 
 \begin{align}
-\hat{T}_{\alpha} &= -\frac{1}{2\mu}  \frac{1}{\rho^2 \sin^2(2\alpha)}  \bigg[ \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} \bigg]\nonumber\\ 
+T_{\alpha} &= -\frac{1}{2\mu}  \frac{1}{\rho^2 \sin^2(2\alpha)}  \bigg[ \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} \bigg]\nonumber\\ 
 &= -\frac{1}{2\mu} \frac{1}{\rho^2} \bigg[ \frac{\partial^2}{\partial\alpha^2} + 4\cot(2\alpha) \frac{\partial}{\partial\alpha} \bigg]\nonumber\\
 &= -\frac{1}{2\mu} \frac{1}{\rho^2} \bigg[ \sin^{-1}(2\alpha) \bigg(\sin(2\alpha)\frac{\partial^2}{\partial\alpha^2} + 4\cos(2\alpha) \frac{\partial}{\partial\alpha} \bigg) \sin^{-1}(2\alpha) \sin(2\alpha) \bigg]\nonumber\\
 &= -\frac{1}{2\mu} \frac{1}{\rho^2}\sin^{-1}(2\alpha) \bigg[ \frac{\partial^2}{\partial\alpha^2} + 4 \bigg] \sin(2\alpha),
@@ -899,7 +923,7 @@ and let the kinetic energy operators for the hyperangles -- that is, the kinetic
 and
 
 \begin{align}                  
-\hat{T}_{\theta} &= -\frac{1}{2\mu} \bigg[ \frac{4}{\rho^2 \sin^2(2\alpha)\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg]\nonumber\\ 
+T_{\theta} &= -\frac{1}{2\mu} \bigg[ \frac{4}{\rho^2 \sin^2(2\alpha)\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg]\nonumber\\ 
 &= -\frac{1}{2\mu} \bigg[ \frac{1}{\rho^2 \sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg]
 \end{align}
 respectively. Removal of first derivatives with respect to $\rho$ and $\alpha$ is now possible by rescaling the total wave function such that $\Psi = \rho^{-5/2}(\sin(2\alpha))^{-1}\psi$. The corresponding transformation of the Hamiltonian is then
@@ -1080,22 +1104,22 @@ Since both the area and the hyperradius are positive quantities the angle must b
 The kinetic energy operator of a particle with mass $\mu$ in a curvilinear coordinate system of $N$ dimensions is given by \cite{podolsky_1928}
 
 \begin{equation}\label{eq:kinetic_e_op}
-\hat{\mathrm{T}} = -\frac{1}{2\mu} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{1}{\sqrt{g}} \frac{\partial}{\partial q_i} \bigg(\sqrt{g} g^{ij} \frac{\partial}{\partial q_j}\bigg),
+T = -\frac{1}{2\mu} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{1}{\sqrt{g}} \frac{\partial}{\partial q_i} \bigg(\sqrt{g} g^{ij} \frac{\partial}{\partial q_j}\bigg),
 \end{equation}
 where $g^{ij}$ is the inverse, or contravariant, metric tensor and $g$ is the determinant of the covariant metric tensor $g = \det(g_{ij}) \neq 0$. The metric tensor $g_{ij}$ describes the relationship between the set of curvilinear coordinates $\mathbf{q}$ and the set of regular Cartesian coordinates $\mathbf{x}$ through
 
 \begin{equation}
 g_{ij} = \sum_{\lambda = 1}^{N} \frac{\partial x_{\lambda}}{\partial q_{i}} \frac{\partial x_{\lambda}}{\partial q_{j}},
 \end{equation}
-where $x_{\lambda} = x_{\lambda}(q_1,\ldots,q_N)$. The metric is usefull for generalizing the concept of distance to general curvilinear coordinate frames and hence maintain the invariance of distance in different coordinate systems. Invariance of the square of the line element $ds^2$ under coordinate transformations can also be considered to define the metric itself since
+where $x_{\lambda} = x_{\lambda}(q_1,\ldots,q_N)$. The metric is usefull for generalizing the concept of distance to general curvilinear coordinate frames and hence maintain the invariance of distance in different coordinate systems. Invariance of the square of the line element $d s^2$ under coordinate transformations can also be considered to define the metric itself since
 
 \begin{equation}
-ds^2 = d\mathbf{x} \cdot d\mathbf{x} = \sum_{i,j}^{N} g_{ij} dq_{i} dq_{j} = g.
+d s^2 = d\mathbf{x} \cdot d\mathbf{x} = \sum_{i,j}^{N} g_{ij}  d q_{i} d q_{j} = g.
 \end{equation}
 Here the displacement differential vector is given by
 
 \begin{equation}
-d\mathbf{x} = \frac{\partial \mathbf{x}}{\partial q_{i}} dq_{i},
+d\mathbf{x} = \frac{\partial \mathbf{x}}{\partial q_{i}} d q_{i},
 \end{equation} 
 where $\mathbf{x}$ is the position vector.
 
@@ -1130,10 +1154,10 @@ At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider t
 \end{aligned}   
 \end{equation}
 
-To describe how rotations of the body-fixed frame affects the derivatives in the space-fixed frame it is enough to consider infinitesimal rotations.  Let $\mathbf{\Omega}$ be the angular displacement differential vector of the rotating axes $xyz$ with respect to the fixed axes $x'y'z'$
+To describe how rotations of the body-fixed frame affects the derivatives in the space-fixed frame it is enough to consider infinitesimal rotations.  Let $d\mathbf{\Omega}$ be the angular displacement differential vector of the rotating axes $xyz$ with respect to the fixed axes $x'y'z'$
 
 \begin{equation}
-\mathbf{\Omega} =
+d\mathbf{\Omega} =
 \begin{pmatrix}
 d\Omega_x\\
 d\Omega_y\\
@@ -1145,20 +1169,20 @@ Then the displacement differential vectors in the space-fixed frame transform li
 
 \begin{subequations}
 \begin{align}
-	d{\mathbf{r}}' &= d\mathbf{r} + \mathbf{\Omega} \times \mathbf{r},\\
-	d{\mathbf{R}}' &= d\mathbf{R} + \mathbf{\Omega} \times \mathbf{R},
+	d{\mathbf{r}}' &= d\mathbf{r} + d\mathbf{\Omega} \times \mathbf{r},\\
+	d{\mathbf{R}}' &= d\mathbf{R} + d\mathbf{\Omega} \times \mathbf{R},
 \end{align}
 \end{subequations}   
 which is given explicitly by
 
 \begin{align}
 \begin{pmatrix}
-dr'_x \\
-dr'_y \\
-dr'_z \\
-dR'_x \\
-dR'_y \\
-dR'_z\\
+d r'_x \\
+d r'_y \\
+d r'_z \\
+d R'_x \\
+d R'_y \\
+d R'_z\\
 \end{pmatrix} 
 &= 
 \begin{pmatrix*}[c]
@@ -1213,10 +1237,10 @@ d\Omega_y\\
 d\Omega_z\\
 \end{pmatrix}.
 \end{equation}
-The squared line segment $ds^2$ is then given by 
+The squared line element $d s^2$ is then given by 
 
 \begin{equation}
-ds^2 = d\mathbf{x}' \cdot d\mathbf{x}' = d\mathbf{q}^{\mathrm{T}} \mathbf{A}^{\mathrm{T}} \mathbf{A}d\mathbf{q} = d\mathbf{q}^{\mathrm{T}} \mathbf{g} d\mathbf{q}.
+d s^2 = d\mathbf{x}' \cdot d\mathbf{x}' = d\mathbf{q}^{\mathrm{T}} \mathbf{A}^{\mathrm{T}} \mathbf{A}d\mathbf{q} = d\mathbf{q}^{\mathrm{T}} \mathbf{g} d\mathbf{q}.
 \end{equation}
 Here the metric tensor
 
@@ -1321,9 +1345,9 @@ Now, if the momentum vector is given by
 \end{equation}
 we can express the kinetic energy operator given in \eqref{eq:kinetic_e_op} in terms of this vector and the metric
 
-\begin{equation}
+\begin{equation}\label{eq:T_SW}
 \begin{aligned}
--\hat{\mathrm{T}} &= -\frac{1}{2\mu \sqrt{g}} \mathbf{p}^\mathrm{T} \sqrt{g} \mathbf{g}^{-1} \mathbf{p}\\
+-T &= -\frac{1}{2\mu \sqrt{g}} \mathbf{p}^\mathrm{T} \sqrt{g} \mathbf{g}^{-1} \mathbf{p}\\
 &= \frac{1}{2\mu \rho^5 \sin(4\Theta)}\Bigg[ \frac{\partial}{\partial \rho} \Bigg(\rho^5 \sin(4 \Theta) \frac{\partial}{\partial \rho}\Bigg) + \frac{\partial}{\partial \Theta}\Bigg(\rho^3\sin(4\Theta)\frac{\partial}{\partial\Theta}\Bigg)\\ &+\frac{\partial}{\partial\Phi}\Bigg(2\rho^3\tan(2\Theta)\frac{\partial}{\partial\Phi} + 2\tan^2(2\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_z}\Bigg)\\
 &+\frac{\partial}{\partial\Omega_x}\Bigg(4\rho^3\cot(\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_x}\Bigg)\\
 &+\frac{\partial}{\partial\Omega_y}\Bigg(4\rho^3\tan(2\Theta)\cos(2\Theta)\frac{\partial}{\partial\Omega_y}\Bigg)\\
@@ -1338,7 +1362,82 @@ we can express the kinetic energy operator given in \eqref{eq:kinetic_e_op} in t
 \end{aligned}
 \end{equation}
 
-Now, as have been mentioned previously, we use the Euler angles $\alpha,\beta,\gamma$ to relate the body-fixed axes $xyz$ with the space-fixed axes $x'y'z'$. The Euler angles can be defined in the following way. If the line of nodes are the intersection of the planes $x'y'$ and $xy$, then $\alpha$ is the angle between the $x'$-axis and the line of nodes  Any coordinate frame the coincide with the space-fixed frame can be made to coincide with the body-fixed frame by performing a series of three elementary rotations. Starting by a rotation of $\alpha$ $(0 \leq \alpha \leq 2\pi)$ around the $z'$-axis, followed by a rotation $\beta$ $(0 \leq \alpha \leq \pi)$ around the   
+Now, as have been mentioned previously, we use the Euler angles $\alpha,\beta,\gamma$ to relate the body-fixed axes $xyz$ with the space-fixed axes $x'y'z'$. Any coordinate frame that coincide with the space-fixed frame can be made to coincide with the body-fixed frame by performing a series of three basic rotations (right-handed). There are several ways for defining the Euler angles, the convention used by Johnson \cite{Johnson_1983} is adopted here and the method is decribed in detail in \cite{arfken_weber_harris_2013}. If the line of nodes $\xi$ are the intersection of the planes $x'y'$ and $xy$, then $\alpha$ is the angle between the $y'$-axis and the line of nodes. The operational sequence are the following:
+
+\begin{enumerate}[(i)]  
+	\item First rotate the coordinates $x'y'z'$ counterclockwise through an angle $\alpha$ in the range $0 \leq \alpha < 2\pi$ about the $z'$-axis, using $\mathbf{S}_{\alpha}$, into the new coordinates $\bar{x}'\xi z'$.
+	\item Then rotate the coordinates $\bar{x}' \xi z'$ counterclockwise through an angle $\beta$ $(0 \leq \beta \leq \pi)$ about the line of nodes, using $\mathbf{S}_{\beta}$, into the new coordinates $\bar{x} \xi z$.
+	\item Finally rotate the coordinates $\bar{x} \xi z$ counterclockwise by an angle $\gamma$ $(0 \leq \gamma < 2\pi)$ about the $z$-axis (the former $z'$-axis) using $\mathbf{S}_{\gamma}$, into the body-fixed coordinates $xyz$.
+\end{enumerate}   
+The total rotation matrix is then the triple matrix product of the basic rotation matrices $\mathbf{S} = \mathbf{S}_{\alpha}\mathbf{S}_{\beta}\mathbf{S}_{\gamma}$, in which
+
+\begin{equation}
+\mathbf{S}_{\alpha}=
+\begin{pmatrix}
+\cos\alpha & \sin\alpha  & 0\\
+-\sin\alpha & \cos\alpha & 0\\
+0            & 0            & 1
+\end{pmatrix},\\
+\end{equation}
+
+\begin{equation}
+\mathbf{S}_{\beta}=
+\begin{pmatrix}
+\cos\beta & 0  & -\sin\beta\\
+0 & 1 & 0\\
+\sin\beta & 0  & \cos\beta
+\end{pmatrix},\\
+\end{equation}
+
+\begin{equation}
+\mathbf{S}_{\gamma}=
+\begin{pmatrix}
+\cos\gamma & \sin\gamma  & 0\\
+-\sin\gamma & \cos\gamma & 0\\
+0            & 0            & 1
+\end{pmatrix},\\
+\end{equation}
+and
+
+\begin{equation}
+\mathbf{S}=
+\begin{pmatrix}
+\cos\gamma \cos\beta \cos\alpha -\sin\gamma \sin\alpha & \cos\gamma \cos\beta \sin\alpha \sin\gamma \cos\alpha  & -\cos\gamma \sin\beta\\
+-\sin\gamma \cos\beta \cos\alpha -\cos\gamma \sin\alpha & \sin\gamma \cos\beta \sin\alpha +\cos\gamma \cos\alpha & \sin\gamma \sin\beta\\
+\sin\beta \cos\alpha & \sin\beta \sin\alpha & \cos\beta
+\end{pmatrix}.
+\end{equation}
+The cartesian coordinates $\mathbf{x}$ and $\mathbf{x}'$ of a point $P$ in the two frames are thus related through
+
+\begin{equation}
+\mathbf{x} = \mathbf{S}\mathbf{x}'. 
+\end{equation}
+Now, the general angular displacement differential  $d\mathbf{\Omega}$ can be considered as consisting of three consecutive infinitesimal rotations where $d\Omega_{\alpha} = d\alpha$, $d\Omega_{\beta} = d\beta$ and $d\Omega_{\gamma} = d\gamma$. The vector $d\mathbf{\Omega}$ can be obtained as the sum of three different angular displacement differential vectors; $d\mathbf{\Omega_{\alpha}}$ is along the space-fixed $z'$-axis, $d\mathbf{\Omega_{\beta}}$ is along the line of nodes and $d\mathbf{\Omega_{\gamma}}$ is along the body-fixed $z$-axis \cite{goldstein_poole_safko_2000}. Since $d\mathbf{\Omega_{\alpha}}$ is along the $z'$-axis, its components are obtained by the applying the total rotation matrix. Thus, if the total rotation matrix is written
+
+\begin{equation}
+\mathbf{S} = [\mathbf{S}_1 \quad \mathbf{S}_2 \quad \mathbf{S}_3],
+\end{equation}
+then the body-fixed displacement differential angles $d\mathbf{\Omega}_{\alpha}$ are related to the Euler angles through
+
+\begin{equation}
+(\mathbf{\Omega}_{\alpha})_{\mathbf{x}} = \mathbf{S}_3 d\alpha= 
+\begin{pmatrix}
+-\sin\beta \cos\gamma \\
+\sin\beta \sin\gamma \\
+\cos\beta
+\end{pmatrix} d\alpha.
+\end{equation}
+Next, because $d\mathbf{\Omega_{\beta}}$ is along the line of nodes, we only need to apply the last transformation $\mathbf{S}_{\gamma}$ to retreive
+
+\begin{equation}
+(\mathbf{\Omega}_{\beta})_{\mathbf{x}} = \mathbf{S}_{\gamma_2} d\beta= 
+\begin{pmatrix}
+\sin\gamma \\
+\cos\gamma \\
+0
+\end{pmatrix} d\beta.
+\end{equation}
+No transformation is needed for $d\mathbf{\Omega_{\gamma}}$ since it is already directed along the body-fixed $z$-axis. The transformations are finally summarized into the total transformation matrix, which relates the body-fixed infinitesimal rotations to the Euler angles through
 
 \begin{equation}
 \begin{pmatrix}
@@ -1347,22 +1446,23 @@ d\Omega_y\\
 d\Omega_z
 \end{pmatrix}
 =
-\mathbf{A}\begin{pmatrix}
+\tilde{\mathbf{S}}\begin{pmatrix}
 d\alpha\\
 d\beta\\
 d\gamma
-\end{pmatrix}
+\end{pmatrix},
 \end{equation}
 where
 
-\begin{equation}
-\mathbf{A}=
+\begin{equation}\label{eq:S_matrix}
+\tilde{\mathbf{S}}=
 \begin{pmatrix}
 -\sin\beta\cos\gamma & \sin\gamma & 0\\
 \sin\beta\sin\gamma  & \cos\gamma & 0\\
 \cos\beta 			 & 0          & 1
-\end{pmatrix}
+\end{pmatrix}.
 \end{equation}
+Thus, a transformation of coordinates
 
 \begin{equation}
 d\mathbf{q} =
@@ -1373,7 +1473,8 @@ d\Phi\\
 d\Omega_x\\
 d\Omega_y\\
 d\Omega_z\\
-\end{pmatrix},
+\end{pmatrix}
+\longrightarrow
 d\mathbf{q}' =
 \begin{pmatrix}
 d\rho\\
@@ -1382,75 +1483,57 @@ d\Phi\\
 d\alpha\\
 d\beta\\
 d\gamma\\
-\end{pmatrix} \notag \\
+\end{pmatrix}
 \end{equation}
+correspond to a transformation of the metric, which is easily derived from the squared line element, where
 
 \begin{equation}
-ds^2 = (d\mathbf{q})^T\mathbf{g}d\mathbf{q} = (d\mathbf{q}')^T\mathbf{g}'d\mathbf{q}'
+d s^2 = d \mathbf{q}^{\mathrm{T}}\mathbf{g}d \mathbf{q} = (d \mathbf{q}')^\mathrm{T}\mathbf{g}'d\mathbf{q}'.
 \end{equation}
-with
+The metric thus transform as 
+
+\begin{equation}
+\mathbf{g}'=\mathbf{B}^{\mathrm{T}}\mathbf{g}\mathbf{B},
+\end{equation}
+in which
 
 \begin{equation}
 \mathbf{B} = 
 \begin{pmatrix}
 \mathbf{I} & 0\\
-0      & \mathbf{A}
-\end{pmatrix}
+0      & \tilde{\mathbf{S}}
+\end{pmatrix}.
 \end{equation}
+Subsequently, the square root of the determinant transform into
 
 \begin{equation}
-\mathbf{g}'=\mathbf{B}^T\mathbf{g}\mathbf{B}
+g'^{1/2}=(\mid\mathbf{B}\mid^2 \mid\mathbf{g}\mid)^{1/2} = (\mid\tilde{\mathbf{S}}\mid^2 \mid\mathbf{g}\mid)^{1/2}
+= \frac{\rho^5}{4}\sin(4\Theta)\sin\beta.
 \end{equation}
-and the determinant is then
+Since a general curvilinear coordinate system of $N$ dimensions have a volume element
 
 \begin{equation}
-g'^{1/2}=(\mid\mathbf{B}\mid^2 \mid\mathbf{g}\mid)^{1/2} = (\mid\mathbf{A}\mid^2 \mid\mathbf{g}\mid)^{1/2}
-= \frac{\rho^5}{4}\sin(4\Theta)\sin\beta
+d ^Nv = g^{1/2}\prod_{i=1}^{N} d q_i,
 \end{equation}
-
-A general curvilinear coordinate system of $N$ dimensions have a volume element, which is given by
+the sought volume element is  
 
 \begin{equation}
-d^Nv = g^{1/2}\prod_{i=1}^{N} dq_i
+d^6v = g^{1/2}\prod_{i=1}^{6} d q_i = \frac{\rho^5}{4}\sin(4\Theta)\sin\beta d\rho d\Theta d\Phi d\alpha d\beta d\gamma.
 \end{equation}
-
-In our set up we thus get 
+Lastly, to produce a representation of the entire internal configuration
+space that is unbiased by the particular choice of the three Jacobi coordinate sets, we follow Kuppermann's mapping procedure \cite{KUPPERMANN1975374} and make the following modification of the internal angles
 
 \begin{equation}
-d^6v = g^{1/2}\prod_{i=1}^{6} dq_i = \frac{\rho^5}{4}\sin(4\Theta)\sin\beta d\rho d\Theta d\Phi d\alpha d\beta d\gamma
+\begin{aligned}
+\Theta &= \frac{\pi}{4}-\frac{\theta}{2} \implies \frac{\partial}{\partial\Theta} = -2\frac{\partial}{\partial\theta},\\
+\Phi &= \frac{\pi}{4}-\frac{\phi}{2} \implies \frac{\partial}{\partial\Phi} = -2\frac{\partial}{\partial\phi}.
+\end{aligned}
 \end{equation}
-
-Now, we make a transformation of the angles (Kuppermann)
-
-\begin{align*}
-\Theta &= \pi/4-\theta/2\\
-\Phi &= \pi/4-\phi/2
-\end{align*}
-
-and
-
-\begin{align*}
-\frac{\partial}{\partial\Theta} &= -2\frac{\partial}{\partial\theta}\\ 						\frac{\partial}{\partial\Phi} &= -2\frac{\partial}{\partial\phi}\\ 		
-\end{align*}
-
-\begin{align*}
-&\sin(4\Theta)   =\sin(2\theta)\\
-&\cos^2(2\Theta) =\sin^2(\theta)\\
-&\sin^2(2\Theta) =\cos^2(\theta)\\
-&\cos^2\Theta    =\frac{1}{2}(1+\sin\theta)\\
-&\sin^2\Theta    =\frac{1}{2}(1-\sin\theta)\\
-\end{align*}
-The corresponding volume element is then
-
-\begin{equation}
-d^6 v = \frac{1}{8}\rho^5 \sin\theta\cos\theta\sin\beta d\rho d\theta d\phi d\alpha d\beta d\gamma
-\end{equation}
-
-Now with
+Now, define
 
 \begin{equation}
 \mathbf{P} = 
--i\hbar
+-i
 \begin{pmatrix}
 \partial/\partial\rho\\
 \partial/\partial\theta\\
@@ -1465,9 +1548,9 @@ P_{\phi}
 \end{equation}
 and
 
-\begin{equation}
+\begin{equation}\label{eq:J_vector}
 \mathbf{J} = 
--i\hbar
+-i
 \begin{pmatrix}
 \partial/\partial\Omega_x\\
 \partial/\partial\Omega_y\\
@@ -1478,43 +1561,83 @@ and
 J_x\\
 J_y\\
 J_z
-\end{pmatrix}
+\end{pmatrix},
 \end{equation}
+where the operators $J_x$, $J_y$ , and $J_z$ are the total angular momentum operators in the body-fixed frame, which can be expressed in terms of the Euler angle coordinates by the relation
 
-The kinetic energy operator then becomes
+\begin{equation}
+\begin{pmatrix}
+J_x\\
+J_y\\
+J_z
+\end{pmatrix} =
+\begin{pmatrix}
+-\cos\gamma/\sin\beta & \sin\gamma & \cot\beta \cos\gamma\\
+\sin\gamma/\sin\beta & \cos\gamma & -\cot\beta \sin\gamma\\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+P_{\alpha}\\
+P_{\beta}\\
+P_{\gamma}
+\end{pmatrix}.
+\end{equation} 
+This can be shown using the chain rule for partial differentiation
 
-\begin{align*}
-\hat{T} &=-\frac{\hbar^2}{2\mu}\Bigg[\frac{1}{\rho^5}\frac{\partial}{\partial\rho}\rho^5\frac{\partial}{\partial\rho} + \frac{4}{\rho^2}\Bigg(\frac{1}{\sin(2\theta)}\frac{\partial}{\partial\theta}\sin(2\theta)\frac{\partial}{\partial\theta}\\
+\begin{equation}
+P_{\sigma} = \sum_{\lambda} \frac{\partial \Omega_{\lambda}}{\partial \sigma} J_{\lambda},
+\end{equation}
+where $\sigma = (\alpha,\beta,\gamma)$ and $\lambda = (x,y,z)$. The partial derivatives are calculated using the inverse of \eqref{eq:S_matrix}
+
+\begin{equation}\label{eq:S_matrix}
+\tilde{\mathbf{S}}^{-1}=
+\begin{pmatrix}
+-\cos\gamma/\sin\beta & \sin\gamma/\sin\beta & 0\\
+\sin\gamma  & \cos\gamma & 0\\
+\cot\beta \cos\gamma  & -\cot\beta \sin\gamma  & 1
+\end{pmatrix}.
+\end{equation}
+Now, using the relations
+
+\begin{equation}
+\begin{aligned}
+&\sin 4\Theta   =\sin 2\theta\\
+&\cos^2 2\Theta =\sin^2 \theta\\
+&\sin^2 2\Theta =\cos^2 \theta\\
+&\cos^2\Theta    =\frac{1}{2}(1+\sin\theta)\\
+&\sin^2\Theta    =\frac{1}{2}(1-\sin\theta)
+\end{aligned}
+\end{equation}
+in conjunction with \eqref{eq:J_vector} the kinetic energy operator \eqref{eq:T_SW} becomes
+
+\begin{equation}
+\begin{aligned}
+T &=-\frac{\hbar^2}{2\mu}\Bigg[\frac{1}{\rho^5}\frac{\partial}{\partial\rho}\rho^5\frac{\partial}{\partial\rho} + \frac{4}{\rho^2}\Bigg(\frac{1}{\sin(2\theta)}\frac{\partial}{\partial\theta}\sin(2\theta)\frac{\partial}{\partial\theta}\\
 &+\frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial\phi^2} \Bigg)\Bigg]-\frac{1}{\mu\rho^2}\Bigg[\frac{J^2_x}{(1-\sin\theta)} + \frac{J^2_y}{(1+\sin\theta)} +\frac{J^2_z}{2\sin^2\theta}\Bigg]\\
-&+ \frac{4i\hbar\cos\theta J_z}{2\mu\rho^2\sin^2\theta}\frac{\partial}{\partial\phi}
-\end{align*}
+&+ \frac{4i\hbar\cos\theta J_z}{2\mu\rho^2\sin^2\theta}\frac{\partial}{\partial\phi},
+\end{aligned}
+\end{equation}
+with the corresponding volume element
 
+\begin{equation}
+d^6 v = \frac{1}{8}\rho^5 \sin\theta\cos\theta\sin\beta d\rho d\theta d\phi d\alpha d\beta d\gamma.
+\end{equation}
 If we only consider $J=0$ states, the Hamiltonian reduces to 
 
 \begin{equation}
-H_{0} = -\frac{\hbar^{2}}{2 \mu} \Bigg[ \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi)
+H_{0} = -\frac{1}{2 \mu} \Bigg[ \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi).
 \end{equation}
-
-By making the following transformation of the wave function 
-\begin{equation}
-\psi = \rho^{5/2} \Psi,
-\end{equation}
-the Schr{\"o}dinger equation becomes
+By rescaling the wave function $\psi = \rho^{5/2} \Psi$ the Schr{\"o}dinger equation becomes
 
 \begin{equation}
-H \psi = E \psi. 
+H \psi = E \psi,
 \end{equation}
-Where the transformed Hamiltonian operator is given by
+where the transformed Hamiltonian operator is given by
 
 \begin{equation}
 H = \rho^{5/2}H_{0} \rho^{-5/2}. 
 \end{equation}
-This transformation removes the first derivative in the hyper radial kinetic-energy operator since
-
-\begin{equation}
-T_{\rho} = \rho^{5/2}T_{\rho_{0}}\rho^{-5/2} = \rho^{5/2} \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} \Big( \rho^{-5/2} \Big) = -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}
-\end{equation}
-and we get the final expression for the Hamiltonian
+This transformation removes the first derivative in the hyper radial kinetic-energy operator and we get the final expression for the Hamiltonian
 
 \begin{align}
 H &= -\frac{\hbar^{2}}{2 \mu} \Bigg[ -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}+ \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi)\\

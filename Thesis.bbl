@@ -393,6 +393,37 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.112.190401
       \endverb
     \endentry
+    \entry{Johnson1980}{article}{}
+      \name{author}{1}{}{%
+        {{hash=91a94b5f3bbb223ee5e42867a8533d39}{%
+           family={Johnson},
+           family_i={J\bibinitperiod},
+           given={B.\bibnamedelimi R.},
+           given_i={B\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{91a94b5f3bbb223ee5e42867a8533d39}
+      \strng{fullhash}{91a94b5f3bbb223ee5e42867a8533d39}
+      \field{sortinit}{J}
+      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Chemical Physics}
+      \field{number}{10}
+      \field{title}{On hyperspherical coordinates and mapping the internal configurations of a three body system}
+      \field{volume}{73}
+      \field{year}{1980}
+      \field{pages}{5051\bibrangedash 5058}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1063/1.439983
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1063/1.439983
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1063/1.439983
+      \endverb
+    \endentry
     \entry{Johnson_1983}{article}{}
       \name{author}{1}{}{%
         {{hash=91a94b5f3bbb223ee5e42867a8533d39}{%

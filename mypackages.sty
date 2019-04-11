@@ -1,0 +1,38 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mypackages}
+
+\RequirePackage[nottoc]{tocbibind}
+\RequirePackage[backend=biber]{biblatex}
+\RequirePackage{amsmath}
+\RequirePackage{cleveref}
+\RequirePackage{mathtools}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{standalone}
+\RequirePackage{multirow}
+\RequirePackage{subfigure}
+\RequirePackage{graphicx}
+\RequirePackage{caption}
+\usepackage{dblfloatfix}    % To enable figures at the bottom of page
+\RequirePackage{bm}
+\RequirePackage{gensymb}
+\RequirePackage{siunitx}
+\RequirePackage{float}
+\RequirePackage{tikz}
+\RequirePackage{tikz-3dplot}
+\usetikzlibrary{calc}
+\RequirePackage{revsymb}
+\RequirePackage{enumerate}
+
+\newcommand{\me}{\mathrm{e}}
+\providecommand{\abs}[1]{\lvert#1\rvert} \providecommand{\norm}[1]{\lVert#1\rVert}
+
+\makeatletter
+\newsavebox{\@brx}
+\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}%
+	\mathopen{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
+\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
+	\mathclose{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
+\makeatother
+
+\endinput
