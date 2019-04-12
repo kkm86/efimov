@@ -29,9 +29,9 @@
 \contentsline {subsection}{\numberline {5.0.1}Basis splines expansion}{29}
 \contentsline {subsection}{\numberline {5.0.2}Gauss-Legendre Quadrature}{31}
 \contentsline {chapter}{\numberline {6}Results and Discussion}{33}
-\contentsline {chapter}{\numberline {A}Delves Coordinates}{37}
-\contentsline {chapter}{\numberline {B}Smith-Whitten Coordinates}{43}
-\contentsline {section}{\numberline {B.1}Coordinate Mapping}{43}
-\contentsline {section}{\numberline {B.2}Transformation of the Kinetic Energy Operator}{48}
-\contentsline {section}{\numberline {B.3}Symmetries}{57}
-\contentsline {chapter}{\numberline {C}Basis Splines}{61}
+\contentsline {chapter}{\numberline {A}Delves Coordinates}{39}
+\contentsline {chapter}{\numberline {B}Smith-Whitten Coordinates}{45}
+\contentsline {section}{\numberline {B.1}Coordinate Mapping}{45}
+\contentsline {section}{\numberline {B.2}Transformation of the Kinetic Energy Operator}{50}
+\contentsline {section}{\numberline {B.3}Symmetries}{59}
+\contentsline {chapter}{\numberline {C}Basis Splines}{63}

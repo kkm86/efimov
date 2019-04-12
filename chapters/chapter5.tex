@@ -33,8 +33,9 @@ M = P_{\phi}-k = N_{\phi}+k-2.
 Thus we have $LM$ B-splines and thus $LM$ unknown coefficents but only $N_{\theta}N_{\phi}$ equations. Only $(k-1)^2$ B-splines are non-zero at the knot points, which means each equation involves $(k-1)^2$ B-splines
 
 \begin{equation}\label{expansion}
-\Phi_{\nu}(\rho;\theta_{l+k-1},\phi_{m+k-1}) = \sum_{l=1}^L\sum_{m=1}^M c_{lm}\varphi_{lm} (\theta_{l+k-1},\phi_{m+k-1}).
+\Phi_{\nu}(\rho;\theta_i,\phi_j) = \sum_{l=i-k+1}^{i-1}\sum_{m=j-k+1}^M c_{lm}\varphi_{lm} (\theta_{j-1},\phi_{m+k-1}),
 \end{equation}
+in which $(i = k,\ldots, j) $
 The limits $L$ and $M$ can be reduced by placing boundary conditions on $\Phi_{\nu}(\rho;\theta,\phi)$. For each boundary condition on the coordinate in question, we get an additional equation and reduce the number of B-splines in that dimension by one. Thus, if $k=6$ we need two boundary conditions for each dimension. The upper limits $L$ and $M$ are thus determined from 
 
 \begin{align}

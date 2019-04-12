@@ -215,27 +215,6 @@
       \field{pages}{271\bibrangedash 293}
       \range{pages}{23}
     \endentry
-    \entry{Esry_thesis}{thesis}{}
-      \name{author}{1}{}{%
-        {{hash=aeeb6746f7fbea9f8916019f857079de}{%
-           family={Esry},
-           family_i={E\bibinitperiod},
-           given={Brett},
-           given_i={B\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {University of Colorado}%
-      }
-      \strng{namehash}{aeeb6746f7fbea9f8916019f857079de}
-      \strng{fullhash}{aeeb6746f7fbea9f8916019f857079de}
-      \field{sortinit}{E}
-      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{MANY-BODY EFFECTS IN BOSE-EINSTEIN CONDENSATES OF DILUTE ATOMIC GASES}
-      \field{type}{phdthesis}
-      \field{year}{1997}
-    \endentry
     \entry{Faddeev:1960su}{article}{}
       \name{author}{1}{}{%
         {{hash=e3cf70e6f3b9e20fbec93cc0ec62372e}{%
