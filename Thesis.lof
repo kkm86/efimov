@@ -14,18 +14,20 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration of the three different Jacobi coordinate sets.\relax }}{21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm {I},\mathrm {II},\mathrm {III}$. At each pole a new two-body bound state is formed. The first bound state is formed as $a$ passes through $\mathrm {I}$, followed by a second a two-body bound state is formed. At each pole a new two-body bound state is formed, so when $\delimiter 69640972 d\delimiter 86418188 $ is increased so that $a$ passes through $\mathrm {II}$ a second two-body bound state is formed, while a third state is formed as $a$ passes through $\mathrm {III}$.\relax }}{34}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Adiabatic potential curves $U_{\nu }$ as a function of the hyperradius $\rho $ for $a=228 $ .\relax }}{35}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces ..\relax }}{36}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces ..\relax }}{36}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces ..\relax }}{37}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces ..\relax }}{37}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm {I},\mathrm {II},\mathrm {III}$. At each pole a new two-body bound state is formed. The first bound state is formed as $a$ passes through $\mathrm {I}$, followed by a second a two-body bound state is formed. At each pole a new two-body bound state is formed, so when $\delimiter 69640972 d\delimiter 86418188 $ is increased so that $a$ passes through $\mathrm {II}$ a second two-body bound state is formed, while a third state is formed as $a$ passes through $\mathrm {III}$.\relax }}{42}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Adiabatic potential curves $U_{\nu }$ as a function of the hyperradius $\rho $ for $a=228 $ .\relax }}{44}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces ..\relax }}{45}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces ..\relax }}{45}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces ..\relax }}{46}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces ..\relax }}{46}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces ..\relax }}{47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Potential surface for three identical particles. Symmetries due to translations and reflections are seen at $\phi = n\pi /3, \ (n = 1-5)$.\relax }}{49}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Potential surface for three identical particles. Symmetries due to translations and reflections are seen at $\phi = n\pi /3, \ (n = 1-5)$.\relax }}{59}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.\relax }}{64}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=1$}}}{64}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=2$}}}{64}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces { $k=3$}}}{64}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces { $k=4$}}}{64}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.\relax }}{72}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=1$}}}{72}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=2$}}}{72}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces { $k=3$}}}{72}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces { $k=4$}}}{72}

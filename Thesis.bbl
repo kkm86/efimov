@@ -84,6 +84,43 @@
       \field{type}{mathesis}
       \field{year}{2016}
     \endentry
+    \entry{Blume2002}{article}{}
+      \name{author}{2}{}{%
+        {{hash=41c816fdf7d915e66469502c6ba17d19}{%
+           family={Blume},
+           family_i={B\bibinitperiod},
+           given={D.},
+           given_i={D\bibinitperiod}}}%
+        {{hash=d8b86c7bb4389e7f80274f0f31dce0fd}{%
+           family={Greene},
+           family_i={G\bibinitperiod},
+           given={Chris\bibnamedelima H.},
+           given_i={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{03cab6fb82fa281ec16b9a101db86a8c}
+      \strng{fullhash}{03cab6fb82fa281ec16b9a101db86a8c}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{1}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{07}
+      \field{title}{Three particles in an external trap: Nature of the complete $J=0$ spectrum}
+      \field{volume}{66}
+      \field{year}{2002}
+      \field{pages}{013601}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.66.013601
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.66.013601
+      \endverb
+    \endentry
     \entry{2008AnPhy.323.1770B}{article}{}
       \name{author}{3}{}{%
         {{hash=fa96bca49e8ea68fb5bce2da11ba52bf}{%
@@ -215,6 +252,69 @@
       \field{pages}{271\bibrangedash 293}
       \range{pages}{23}
     \endentry
+    \entry{EsryGreeneSuno2001}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4d9235f1975196320c77d6fab2bd1122}{%
+           family={Esry},
+           family_i={E\bibinitperiod},
+           given={B.\bibnamedelimi D.},
+           given_i={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d8b86c7bb4389e7f80274f0f31dce0fd}{%
+           family={Greene},
+           family_i={G\bibinitperiod},
+           given={Chris\bibnamedelima H.},
+           given_i={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=5406bbd31d1365f5e8f03b1306b42fe7}{%
+           family={Suno},
+           family_i={S\bibinitperiod},
+           given={H.},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{43f9029aafefbd8dd3040546367a8e60}
+      \strng{fullhash}{43f9029aafefbd8dd3040546367a8e60}
+      \field{sortinit}{E}
+      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{1}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{12}
+      \field{title}{Threshold laws for three-body recombination}
+      \field{volume}{65}
+      \field{year}{2001}
+      \field{pages}{010705}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.65.010705
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.65.010705
+      \endverb
+    \endentry
+    \entry{Esry_thesis}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=aeeb6746f7fbea9f8916019f857079de}{%
+           family={Esry},
+           family_i={E\bibinitperiod},
+           given={Brett},
+           given_i={B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Colorado}%
+      }
+      \strng{namehash}{aeeb6746f7fbea9f8916019f857079de}
+      \strng{fullhash}{aeeb6746f7fbea9f8916019f857079de}
+      \field{sortinit}{E}
+      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{MANY-BODY EFFECTS IN BOSE-EINSTEIN CONDENSATES OF DILUTE ATOMIC GASES}
+      \field{type}{phdthesis}
+      \field{year}{1997}
+    \endentry
     \entry{Faddeev:1960su}{article}{}
       \name{author}{1}{}{%
         {{hash=e3cf70e6f3b9e20fbec93cc0ec62372e}{%
@@ -236,6 +336,43 @@
       \field{year}{1961}
       \field{pages}{1014\bibrangedash 1019}
       \range{pages}{6}
+    \endentry
+    \entry{Fedorov1993}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1b9877a07899d53377cd086a4c713ee6}{%
+           family={Fedorov},
+           family_i={F\bibinitperiod},
+           given={D.\bibnamedelimi V.},
+           given_i={D\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=a8edeed80675b69c8d6d20cf907cf993}{%
+           family={Jensen},
+           family_i={J\bibinitperiod},
+           given={A.\bibnamedelimi S.},
+           given_i={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{949286d650b268aa962fd8eef923c826}
+      \strng{fullhash}{949286d650b268aa962fd8eef923c826}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{25}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{12}
+      \field{title}{Efimov effect in coordinate space Faddeev equations}
+      \field{volume}{71}
+      \field{year}{1993}
+      \field{pages}{4103\bibrangedash 4106}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.71.4103
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.71.4103
+      \endverb
     \endentry
     \entry{Grimm:2009}{article}{}
       \name{author}{7}{}{%
