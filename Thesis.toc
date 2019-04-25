@@ -23,16 +23,16 @@
 \contentsline {section}{\numberline {4.2}The Hyperspherical Method}{22}
 \contentsline {section}{\numberline {4.3}The Adiabatic Hyperspherical Representation}{23}
 \contentsline {subsection}{\numberline {4.3.1}Effective Three-body Potentials}{25}
-\contentsline {subsection}{\numberline {4.3.2}Delves Coordinates}{26}
-\contentsline {subsection}{\numberline {4.3.3}Smith-Whitten Coordinates}{28}
-\contentsline {section}{\numberline {4.4}Generalized Hellmann-Feynman theorem}{32}
-\contentsline {chapter}{\numberline {5}Numerical Approach}{35}
-\contentsline {section}{\numberline {5.1}Basis splines expansion}{35}
-\contentsline {section}{\numberline {5.2}Gauss-Legendre Quadrature}{37}
-\contentsline {chapter}{\numberline {6}Scattering Model}{41}
-\contentsline {chapter}{\numberline {7}Results and Discussion}{43}
-\contentsline {chapter}{\numberline {A}Delves Coordinates}{49}
-\contentsline {chapter}{\numberline {B}Smith-Whitten Coordinates}{55}
-\contentsline {section}{\numberline {B.1}Coordinate Mapping}{55}
-\contentsline {section}{\numberline {B.2}Transformation of the Kinetic Energy Operator}{60}
-\contentsline {chapter}{\numberline {C}Basis Splines}{71}
+\contentsline {subsection}{\numberline {4.3.2}Delves Coordinates}{27}
+\contentsline {subsection}{\numberline {4.3.3}Smith-Whitten Coordinates}{29}
+\contentsline {section}{\numberline {4.4}Generalized Hellmann-Feynman theorem}{33}
+\contentsline {chapter}{\numberline {5}Numerical Approach}{37}
+\contentsline {section}{\numberline {5.1}Basis splines expansion}{37}
+\contentsline {section}{\numberline {5.2}Gauss-Legendre Quadrature}{39}
+\contentsline {chapter}{\numberline {6}Scattering Model}{43}
+\contentsline {chapter}{\numberline {7}Results and Discussion}{45}
+\contentsline {chapter}{\numberline {A}Delves Coordinates}{53}
+\contentsline {chapter}{\numberline {B}Smith-Whitten Coordinates}{59}
+\contentsline {section}{\numberline {B.1}Coordinate Mapping}{59}
+\contentsline {section}{\numberline {B.2}Transformation of the Kinetic Energy Operator}{64}
+\contentsline {chapter}{\numberline {C}Basis Splines}{75}

@@ -121,3 +121,19 @@ Since the B-splines are piecewise polynomial functions of order $(k-1)$, it is i
 However, the potential term cannot be separated into a product of one-dimensional integrals, wherefore integration in two dimensions is required for this term. Another issue with the potential is that it is not generally a polynomial and for the calculation to converge, we need a fine enough mesh. 
  
 To calculate the sought eigenvalues and corresponding eigenvectors -- i.e. the effective three-body potential curves and the unknown coefficents -- I have used the Lapack routine \textit{dsygvd}.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{||c c c c c c||} 
+		\hline
+		$N_{\theta}$ & $\lambda_{0 0}$ & $\lambda_{1 3}$ & $\lambda_{2 6}$ & array(s) & dsygvd(s)
+		\\ [0.5ex] 
+		\hline\hline
+		5	   & 0.000 000 000 0214   & 32.000 000 071 3015 & 60.000 002 031 0135 & 0.66 & 0.00  \\
+		10     & -0.000 000 000 0417  & 32.000 000 000 1003 & 60.000 000 000 2154  & 4.58 & 0.00 \\
+		15 & 0.000 000 000 0007 & 32.000 000 000 1309 & 59.999 999 999 8871& 12.32& 0.02 \\  [1ex] 
+		\hline
+	\end{tabular}
+	\caption{Numerically calculated eigenvalues}
+	\label{table:2}
+\end{table}

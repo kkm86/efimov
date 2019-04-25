@@ -904,6 +904,65 @@
       \verb https://doi.org/10.1063/1.1724275
       \endverb
     \endentry
+    \entry{WANG20131}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=a44af477e42cc4d9bbc346304bdd8525}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Yujun},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=0d8bca81423f1f5ab21e38576c830788}{%
+           family={D'Incao},
+           family_i={D\bibinitperiod},
+           given={Jose\bibnamedelima P.},
+           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ceca3cde1cdebb7e2d96d5e9c4d06ad3}{%
+           family={Esry},
+           family_i={E\bibinitperiod},
+           given={Brett\bibnamedelima D.},
+           given_i={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=716162a89477925f8fb11e6ca3992074}{%
+           family={Arimondo},
+           family_i={A\bibinitperiod},
+           given={Ennio},
+           given_i={E\bibinitperiod}}}%
+        {{hash=02d9b991d102ba11f19f12dc78348878}{%
+           family={Berman},
+           family_i={B\bibinitperiod},
+           given={Paul\bibnamedelima R.},
+           given_i={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=917896baed3ff38d2f8afcf8a617a2af}{%
+           family={Lin},
+           family_i={L\bibinitperiod},
+           given={Chun\bibnamedelima C.},
+           given_i={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{595e8e65944a7a4607fbbda0edd2ee04}
+      \strng{fullhash}{595e8e65944a7a4607fbbda0edd2ee04}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Atomic, Molecular, and Optical Physics}
+      \field{issn}{1049-250X}
+      \field{series}{Advances In Atomic, Molecular, and Optical Physics}
+      \field{title}{Chapter 1 - Ultracold Few-Body Systems}
+      \field{volume}{62}
+      \field{year}{2013}
+      \field{pages}{1\bibrangedash 115}
+      \range{pages}{115}
+      \verb{doi}
+      \verb https://doi.org/10.1016/B978-0-12-408090-4.00001-3
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/B9780124080904000013
+      \endverb
+    \endentry
     \entry{Smith_Whitten1968}{article}{}
       \name{author}{2}{}{%
         {{hash=a4d42d68da18fd6a746fe9708e281140}{%

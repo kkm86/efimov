@@ -1,34 +1,36 @@
 \chapter{Scattering Model}
-A system of three idenical bosons with $J=0$ and masses $m = m( \prescript{87}{}{\mathrm{Rb}})$ has been considered in this work. We have assumed that the interactions $V(\rho,\theta,\psi)$ can be written as a sum of pairwise two-body potentials   
+A system of three identical bosons with $J=0$ and masses $m = m( \prescript{87}{}{\mathrm{Rb}})$ has been considered in this work. We have assumed that the interactions $V(\rho,\theta,\psi)$ can be written as a sum of pairwise two-body potentials   
 
 \begin{equation}\label{eq:potential_sum}
 V(\rho,\theta,\psi) = v(r_{12}) + v(r_{23}) + v(r_{31}).
 \end{equation} 
 
-Since, the general feature of the Efimov effect is that it is insensitive to the details of the interatomic interaction and that it, to a good approximation, only depends on the scattering length and the interaction range it allows for the use of model potentials, where the scattering length and the number of two-body bound states can be controlled. The two-body potential used here is  
+Since a general feature of the Efimov effect is that it is insensitive to the details of the short-ranged interatomic interactions and that it, to a good approximation, only depends on the scattering length and the interaction range it allows for the use of model potentials, where the scattering length and the number of two-body bound states can be controlled. The two-body potential used here is  
 
 \begin{equation}\label{eq:two_b_potential}
 v(r) = d\cosh^{-2}{(r/r_0)},
 \end{equation}
 where $d$ controls the depth and $r_0$ the range of the potential.
-This potential is particularly usefull since the eigenfuctions and energies are known analytically \cite{Landau1965Quantum}. The scattering length can be calculated at different $d$ numerically as described in \cref{sec:zero_energy_scat}, or it can be calculated exactly through 
+This potential is particularly useful since the eigenfunctions and energies are known analytically \cite{Landau1965Quantum}. The scattering length can be calculated at different $d$ numerically as described in \cref{sec:zero_energy_scat}, or can be expressed analytically as a function of $d$ through 
 
 \begin{equation}
 a = \lim_{k \to 0} \frac{1}{ik} \frac{S(k)-1}{S(k)+1}
 \end{equation}
-in which $S(k)$ is the scattering  using 
+in which $S(k)$ is the diagonal S-matrix element given by
 
 \begin{equation}
-2^{\varepsilon} \frac{\,_2F_1(-s, s+1, 1-\varepsilon;\frac{1}{2})}{\,_2F_1(\varepsilon-s, \varepsilon + s+1, 1+\varepsilon;\frac{1}{2})}
+S(k) = 2^{\varepsilon} \frac{\,_2F_1(-s, s+1, 1-\varepsilon;\frac{1}{2})}{\,_2F_1(\varepsilon-s, \varepsilon + s+1, 1+\varepsilon;\frac{1}{2})},
 \end{equation}
-where 
+where $\,_2F_1$ is the hypergeometrical function, $\varepsilon = ikr_0$, $k = \sqrt{mE}$, $s = \frac{1}{2}(-1 + \sqrt{1-4 m d r_0^2})$, and the energies are given by
 
-The scattering length can  
+\begin{equation}
+E = -\frac{\Big(-(1+2n)+\sqrt{1-4mdr_0^2}\Big)^2}{4mr_0^2}.
+\end{equation}
 
-By changing the interaction strength, the potential can be tuned to support a different number of two-body bound states.   
+The scattering length is plotted as a function of the potential depth in \cref{fig:res_1} using the range $r_0=55 $ a.u. and the mass of $ \prescript{87}{}{\mathrm{Rb}}$. By changing the depth $d$, the potential can be tuned to support a different number of two-body bound $s$-wave states. The formation of a two-body bound state can be recognized by the scattering length going through a pole. Three such poles can be seen in \cref{fig:res_1}, labelled $\mathrm{I},\mathrm{II}$ and $\mathrm{III}$. At each pole a new bound state is formed. The first weakly bound dimer is formed as $a$ passes through $\mathrm{I}$ from the right. Then, as $a$ approaches $\mathrm{II}$ the first bound state becomes deeply bound and a second bound state is formed as $a$ goes through $\mathrm{II}$ and again becomes positive. A third bound state is formed in the same manner as $a$ passes over $\mathrm{III}$ to the positive side.
 
 \begin{figure*}[b!]
 	\includegraphics[width=\linewidth]{scatteringlength.pdf}
-	\caption{The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm{I},\mathrm{II},\mathrm{III}$. At each pole a new two-body bound state is formed. The first bound state is formed as $a$ passes through $\mathrm{I}$, followed by a second a two-body bound state is formed. At each pole a new two-body bound state is formed, so when $\abs{d}$ is increased so that $a$ passes through $\mathrm{II}$ a second two-body bound state is formed, while a third state is formed as $a$ passes through $\mathrm{III}$.}
+	\caption{The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm{I},\mathrm{II}$ and $\mathrm{III}$. For values of $d$ that lie between the poles $\mathrm{I}$ and $\mathrm{II}$, the potential is deep enough to support a single $s$-wave bound state.}
 	\label{fig:res_1}
 \end{figure*}

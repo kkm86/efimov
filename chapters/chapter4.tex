@@ -1,12 +1,12 @@
 \chapter{The Three-body Problem}
 Two-body scattering processes basically concern two different situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmenation channels (1+2). This makes the construction of permutation symmetric wavefunctions highly non-trivial. 
 
-There are different routes for solving the three-body problem and they involve either solving the three-body Schr{\"o}dinger equation or solving the Faddeev equation, which is equivalent to solving the three-body Schr{\"o}dinger equation in configuration space. Irrespective of the specific method of choice for solving the three-body system, most approaches start with the same steps. This includes separating out the center-of-mass motion and then defining a set of relative coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since this removes the mass factors in the kinetic energy operator. Introducing hyperspherical coordinates in combination with an adiabatic representation are then used to reduce the problem of three colliding atoms to dynamics on a set of coupled adiabatic hyperspherical potentials.
+There are different routes for solving the three-body problem and they involve either solving the three-body Schr{\"o}dinger equation or solving the Faddeev equation, which is equivalent to solving the three-body Schr{\"o}dinger equation in configuration space. Irrespective of the specific method of choice for solving the three-body system, most approaches start with the same steps. These include separating out the center-of-mass motion and then defining a set of relative coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since this removes the mass factors in the kinetic energy operator. Introducing hyperspherical coordinates in combination with an adiabatic representation are then used to reduce the problem of three colliding atoms to dynamics on a set of coupled adiabatic hyperspherical potentials.
 
-Atomic units\footnote{There are four fundamental atomic units -- the electron rest mass $m_e$, the elementary charge $e$, the reduced Planck's constant $\hbar$, and the Coulomb force constant $k_e$ -- which numerical values are unity by definition, i.e. $m_e = e = \hbar = k_e = 1$. Derived atomic units include dimensions of length and energy, which are expressed in terms of the Bohr radius $a_0$ and the Hartree $E_h$.    } (a.u.) will be used in the following chapters. 
+Atomic units\footnote{There are four fundamental atomic units -- the electron rest mass $m_e$, the elementary charge $e$, the reduced Planck's constant $\hbar$, and the Coulomb force constant $k_e$ -- whose numerical values are unity by definition, i.e. $m_e = e = \hbar = k_e = 1$. Derived atomic units include dimensions of length and energy, which are expressed in terms of the Bohr radius $a_0$ and the Hartree $E_h$.    } (a.u.) will be used in the following chapters. 
 
 \section{Mass Normalized Jacobi Coordinates}\label{MNJC}
-The spatial position of three particles in $\mathbb{R}^3$ are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$ labels the particles, and $\alpha(=1,2,3)$ their Cartesian space coordinates, respectively. Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are defined by
+The spatial position of three particles in $\mathbb{R}^3$ are fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$ labels the particles, and $\alpha(=1,2,3)$ their Cartesian space coordinates. Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are defined by
 
 \begin{align}
 M &= \sum_{i=1}^{3}m_i,  \label{eq:3,1} \\
@@ -55,7 +55,7 @@ Henceforth, we will only consider the internal motion part of the  Schr{\"o}ding
 	\label{fig:2}
 \end{figure}
 
-There are three possible ways to construct the Jacobi coordinates described above, see Figure \ref{fig:2}. Each set transforms into one of the other by exchange of particles. To be able to describe permutations in a system with mass-scaled coordinates it is useful to introduce angles defined by the particle masses \cite{Smith1962}. If an even permutation $(ijk)$ of the set $(123)$ is considered, then the obtuse angle $\beta_{ij}$ has the properties
+There are three possible ways to construct the Jacobi coordinates described above, see \cref{fig:2}. Each set transforms into one of the other sets the by exchange of particles. To be able to describe permutations in a system with mass-scaled coordinates it is useful to introduce angles defined by the particle masses \cite{Smith1962}. If an even permutation $(ijk)$ of the set $(123)$ is considered, then the obtuse angle $\beta_{ij}$ has the properties
 
 \begin{subequations}
 	\begin{align}
@@ -85,7 +85,7 @@ Orthogonal transformations within the coordinate set are then given by
 \end{equation}
 
 \section{The Hyperspherical Method}
-The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these angles $\alpha, \beta, \gamma$ are usually chosen as the Euler angles that specify the  orientation of the body-fixed axis system -- i.e. the triangle formed by the three particles -- relative to a space-fixed coordinate frame. These are the external coordinates of the system. The internal coordinates are the hyperradius -- which describes the overall size of the system -- and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
+The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these angles $\alpha, \beta, \gamma$ are usually chosen as the Euler angles that specify the  orientation of the body-fixed axis system -- i.e. the triangle formed by the three particles -- relative to a space-fixed coordinate frame. These are the external coordinates of the system. The internal coordinates are the hyperradius, which describes the overall size of the system, and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
 
 Hyperspherical coordinates are useful for describing fragmentation problems. Fragmentation processes of the system into any one of the possible channels are described by the hyperradius becoming very large $(\rho \rightarrow \infty)$, while the hyperangles distinguish between the different fragmentation channels. The hyperradius is invariant under both rotations and particle permutations, and for the three-body problem it is defined by
 
@@ -93,25 +93,25 @@ Hyperspherical coordinates are useful for describing fragmentation problems. Fra
 \rho = \Big(\mathbf{r}^{2} + \mathbf{R}^{2}\Big)^{1/2}, \quad 0\leq \rho < \infty.
 \end{equation} 
 
-In contrast to the hyperradius there is no unique way to define the hyperangles and the various definitions are not in general invariant under particle permutations. The most common choises of parametrizing the hypersphere fall into two distinct categories: Delves coordinates, and (democratic) Smith-Whitten coordinates. A brief overview of these coordinates are given in \cref{delvescoord,smith_whitten} and a more thorough description can be found in \cref{delves,smith}.
+In contrast to the hyperradius there is no unique way to define the hyperangles and the various definitions are not in general invariant under particle permutations. The most common choises of parametrizing the hypersphere fall into two distinct categories: Delves coordinates, and (democratic) Smith-Whitten coordinates. A brief overview of these coordinates is given in \cref{delvescoord,smith_whitten} and a more thorough description can be found in \cref{delves,smith}.
 
 Independent of the specific choise of hyperangular coordinates, after scaling the total wave function by a factor $\rho^{5/2}$ the three-body Schr{\"o}dinger equation in terms of general hyperspherical coordinates is written
 
 \begin{equation}\label{eq:schrodinger_general}
 \bigg(-\frac{1}{2 \mu}\frac{\partial^2}{\partial \rho^2} + \frac{ \Lambda^2 + \frac{15}{4}}{2 \mu \rho^{2}}+ V(\rho,\Omega)\bigg)\psi(\rho,\Omega) = E\psi(\rho,\Omega),
 \end{equation}
-where $\Lambda^2$ is the squared angular momentum operator.
+where $\Lambda$ is the grand angular momentum operator.
 
 \section{The Adiabatic Hyperspherical Representation}\label{sec:AHM}
-The first step in solving for \eqref{eq:schrodinger_general} is to introduce the adiabatic representation. This means expanding the solution $\psi_{n}(\rho,\Omega)$ into a complete set of orthonormal channel functions $\Phi_{\nu}(\rho;\Omega)$ that depend parametrically on $\rho$, with the radial wavefunctions $F_{\nu n}(\rho)$ as expansion coefficients. The hyperradius is treated as an adiabatic variable and the channel functions $\Phi_{\nu}$ are eigenfunctions to the adiabatic equation
+The first step in solving \eqref{eq:schrodinger_general} is to introduce the adiabatic representation. This means expanding the solution $\psi_{n}(\rho,\Omega)$ into a complete set of orthonormal channel functions $\Phi_{\nu}(\rho;\Omega)$ that depend parametrically on $\rho$, with the radial wavefunctions $F_{\nu n}(\rho)$ as expansion coefficients. The hyperradius is treated as an adiabatic variable and the channel functions $\Phi_{\nu}$ are eigenfunctions to the adiabatic equation
 
 \begin{equation}\label{adiabatic}
 H_{ad}\Phi_{\nu}{(\rho;\Omega)} = U_{\nu}{(\rho)}\Phi_{\nu}(\rho;\Omega), 
 \end{equation}
 where the eigenvalues $U_{\nu}(\rho)$ are the resulting effective potental curves obtained by solving this eigenvalue equation at a number of different hyperradii, and $H_{ad}$ is the adiabatic Hamiltonian given by
 
-\begin{equation}
-H_{ad} = \frac{\Lambda^2+15/4}{2 \mu \rho^2} + V(\rho,\Omega).
+\begin{equation}\label{eq:adiabitic_hamiltonian}
+H_{ad} = \frac{\Lambda^2+\frac{15}{4}}{2 \mu \rho^2} + V(\rho,\Omega).
 \end{equation}
 The adiabatic hyperspherical potentials $U_{\nu}$ contain most of the three-body physics and can be regarded as the three-body equivalent to the Born-Oppenheimer potential in the two-body problem. The zero potential eigenfunctions $\Phi_{\nu}$ of equation \eqref{adiabatic} for three identical bosons are the Gegenbauer polynomials with eigenvalues
 
@@ -155,7 +155,7 @@ The antisymmetry of $P_{\mu\nu}$ together with $P_{\mu\nu}^2 = P_{\nu\mu}^2$ lea
 \subsection{Effective Three-body Potentials}
 Approximations within the adiabatic treatment include both the hyperspherical Born-Oppenheimer approximation and the strict adiabatic approximation, where the former corresponds to neglecting all nonadiabatic couplings and the latter to neglecting all nondiagonal couplings \cite{Blume2002}. 
 
-The eigenvalues obtained using these two approximations are denoted $E_{\nu n}$. The lowest energy level $E_{00}$ obtained by solving \eqref{eq:schrodinger_general} in the Born-Oppenheimer  approximation is a lower bound to the true ground state energy $E_0$, while the ground state energy obtained in the adiabatic approximation is a variational upper bound to $E_{0}$. 
+The eigenvalues obtained using these two approximations are denoted $E_{\nu n}$. The lowest energy level $E_{00}$, obtained by solving \eqref{eq:schrodinger_general} in the Born-Oppenheimer  approximation, is a lower bound to the true ground state energy $E_0$, while the ground state energy obtained in the adiabatic approximation is a variational upper bound to $E_{0}$. 
 
 In the adiabatic approximation the effective potentials are defined as 
 
@@ -166,37 +166,42 @@ These potentials are henceforth used to determine the single channel solutions o
 
 The following discussion concerns short-ranged two-body interactions, where $\abs{a}\gg r_0$. 
 
-In the asymptotic limit $\rho \gg \abs{a}$ the non-adiabatic couplings $Q_{\nu \nu}$ vanish and the channel index $\nu$ are associated with both two- and three-body configurations since the adiabatic hyperspherical potential curves $U_{\nu}(\rho)$ asymptotically approach either a two-body bound state energy for the bound channels or the three-body breakup threshold ($U_{\nu}=0$) for the three-body continuum channels.  By comparison with the eigenvalues for the Gegenbauer polynomials in \eqref{eq:gegenbauer}, it is clear that the potentials for the continuum channels have the following asymptotic behaviour 
+In the asymptotic limit $\rho \gg \abs{a}$ the non-adiabatic couplings $Q_{\nu \nu}$ vanish and the channel indices $\nu$ are associated with both two- and three-body configurations since the adiabatic hyperspherical potential curves $U_{\nu}(\rho)$ asymptotically approach either a two-body bound state energy for the bound channels or the three-body breakup threshold ($U_{\nu}=0$) for the three-body continuum channels.  By comparison with the eigenvalues for the Gegenbauer polynomials in \eqref{eq:gegenbauer}, it is clear that the potentials for the continuum channels have the following asymptotic behaviour 
 
-\begin{equation}
-W_{\nu}(\rho)  \xrightarrow{ \rho \to \infty} \frac{\lambda(\lambda+4)+15/4}{2\mu \rho^2}.
+\begin{equation}\label{eq:continuumchannel}
+W_{\nu}(\rho)  \xrightarrow{ \rho \to \infty} \frac{\lambda(\lambda+4)+\frac{15}{4}}{2\mu \rho^2}.
 \end{equation}
-However, the bound channels correspond to the atom-dimer configurations in the asymptotic limit, which means the potentials for these channels asymptotically behave like
+However, the bound channels correspond to the atom-dimer configurations in the asymptotic limit, which means that the potentials for these channels asymptotically behave like
 
-\begin{equation}
+\begin{equation}\label{eq:weakdimer}
 W_{\nu}(\rho)  \xrightarrow{ \rho \to \infty} E_{\nu l'} +\frac{l(l+1)}{2\mu \rho^2},
 \end{equation} 
 in which the bound state energy of the dimer $E_{\nu l'}$ is labeled by the rovibrational quantum numbers $\nu$ and $l'$, and where $l$ is the relative angular momentum between the pair and the third atom. For identical bosons symmetry requires that $l=l'=0,2,4,\ldots$.
 
-Efimov physics comes into play when $r_0 \ll \rho \ll \abs{a}$. In this intermediate region, while still being proportional to $\rho^{-2}$, modifications of $W_{\nu}$ leads to effective three-body potentials that can be both attractive and repulsive. 
+Efimov physics comes into play when $r_0 \ll \rho \ll \abs{a}$. In this intermediate region, while still being proportional to $\rho^{-2}$, modifications of $W_{\nu}$ lead to effective three-body potentials that can be both attractive and repulsive. 
 
 For systems of three identical bosons with a pair-wise attraction that is strong enough to support two-body bound states, one effective three-body potential curve will converge asymptotically to each two-body bound state. The one channel of particular interest is the one that leads to the Efimov effect\footnote{Strictly speaking, the Efimov effect is the emergence of an infinite number of weakly bound trimers and only for $\abs{a} = \infty$ is the emergent effective potential infinitely extended, which of course is required for an infinite number of bound states. However, for large but finite $\abs{a}$ a number of bound trimers can still form.}. For $a>0$ this is the channel that converges asymptotically to the highest vibrationally excited $s$-wave bound state, i.e. the weakly bound dimer, and for $a<0$ it is the lowest continuum channel.  As the scattering length grows in magnitude for $a>0$ and $a<0$ the effective potential will converge to the Efimov potential 
 
-\begin{equation}
-W_{\nu}(\rho) = -\frac{s_0^2+1/4}{2\mu \rho^2},
+\begin{equation}\label{eq:efimov_channel}
+W_{\nu}(\rho) = -\frac{s_0^2+\frac{1}{4}}{2\mu \rho^2},
 \end{equation} 
-in which $s_0 = 1.00624$. This potential is responsible for the Efimov effect since it produces an infinite number of bound trimers when $\abs{a} = \infty$. For finite scattering lengths a number of Efimov trimers can still form provided that the magnitude of $a$ is large enough. The number of Efimov states that can be formed at a specific value of $a$ is estimated by
+in which $s_0 \simeq 1.00624$. This potential is responsible for the Efimov effect since it produces an infinite number of bound trimers when $\abs{a} = \infty$. For finite scattering lengths a number of Efimov trimers can still form provided that the magnitude of $a$ is large enough. The number of Efimov states $N$ that can be formed at a specific value of $a$ can be derived based on the form of the Efimov potential \cite{WANG20131}
 
-\begin{equation}
-N \simeq (s_0/\pi)\ln(\abs{a}/r_0).
+\begin{equation}\label{eq:number_of_states}
+\begin{aligned}
+N & \simeq \frac{1}{\pi} \int_{r_0}^{\abs{a}} \sqrt{-2\mu\bigg(W_{\nu}(\rho) + \frac{\frac{1}{4}}{2\mu \rho}\bigg)} \,d\rho \\
+&= (s_0/\pi)\ln(\abs{a}/r_0).
+\end{aligned}
 \end{equation}
+Thus, for finite scattering lengths the number of bound states supported by the potential increases rather slowly with $\abs{a}$,
+even though there exists an infinite number of Efimov states at $a=\pm \infty$. Another intriguing property that can be revealed by examining \eqref{eq:number_of_states} is that a new trimer is formed every time $\abs{a}$ increases with a factor $\me^{\pi/s_0}$, i.e. as $a \rightarrow a\me^{\pi/s_0}$. This geometric scaling of the length scale implies that each consecutively formed trimer is $\me^{\pi/s_0}$ times as large as the former and has a binding energy that is $\me^{2\pi/s_0}$ as small as the previous. 
 
-All higher lying potentials are continuum channels and they cannot support bound states but they are also modified. Instead of simply converging to the eigenvalues of the kinetic energy for $\abs{a} \rightarrow \infty$ in the region $r_0 \ll \rho \ll \abs{a}$, Efimov physics is manifested here by the repulsive effective potentials converging to 
+All higher lying potentials are continuum channels and none of them can support bound states, but they are also modified in the region $r_0 \ll \rho \ll \abs{a}$. Instead of simply converging to the eigenvalues of the kinetic energy for $\abs{a} \rightarrow \infty$, Efimov physics is manifested here by the repulsive effective potentials converging to 
 
 \begin{equation}
-W_{\nu}(\rho) = \frac{s_{\nu}^2-1/4}{2\mu \rho^2},
+W_{\nu}(\rho) = \frac{s_{\nu}^2-\frac{1}{4}}{2\mu \rho^2},
 \end{equation} 
-where $s_{\nu}$ is a constant that can be regarded as correction to the kinetic energy. 
+where $s_{\nu}$ is a constant that can be regarded as a correction to the kinetic energy. 
  
 \subsection{Delves Coordinates}\label{delvescoord}
 Delves coordinates are adapted to collinear atom-diatom collisions and are regular polar coordinates. They where originally developed to treat nuclear three-body problems. Each coordinate set is defined by the Jacobi vectors
@@ -215,9 +220,9 @@ This coordinate set corresponds to the reactant arrangement when particle $k$ sc
 \begin{equation}
 \cos{\theta_{k}} = \frac{\mathbf{r}_{k} \cdot \mathbf{R}_{k}}{r_{k} R_{k}}, \quad  0\leq \theta \leq \pi.
 \end{equation}
-For simplicity, the indicies labelling each coordinate set will be surpressed from hereon. 
+For simplicity, the indicies labelling each coordinate set will be suppressed from hereon. 
 
-The full derivation of the three-body Schr{\"o}dinger equation written in Delves coordinates is given in \cref{delves}, here we simply state the results. After rescaling the total wave function, $\psi = \rho^{5/2}\sin2\alpha\Psi$, the Schr{\"o}dinger equation can be written
+The full derivation of the three-body Schr{\"o}dinger equation written in Delves coordinates is given in \cref{delves}; here we simply state the results. After rescaling the total wave function, $\psi = \rho^{5/2}\sin2\alpha\Psi$, the Schr{\"o}dinger equation can be written
 
 \begin{equation}
 \bigg(-\frac{1}{2\mu}\frac{\partial^2}{\partial\rho^2} + \frac{\Lambda^2 - 1/4}{2\mu\rho^2} + V(\rho,\alpha,\theta)\bigg) \psi(\rho,\alpha,\theta) = E \psi(\rho,\alpha,\theta),
@@ -227,7 +232,7 @@ in which $E$ is the internal energy and where the squared grand angular momentum
 \begin{equation}
 \Lambda^2 = -\frac{\partial^2}{\partial\alpha^2} - \frac{1}{\sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta}\bigg).
 \end{equation}
-The corresponding volume element is proportional to $\rho^5\sin^2\alpha\cos^2\alpha\sin\theta d\rho d\alpha d\theta$. To be square-integrable, the rescaled wavefunction for a bound state must obey the boundary conditions
+The corresponding volume element is proportional to $\rho^5\sin^2\alpha\cos^2\alpha\sin\theta \,d\rho\,d\alpha\, d\theta$. To be square-integrable, the rescaled wavefunction for a bound state must obey the boundary conditions
 
 \begin{align}
 \psi(0,\alpha,\theta) &= 0,\\
@@ -242,27 +247,49 @@ In the context of Efimov physics, Delves coordinates are often used for derivati
 \begin{equation}\label{eq:totwave}
 \Psi = \psi_{1}(\mathbf{r}_1,\mathbf{R}_1)+\psi_{2}(\mathbf{r}_2,\mathbf{R}_2)+\psi_{3}(\mathbf{r}_3,\mathbf{R}_3).
 \end{equation}
-The component wave functions satisfy the set of coordinate space Faddev equations
+The component wave functions satisfy the set of coordinate space Faddeev equations
 
 \begin{equation}\label{eq:faddev}
 (T-E)\psi_{i} + v_i(\psi_{1}+\psi_{2}+\psi_{3}) = 0,
 \end{equation}
-where $i = 1,2,3$ and $v_i$ is the pair-wise interaction between the particles $j$ and $k$. If the orbital angular momentum of each subsystem is neglected \eqref{eq:totwave} takes the form 
+where $i = 1,2,3$ and $v_i$ is the pair-wise interaction between the particles $j$ and $k$. If the orbital angular momentum of each subsystem is neglected, then \eqref{eq:totwave} takes the form 
 
 \begin{equation}
 \Psi = \psi_{1}(\rho,\alpha_1)+\psi_{2}(\rho,\alpha_2)+\psi_{3}(\rho,\alpha_3).
 \end{equation}
-The Faddev equations in \eqref{eq:faddev} then reduce to the three identical equations
+The Faddeev equations in \eqref{eq:faddev} can be reduced to the three identical equations
 
 \begin{equation}
 (T_{\rho} + T_{\alpha} -E)\psi_{i}(\rho,\alpha) + v_i(\sqrt{2}\rho\sin \alpha_i)(\psi_{1}(\rho,\alpha_1)+\psi_{2}(\rho,\alpha_2)+\psi_{3}(\rho,\alpha_3)) = 0,
 \end{equation}
-with $\alpha = \alpha_1,\alpha_2,\alpha_3$, and where the kinetic energy operators $T_{\rho}$ and $T_{\alpha}$ are given in \eqref{eq:kinetic_rho} and \eqref{eq:kinetic_alpha} in \cref{delves}. By rotating the second and third equation into the first \cite{Fedorov1993}, the Faddeev equation becomes
+with $\alpha = \alpha_1,\alpha_2,\alpha_3$, and where the kinetic energy operators $T_{\rho}$ and $T_{\alpha}$ are given in \eqref{eq:kinetic_rho} and \eqref{eq:kinetic_alpha} in \cref{delves}. By rotating the second and third equation into the first \cite{Fedorov1993}, the Faddeev equation for three identical particles becomes
+
+\begin{equation}\label{eq:faddeev}
+(T_{\rho} + T_{\alpha} -E)\psi(\rho,\alpha) + v(\sqrt{2}\rho\sin \alpha)\bigg[\psi(\rho,\alpha) + \frac{4}{\sqrt{3}} \int_{\abs{\frac{\pi}{3}-\alpha}}^{\frac{\pi}{2}-\abs{\frac{\pi}{6}-\alpha}} \frac{\sin 2\alpha'}{\sin 2\alpha}\psi(\rho,\alpha') \, d\alpha'\bigg] = 0,
+\end{equation} 
+where $\alpha = \alpha_1, \alpha_2$ or $\alpha_3$. The integro-differential Faddeev equation \eqref{eq:faddeev} can be solved by expanding the wave function $\psi$ in a complete set of hyperangular wave functions
 
 \begin{equation}
-(T_{\rho} + T_{\alpha} -E)\psi_{i}(\rho,\alpha)
-\end{equation} 
+\psi(\rho,\alpha) = \sum_{n}\frac{f_n(\rho)}{\rho^{5/2}} \frac{\Phi_n(\rho,\alpha)}{\sin \alpha \cos \alpha},
+\end{equation}
+in which $\Phi_n$ are the eigenfunctions to the hyperangular Faddeev equation
 
+\begin{equation}\label{eq:faddeev_hyperang}
+-\frac{\partial^2\Phi_n(\rho,\alpha)}{\partial \alpha^2} + \rho^2 v(\sqrt{2}\rho\sin \alpha)\bigg[\Phi_n(\rho,\alpha) + \frac{4}{\sqrt{3}} \int_{\abs{\frac{\pi}{3}-\alpha}}^{\frac{\pi}{2}-\abs{\frac{\pi}{6}-\alpha}} \frac{\sin 2\alpha'}{\sin 2\alpha}\Phi(\rho,\alpha') \, d\alpha'\bigg] = \lambda_n(\rho)\Phi(\rho,\alpha).
+\end{equation}
+The eigenvalues $\lambda_{n}(\rho)$ are adiabatic potentials, which can be related to the effective potentials $U_{n}(\rho)$ by 
+
+\begin{equation}\label{eq:faddeev_effectivepot}
+U_{n}(\rho) = \Big(\lambda_n(\rho)-\frac{1}{4}\Big)\frac{1}{2 m \mu \rho^2}.
+\end{equation}
+Is something wrong here?????
+
+Fedorov and Jensen showed in \cite{Fedorov1993} that the adiabatic potentials $\lambda_n$ can be determined analytically through the trancendental equation
+
+\begin{equation}\label{eq:transcendental}
+\sqrt{\lambda_n} \cos{\bigg(\sqrt{\lambda_n} \frac{\pi}{2}\bigg)} - \frac{8}{\sqrt{3}}\sin{\bigg(\sqrt{\lambda_n} \frac{\pi}{6}\bigg)} = \sqrt{2}\frac{\rho}{a}\sin{\bigg(\sqrt{\lambda_n} \frac{\pi}{2}\bigg)}, 
+\end{equation}
+for different scattering lengths $a$.
 \subsection{Smith-Whitten Coordinates}\label{smith_whitten}
 The motion of three particles can be represented in a symmetric way by using so called democratic coordinates. The main advantage with these kinds of coordinates is that permutation symmetries for three identical particles can be imposed exactly. To define the two hyperangles $\theta$ and $\phi$ I use the mapping procedure described by Johnson \cite{Johnson1980} to produce a modified set of the coordinates first introduced by Smith and Whitten \cite{Smith_Whitten1968}, see \cref{Appendix_2_1}. Here I am content with presenting the results. The two hyperangles are defined implictly by the interparticle distances given by 
 
@@ -291,7 +318,7 @@ The derivation of the Schr{\"o}dinger equation in these coordinates is presented
  \bigg(-\frac{1}{2 \mu}\frac{\partial^2}{\partial \rho^2} + \frac{ \Lambda^2 + \frac{15}{4}}{2 \mu \rho^{2}}+ V(\rho, \theta, \phi)\bigg)\psi(\rho,\theta,\phi) = E\psi(\rho,\theta,\phi),
 \end{equation}
 with the corresponding volume element $
-\frac{1}{16}\rho^5 \sin 2\theta\sin\beta d\rho d\theta d\phi d\alpha d\beta d\gamma$. The grand angular momentum operator $\Lambda^2$ for $J=0$ states is given by
+\frac{1}{16}\rho^5 \sin 2\theta\sin\beta \,d\rho\,d\theta\,d\phi\, d\alpha\,d\beta\,d\gamma$. The squared grand angular momentum operator $\Lambda^2$ for $J=0$ states is given by
 
 \begin{equation}\label{eq:grandangularmomentum}
 \Lambda^2 = -\frac{4}{\sin 2\theta}\frac{\partial}{\partial \theta}\sin 2\theta \frac{\partial}{\partial \theta} - \frac{4}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}.
@@ -312,7 +339,7 @@ r_{31} &= 3^{-1/4}\rho\big[1 + \sin\theta\cos(\phi + 2\pi/3)\big]^{1/2}.
 \end{aligned}
 \end{equation}
 
-The particles permutates in a cyclical manner as the hyperangular coordinate $\phi$ changes from $0$ to $2\pi$. The symmetric properties of the wave function depend on the parity of the system and for a general system the symmetry requirement is
+The particles permutate in a cyclical manner as the hyperangular coordinate $\phi$ changes from $0$ to $2\pi$. The symmetric properties of the wave function depend on the parity of the system and for a general system the symmetry requirement is
 
 \begin{equation}
 \Phi_{\nu}(\rho;\theta,\phi = 0) = \pm \Phi_{\nu}(\rho;\theta,\phi = 2\pi), \qquad \text{for} \qquad \Pi = \pm 1.\\
@@ -322,7 +349,7 @@ For three identical particles the range is reduced to $[0,2\pi/3]$ and
 \begin{equation}
 \Phi_{\nu}(\rho;\theta,\phi = 0) = \pm \Phi_{\nu}(\rho;\theta,\phi = 2\pi/3), \qquad \text{for} \qquad \Pi = \pm 1.\\
 \end{equation}
-Moreover, by defining the hyperangles this way, the interaction potential for three indistinguishable particles becomes invariant under reflection about $\phi=\pi/3$, see \cref{fig:potential} in \cref{Appendix_2_1}. The solutions to the Schr{\"o}dinger equation is therefore either symmetric (bosons) or antisymmetric (fermions) under exchange of any two particles in this restricted domain. The original range of $\phi$ is thus reduced by a factor $3!$ for three identical particles and for $J^{\pi} = 0^+$  symmetry\footnote{For a three-body system, the number and kind of identical particles for each partial wave are denoted $J^{\pi}$, where $J$ is the total angular momentum and $\pi$ is the parity. The bosonic state for three identical particles is therefore denoted $0^+$.} to be fullfilled the $\phi$ derivative of the wave function must vanish at $0$ and $\pi/3$ \cite{EsryGreeneSuno2001}.
+Moreover, by defining the hyperangles this way, the interaction potential for three indistinguishable particles becomes invariant under reflection about $\phi=\pi/3$, see \cref{fig:potential} in \cref{Appendix_2_1}. The solutions to the Schr{\"o}dinger equation are therefore either symmetric (bosons) or antisymmetric (fermions) under exchange of any two particles in this restricted domain. The original range of $\phi$ is thus reduced by a factor $3!$ for three identical particles and for $J^{\pi} = 0^+$  symmetry\footnote{For a three-body system, the number and kind of identical particles for each partial wave are denoted $J^{\pi}$, where $J$ is the total angular momentum and $\pi$ is the parity. The bosonic state for three identical particles is therefore denoted $0^+$.} to be fullfilled the $\phi$ derivative of the wave function must vanish at $0$ and $\pi/3$ \cite{EsryGreeneSuno2001}.
 
 To derive boundary conditions for the hyperangle $\theta$ it is convenient to write the eigenfunctions of the squared angular momentum as basis functions on the form
 
@@ -364,7 +391,7 @@ where the leading order coefficents imply
 \begin{equation}
 s(s-1)+s-m^2 = 0 \quad \Rightarrow \quad s=\pm m.
 \end{equation}
-Requiring $\Phi_{\nu}$ to be bounded everywhere on the range means $g_l$ must not diverge as $\theta \rightarrow 0$. Because $g_l(\theta) \propto \theta^m$ in the limit $\theta \rightarrow 0$ and since $g_l(0) \neq 0$, it is implied that for $m = 0$ the $\theta$ derivative of the wave function must vanish at $\theta=0$. 
+Requiring $\Phi_{\nu}$ to be bounded everywhere on the range means that $g_l$ must not diverge as $\theta \rightarrow 0$. Because $g_l(\theta) \propto \theta^m$ in the limit $\theta \rightarrow 0$ and since $g_l(0) \neq 0$, it is implied that for $m = 0$ the $\theta$ derivative of the wave function must vanish at $\theta=0$. 
 
 The boundary condition at $\theta = \pi/2$ is determined by setting $\theta=\pi/2-\varepsilon$ and taking the limit $\varepsilon \rightarrow 0^+$. In this limit
 
@@ -391,13 +418,13 @@ The eigenvalues of  $\Lambda^2$ can be derived analytically and are given by
 U_{lm} = \lambda_{lm}(\lambda_{lm} + 4), \quad \text{where} \quad \lambda_{lm}=2(l+m).
 \end{equation}
 
-\Cref{table:1} presents the analytically derived eigenvalues together with the results obtained from numerically solving the $\theta$-equation with B-splines at the three first $m$-values ($m=0,3,6$) along with the eigenvalues obtained when numerically solving \eqref{eq:eigenlambda} by expanding $\Phi_{\nu}(\rho;\theta,\phi)$ onto a direct product of B-splines\footnote{B-splines of order $k=6$ was used for both dimensions, which corresponds to local polynomials of degree $5$, see \cref{B-splines}.} in $\theta$ and $\phi$. 
+\Cref{table:1} presents the analytically derived eigenvalues together with the results obtained from numerically solving the $\theta$-equation with B-splines at the three first $m$-values ($m=0,3,6$) along with the eigenvalues obtained when numerically solving \eqref{eq:eigenlambda} by expanding $\Phi_{\nu}(\rho;\theta,\phi)$ onto a direct product of B-splines\footnote{B-splines of order $k=6$ were used for both dimensions, which corresponds to local polynomials of degree $5$, see \cref{B-splines}.} in $\theta$ and $\phi$. 
 
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{||c c c c c c||} 
 		\hline
-		$U_{lm=0}$ & $U_{lm=3}$ & $U_{lm=6}$ & $U_{[\nu]}$ & $\lambda_{[lm]}$& multiplicity \\ [0.5ex] 
+		$U_{lm=0}$ & $U_{lm=3}$ & $U_{lm=6}$ & $U_{[\nu]}$ & $\lambda_{[lm]}$& Multiplicity \\ [0.5ex] 
 		\hline\hline
 		0		& 60     & 192 & $0_{[0]}$ & $0_{[00]}$ & 1  \\ 
 		32 & 140   & 320 & $32_{[1]}$ & $4_{[20]}$ & 1  \\
