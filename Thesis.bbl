@@ -121,47 +121,6 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevA.66.013601
       \endverb
     \endentry
-    \entry{2008AnPhy.323.1770B}{article}{}
-      \name{author}{3}{}{%
-        {{hash=fa96bca49e8ea68fb5bce2da11ba52bf}{%
-           family={{Braaten}},
-           family_i={B\bibinitperiod},
-           given={Eric},
-           given_i={E\bibinitperiod}}}%
-        {{hash=318cf8ed3aecf2e2cedea21f7d13331c}{%
-           family={{Kusunoki}},
-           family_i={K\bibinitperiod},
-           given={Masaoki},
-           given_i={M\bibinitperiod}}}%
-        {{hash=69d38c6fe2a3b0743c5e5d9c7fdf1470}{%
-           family={{Zhang}},
-           family_i={Z\bibinitperiod},
-           given={Dongqing},
-           given_i={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{cec769b4266152f9a88b5cfea81eb5c1}
-      \strng{fullhash}{cec769b4266152f9a88b5cfea81eb5c1}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cond-mat.other}
-      \field{eprinttype}{arXiv}
-      \field{journaltitle}{Annals of Physics}
-      \field{month}{07}
-      \field{title}{{Scattering models for ultracold atoms}}
-      \field{volume}{323}
-      \field{year}{2008}
-      \field{pages}{1770\bibrangedash 1815}
-      \range{pages}{46}
-      \verb{doi}
-      \verb 10.1016/j.aop.2007.12.004
-      \endverb
-      \verb{eprint}
-      \verb 0709.0499
-      \endverb
-      \keyw{Condensed Matter - Other,High Energy Physics - Phenomenology,Nuclear Theory}
-    \endentry
     \entry{Chenciner2015}{inbook}{}
       \name{author}{1}{}{%
         {{hash=9ab75b50eb87cc35521c51f02129f8dd}{%
@@ -194,9 +153,9 @@
       \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Henri Poincar\'{e}, 1912--2012: Poincar\'{e} Seminar 2012}
+      \field{booktitle}{Henri Poincaré, 1912--2012: Poincaré Seminar 2012}
       \field{isbn}{978-3-0348-0834-7}
-      \field{title}{Poincar\'{e} and the Three-Body Problem}
+      \field{title}{Poincaré and the Three-Body Problem}
       \field{year}{2015}
       \field{pages}{51\bibrangedash 149}
       \range{pages}{99}
@@ -205,6 +164,100 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1007/978-3-0348-0834-7_2
+      \endverb
+    \endentry
+    \entry{vanderWaals}{article}{}
+      \name{author}{4}{}{%
+        {{hash=82f5a7e2e1d839e54ffed40436583fcd}{%
+           family={Chin},
+           family_i={C\bibinitperiod},
+           given={Cheng},
+           given_i={C\bibinitperiod}}}%
+        {{hash=fe2959547cb357a53a7a05b33161fd76}{%
+           family={Grimm},
+           family_i={G\bibinitperiod},
+           given={Rudolf},
+           given_i={R\bibinitperiod}}}%
+        {{hash=be565a40dcc865606131d9985cbcc3cb}{%
+           family={Julienne},
+           family_i={J\bibinitperiod},
+           given={Paul},
+           given_i={P\bibinitperiod}}}%
+        {{hash=c78972b7154db12858f8b2a43cbddc26}{%
+           family={Tiesinga},
+           family_i={T\bibinitperiod},
+           given={Eite},
+           given_i={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{22675ab16014f652884c9d75b2fb066d}
+      \strng{fullhash}{99adb1ddaebfa60d8f5b2424a174f930}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{2}
+      \field{journaltitle}{Rev. Mod. Phys.}
+      \field{month}{04}
+      \field{title}{Feshbach resonances in ultracold gases}
+      \field{volume}{82}
+      \field{year}{2010}
+      \field{pages}{1225\bibrangedash 1286}
+      \range{pages}{62}
+      \verb{doi}
+      \verb 10.1103/RevModPhys.82.1225
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/RevModPhys.82.1225
+      \endverb
+    \endentry
+    \entry{Feshbach}{article}{}
+      \name{author}{4}{}{%
+        {{hash=82f5a7e2e1d839e54ffed40436583fcd}{%
+           family={Chin},
+           family_i={C\bibinitperiod},
+           given={Cheng},
+           given_i={C\bibinitperiod}}}%
+        {{hash=fe2959547cb357a53a7a05b33161fd76}{%
+           family={Grimm},
+           family_i={G\bibinitperiod},
+           given={Rudolf},
+           given_i={R\bibinitperiod}}}%
+        {{hash=be565a40dcc865606131d9985cbcc3cb}{%
+           family={Julienne},
+           family_i={J\bibinitperiod},
+           given={Paul},
+           given_i={P\bibinitperiod}}}%
+        {{hash=c78972b7154db12858f8b2a43cbddc26}{%
+           family={Tiesinga},
+           family_i={T\bibinitperiod},
+           given={Eite},
+           given_i={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{22675ab16014f652884c9d75b2fb066d}
+      \strng{fullhash}{99adb1ddaebfa60d8f5b2424a174f930}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{2}
+      \field{journaltitle}{Rev. Mod. Phys.}
+      \field{month}{04}
+      \field{title}{Feshbach resonances in ultracold gases}
+      \field{volume}{82}
+      \field{year}{2010}
+      \field{pages}{1225\bibrangedash 1286}
+      \range{pages}{62}
+      \verb{doi}
+      \verb 10.1103/RevModPhys.82.1225
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/RevModPhys.82.1225
       \endverb
     \endentry
     \entry{Efimov:1970zz}{article}{}
@@ -230,6 +283,27 @@
       \verb{doi}
       \verb 10.1016/0370-2693(70)90349-7
       \endverb
+    \endentry
+    \entry{Efimov:1971zz}{article}{}
+      \name{author}{1}{}{%
+        {{hash=33ae5ab2cf8c71d8dfe09c6eb2279671}{%
+           family={Efimov},
+           family_i={E\bibinitperiod},
+           given={V.\bibnamedelimi N.},
+           given_i={V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{33ae5ab2cf8c71d8dfe09c6eb2279671}
+      \strng{fullhash}{33ae5ab2cf8c71d8dfe09c6eb2279671}
+      \field{sortinit}{E}
+      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sov. J. Nucl. Phys.}
+      \field{title}{{WEAKLY-BOUND STATES OF 3 RESONANTLY-INTERACTING PARTICLES}}
+      \field{volume}{12}
+      \field{year}{1971}
+      \field{pages}{589}
+      \range{pages}{1}
     \endentry
     \entry{efimov1990qualitative}{article}{}
       \name{author}{1}{}{%
@@ -402,7 +476,7 @@
            given={Jose\bibnamedelima P.},
            given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
         {{hash=2cd675b74bee149c16b48648f7d13544}{%
-           family={N\"{a}gerl},
+           family={Nägerl},
            family_i={N\bibinitperiod},
            given={Hanns-Christoph},
            given_i={H\bibinithyphendelim C\bibinitperiod}}}%
@@ -460,6 +534,120 @@
       \field{year}{2000}
       \verb{url}
       \verb https://detritus.fundacioace.com/pub/books/Classical_Mechanics_Goldstein_3ed.pdf
+      \endverb
+    \endentry
+    \entry{Lithium7}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f8948960473441990450fc1a0308c5bc}{%
+           family={Gross},
+           family_i={G\bibinitperiod},
+           given={Noam},
+           given_i={N\bibinitperiod}}}%
+        {{hash=6002f5016f1830faf80b4426b0657420}{%
+           family={Shotan},
+           family_i={S\bibinitperiod},
+           given={Zav},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=2fe86895d973adea16605b0834dac816}{%
+           family={Kokkelmans},
+           family_i={K\bibinitperiod},
+           given={Servaas},
+           given_i={S\bibinitperiod}}}%
+        {{hash=c5c2d94d3dd8a6c367e78a867bc5224a}{%
+           family={Khaykovich},
+           family_i={K\bibinitperiod},
+           given={Lev},
+           given_i={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef3dd545d9a82a7a373f6bc83c059dbb}
+      \strng{fullhash}{1e1c479911dd00d6ce535e1bf7826fed}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical review letters}
+      \field{month}{10}
+      \field{title}{Observation of Universality in Ultracold Li-7 Three-Body Recombination}
+      \field{volume}{103}
+      \field{year}{2009}
+      \field{pages}{163202}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PHYSREVLETT.103.163202
+      \endverb
+    \endentry
+    \entry{Blume2019}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f8a9693099a396729a8a70013d96e38f}{%
+           family={Guan},
+           family_i={G\bibinitperiod},
+           given={Q.},
+           given_i={Q\bibinitperiod}}}%
+        {{hash=41c816fdf7d915e66469502c6ba17d19}{%
+           family={Blume},
+           family_i={B\bibinitperiod},
+           given={D.},
+           given_i={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{8058d675b70265b2e4262aad46057f65}
+      \strng{fullhash}{8058d675b70265b2e4262aad46057f65}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{3}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{03}
+      \field{title}{Electric-field-induced helium-helium resonances}
+      \field{volume}{99}
+      \field{year}{2019}
+      \field{pages}{033416}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.99.033416
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.99.033416
+      \endverb
+    \endentry
+    \entry{Kamimura2012}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4671e4365b865b95580d668ce3a2e5cb}{%
+           family={Hiyama},
+           family_i={H\bibinitperiod},
+           given={E.},
+           given_i={E\bibinitperiod}}}%
+        {{hash=4d6c175e6911209d5ab54d0975986bf0}{%
+           family={Kamimura},
+           family_i={K\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{b5b612b8455a139f48c474de49ef135b}
+      \strng{fullhash}{b5b612b8455a139f48c474de49ef135b}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{6}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{06}
+      \field{title}{Linear correlations between ${}^{4}$He trimer and tetramer energies calculated with various realistic ${}^{4}$He potentials}
+      \field{volume}{85}
+      \field{year}{2012}
+      \field{pages}{062505}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.85.062505
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.85.062505
       \endverb
     \endentry
     \entry{Huang2014}{article}{}
@@ -571,6 +759,68 @@
       \verb https://doi.org/10.1063/1.445969
       \endverb
     \endentry
+    \entry{Klauss2017}{article}{}
+      \name{author}{7}{}{%
+        {{hash=b120d4cc1c03438b5a556d980d4473a1}{%
+           family={Klauss},
+           family_i={K\bibinitperiod},
+           given={Catherine\bibnamedelima E.},
+           given_i={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=575a5ee21fb18fa9d777a9a1a1c55273}{%
+           family={Xie},
+           family_i={X\bibinitperiod},
+           given={Xin},
+           given_i={X\bibinitperiod}}}%
+        {{hash=2875b9c22ec74da802811a1bb63a609d}{%
+           family={Lopez-Abadia},
+           family_i={L\bibinithyphendelim A\bibinitperiod},
+           given={Carlos},
+           given_i={C\bibinitperiod}}}%
+        {{hash=f261a4fa17d5a7638f621472eae58d8f}{%
+           family={D'Incao},
+           family_i={D\bibinitperiod},
+           given={José\bibnamedelima P.},
+           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=e559cd113aa4b05a31c869250cda6cc1}{%
+           family={Hadzibabic},
+           family_i={H\bibinitperiod},
+           given={Zoran},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=585dcd46b426c5ac8adee72689b5846a}{%
+           family={Jin},
+           family_i={J\bibinitperiod},
+           given={Deborah\bibnamedelima S.},
+           given_i={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=2f6b1a2c5ee80dfe506ce88d1b0dbaea}{%
+           family={Cornell},
+           family_i={C\bibinitperiod},
+           given={Eric\bibnamedelima A.},
+           given_i={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{54a4c24594cbeca22eae78fd0b8a4bc7}
+      \strng{fullhash}{7c1cb2935efb964210bacdff9cb3d202}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{14}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{10}
+      \field{title}{Observation of Efimov Molecules Created from a Resonantly Interacting Bose Gas}
+      \field{volume}{119}
+      \field{year}{2017}
+      \field{pages}{143401}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.119.143401
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.119.143401
+      \endverb
+    \endentry
     \entry{Grimm:2006}{article}{}
       \name{author}{11}{}{%
         {{hash=79b4143b76de6194ce6fac487e501773}{%
@@ -619,7 +869,7 @@
            given={A.},
            given_i={A\bibinitperiod}}}%
         {{hash=235108a346cb2cb61bebc6b4917c873e}{%
-           family={N\"{a}gerl},
+           family={Nägerl},
            family_i={N\bibinitperiod},
            given={H.\bibnamedelimi -C.},
            given_i={H\bibinitperiod\bibinitdelim \bibinithyphendelim \bibinithyphendelim C\bibinitperiod}}}%
@@ -651,35 +901,84 @@
       \warn{\item Datamodel: Entry 'Grimm:2006' (References.bib): Invalid format '2006/03/16/online' of date field 'date' - ignoring}
       \warn{\item Range field 'pages' in entry 'Grimm:2006' is malformed, skipping}
     \endentry
-    \entry{Kunitski:2015qth}{article}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{1}{}{%
+    \entry{Blume2015}{article}{}
+      \name{author}{12}{}{%
         {{hash=83c5ac1ba6e64eb5b9635bd5385fac69}{%
            family={Kunitski},
            family_i={K\bibinitperiod},
            given={Maksim},
            given_i={M\bibinitperiod}}}%
+        {{hash=d08f792a93a7ebd5f1b96fd2e0ac80eb}{%
+           family={Zeller},
+           family_i={Z\bibinitperiod},
+           given={Stefan},
+           given_i={S\bibinitperiod}}}%
+        {{hash=8d1e45ec9e736600cc5cee2d5806c988}{%
+           family={Voigtsberger},
+           family_i={V\bibinitperiod},
+           given={Jörg},
+           given_i={J\bibinitperiod}}}%
+        {{hash=e6f687aa491d5b8d500a6dd901573e9d}{%
+           family={Kalinin},
+           family_i={K\bibinitperiod},
+           given={A},
+           given_i={A\bibinitperiod}}}%
+        {{hash=d74949d566f1e9e9499313c9661034b0}{%
+           family={Ph\bibnamedelima H\bibnamedelima Schmidt},
+           family_i={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Lothar},
+           given_i={L\bibinitperiod}}}%
+        {{hash=ab983505a29d2f41253616f43b1c408c}{%
+           family={Schoffler},
+           family_i={S\bibinitperiod},
+           given={M},
+           given_i={M\bibinitperiod}}}%
+        {{hash=c455be0b17499e2c9cdcd77651b4fc63}{%
+           family={Czasch},
+           family_i={C\bibinitperiod},
+           given={Achim},
+           given_i={A\bibinitperiod}}}%
+        {{hash=53e889bc720ee58bf2d3a5b06314eddc}{%
+           family={Schöllkopf},
+           family_i={S\bibinitperiod},
+           given={W},
+           given_i={W\bibinitperiod}}}%
+        {{hash=d982c64a10c86cf1d4778ebeeef4b19d}{%
+           family={E\bibnamedelima Grisenti},
+           family_i={E\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Robert},
+           given_i={R\bibinitperiod}}}%
+        {{hash=c85cfc805d136d1344c31a4feae00e8f}{%
+           family={Jahnke},
+           family_i={J\bibinitperiod},
+           given={Till},
+           given_i={T\bibinitperiod}}}%
+        {{hash=62ddba50b555b7ac2736171c3882614a}{%
+           family={Blume},
+           family_i={B\bibinitperiod},
+           given={Dörte},
+           given_i={D\bibinitperiod}}}%
+        {{hash=1e61bdc33d43b7fb590b6981762ca7ba}{%
+           family={Dörner},
+           family_i={D\bibinitperiod},
+           given={Reinhard},
+           given_i={R\bibinitperiod}}}%
       }
       \strng{namehash}{73b57908a701a9a63390f89122f0697a}
-      \strng{fullhash}{73b57908a701a9a63390f89122f0697a}
+      \strng{fullhash}{c22be03054de304e7eaf9459c8eef0d3}
       \field{sortinit}{K}
       \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{eprintclass}{physics.atm-clus}
-      \field{eprinttype}{arXiv}
       \field{journaltitle}{Science}
-      \field{title}{{Observation of the Efimov state of the helium trimer}}
+      \field{month}{05}
+      \field{title}{Three-body physics. Observation of the Efimov state of the helium trimer}
       \field{volume}{348}
       \field{year}{2015}
       \field{pages}{551\bibrangedash 555}
       \range{pages}{5}
       \verb{doi}
       \verb 10.1126/science.aaa5601
-      \endverb
-      \verb{eprint}
-      \verb 1512.02036
       \endverb
     \endentry
     \entry{KUPPERMANN1975374}{article}{}
@@ -739,6 +1038,95 @@
       \field{title}{Quantum Mechanics Non-Relativistic Theory, Second Edition: Volume 3}
       \field{year}{1965}
       \keyw{book}
+    \endentry
+    \entry{Lim1977}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0c40fd33c03d8ce3caab66ff875a267a}{%
+           family={Lim},
+           family_i={L\bibinitperiod},
+           given={T.\bibnamedelimi K.},
+           given_i={T\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=729145bd024cad2c2168e3bb736bd82d}{%
+           family={Duffy},
+           family_i={D\bibinitperiod},
+           given={Sister\bibnamedelima Kathleen},
+           given_i={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=4c73db3d5cfed2669c137bcd65623391}{%
+           family={Damer},
+           family_i={D\bibinitperiod},
+           given={William\bibnamedelima C.},
+           given_i={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{294204108806a3dc84c81fbb52fe60d6}
+      \strng{fullhash}{294204108806a3dc84c81fbb52fe60d6}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{7}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{02}
+      \field{title}{Efimov State in the $^{4}\mathrm{He}$ Trimer}
+      \field{volume}{38}
+      \field{year}{1977}
+      \field{pages}{341\bibrangedash 343}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.38.341
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.38.341
+      \endverb
+    \endentry
+    \entry{LithiumRubidium}{article}{}
+      \name{author}{4}{}{%
+        {{hash=479ee19ea90d01ff4e0c892629fa1dbf}{%
+           family={Maier},
+           family_i={M\bibinitperiod},
+           given={R.\bibnamedelimi A.\bibnamedelimi W.},
+           given_i={R\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=e371deeb78315423a8188803e8f9947c}{%
+           family={Eisele},
+           family_i={E\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=e04b3ea9e1839a5f2955401ae8f03435}{%
+           family={Tiemann},
+           family_i={T\bibinitperiod},
+           given={E.},
+           given_i={E\bibinitperiod}}}%
+        {{hash=64c9e5f5777c27ca72aa333af0bb7337}{%
+           family={Zimmermann},
+           family_i={Z\bibinitperiod},
+           given={C.},
+           given_i={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{d969482efdc945bd2c907845b0271920}
+      \strng{fullhash}{e11ed9e38fb1672956189392193c644c}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{4}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{07}
+      \field{title}{Efimov Resonance and Three-Body Parameter in a Lithium-Rubidium Mixture}
+      \field{volume}{115}
+      \field{year}{2015}
+      \field{pages}{043201}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.115.043201
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.115.043201
+      \endverb
     \endentry
     \entry{podolsky_1928}{article}{}
       \name{author}{1}{}{%
@@ -904,6 +1292,64 @@
       \verb https://doi.org/10.1063/1.1724275
       \endverb
     \endentry
+    \entry{LithiumCeasium}{article}{}
+      \name{author}{6}{}{%
+        {{hash=c81c0587d381907e45edbc22c7e0dfe9}{%
+           family={{Ulmanis}},
+           family_i={U\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+        {{hash=57cb0cfff538dfdc3bb9b01dff7712fd}{%
+           family={{Häfner}},
+           family_i={H\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=5033b39c2472378182c31ab79475bdc3}{%
+           family={{Pires}},
+           family_i={P\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+        {{hash=fd55373b659b4f6e76e2375a015c6c51}{%
+           family={{Kuhnle}},
+           family_i={K\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           given_i={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=bdbe197c12bd1a8d3f9421d2b44006ee}{%
+           family={{Weidemüller}},
+           family_i={W\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=e04b3ea9e1839a5f2955401ae8f03435}{%
+           family={{Tiemann}},
+           family_i={T\bibinitperiod},
+           given={E.},
+           given_i={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b28ceee0c5ffcdabbf0a5b145e29e8a}
+      \strng{fullhash}{fe85c37cefd515a7656eed22fedb3903}
+      \field{sortinit}{U}
+      \field{sortinithash}{8145509bd2718876fc77d31fd2cde117}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{055009}
+      \field{eprintclass}{cond-mat.quant-gas}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{New Journal of Physics}
+      \field{month}{05}
+      \field{number}{5}
+      \field{title}{{Universality of weakly bound dimers and Efimov trimers close to Li-Cs Feshbach resonances}}
+      \field{volume}{17}
+      \field{year}{2015}
+      \field{pages}{055009}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1367-2630/17/5/055009
+      \endverb
+      \verb{eprint}
+      \verb 1501.04799
+      \endverb
+      \keyw{Condensed Matter - Quantum Gases,Physics - Atomic Physics,Quantum Physics}
+    \endentry
     \entry{WANG20131}{incollection}{}
       \name{author}{3}{}{%
         {{hash=a44af477e42cc4d9bbc346304bdd8525}{%
@@ -911,11 +1357,11 @@
            family_i={W\bibinitperiod},
            given={Yujun},
            given_i={Y\bibinitperiod}}}%
-        {{hash=0d8bca81423f1f5ab21e38576c830788}{%
-           family={D'Incao},
-           family_i={D\bibinitperiod},
-           given={Jose\bibnamedelima P.},
-           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=5360f4175f2349053df00d6f04a61c29}{%
+           family={Incao},
+           family_i={I\bibinitperiod},
+           given={Jose\bibnamedelimb P.\bibnamedelimi D'},
+           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
         {{hash=ceca3cde1cdebb7e2d96d5e9c4d06ad3}{%
            family={Esry},
            family_i={E\bibinitperiod},
@@ -942,8 +1388,8 @@
       \list{publisher}{1}{%
         {Academic Press}%
       }
-      \strng{namehash}{595e8e65944a7a4607fbbda0edd2ee04}
-      \strng{fullhash}{595e8e65944a7a4607fbbda0edd2ee04}
+      \strng{namehash}{ce50a8d216d45f6b61f89c4585143eb6}
+      \strng{fullhash}{ce50a8d216d45f6b61f89c4585143eb6}
       \field{sortinit}{W}
       \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
       \field{labelnamesource}{author}
@@ -997,6 +1443,128 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1063/1.1664683
+      \endverb
+    \endentry
+    \entry{Williams2009}{article}{}
+      \name{author}{6}{}{%
+        {{hash=4e32a08911ef8fdaecfc04c6667137e8}{%
+           family={Williams},
+           family_i={W\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           given_i={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=c82ae4b4329607c21889d51539d4b88c}{%
+           family={Hazlett},
+           family_i={H\bibinitperiod},
+           given={E.\bibnamedelimi L.},
+           given_i={E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=805f0fb4f5ae803f6afd6ca6d780a5a8}{%
+           family={Huckans},
+           family_i={H\bibinitperiod},
+           given={J.\bibnamedelimi H.},
+           given_i={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=7b64ce63ffdfc5645f7ae3d5594270f4}{%
+           family={Stites},
+           family_i={S\bibinitperiod},
+           given={R.\bibnamedelimi W.},
+           given_i={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=95a281ba3b1fbf7b222b10f7711f11b0}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Y.},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=501048867028a7108492b93e3f3f1c6a}{%
+           family={O'Hara},
+           family_i={O\bibinitperiod},
+           given={K.\bibnamedelimi M.},
+           given_i={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{add392f41daf68fb3c94a17b889328f8}
+      \strng{fullhash}{a72ffb5e2a04fc18964cefc347f705df}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{13}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{09}
+      \field{title}{Evidence for an Excited-State Efimov Trimer in a Three-Component Fermi Gas}
+      \field{volume}{103}
+      \field{year}{2009}
+      \field{pages}{130404}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.103.130404
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.103.130404
+      \endverb
+    \endentry
+    \entry{Potassium}{article}{}
+      \name{author}{9}{}{%
+        {{hash=947710d29c81e9acb629b3bdc3b9b352}{%
+           family={Zaccanti},
+           family_i={Z\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=2676373af8b6c3759b3585905c454024}{%
+           family={Deissler},
+           family_i={D\bibinitperiod},
+           given={B.},
+           given_i={B\bibinitperiod}}}%
+        {{hash=a720785b355a800cf81e94dd9b59f791}{%
+           family={D'\bibnamedelima Errico},
+           family_i={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+           given={C.},
+           given_i={C\bibinitperiod}}}%
+        {{hash=dbf456a858b053ad8fc2e242e7ef4659}{%
+           family={Fattori},
+           family_i={F\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=ba489c2b8150c6178ec5c2cbbd806f3b}{%
+           family={Jona-Lasinio},
+           family_i={J\bibinithyphendelim L\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=fb0b1edc28f3ffcad8537d207f2cbbf2}{%
+           family={Muller},
+           family_i={M\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=84eeb1494df5893c9af76f182f72c3c6}{%
+           family={Roati},
+           family_i={R\bibinitperiod},
+           given={G.},
+           given_i={G\bibinitperiod}}}%
+        {{hash=b5d07cff6ee58d1db041536661d4589f}{%
+           family={Inguscio},
+           family_i={I\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=fbc1b6bb9c91c08be3db2383365324de}{%
+           family={Modugno},
+           family_i={M\bibinitperiod},
+           given={G.},
+           given_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{31e916576080a9e9cbb1976f3cea5713}
+      \strng{fullhash}{dc1c6f547c81bfb05970c4ca10d4ecfe}
+      \field{sortinit}{Z}
+      \field{sortinithash}{fdda4caaa6b5fa63e0c081dcb159543a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1745-2473}
+      \field{journaltitle}{NATURE PHYSICS}
+      \field{number}{8}
+      \field{title}{Observation of an Efimov spectrum in an atomic system.}
+      \field{year}{2009}
+      \field{pages}{586}
+      \range{pages}{1}
+      \verb{url}
+      \verb https://ezp.sub.su.se/login?url=http://search.ebscohost.com/login.aspx?direct=true&db=edsbl&AN=RN255515896&site=eds-live&scope=site
       \endverb
     \endentry
     \entry{Zubarev:1994}{article}{}

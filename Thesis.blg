@@ -1,21 +1,18 @@
 [0] Config.pm:343> INFO - This is Biber 2.5
 [0] Config.pm:346> INFO - Logfile is 'Thesis.blg'
-[48] biber-darwin:290> INFO - === Wed Apr 24, 2019, 09:36:24
-[83] Biber.pm:351> INFO - Reading 'Thesis.bcf'
-[171] Biber.pm:776> INFO - Found 28 citekeys in bib section 0
-[184] Biber.pm:3493> INFO - Processing section 0
-[204] Biber.pm:3657> INFO - Looking for bibtex format file 'References.bib' for section 0
-[207] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[211] bibtex.pm:1048> INFO - Found BibTeX data source 'References.bib'
-[272] Utils.pm:149> WARN - Datamodel: Entry 'Grimm:2006' (References.bib): Invalid format '2006/03/16/online' of date field 'date' - ignoring
-[272] Utils.pm:149> WARN - Range field 'pages' in entry 'Grimm:2006' is malformed, skipping
-[327] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[327] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[327] Biber.pm:3306> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
-[327] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
-[357] bbl.pm:526> INFO - Writing 'Thesis.bbl' with encoding 'ascii'
-[361] Utils.pm:149> WARN - The entry 'Chenciner2015' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[363] Utils.pm:149> WARN - The entry 'Grimm:2009' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[365] Utils.pm:149> WARN - The entry 'Grimm:2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[367] bbl.pm:619> INFO - Output to Thesis.bbl
-[368] Biber.pm:108> INFO - WARNINGS: 5
+[86] biber-darwin:290> INFO - === Sun Apr 28, 2019, 16:46:13
+[110] Biber.pm:351> INFO - Reading 'Thesis.bcf'
+[197] Biber.pm:776> INFO - Found 39 citekeys in bib section 0
+[209] Biber.pm:3493> INFO - Processing section 0
+[234] Biber.pm:3657> INFO - Looking for bibtex format file 'References.bib' for section 0
+[237] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[241] bibtex.pm:1048> INFO - Found BibTeX data source 'References.bib'
+[285] Utils.pm:149> WARN - Datamodel: Entry 'Grimm:2006' (References.bib): Invalid format '2006/03/16/online' of date field 'date' - ignoring
+[285] Utils.pm:149> WARN - Range field 'pages' in entry 'Grimm:2006' is malformed, skipping
+[357] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[357] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[357] Biber.pm:3306> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
+[357] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
+[415] bbl.pm:526> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
+[426] bbl.pm:619> INFO - Output to Thesis.bbl
+[426] Biber.pm:108> INFO - WARNINGS: 2
