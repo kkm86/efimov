@@ -18,7 +18,7 @@ Efimov proposed that attractive three-body interaction appearing in systems with
 The notion of Efimov physics comprises a range of universal phenomena that occur in few-body systems exhibiting the Efimov effect. Short-ranged forces commonly occur in nature and few-body effects are expected to appear in a broad range of physical systems. Development in the theory of few-body quantum systems is important, since it could bridge the gap between existing well developed models of treating one- and two-body systems and the statistical methods used to describe many-body systems.
 
 \section{Theoretical Introduction}
-A short review concerning some important aspects of quantum mechanical systems and two-body scattering, in particlular the concept of \emph{scattering length}, will follow, in order to set the stage for a discussion of quantum effects in few-body systems in general and Efimov states in three-body systems in particular. 
+A short review concerning some important aspects of quantum mechanical systems and two-body scattering, in particlular the concept of \emph{scattering length}, will follow, in order to set the stage for a discussion of quantum effects in few-body systems in general and Efimov states in three-body systems in particular. A more detailed description of two-body scattering will be given in \cref{chap:3}.
 
 \subsection{Entering the Quantum Realm}
 All particles of matter exhibit wave-like properties. The wavelength of a particle with momentum $p$ is given by the de Broglie equation
@@ -41,7 +41,7 @@ The scattering processes of two particles can be decomposed into that of an inco
 \begin{equation} \label{eq:2}
 a = \lim_{k \to 0} -\frac{\tan\delta_0(k)}{k},
 \end{equation}
-where $k$ is the wave number ($k=p/\hbar = \sqrt{2\mu E}/\hbar$) and $\delta_0(k)$ is the $s$-wave phase shift of the outgoing wave. For small $k$, the phase shift will behave as $\delta(k)\approx-ka + O(k^2)$. If scattering by a hard sphere is considered, the scattering length $a$ is simply the radius of the sphere. In the low energy limit, the scattering properties for an arbitrary potential is the same as that of a hard sphere with radius $a$. Scattering can therefore occur at separations greater than the interaction range if the magnitude of the scattering length is sufficently large. The scattering length characterizes the strength of the short-range interparticle interaction. Since a positive scattering length corresponds to a negative phase shift, which means that the scattered wave is pushed out, the effective interaction will be repulsive and an increase in $a$ will cause the underlying attractive potential in a two-body bound state to become less attractive. Increasing the magnitude of a negative scattering length will, on the other hand, make the potential more attractive, since the phase shift is now positive and the scattered wave is pulled in, see \cref{fig:phaseshift}. Even though the effective interaction is attractive at negative scattering lengths, the interaction will always be to weak to support a two-body bound state.  
+where $k$ is the wave number ($k=p/\hbar = \sqrt{2\mu_{2b} E}/\hbar$), $\mu_{2b}$ is the two-body reduced mass and $\delta_0(k)$ is the $s$-wave phase shift of the outgoing wave. For small $k$, the phase shift will behave as $\delta(k)\approx-ka + O(k^2)$. If scattering by a hard sphere is considered, the scattering length $a$ is simply the radius of the sphere. In the low energy limit, the scattering properties for an arbitrary potential is the same as that of a hard sphere with radius $a$. Scattering can therefore occur at separations greater than the interaction range if the magnitude of the scattering length is sufficently large. The scattering length characterizes the strength of the short-range interparticle interaction. Since a positive scattering length corresponds to a negative phase shift, which means that the scattered wave is pushed out, the effective interaction will be repulsive and an increase in $a$ will cause the underlying attractive potential in a two-body bound state to become less attractive. Increasing the magnitude of a negative scattering length will, on the other hand, make the potential more attractive, since the phase shift is now positive and the scattered wave is pulled in, see \cref{fig:phaseshift}. Even though the effective interaction is attractive at negative scattering lengths, the interaction will always be to weak to support a two-body bound state.  
 
 \begin{figure}
 	\centering  
@@ -55,12 +55,12 @@ In the abscence of an interaction, the phase shift is simply zero. The strongest
 Particles with large scattering lengths, i.e., $\abs{a}\gg r_0$, in the low-energy regime have universal properties. The properties are universal in the sense that they depend on the scattering length alone and not on the details of the short-range interaction. Alkali atoms interact via van der Waals potentials of the form $-C_6/r^6$, where the range $r_0$ is typically on the order of the van der Waals length, which can be defined by \cite{vanderWaals}
 
 \begin{equation}
-l_{vdW} = \frac{1}{2}\bigg(\frac{2\mu C_6}{\hbar^2}\bigg)^{1/4}.
+l_{vdW} = \frac{1}{2}\bigg(\frac{2\mu_{2b} C_6}{\hbar^2}\bigg)^{1/4}.
 \end{equation}
 
 For a system of two identical bosons with $a>0$, there is a universal shallow two-body bound state near the scattering threshold, with binding energy 
 \begin{equation}\label{shallowdimer}
-E_D = \frac{\hbar^2}{2 \mu a^2}.
+E_D = \frac{\hbar^2}{2 \mu_{2b} a^2}.
 \end{equation}
 For $a<0$ there is no such bound state. Outside the universal range the natural binding energy for two particles should be approximately $1/mr_0^2$. The cross section for elastic scattering of two identical bosons in this regime is also universal and so is the mean square radius, which are given by
 

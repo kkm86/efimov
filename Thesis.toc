@@ -1,4 +1,6 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {british}
 \contentsline {chapter}{List of Figures}{iii}
 \contentsline {chapter}{List of Tables}{v}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
@@ -22,17 +24,17 @@
 \contentsline {section}{\numberline {4.1}Mass Normalized Jacobi Coordinates}{22}
 \contentsline {section}{\numberline {4.2}The Hyperspherical Method}{24}
 \contentsline {section}{\numberline {4.3}The Adiabatic Hyperspherical Representation}{25}
-\contentsline {subsection}{\numberline {4.3.1}Effective Three-body Potentials}{27}
-\contentsline {subsection}{\numberline {4.3.2}Delves Coordinates}{29}
-\contentsline {subsection}{\numberline {4.3.3}Smith-Whitten Coordinates}{31}
-\contentsline {section}{\numberline {4.4}The Generalized Hellmann-Feynman Theorem}{35}
-\contentsline {chapter}{\numberline {5}Numerical Approach}{39}
-\contentsline {section}{\numberline {5.1}Basis splines expansion}{39}
-\contentsline {section}{\numberline {5.2}Gauss-Legendre Quadrature}{41}
-\contentsline {chapter}{\numberline {6}Scattering Model}{45}
-\contentsline {chapter}{\numberline {7}Results and Discussion}{47}
-\contentsline {chapter}{\numberline {A}Delves Coordinates}{55}
-\contentsline {chapter}{\numberline {B}Smith-Whitten Coordinates}{61}
-\contentsline {section}{\numberline {B.1}Coordinate Mapping}{61}
-\contentsline {section}{\numberline {B.2}Transformation of the Kinetic Energy Operator}{66}
-\contentsline {chapter}{\numberline {C}Basis Splines}{77}
+\contentsline {subsection}{\numberline {4.3.1}The Hellmann-Feynman Theorem}{27}
+\contentsline {subsection}{\numberline {4.3.2}Effective Three-body Potentials}{28}
+\contentsline {subsection}{\numberline {4.3.3}Delves Coordinates}{30}
+\contentsline {subsection}{\numberline {4.3.4}Smith-Whitten Coordinates}{33}
+\contentsline {chapter}{\numberline {5}Numerical Approach}{37}
+\contentsline {section}{\numberline {5.1}Basis splines expansion}{37}
+\contentsline {section}{\numberline {5.2}Gauss-Legendre Quadrature}{39}
+\contentsline {chapter}{\numberline {6}Scattering Model}{43}
+\contentsline {chapter}{\numberline {7}Results and Discussion}{45}
+\contentsline {chapter}{\numberline {A}Delves Coordinates}{53}
+\contentsline {chapter}{\numberline {B}Smith-Whitten Coordinates}{59}
+\contentsline {section}{\numberline {B.1}Coordinate Mapping}{59}
+\contentsline {section}{\numberline {B.2}Transformation of the Kinetic Energy Operator}{64}
+\contentsline {chapter}{\numberline {C}Basis Splines}{75}

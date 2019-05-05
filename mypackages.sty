@@ -1,9 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{mypackages}
 
+
 \RequirePackage[utf8]{inputenc}
+\RequirePackage[backend=biber,natbib=true,
+style=numeric,
+sorting=none]{biblatex}
+\RequirePackage[british]{babel}
+\RequirePackage{csquotes}
+
+\addbibresource{References.bib}
+
+
 \RequirePackage[nottoc]{tocbibind}
-\RequirePackage[backend=biber]{biblatex}
 \RequirePackage{amsmath}
 \RequirePackage{cleveref}
 \RequirePackage{mathtools}

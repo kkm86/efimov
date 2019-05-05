@@ -152,6 +152,59 @@ P^2_{\mu \nu} &= \sum_{\sigma}P_{\mu \sigma}P_{\sigma \nu} = \sum_{\sigma}\llang
 \end{align}
 The antisymmetry of $P_{\mu\nu}$ together with $P_{\mu\nu}^2 = P_{\nu\mu}^2$ leads to $P_{\nu\nu} = 0$ and $Q_{\nu \nu} = P_{\nu\nu}^2$. A mathematical description of the nonadiabatic couplings and the operational procedures needed to numerically calculate them are given in \cref{section:Hellmann_Feynman}.
 
+\subsection{The Hellmann-Feynman Theorem}\label{section:Hellmann_Feynman}
+This subsection concerns the mathematical description of the nonadiabatic coupling matrices. The nonadiabatic coupling terms defined in  \cref{couplingP,couplingQ} can be determined analytically by means of the Hellmann-Feynman (HF) theorem \cite{Hellmann1933,Feynman}. In this setting, the theorem relates the derivative of the adiabatic potential $U_{\nu}$ with respect to the parametrized hyperradius, with the expectation value of the  hyperradial derivative of the adaibatic Hamiltonian. Consider the $\nu$ adiabatic eigenstates $\Phi_{\nu}$ obtained in \eqref{adiabatic}. Using the identities 
+
+\begin{align}
+\llangle[\big]  \Phi_{\mu} \big\rvert  \Phi_{\nu}  \rrangle[\big] &\equiv \delta_{\mu \nu} \label{eq:orthogonality}\\
+\intertext{and}
+\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu}  \big\rvert  \Phi_{\nu} \rrangle[\big] &\equiv 0,
+\end{align}
+the diagonal part of the HF theorem is retreived by projecting $\Phi_{\nu}$ out from equation \eqref{adiabatic} and differentiating with respect to the hyperradius
+
+
+\begin{align}
+\frac{\partial U_{\nu}}{\partial \rho}&=\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu} \big\lvert H_{ad} \big\rvert  \Phi_{\nu} \rrangle[\big]\nonumber\\
+&=\llangle[\Big]  \Phi_{\nu}  \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] +  \llangle[\Big]  \Phi_{\nu} \Big\lvert H_{ad}\Big\rvert  \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big] +\llangle[\Big] \frac{\partial \Phi_{\nu}}{\partial \rho}    \Big\lvert H_{ad}\Big\rvert  \Phi_{\nu}  \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu} \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\nu}\llangle[\Big]  \Phi_{\nu} \Big\rvert \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\nu}}{\partial \rho}\Big\rvert  \Phi_{\nu} \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu} \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\nu} \frac{\partial}{\partial \rho}\llangle[\Big]  \Phi_{\nu} \Big\rvert \Phi_{\nu} \rrangle[\Big] \nonumber \\
+&=\llangle[\Big]  \Phi_{\nu}\Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big].
+\end{align}
+
+The nondiagonal part are similarly given by
+
+\begin{align}
+&\frac{\partial U_{\nu}}{\partial \rho}\llangle[\Big]  \Phi_{\mu} \Big\lvert \Phi_{\nu} \rrangle[\Big] + U_{\nu}\llangle[\Big]  \Phi_{\mu} \Big\lvert \frac{\partial \Phi_{\nu}}{\partial \rho} \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}}{\partial \rho} \Big\lvert \Phi_{\nu} \rrangle[\Big] \nonumber \\
+&= \llangle[\Big]  \Phi_{\mu}\Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\mu}\llangle[\Big]  \Phi_{\mu} \Big\rvert  \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}}{\partial \rho}\Big\rvert  \Phi_{\nu} \rrangle[\Big].
+\end{align}
+Due to the orthogonality of the channel functions \eqref{eq:orthogonality}, the first term on the left hand side of this equation vanish. By removing the last term on both sides we obtain the final expression
+
+\begin{equation}\label{derivaham}
+\llangle[\bigg]  \Phi_{\mu}\bigg\lvert \frac{\partial H_{ad}}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg]= \big(U_{\nu}-U_{\mu}\big) \llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg],
+\end{equation}
+which results in the following expression for the nonadiabatic coupling terms $P_{\mu \nu}$
+
+\begin{equation}
+P_{\mu \nu} = \frac{1}{\big(U_{\nu}-U_{\mu}\big)}\llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial H_{ad}}{\partial \rho} \bigg\rvert \Phi_{\nu}\rrangle[\bigg].
+\end{equation}
+
+If it is assumed that the channel functions can be expressed as a series of basis functions
+
+\begin{equation}
+\Phi_{\nu} = \sum_{j}C_{\nu}^j \varphi_j,
+\end{equation} 
+where $C_{\nu}^{j}$ are expansion coeffients, which characterize the channel functions and the Hamiltonian operator take the matrical form with elements $H_{ij}$, then the diagonal elements are obtained from the following matrical expression \cite{Sanz-Sanz}
+
+\begin{equation}
+\frac{\partial U_{\nu}}{\partial \rho} = \sum_{ij}(C_{\nu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}
+\end{equation}
+and the non-diagonal matrix elements are obtained by 
+
+\begin{equation}
+\llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg] = P_{\mu \nu} = \sum_{ij}(C_{\mu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
+\end{equation}
+
+
 \subsection{Effective Three-body Potentials}
 Approximations within the adiabatic treatment include both the hyperspherical Born-Oppenheimer approximation and the strict adiabatic approximation, where the former corresponds to neglecting all nonadiabatic couplings and the latter to neglecting all nondiagonal couplings \cite{Blume2002}. 
 
@@ -166,7 +219,7 @@ These potentials are henceforth used to determine the single channel solutions o
 
 The following discussion concerns short-ranged two-body interactions, where $\abs{a}\gg r_0$. 
 
-In the asymptotic limit $\rho \gg \abs{a}$ the non-adiabatic couplings $Q_{\nu \nu}$ vanish and the channel indices $\nu$ are associated with both two- and three-body configurations since the adiabatic hyperspherical potential curves $U_{\nu}(\rho)$ asymptotically approach either a two-body bound state energy for the bound channels or the three-body breakup threshold ($U_{\nu}=0$) for the three-body continuum channels.  By comparison with the eigenvalues for the Gegenbauer polynomials in \eqref{eq:gegenbauer}, it is clear that the potentials for the continuum channels have the following asymptotic behaviour 
+In the asymptotic limit $\rho \gg \abs{a}$ the non-adiabatic couplings $Q_{\nu \nu}$ vanish and there are two possibilities for the asymptotic channels at large hyperradii $\rho$. The channel indices $\nu$ in this region are associated with both two- and three-body configurations since the adiabatic hyperspherical potential curves $U_{\nu}(\rho)$ asymptotically approach either a two-body bound state energy for the bound channels or the three-body breakup threshold ($U_{\nu}=0$) for the three-body continuum channels.  By comparison with the eigenvalues for the Gegenbauer polynomials in \eqref{eq:gegenbauer}, it is clear that the potentials for the continuum channels have the following asymptotic behaviour 
 
 \begin{equation}\label{eq:continuumchannel}
 W_{\nu}(\rho)  \xrightarrow{ \rho \to \infty} \frac{\lambda(\lambda+4)+\frac{15}{4}}{2\mu \rho^2}.
@@ -180,12 +233,12 @@ in which the bound state energy of the dimer $E_{\nu l'}$ is labeled by the rovi
 
 Efimov physics comes into play when $r_0 \ll \rho \ll \abs{a}$. In this intermediate region, while still being proportional to $\rho^{-2}$, modifications of $W_{\nu}$ lead to effective three-body potentials that can be both attractive and repulsive. 
 
-For systems of three identical bosons with a pair-wise attraction that is strong enough to support two-body bound states, one effective three-body potential curve will converge asymptotically to each two-body bound state. The one channel of particular interest is the one that leads to the Efimov effect\footnote{Strictly speaking, the Efimov effect is the emergence of an infinite number of weakly bound trimers and only for $\abs{a} = \infty$ is the emergent effective potential infinitely extended, which of course is required for an infinite number of bound states. However, for large but finite $\abs{a}$ a number of bound trimers can still form.}. For $a>0$ this is the channel that converges asymptotically to the highest vibrationally excited $s$-wave bound state, i.e. the weakly bound dimer, and for $a<0$ it is the lowest continuum channel.  As the scattering length grows in magnitude for $a>0$ and $a<0$ the effective potential will converge to the Efimov potential 
+For systems of three identical bosons with a pair-wise attraction that is strong enough to support two-body bound states, one effective three-body potential curve will converge asymptotically to each two-body bound state. The one channel of particular interest is the one that leads to the Efimov effect\footnote{Strictly speaking, the Efimov effect is the emergence of an infinite number of weakly bound trimers and only for $\abs{a} = \infty$ is the emergent effective potential infinitely extended, which of course is required for an infinite number of bound states. However, for large but finite $\abs{a}$ a number of bound trimers can still form.}. For $a>0$ this is the channel that converges asymptotically to the highest vibrationally excited $s$-wave bound state, i.e. the weakly bound dimer, and for $a<0$ it is the lowest continuum channel.  As the scattering length grows in magnitude for $a>0$ and $a<0$ the lowest effective potential will converge to the Efimov potential 
 
 \begin{equation}\label{eq:efimov_channel}
 W_{\nu}(\rho) = -\frac{s_0^2+\frac{1}{4}}{2\mu \rho^2},
 \end{equation} 
-in which $s_0 \simeq 1.00624$. This potential is responsible for the Efimov effect since it produces an infinite number of bound trimers when $\abs{a} = \infty$. For finite scattering lengths a number of Efimov trimers can still form provided that the magnitude of $a$ is large enough. The number of Efimov states $N$ that can be formed at a specific value of $a$ can be derived based on the form of the Efimov potential \cite{WANG20131}
+in which $s_0 \simeq 1.00624$. This potential is attractive, and hence responsible for the Efimov effect, since it produces an infinite number of bound trimers when $\abs{a} = \infty$. For finite scattering lengths a number of Efimov trimers can still form provided that the magnitude of $a$ is large enough. The number of Efimov states $N$ that can be formed at a specific value of $a$ can be derived based on the form of the Efimov potential \cite{WANG20131}
 
 \begin{equation}\label{eq:number_of_states}
 \begin{aligned}
@@ -201,7 +254,7 @@ All higher lying potentials are continuum channels and none of them can support 
 \begin{equation}
 W_{\nu}(\rho) = \frac{s_{\nu}^2-\frac{1}{4}}{2\mu \rho^2},
 \end{equation} 
-where $s_{\nu}$ is a constant that can be regarded as a correction to the kinetic energy. 
+where $s_{\nu}$ is a constant that depend on the number  can be regarded as a correction to the kinetic energy. 
  
 \subsection{Delves Coordinates}\label{delvescoord}
 Delves coordinates are adapted to collinear atom-diatom collisions and are regular polar coordinates. They where originally developed to treat nuclear three-body problems. Each coordinate set is defined by the Jacobi vectors
@@ -439,57 +492,3 @@ U_{lm} = \lambda_{lm}(\lambda_{lm} + 4), \quad \text{where} \quad \lambda_{lm}=2
 	\caption{Analytically derived eigenvalues together with numerically calculated eigenvalues for three identical bosons.}
 	\label{table:1}
 \end{table} 
-
-\section{The Generalized Hellmann-Feynman Theorem}\label{section:Hellmann_Feynman}
-The following subsection concerns the mathematical description of the non-adiabatic coupling matrices, which were defined in subsection \ref{sec:AHM}. To obtain an expression for the coupling term $P_{\mu \nu}$ given in \eqref{couplingP}, a generalized Hellmann-Feynman (HF) approach can be used. Consider $\nu$ adiabatic eigenstates $\Phi_{\nu}$, which were obtained in \eqref{adiabatic} by
-
-\begin{equation}
-H_{ad}\Phi_{\nu} = U_{\nu}\Phi_{\nu},\notag
-\end{equation}
-where the eigenvalues $U_{\nu}$ are the effective adiabatic three-body potential curves. Using the identities 
-
-\begin{align}
-\llangle[\big]  \Phi_{\mu} \big\rvert  \Phi_{\nu}  \rrangle[\big] &\equiv \delta_{\mu \nu}\\
-\intertext{and}
-\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu}  \big\rvert  \Phi_{\nu} \rrangle[\big] &\equiv 0,
-\end{align}
-we start by deriving the diagonal part of the HF theorem. Projecting $\Phi_{\nu}$ out from equation \eqref{adiabatic}, and differentiating with respect to the hyperradius gives
-
-\begin{align}
-\frac{\partial U_{\nu}}{\partial \rho}&=\frac{\partial}{\partial \rho}\llangle[\big]  \Phi_{\nu} \big\lvert H_{ad} \big\rvert  \Phi_{\nu} \rrangle[\big]\nonumber\\
-&=\llangle[\Big]  \Phi_{\nu}  \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] +  \llangle[\Big]  \Phi_{\nu} \Big\lvert H_{ad}\Big\rvert  \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big] +\llangle[\Big] \frac{\partial \Phi_{\nu}}{\partial \rho}    \Big\lvert H_{ad}\Big\rvert  \Phi_{\nu}  \rrangle[\Big] \nonumber \\
-&=\llangle[\Big]  \Phi_{\nu} \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\nu}\llangle[\Big]  \Phi_{\nu} \Big\rvert \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\nu}}{\partial \rho}\Big\rvert  \Phi_{\nu} \rrangle[\Big] \nonumber \\
-&=\llangle[\Big]  \Phi_{\nu} \Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\nu} \frac{\partial}{\partial \rho}\llangle[\Big]  \Phi_{\nu} \Big\rvert \Phi_{\nu} \rrangle[\Big] \nonumber \\
-&=\llangle[\Big]  \Phi_{\nu}\Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big].
-\end{align}
-The generalized HF theorem also includes the nondiagonal terms. Multiplying with $\Phi_{\mu}^{\dagger}$ from the left in \eqref{adiabatic} and integrating over the two hyperangles, followed by differentiation with respect to the hyperradius gives
-
-\begin{align}
-&\frac{\partial U_{\nu}}{\partial \rho}\llangle[\Big]  \Phi_{\mu} \Big\lvert \Phi_{\nu} \rrangle[\Big] + U_{\nu}\llangle[\Big]  \Phi_{\mu} \Big\lvert \frac{\partial \Phi_{\nu}}{\partial \rho} \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}}{\partial \rho} \Big\lvert \Phi_{\nu} \rrangle[\Big] \nonumber \\
-&= \llangle[\Big]  \Phi_{\mu}\Big\lvert \frac{\partial H_{ad}}{\partial \rho} \Big\rvert  \Phi_{\nu} \rrangle[\Big] + U_{\mu}\llangle[\Big]  \Phi_{\mu} \Big\rvert  \frac{\partial \Phi_{\nu}}{\partial \rho}  \rrangle[\Big]+U_{\nu}\llangle[\Big] \frac{\partial \Phi_{\mu}}{\partial \rho}\Big\rvert  \Phi_{\nu} \rrangle[\Big]. 
-\end{align}
-The first term on the left hand side of this equation i zero by the orthogonality of the channel functions. By removing the last term on both sides we obtain the final expression
-
-\begin{equation}\label{derivaham}
-\llangle[\bigg]  \Phi_{\mu}\bigg\lvert \frac{\partial H_{ad}}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg]= \big(U_{\nu}-U_{\mu}\big) \llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg],
-\end{equation}
-and we can express the nonadiabatic coupling terms $P_{\mu \nu}$ as
-
-\begin{equation}
-P_{\mu \nu} = \frac{1}{\big(U_{\nu}-U_{\mu}\big)}\llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial H_{ad}}{\partial \rho} \bigg\rvert \Phi_{\nu}\rrangle[\bigg].
-\end{equation}
-Assume that the channel functions can be expressed as a series of basis functions
-
-\begin{equation}
-\Phi_{\nu} = \sum_{j}C_{\nu}^j \varphi_j,
-\end{equation} 
-Where $C_{\nu}^{j}$ are the expansion coeffients given in TODO(make reference). Anticipating that the Hamiltonian operator will take the matrical form of elements $H_{ij}$. From the results of the diagonal case discussed in, we obtain the following matrical expression \cite{Sanz-Sanz}
-
-\begin{equation}
-\frac{\partial U_{\nu}}{\partial \rho} = \sum_{ij}(C_{\nu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
-\end{equation}
-In the non-diagonal case the result in matrical form reads 
-
-\begin{equation}
-\llangle[\bigg]  \Phi_{\mu} \bigg\lvert \frac{\partial}{\partial \rho} \bigg\rvert \Phi_{\nu} \rrangle[\bigg] = P_{\mu \nu} = \sum_{ij}(C_{\mu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}.
-\end{equation}

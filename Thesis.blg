@@ -1,18 +1,18 @@
 [0] Config.pm:343> INFO - This is Biber 2.5
 [0] Config.pm:346> INFO - Logfile is 'Thesis.blg'
-[86] biber-darwin:290> INFO - === Sun Apr 28, 2019, 16:46:13
-[110] Biber.pm:351> INFO - Reading 'Thesis.bcf'
-[197] Biber.pm:776> INFO - Found 39 citekeys in bib section 0
-[209] Biber.pm:3493> INFO - Processing section 0
-[234] Biber.pm:3657> INFO - Looking for bibtex format file 'References.bib' for section 0
-[237] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[241] bibtex.pm:1048> INFO - Found BibTeX data source 'References.bib'
-[285] Utils.pm:149> WARN - Datamodel: Entry 'Grimm:2006' (References.bib): Invalid format '2006/03/16/online' of date field 'date' - ignoring
-[285] Utils.pm:149> WARN - Range field 'pages' in entry 'Grimm:2006' is malformed, skipping
-[357] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[357] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[357] Biber.pm:3306> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
-[357] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
-[415] bbl.pm:526> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
-[426] bbl.pm:619> INFO - Output to Thesis.bbl
-[426] Biber.pm:108> INFO - WARNINGS: 2
+[49] biber-darwin:290> INFO - === Mon Apr 29, 2019, 15:41:33
+[70] Biber.pm:351> INFO - Reading 'Thesis.bcf'
+[160] Biber.pm:776> INFO - Found 41 citekeys in bib section 0
+[172] Biber.pm:3493> INFO - Processing section 0
+[198] Biber.pm:3657> INFO - Looking for bibtex format file 'References.bib' for section 0
+[204] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[209] bibtex.pm:1048> INFO - Found BibTeX data source 'References.bib'
+[254] Utils.pm:149> WARN - Datamodel: Entry 'Grimm:2006' (References.bib): Invalid format '2006/03/16/online' of date field 'date' - ignoring
+[255] Utils.pm:149> WARN - Range field 'pages' in entry 'Grimm:2006' is malformed, skipping
+[312] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[312] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[312] Biber.pm:3306> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'en-GB'
+[312] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-GB'
+[334] bbl.pm:526> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
+[340] bbl.pm:619> INFO - Output to Thesis.bbl
+[341] Biber.pm:108> INFO - WARNINGS: 2
