@@ -26,8 +26,9 @@
 \contentsline {section}{\numberline {4.3}The Adiabatic Hyperspherical Representation}{25}
 \contentsline {subsection}{\numberline {4.3.1}The Hellmann-Feynman Theorem}{27}
 \contentsline {subsection}{\numberline {4.3.2}Effective Three-body Potentials}{28}
-\contentsline {subsection}{\numberline {4.3.3}Delves Coordinates}{30}
-\contentsline {subsection}{\numberline {4.3.4}Smith-Whitten Coordinates}{33}
+\contentsline {section}{\numberline {4.4}Hyperangular Coordinates}{30}
+\contentsline {subsection}{\numberline {4.4.1}Delves Coordinates}{30}
+\contentsline {subsection}{\numberline {4.4.2}Smith-Whitten Coordinates}{33}
 \contentsline {chapter}{\numberline {5}Numerical Approach}{37}
 \contentsline {section}{\numberline {5.1}Basis splines expansion}{37}
 \contentsline {section}{\numberline {5.2}Gauss-Legendre Quadrature}{39}

@@ -84,7 +84,7 @@ Orthogonal transformations within the coordinate set are then given by
 \end{pmatrix}.
 \end{equation}
 
-\section{The Hyperspherical Method}
+\section{The Hyperspherical Method}\label{sec:hyperspherical}
 The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these angles $\alpha, \beta, \gamma$ are usually chosen as the Euler angles that specify the  orientation of the body-fixed axis system -- i.e. the triangle formed by the three particles -- relative to a space-fixed coordinate frame. These are the external coordinates of the system. The internal coordinates are the hyperradius, which describes the overall size of the system, and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
 
 Hyperspherical coordinates are useful for describing fragmentation problems. Fragmentation processes of the system into any one of the possible channels are described by the hyperradius becoming very large $(\rho \rightarrow \infty)$, while the hyperangles distinguish between the different fragmentation channels. The hyperradius is invariant under both rotations and particle permutations, and for the three-body problem it is defined by
@@ -254,10 +254,13 @@ All higher lying potentials are continuum channels and none of them can support 
 \begin{equation}
 W_{\nu}(\rho) = \frac{s_{\nu}^2-\frac{1}{4}}{2\mu \rho^2},
 \end{equation} 
-where $s_{\nu}$ is a constant that depend on the number  can be regarded as a correction to the kinetic energy. 
+where $s_{\nu}$ is a real constant. 
  
+\section{Hyperangular Coordinates}
+To solve \eqref{adiabatic} we need introduce some explicit form of the hyperangles $\Omega$ and express $\Lambda^2$ and $V$ in these coordinates. As mentioned in \cref{sec:hyperspherical} two different forms of coordinates are commonly used.
+
 \subsection{Delves Coordinates}\label{delvescoord}
-Delves coordinates are adapted to collinear atom-diatom collisions and are regular polar coordinates. They where originally developed to treat nuclear three-body problems. Each coordinate set is defined by the Jacobi vectors
+Delves coordinates are adapted to collinear atom-diatom collisions and are regular polar coordinates. They where originally developed to treat nuclear three-body problems. Each coordinate set is defined by the Jacobi vectors in \cref{eq:4_1,eq:4_2} and 
 
 \begin{align}
 r_{k} &= \rho \sin{\alpha_{k}},\\
@@ -305,7 +308,7 @@ The component wave functions satisfy the set of coordinate space Faddeev equatio
 \begin{equation}\label{eq:faddev}
 (T-E)\psi_{i} + v_i(\psi_{1}+\psi_{2}+\psi_{3}) = 0,
 \end{equation}
-where $i = 1,2,3$ and $v_i$ is the pair-wise interaction between the particles $j$ and $k$. If the orbital angular momentum of each subsystem is neglected, then \eqref{eq:totwave} takes the form 
+where $i = 1,2,3$ and $v_i$ is the pair-wise interaction between the particles $j$ and $k$. At very low energies the contribution to the scattering cross-section of partial waves with $l>0$ is negligeble and in general it is enough to only consider $s$-waves. Thus, if the orbital angular momentum of each subsystem is neglected, then \eqref{eq:totwave} takes the form 
 
 \begin{equation}
 \Psi = \psi_{1}(\rho,\alpha_1)+\psi_{2}(\rho,\alpha_2)+\psi_{3}(\rho,\alpha_3).
@@ -323,45 +326,39 @@ with $\alpha = \alpha_1,\alpha_2,\alpha_3$, and where the kinetic energy operato
 where $\alpha = \alpha_1, \alpha_2$ or $\alpha_3$. The integro-differential Faddeev equation \eqref{eq:faddeev} can be solved by expanding the wave function $\psi$ in a complete set of hyperangular wave functions
 
 \begin{equation}
-\psi(\rho,\alpha) = \sum_{n}\frac{f_n(\rho)}{\rho^{5/2}} \frac{\Phi_n(\rho,\alpha)}{\sin \alpha \cos \alpha},
+\psi(\rho,\alpha) = \sum_{n}\frac{f_n(\rho)}{\rho^{5/2}} \frac{\Phi_n(\rho;\alpha)}{\sin \alpha \cos \alpha},
 \end{equation}
 in which $\Phi_n$ are the eigenfunctions to the hyperangular Faddeev equation
 
 \begin{equation}\label{eq:faddeev_hyperang}
--\frac{\partial^2\Phi_n(\rho,\alpha)}{\partial \alpha^2} + \rho^2 v(\sqrt{2}\rho\sin \alpha)\bigg[\Phi_n(\rho,\alpha) + \frac{4}{\sqrt{3}} \int_{\abs{\frac{\pi}{3}-\alpha}}^{\frac{\pi}{2}-\abs{\frac{\pi}{6}-\alpha}} \frac{\sin 2\alpha'}{\sin 2\alpha}\Phi(\rho,\alpha') \, d\alpha'\bigg] = \lambda_n(\rho)\Phi(\rho,\alpha).
+-\frac{\partial^2\Phi_n(\rho;\alpha)}{\partial \alpha^2} + \rho^2 v(\sqrt{2}\rho\sin \alpha)\bigg[\Phi_n(\rho;\alpha) + \frac{4}{\sqrt{3}} \int_{\abs{\frac{\pi}{3}-\alpha}}^{\frac{\pi}{2}-\abs{\frac{\pi}{6}-\alpha}} \frac{\sin 2\alpha'}{\sin 2\alpha}\Phi(\rho;\alpha') \, d\alpha'\bigg] = \nu_n(\rho)\Phi(\rho;\alpha).
 \end{equation}
-The eigenvalues $\lambda_{n}(\rho)$ are adiabatic potentials, which can be related to the effective potentials $U_{n}(\rho)$ by 
+The eigenvalues $\nu_{n}(\rho)$ are adiabatic potentials, which can be related to the effective potentials $U_{n}(\rho)$ in \eqref{adiabatic} by 
 
 \begin{equation}\label{eq:faddeev_effectivepot}
-U_{n}(\rho) = \Big(\lambda_n(\rho)-\frac{1}{4}\Big)\frac{1}{2 m \mu \rho^2}.
+U_{n}(\rho) = \Big(\nu_n(\rho)-\frac{1}{4}\Big)\frac{1}{2 \mu \rho^2}.
 \end{equation}
-Is something wrong here?????
 
-Fedorov and Jensen showed in \cite{Fedorov1993} that the adiabatic potentials $\lambda_n$ can be determined analytically through the trancendental equation
+Fedorov and Jensen showed in \cite{Fedorov1993} that for $\rho \gg r_0$ the adiabatic potentials $\nu_n$ can be determined analytically through the transcendental equation
 
 \begin{equation}\label{eq:transcendental}
-\sqrt{\lambda_n} \cos{\bigg(\sqrt{\lambda_n} \frac{\pi}{2}\bigg)} - \frac{8}{\sqrt{3}}\sin{\bigg(\sqrt{\lambda_n} \frac{\pi}{6}\bigg)} = \sqrt{2}\frac{\rho}{a}\sin{\bigg(\sqrt{\lambda_n} \frac{\pi}{2}\bigg)}, 
+\sqrt{\nu_n} \cos{\bigg(\sqrt{\nu_n} \frac{\pi}{2}\bigg)} - \frac{8}{\sqrt{3}}\sin{\bigg(\sqrt{\nu_n} \frac{\pi}{6}\bigg)} = \sqrt{2}\frac{\rho}{a}\sin{\bigg(\sqrt{\nu_n} \frac{\pi}{2}\bigg)}, 
 \end{equation}
-for different scattering lengths $a$.
+for different scattering lengths $a$. In the limit $\abs{a} \rightarrow \infty$ the right hand side vanish and the resulting transcendental equation has solutions $\sqrt{\nu_0}=-s_0$ and $\sqrt{\nu_n}=s_n$.
 \subsection{Smith-Whitten Coordinates}\label{smith_whitten}
-The motion of three particles can be represented in a symmetric way by using so called democratic coordinates. The main advantage with these kinds of coordinates is that permutation symmetries for three identical particles can be imposed exactly. To define the two hyperangles $\theta$ and $\phi$ I use the mapping procedure described by Johnson \cite{Johnson1980} to produce a modified set of the coordinates first introduced by Smith and Whitten \cite{Smith_Whitten1968}, see \cref{Appendix_2_1}. Here I am content with presenting the results. The two hyperangles are defined implictly by the interparticle distances given by 
+The motion of three particles can be represented in a symmetric way by using so called democratic coordinates. The main advantage with these kinds of coordinates is that permutation symmetries for three identical particles can be imposed exactly. To define the two hyperangles $\theta$ and $\phi$ I use the mapping procedure described by Johnson \cite{Johnson1980} to produce a modified set of the coordinates first introduced by Smith and Whitten \cite{Smith_Whitten1968}, see \cref{Appendix_2_1}. Here I am content with presenting the results. The two hyperangles are defined by
 
 \begin{equation}
 \begin{aligned}
-r_{12} &= \frac{d_3\rho}{2^{1/2}}\big[1+\sin\theta\cos\phi\big]^{1/2},\\
-r_{23} &= \frac{d_1\rho}{2^{1/2}}\big[1 + \sin\theta\cos(\phi-\varphi_1)\big]^{1/2},\\
-r_{31} &= \frac{d_2\rho}{2^{1/2}}\big[1 + \sin\theta\cos(\phi + \varphi_2)\big]^{1/2},
-\end{aligned}
+r_x &= \rho \cos(\pi/4-\theta/2)\cos(2\pi - \phi/2),\\
+r_y &= -\rho \sin(\pi/4-\theta/2)\sin(2\pi - \phi/2),\\
+r_z &= 0\\
+R_x &= \rho \cos(\pi/4-\theta/2)\sin(2\pi - \phi/2),\\
+R_y &= \rho \sin(\pi/4-\theta/2)\cos(2\pi - \phi/2),\\
+R_z &= 0.
+\end{aligned}   
 \end{equation}
-in which
-
-\begin{equation}
-\begin{aligned}
-\varphi_1 &= 2\tan^{-1}(m_2/\mu),\\
-\varphi_2 &= 2\tan^{-1}(m_1/\mu).
-\end{aligned}
-\end{equation}
-The hyperangle $\theta$ spans the range $[0,\pi/2]$ and -- by requiring the wave function to be single valued -- the span of $\phi$ is restricted to the range $[0,2\pi]$. 
+The hyperangle $\theta$ spans the range $[0,\pi/2]$ and, by requiring the wave function to be single valued, the span of $\phi$ is restricted to the range $[0,2\pi]$. 
 
 The hyperangular coordinates are connected to the geometry of the triangle formed by the three particles, with $\theta$ determining its shape and $\phi$ the particle arrangement at the vertices. The geometrical configuration of the particles when $\theta = 0$ is an equilateral triangle, while at $\theta=\pi/2$ they form a line. 
 
@@ -370,8 +367,8 @@ The derivation of the Schr{\"o}dinger equation in these coordinates is presented
 \begin{equation}
  \bigg(-\frac{1}{2 \mu}\frac{\partial^2}{\partial \rho^2} + \frac{ \Lambda^2 + \frac{15}{4}}{2 \mu \rho^{2}}+ V(\rho, \theta, \phi)\bigg)\psi(\rho,\theta,\phi) = E\psi(\rho,\theta,\phi),
 \end{equation}
-with the corresponding volume element $
-\frac{1}{16}\rho^5 \sin 2\theta\sin\beta \,d\rho\,d\theta\,d\phi\, d\alpha\,d\beta\,d\gamma$. The squared grand angular momentum operator $\Lambda^2$ for $J=0$ states is given by
+where the corresponding volume element is $
+\frac{1}{16}\rho^5 \sin 2\theta\sin\beta \,d\rho\,d\theta\,d\phi\, d\alpha\,d\beta\,d\gamma$, with $\alpha,\beta,\gamma$ being Euler angles. The squared grand angular momentum operator $\Lambda^2$ for $J=0$ states is given by
 
 \begin{equation}\label{eq:grandangularmomentum}
 \Lambda^2 = -\frac{4}{\sin 2\theta}\frac{\partial}{\partial \theta}\sin 2\theta \frac{\partial}{\partial \theta} - \frac{4}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}.
@@ -382,7 +379,7 @@ For three identical particles, the hyperradius is written in terms of the interp
 \begin{equation}
 \rho^2 = \frac{r_{12}^2+r_{23}^2+r_{31}^2}{\sqrt{3}},
 \end{equation}
-where 
+where the interparticle distances are
 
 \begin{equation}
 \begin{aligned}
@@ -392,7 +389,7 @@ r_{31} &= 3^{-1/4}\rho\big[1 + \sin\theta\cos(\phi + 2\pi/3)\big]^{1/2}.
 \end{aligned}
 \end{equation}
 
-The particles permutate in a cyclical manner as the hyperangular coordinate $\phi$ changes from $0$ to $2\pi$. The symmetric properties of the wave function depend on the parity of the system and for a general system the symmetry requirement is
+The particles permutate in a cyclical manner as the hyperangular coordinate $\phi$ changes from $0$ to $2\pi$. The symmetric properties of the wave function depend on the parity of the system and for a general system the symmetry requirement is \cite{SunoEsryGreeneBurke2002}
 
 \begin{equation}
 \Phi_{\nu}(\rho;\theta,\phi = 0) = \pm \Phi_{\nu}(\rho;\theta,\phi = 2\pi), \qquad \text{for} \qquad \Pi = \pm 1.\\
@@ -444,7 +441,7 @@ where the leading order coefficents imply
 \begin{equation}
 s(s-1)+s-m^2 = 0 \quad \Rightarrow \quad s=\pm m.
 \end{equation}
-Requiring $\Phi_{\nu}$ to be bounded everywhere on the range means that $g_l$ must not diverge as $\theta \rightarrow 0$. Because $g_l(\theta) \propto \theta^m$ in the limit $\theta \rightarrow 0$ and since $g_l(0) \neq 0$, it is implied that for $m = 0$ the $\theta$ derivative of the wave function must vanish at $\theta=0$. 
+Requiring $\Phi_{\nu}$ to be bounded everywhere on the range means that $g_l$ must not diverge as $\theta \rightarrow 0$. Because $g_l(\theta) \propto \theta^m$ in the limit $\theta \rightarrow 0$ and since $g_l(0) \neq 0$ in the case $m=0$, it is implied that for $m = 0$ the $\theta$ derivative of the wave function must vanish at $\theta=0$. 
 
 The boundary condition at $\theta = \pi/2$ is determined by setting $\theta=\pi/2-\varepsilon$ and taking the limit $\varepsilon \rightarrow 0^+$. In this limit
 
@@ -456,13 +453,13 @@ By assuming that the basis function takes the form $g_l(\theta) \propto \varepsi
 \begin{equation}
 s(s-1)+s = 0 \quad \Rightarrow \quad s=0.
 \end{equation}
-Since $g_l(\pi/2) \neq 0$ it is implied that the $\theta$ derivative of the wave function must also vanish at this boundary.
+Since $s=0$ the function $g_l(\pi/2)$ approach some constant in the limit $\theta \rightarrow \pi/2$, which implies that the $\theta$ derivative of the wave function must vanish at this boundary as well.
 
 Identical particle symmeries can therefore easily be built into the adiabatic equation \eqref{adiabatic} when using these kinds of symmetrized hyperangular coordinates. For three identical particles with $0^+$ symmetry the boundary conditions are  
 
 \begin{align}
-\frac{\partial\Phi_{\nu}(\rho;0,\phi)}{\partial \theta} = \frac{\partial\Phi_{\nu}(\rho;\frac{\pi}{2},\phi)}{\partial \theta},\\
-\frac{\partial\Phi_{\nu}(\rho;\theta,0)}{\partial \phi} = \frac{\partial\Phi_{\nu}(\rho;\theta,\frac{\pi}{3})}{\partial \phi}.
+\frac{\partial\Phi_{\nu}(\rho;0,\phi)}{\partial \theta} = \frac{\partial\Phi_{\nu}(\rho;\frac{\pi}{2},\phi)}{\partial \theta} = 0,\\
+\frac{\partial\Phi_{\nu}(\rho;\theta,0)}{\partial \phi} = \frac{\partial\Phi_{\nu}(\rho;\theta,\frac{\pi}{3})}{\partial \phi} = 0.
 \end{align}
 
 The eigenvalues of  $\Lambda^2$ can be derived analytically and are given by
@@ -475,9 +472,9 @@ U_{lm} = \lambda_{lm}(\lambda_{lm} + 4), \quad \text{where} \quad \lambda_{lm}=2
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{||c c c c c c||} 
+	\begin{tabular}{||c c c | c c c||} 
 		\hline
-		$U_{lm=0}$ & $U_{lm=3}$ & $U_{lm=6}$ & $U_{[\nu]}$ & $\lambda_{[lm]}$& Multiplicity \\ [0.5ex] 
+		$U_{l,m=0}$ & $U_{l,m=3}$ & $U_{l,m=6}$ & $U_{[\nu]}$ & $\lambda_{[lm]}$& Multiplicity \\ [0.5ex] 
 		\hline\hline
 		0		& 60     & 192 & $0_{[0]}$ & $0_{[00]}$ & 1  \\ 
 		32 & 140   & 320 & $32_{[1]}$ & $4_{[20]}$ & 1  \\

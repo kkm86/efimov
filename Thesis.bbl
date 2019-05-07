@@ -1454,6 +1454,53 @@
       \verb https://doi.org/10.1063/1.1664683
       \endverb
     \endentry
+    \entry{SunoEsryGreeneBurke2002}{article}{}
+      \name{author}{4}{}{%
+        {{hash=5406bbd31d1365f5e8f03b1306b42fe7}{%
+           family={Suno},
+           family_i={S\bibinitperiod},
+           given={H.},
+           given_i={H\bibinitperiod}}}%
+        {{hash=4d9235f1975196320c77d6fab2bd1122}{%
+           family={Esry},
+           family_i={E\bibinitperiod},
+           given={B.\bibnamedelimi D.},
+           given_i={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d8b86c7bb4389e7f80274f0f31dce0fd}{%
+           family={Greene},
+           family_i={G\bibinitperiod},
+           given={Chris\bibnamedelima H.},
+           given_i={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=0438142a9945d126288eb66f4e826163}{%
+           family={Burke},
+           family_i={B\bibinitperiod},
+           given={James\bibnamedelima P.},
+           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{5a794e92b47c443a4a7258d95712d17b}
+      \strng{fullhash}{79293656c7457585865fc2373582b351}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{4}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{04}
+      \field{title}{Three-body recombination of cold helium atoms}
+      \field{volume}{65}
+      \field{year}{2002}
+      \field{pages}{042725}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.65.042725
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.65.042725
+      \endverb
+    \endentry
     \entry{EsryGreeneSuno2001}{article}{}
       \name{author}{3}{}{%
         {{hash=4d9235f1975196320c77d6fab2bd1122}{%
