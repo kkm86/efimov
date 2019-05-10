@@ -468,22 +468,22 @@ The eigenvalues of  $\Lambda^2$ can be derived analytically and are given by
 U_{lm} = \lambda_{lm}(\lambda_{lm} + 4), \quad \text{where} \quad \lambda_{lm}=2(l+m).
 \end{equation}
 
-\Cref{table:1} presents the analytically derived eigenvalues together with the results obtained from numerically solving the $\theta$-equation with B-splines at the three first $m$-values ($m=0,3,6$) along with the eigenvalues obtained when numerically solving \eqref{eq:eigenlambda} by expanding $\Phi_{\nu}(\rho;\theta,\phi)$ onto a direct product of B-splines\footnote{B-splines of order $k=6$ were used for both dimensions, which corresponds to local polynomials of degree $5$, see \cref{B-splines}.} in $\theta$ and $\phi$. 
+\Cref{table:1} presents the analytically derived eigenvalues at the three first $m$-values ($m=0,3,6$) together with the eigenvalues ($\tilde{U}_{\nu}$) obtained by numerically solving \eqref{eq:eigenlambda} by expanding $\Phi_{\nu}(\rho;\theta,\phi)$ onto a direct product of B-splines\footnote{B-splines of order $k=6$ were used for both dimensions, which corresponds to local polynomials of degree $5$, see \cref{B-splines}.} in $\theta$ and $\phi$ on a mesh containing $N_{\theta}=N_{\phi}=60$ physical points.
 
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{||c c c | c c c||} 
-		\hline
-		$U_{l,m=0}$ & $U_{l,m=3}$ & $U_{l,m=6}$ & $U_{[\nu]}$ & $\lambda_{[lm]}$& Multiplicity \\ [0.5ex] 
+		\hline 
+		$U_{l,m=0}$ & $U_{l,m=3}$ & $U_{l,m=6}$ & $\tilde{U}_{[\nu]}$ & $\lambda_{[lm]}$& Multiplicity \Tstrut\Bstrut \\ [0.7ex] 
 		\hline\hline
-		0		& 60     & 192 & $0_{[0]}$ & $0_{[00]}$ & 1  \\ 
-		32 & 140   & 320 & $32_{[1]}$ & $4_{[20]}$ & 1  \\
-		96  & 252  & 480 & $60_{[2]}$& $6_{[03]}$ & 1  \\
-		192& 396  & 672  & $96_{[3]}$ & $8_{[40]}$ & 1  \\
-		320 & 572  & 896  & $140_{[4]}$&$10_{[23]}$ & 1  \\
-		480  & 780  & 1152 & $192_{[5,6]}$ & $12_{[06]}$ & 2  \\  
-		672  & 1020  & 1440 & $192_{[5,6]}$ & $12_{[60]}$ &  \\  
-		   &  &  & $252_{[7]}$ & $14_{[43]}$ & 1  \\ [1ex] 
+		0		& 60     & 192 & $-0.00000000_{[0]}$ & $0_{[00]}$ & 1  \\ 
+		32 & 140   & 320 & $32.00000001_{[1]}$ & $4_{[20]}$ & 1  \\
+		96  & 252  & 480 & $60.00000000_{[2]}$& $6_{[03]}$ & 1  \\
+		192& 396  & 672  & $95.99999998_{[3]}$ & $8_{[40]}$ & 1  \\
+		320 & 572  & 896  & $140.00000000_{[4]}$&$10_{[23]}$ & 1  \\
+		480  & 780  & 1152 & $192.00000001_{[5,6]}$ & $12_{[06]}$ & 2  \\  
+		672  & 1020  & 1440 & $192.00000001_{[5,6]}$ & $12_{[60]}$ &  \\  
+		   &  &  & $252.00000000_{[7]}$ & $14_{[43]}$ & 1  \\ [1ex] 
 		\hline
 	\end{tabular}
 	\caption{Analytically derived eigenvalues together with numerically calculated eigenvalues for three identical bosons.}

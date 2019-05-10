@@ -16,7 +16,7 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration of the three different Jacobi coordinate sets.\relax }}{23}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm {I},\mathrm {II}$ and $\mathrm {III}$. For values of $d$ that lie between the poles $\mathrm {I}$ and $\mathrm {II}$, the potential is deep enough to support a single $s$-wave bound state.\relax }}{44}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm {I},\mathrm {II}$ and $\mathrm {III}$. For values of $d$ that lie between the poles $\mathrm {I}$ and $\mathrm {II}$, the potential is deep enough to support a single $s$-wave bound state. The binding energy for the shallow dimer for $a>0$ is universal and was given in equation \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {shallowdimer}\unskip \@@italiccorr )}}.\relax }}{44}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces The adiabatic potential curves $U_{\nu }$ for $\nu =0-7$ are plotted as functions of the hyperradius $\rho $ for $a=228$ a.u. The index labelled $\nu =1$ corresponds to the Efimov channel.\relax }}{46}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Three-body effective potentials for $a<0$. The horizontal dashed line is the value $-s_0^2$, which the Efimov potential takes on for $\rho \gg r_0$.\relax }}{47}
@@ -26,10 +26,10 @@
 \contentsline {figure}{\numberline {7.6}{\ignorespaces The convergence toward the analytically derived eigenvalues $\lambda _0$ for $a=-8720$ a.u. is shown for several different numbers of mesh points $N_{\theta }=N_{\phi }$.\relax }}{52}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Potential surface for three identical particles. Symmetries due to translations and reflections are seen at $\phi = n\pi /3, \ (n = 1-5)$.\relax }}{63}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Potential surface for three identical particles. Symmetries due to translations and reflections are seen at $\phi = n\pi /3, \ (n = 1-5)$.\relax }}{61}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.\relax }}{76}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=1$}}}{76}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=2$}}}{76}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces { $k=3$}}}{76}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces { $k=4$}}}{76}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.\relax }}{74}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=1$}}}{74}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=2$}}}{74}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces { $k=3$}}}{74}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces { $k=4$}}}{74}

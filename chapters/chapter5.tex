@@ -81,7 +81,15 @@ The potential term in the adiabatic Hamiltonian cannot be separated into a produ
 \section{Gauss-Legendre Quadrature}
 In this work, all integrals have been calculated with Gaussian quadrature. Quadrature rules are used for numerically approximating the definite integral of a function. An $n$-point Gaussian quadrature rule is constructed to exactly\footnote{To within machine precision.} integrate polynomials of degree $2n-1$ or less if the abscissas $x_i$ and weights $w_i$ for $i=1,\ldots,n$ are appropriately chosen. 
 
-If the integrand $f(x,y)$ is well approximated by the monomials $x^{i}y^{j}$ of degree $i = 2n-1, \, j = 2m-1$ or less, then the Gauss-Legendre quadrature rule for integration on an arbitrary interval is 
+If the integrand $f(x,y)$ is well approximated by the monomials $x^{i}y^{j}$ of degree $i = 2n-1, \, j = 2m-1$ or less, then the Gauss-Legendre quadrature rule for integration on an arbitrary interval is formulated by first changing the variables
+
+\begin{equation}
+\begin{aligned}
+u &= \frac{x-a}{b-a} - \frac{b-x}{b-a} \, \rightarrow \, x= u\frac{b-a}{2}+\frac{a+b}{2}, \,dx=\frac{b-a}{2}\,du, \\
+v &= \frac{y-c}{d-c} - \frac{d-y}{d-c} \, \rightarrow \, y= v\frac{d-c}{2}+\frac{c+d}{2}, \,dy=\frac{d-c}{2}\,dv,
+\end{aligned}
+\end{equation} 
+and then writing the integral as
 
 \begin{equation}
 \begin{aligned}
@@ -89,16 +97,9 @@ If the integrand $f(x,y)$ is well approximated by the monomials $x^{i}y^{j}$ of 
 &\approx \frac{b-a}{2} \cdot \frac{d-c}{2} \sum_{i=1}^{n}\sum_{j=1}^{m}w_i \tilde{w}_j f\bigg( u_i\frac{b-a}{2} + \frac{a+b}{2},v_j\frac{d-c}{2} + \frac{c+d}{2}\bigg)
 \end{aligned}
 \end{equation}
-where $u_i (v_j)$ and $w_i (\tilde{w}_j)$ are Gaussian quadrature points and weights of order $n (m)$ in the $u (v)$ direction, and where the change of varibles is
+where $u_i (v_j)$ and $w_i (\tilde{w}_j)$ are Gaussian quadrature points and weights of order $n (m)$ in the $u (v)$ direction. Weights and abscissas for different Gaussian quadrature rules can be found online, for example in \cite{NumericalRecipes}.
 
-\begin{equation}
-\begin{aligned}
-u &= \frac{x-a}{b-a} - \frac{b-x}{b-a} \, \rightarrow \, x= u\frac{b-a}{2}+\frac{a+b}{2}, \,dx=\frac{b-a}{2}\,du, \\
-v &= \frac{y-c}{d-c} - \frac{d-y}{d-c} \, \rightarrow \, y= v\frac{d-c}{2}+\frac{c+d}{2}, \,dy=\frac{d-c}{2}\,dv.
-\end{aligned}
-\end{equation} 
-
-I use the overlap matrix to illustrate how integration in each subinterval of the mesh can be set up. Note that when calculating matrix elements we only need to integrate over the knot points where the B-splines $(\varphi_{l'm'}(\theta,\phi)\varphi_{lm}(\theta,\phi))$ are non-zero. On the knot sequence $t_{l}$, the B-splines $\varphi_{1l'}$ and $\varphi_{1l}$ are non-zero on the interval $[t_{\text{max}(l',l)},t_{\text{min}(l',l)+k}]$, so the integration can be divided into several segments, with integration in each subinterval of the mesh. If $t_{l}$ and $t_{m}$ are our two knot point sequences and $k$ is the order of the B-splines, then the overlap matrix elements are obtained by
+In the following example, I use the overlap matrix to illustrate how integration in each subinterval of the mesh can be set up. Note that when calculating matrix elements we only need to integrate over the knot points where the B-splines $(\varphi_{l'm'}(\theta,\phi)\varphi_{lm}(\theta,\phi))$ are non-zero. On the knot sequence $t_{l}$, the B-splines $\varphi_{1l'}$ and $\varphi_{1l}$ are non-zero on the interval $[t_{\text{max}(l',l)},t_{\text{min}(l',l)+k}]$, so the integration can be divided into several segments, with integration in each subinterval of the mesh. If $t_{l}$ and $t_{m}$ are our two knot point sequences and $k$ is the order of the B-splines, then the overlap matrix elements are obtained by
 
 \begin{equation}
 \begin{aligned}
@@ -120,4 +121,20 @@ Since the B-splines are piecewise polynomial functions of order $(k-1)$, it is i
 
 However, the potential term cannot be separated into a product of one-dimensional integrals, wherefore integration in two dimensions is required for this term. Another issue with the potential is that it is not generally a polynomial and for the calculation to converge, we need a fine enough mesh. 
  
-To calculate the sought eigenvalues and corresponding eigenvectors -- i.e. the effective three-body potential curves and the unknown coefficents -- I have used the Lapack routine \textit{dsygvd}.
+To calculate the sought eigenvalues and corresponding eigenvectors, i.e., the effective three-body potential curves and the unknown coefficents, I have used the Lapack routine \textit{dsygvd}. To show convergence to the analytical results presented in \cref{table:1}, I numerically calculated the first three eigenvalues $\tilde{U}_{\nu}$ obtained by solving equation \eqref{eq:eigenlambda} using the B-spline collocation method with an increasing number of mesh points $N_{\theta}=N_{\phi}$. The results are presented in \cref{table:2} 
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{||c c c c c c||} 
+		\hline
+		$N_{\theta}$ & $\tilde{U}_0$ & $\tilde{U}_1$ & $\tilde{U}_2$ &  Array(s) & dsygvd(s)
+		\Tstrut\Bstrut \\ [0.7ex]
+		\hline\hline
+		5	   & 0.000 000 000 0109   & 32.000 000 071 3049 & 60.000 002 031 0280 & 0.03 & 0.00  \\
+		15     & -0.000 000 000 0267 & 32.000 000 000 4180 & 59.999 999 999 9067  & 0.53 & 0.05 \\
+		25 & 0.000 000 000 1034 & 32.000 000 000 4178 & 60.000 000 000 1971& 1.73& 0.63 \\ [1ex] 
+		\hline
+	\end{tabular}
+	\caption{Numerically calculated eigenvalues, problem with precision, look into this.}
+	\label{table:2}
+\end{table}

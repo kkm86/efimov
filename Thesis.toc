@@ -35,7 +35,7 @@
 \contentsline {chapter}{\numberline {6}Scattering Model}{43}
 \contentsline {chapter}{\numberline {7}Results and Discussion}{45}
 \contentsline {chapter}{\numberline {A}Delves Coordinates}{53}
-\contentsline {chapter}{\numberline {B}Smith-Whitten Coordinates}{59}
-\contentsline {section}{\numberline {B.1}Coordinate Mapping}{59}
-\contentsline {section}{\numberline {B.2}Transformation of the Kinetic Energy Operator}{64}
-\contentsline {chapter}{\numberline {C}Basis Splines}{75}
+\contentsline {chapter}{\numberline {B}Smith-Whitten Coordinates}{57}
+\contentsline {section}{\numberline {B.1}Coordinate Mapping}{57}
+\contentsline {section}{\numberline {B.2}Transformation of the Kinetic Energy Operator}{62}
+\contentsline {chapter}{\numberline {C}Basis Splines}{73}

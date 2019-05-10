@@ -33,9 +33,13 @@ sorting=none]{biblatex}
 \usetikzlibrary{calc}
 \RequirePackage{revsymb}
 \RequirePackage{enumerate}
+\RequirePackage{changepage}
 
 \newcommand{\me}{\mathrm{e}}
 \providecommand{\abs}[1]{\lvert#1\rvert} \providecommand{\norm}[1]{\lVert#1\rVert}
+
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
 
 \makeatletter
 \newsavebox{\@brx}

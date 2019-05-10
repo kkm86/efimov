@@ -1041,6 +1041,8 @@
       \field{isbn}{0750635398}
       \field{title}{Quantum Mechanics Non-Relativistic Theory, Second Edition: Volume 3}
       \field{year}{1965}
+      \field{pages}{72\bibrangedash 74}
+      \range{pages}{3}
       \keyw{book}
     \endentry
     \entry{Sadeghpour_2000}{article}{}
@@ -1563,6 +1565,46 @@
       \field{title}{MANY-BODY EFFECTS IN BOSE-EINSTEIN CONDENSATES OF DILUTE ATOMIC GASES}
       \field{type}{phdthesis}
       \field{year}{1997}
+    \endentry
+    \entry{NumericalRecipes}{book}{}
+      \name{author}{4}{}{%
+        {{hash=e25935343805f5bc8cf8924629f02376}{%
+           family={Press},
+           family_i={P\bibinitperiod},
+           given={William\bibnamedelima H.},
+           given_i={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=860156a7102b745ba7a9dddf4d5bfb8c}{%
+           family={Teukolsky},
+           family_i={T\bibinitperiod},
+           given={Saul\bibnamedelima A.},
+           given_i={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=12ba825dc296f78b21b90f645ff266b9}{%
+           family={Vetterling},
+           family_i={V\bibinitperiod},
+           given={William\bibnamedelima T.},
+           given_i={W\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=15807a7b15e1cd89dfa546bd8385a36f}{%
+           family={Flannery},
+           family_i={F\bibinitperiod},
+           given={Brian\bibnamedelima P.},
+           given_i={B\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{21c96521d50e44757fcf123ac89a147c}
+      \strng{fullhash}{d431675d310aa326c8a50833d56c0d51}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{isbn}{0521880688, 9780521880688}
+      \field{title}{Numerical Recipes 3rd Edition: The Art of Scientific Computing}
+      \field{year}{2007}
     \endentry
     \entry{KUPPERMANN1975374}{article}{}
       \name{author}{1}{}{%

@@ -17,32 +17,25 @@ The other angle in this coordinate set is the angle between the two vectors $\ma
 \begin{equation}
 \cos{\theta_{k}} = \frac{\mathbf{r}_{k} \cdot \mathbf{R}_{k}}{r_{k} R_{k}}, \quad  0\leq \theta \leq \pi.
 \end{equation}
-The indices $k$ will be suppressed from hereon. The mass weighted Schr{\"o}dinger equation for the stationary wavefunction $\Psi$ of a three-body system -- with position vectors $\mathbf{x}_i$ and masses $m_i$, ($i=1,2,3$) -- interacting pairwise through a potential $V$, is given by
+
+We choose one arbitary set to work in and suppress the indices from hereon. The mass weighted Schr{\"o}dinger equation for the stationary wavefunction $\Psi$ of a three-body system -- with position vectors $\mathbf{x}_i$ and masses $m_i$, ($i=1,2,3$) -- interacting pairwise through a potential $V$, is given by
 
 \begin{equation}
--\frac{1}{2} \sum_{i=1}^{N} m^{-1}_{i} \nabla^{2}_{\mathbf{x}_{i}} \Psi + V\Psi = E \Psi. 
+-\frac{1}{2} \sum_{i=1}^{3} m^{-1}_{i} \nabla^{2}_i \Psi + V\Psi = E \Psi. 
 \end{equation}
-Where $\nabla^{2}$ is the Laplace operator, which in spherical coordinates reads
+Where $\nabla_i^{2}$ is the Laplace operator for particle $i$, which in spherical coordinates reads
 
 \begin{equation}
-\Delta = \frac{1}{r^{2}}\frac{\partial}{\partial r} \bigg(r^{2} \frac{\partial}{\partial r}\bigg) - \frac{L^{2}}{r^{2}},
+\nabla_i^2 = \frac{1}{r_i^{2}}\frac{\partial}{\partial r_i} \bigg(r_i^{2} \frac{\partial}{\partial r_i}\bigg) - \frac{L_i^{2}}{r_i^{2}},
 \end{equation}
-in which $L$ is the angular momentum operator associated with the vector $\mathbf{r}$ and
+in which $L_i$ is the angular momentum operator associated with the vector $\mathbf{r}_i$. 
 
-\begin{equation}
-L^{2} = -\frac{1}{\sin{\theta}}\frac{\partial}{\partial \theta} \bigg(\sin{\theta}\frac{\partial}{\partial \theta}\bigg) - \frac{1}{\sin^{2}{\theta}} \frac{\partial^{2}}{\partial \phi^{2}}.
-\end{equation}
 The kinetic energy for three particles in the mass normalized Jacobi coordinates was given in \eqref{eq:6}. Thus, after separating out the center-of-mass coordinate, the Schr{\"o}dinger equation for the internal motion is simply 
 
 \begin{equation}
 -\frac{1}{2\mu} \bigg(\nabla^{2}_{\mathbf{r}} + \nabla^{2}_{\mathbf{R}}\bigg) \Psi + V\Psi = E \Psi. 
 \end{equation}
-With the Laplacians for the mass scaled Jacobi vectors given by
 
-\begin{align}
-	\nabla^2_{\mathbf{r}} &= \frac{1}{r^2}\frac{\partial}{\partial r} \bigg( r^2 \frac{\partial}{\partial r} \bigg) - \frac{L^2_{r}}{r^2} = \frac{2}{r}\frac{\partial}{\partial r} + \frac{\partial^2}{\partial r^{2}} - \frac{L^{2}_{r}}{r^2},\\
-	\nabla^2_{\mathbf{R}} &= \frac{1}{R^2}\frac{\partial}{\partial R} \bigg( R^2 \frac{\partial}{\partial R} \bigg) - \frac{L^2_{R}}{R^2} = \frac{2}{R}\frac{\partial}{\partial R} + \frac{\partial^2}{\partial R^{2}} - \frac{L^{2}_{R}}{R^2}.
-\end{align}
 If spin interactions are excluded the total orbital angular momentum is zero and we have 
 
 \begin{equation}

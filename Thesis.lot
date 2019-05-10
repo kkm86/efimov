@@ -7,9 +7,10 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Analytically derived eigenvalues together with numerically calculated eigenvalues for three identical bosons.\relax }}{36}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Numerically calculated eigenvalues, problem with precision, look into this.\relax }}{41}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Three-body potential values at different hyperradii for $a = -2702020$ a.u. corrsponding to \cref {fig:res_4}.\relax }}{49}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Three-body potential values at different hyperradii for $a_1 = -2702020$ a.u. $a_1 = 1966590$ a.u. corrsponding to \cref {fig:res_4}.\relax }}{49}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
