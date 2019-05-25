@@ -2,34 +2,44 @@
 \defcounter {refsection}{0}\relax 
 \select@language {british}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustration of the phase shifts causing the effective interaction and how they depend on the sign and magnitude of $a$.\relax }}{5}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {The wave function is pushed outwards when the magnitude of a positive scattering length is increased.}}}{5}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The wave is pulled inwards when the magnitude of a negative scattering length is increased.}}}{5}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces The energies of the three first Efimov states are plotted as functions of the inverse scattering length $a$. Three different regions can be identified in the figure. The three atom continuum is the region above the zero-energy threshold. The atom-dimer region is the region enclosed by the horisontal axis and the atom-dimer threshold and the trimer region shown in grey, in which Efimov states are represented by the blue lines.\cite {Kajsa_my}\relax }}{7}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustration of the phase shifts causing the effective interaction and how they depend on the sign and magnitude of $a$.\relax }}{5}{figure.caption.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {The wave function is pushed outwards when the magnitude of a positive scattering length is increased.}}}{5}{figure.caption.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The wave is pulled inwards when the magnitude of a negative scattering length is increased.}}}{5}{figure.caption.4}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The energies of the three first Efimov states are plotted as functions of the inverse scattering length $a$. Three different regions can be identified in the figure. The three atom continuum is the region above the zero-energy threshold. The atom-dimer region is the region enclosed by the horisontal axis and the atom-dimer threshold and the trimer region shown in grey, in which Efimov states are represented by the blue lines.\cite {Kajsa_my}\relax }}{7}{figure.caption.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot of $u(r)$ versus $r$ for the model potential \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {modelpotential}\unskip \@@italiccorr )}} at three different depths. The radius at which the tangent intercept the $r$-axis gives the value of $a$.\relax }}{20}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces The three lowest curves correspond to the potentials used in \cref {fig:intercept}. As the magnitude of a negative $a$ increases, the potential becomes more attractive until it reaches a constant depth at $a=\pm \infty $. After the change in sign, a further increase of $a$ will instead have a repulsive effect on the interaction.\relax }}{20}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustration of three potentials and their coorsponding radial wave functions\relax }}{20}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot of $u(r)$ versus $r$ for the model potential \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {modelpotential}\unskip \@@italiccorr )}} at three different depths. The radius at which the tangent intercept the $r$-axis gives the value of $a$.\relax }}{20}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The three lowest curves correspond to the potentials used in \cref {fig:intercept}. As the magnitude of a negative $a$ increases, the potential becomes more attractive until it reaches a constant depth at $a=\pm \infty $. After the change in sign, a further increase of $a$ will instead have a repulsive effect on the interaction.\relax }}{20}{figure.caption.8}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustration of three potentials and their coorsponding radial wave functions\relax }}{20}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Spatial positions of three particles.\relax }}{23}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration of the three different Jacobi coordinate sets.\relax }}{23}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm {I},\mathrm {II}$ and $\mathrm {III}$. For values of $d$ that lie between the poles $\mathrm {I}$ and $\mathrm {II}$, the potential is deep enough to support a single $s$-wave bound state. The binding energy for the shallow dimer for $a>0$ is universal and was given in equation \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {shallowdimer}\unskip \@@italiccorr )}}.\relax }}{44}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces The adiabatic potential curves $U_{\nu }$ for $\nu =0-7$ are plotted as functions of the hyperradius $\rho $ for $a=228$ a.u. The index labelled $\nu =1$ corresponds to the Efimov channel.\relax }}{46}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Three-body effective potentials for $a<0$. The horizontal dashed line is the value $-s_0^2$, which the Efimov potential takes on for $\rho \gg r_0$.\relax }}{47}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Three-body effective potentials for $a=-2702020$ a.u. obtained using $N_{\theta }=N_{\phi }=80$ and $N_{\theta }=N_{\phi }=100$ mesh points. The potential obtained with $N_{\theta }=0$ converges to $-s_0^2$ for larger $\rho $.\relax }}{48}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Three-body effective potentials for $a>0$. The horizontal dashed line is $-s_0^2$.\relax }}{50}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces The convergence toward the analytically derived eigenvalues $\lambda _0$ for $a=-2385$ a.u. is shown for several different numbers of mesh points $N_{\theta }=N_{\phi }$.\relax }}{51}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces The convergence toward the analytically derived eigenvalues $\lambda _0$ for $a=-8720$ a.u. is shown for several different numbers of mesh points $N_{\theta }=N_{\phi }$.\relax }}{52}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Spatial positions of three particles.\relax }}{23}{figure.caption.9}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration of the three different Jacobi coordinate sets.\relax }}{23}{figure.caption.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Potential surface for three identical particles. Symmetries due to translations and reflections are seen at $\phi = n\pi /3, \ (n = 1-5)$.\relax }}{61}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm {I},\mathrm {II}$ and $\mathrm {III}$. For values of $d$ that lie between the poles $\mathrm {I}$ and $\mathrm {II}$, the potential is deep enough to support a single $s$-wave bound state.\relax }}{44}{figure.caption.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.\relax }}{74}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=1$}}}{74}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=2$}}}{74}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces { $k=3$}}}{74}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces { $k=4$}}}{74}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces The lowest three-body effective potential curves $\xi (\rho )$ are plotted as functions of $\rho $ for $a_1 = -2702020$ a.u. $a_1 = 1966590$ a.u. over the full range of hyperradii for which the numerically calculated potentials converged.\relax }}{47}{figure.caption.15}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Effective three-body potentials for $a>0$. The horizontal dashed line is $-s_0^2$.\relax }}{49}{figure.caption.16}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces The effective three-body potentials for $a_1=1018$ a.u. and $a_2=5655$ a.u. are highlighted and showed together with their analytical asymptotic forms $\xi _{+1}$ and $\xi _{+2}$.\relax }}{50}{figure.caption.17}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Effective three-body potentials for $a<0$. The horizontal dashed line is the value $-s_0^2$, which the Efimov potential takes on for $\rho \gg r_0$.\relax }}{51}{figure.caption.18}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Eigenvalues $\nu _0(\rho /\delimiter 69640972 a\delimiter 86418188 )$ of the hyperangular Faddeev equation \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:faddeev_hyperang}\unskip \@@italiccorr )}}, for $a>0$ (solid line) and $a<0$ (dashed line).\relax }}{51}{figure.caption.19}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Three-body effective potentials $\xi (\rho )$ for (a) $a_1=-2385$ a.u. and (b) $a_2=-8720$ a.u. plotted as functions of $\rho /\delimiter 69640972 a\delimiter 86418188 $. The potentials, calculated using an increasing number of B-splines, are shown together with the eigenvalues $\nu _0(\rho /\delimiter 69640972 a\delimiter 86418188 )$ of \Cref {eq:faddeev_hyperang} for $a<0$.\relax }}{52}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{52}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{52}{figure.caption.20}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Three-body effective potentials $\xi (\rho )$ for $a=1018$ a.u., plotted as functions of $\rho /\delimiter 69640972 a\delimiter 86418188 $, are shown together with the eigenvalues $\nu _0(\rho /\delimiter 69640972 a\delimiter 86418188 )$ of \Cref {eq:faddeev_hyperang} for $a>0$. The numerically calculated potentials can be seen to converge to a slightly different form than $\nu _0(\rho /\delimiter 69640972 a\delimiter 86418188 )$.\relax }}{54}{figure.caption.21}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces \relax }}{55}{figure.caption.22}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces The convergence toward the analytically derived eigenvalues $\lambda _0$ for $a=5655$ a.u. is shown for several different numbers of mesh points $N_{\theta }=N_{\phi }$.\relax }}{55}{figure.caption.23}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Three-body effective potentials for $a>0$. The horizontal dashed line is $-s_0^2$.\relax }}{56}{figure.caption.24}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Three-body effective potentials for $a>0$. The horizontal dashed line is $-s_0^2$.\relax }}{56}{figure.caption.25}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Illustration of the two-body potential surfaces at two different hyperradii $\rho $. The potential surface change more rapidly at the hyperangular configuration $(\theta ,\phi )=(\pi /2,\phi )$ for larger $\rho $.\relax }}{57}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {The potential surface for $\rho =r_0$.}}}{57}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The potential surface for $\rho =3r_0$.}}}{57}{figure.caption.26}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Potential surface for three identical particles. Symmetries due to translations and reflections are seen at $\phi = n\pi /3, \ (n = 1-5)$.\relax }}{67}{figure.caption.27}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.\relax }}{80}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=1$}}}{80}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=2$}}}{80}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces { $k=3$}}}{80}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces { $k=4$}}}{80}{figure.caption.28}

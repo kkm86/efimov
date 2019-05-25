@@ -120,11 +120,14 @@ in which
 Since the B-splines are piecewise polynomial functions of order $(k-1)$, it is in principle possible to evaluate the overlap matrix elements and the kinetic terms in the adiabatic Hamiltonian exactly, i.e. to within machine precision, using Gauss-Legendre quadrature. These terms can also be separated into a product of one-dimensional integrals, which is advantageous since the computational cost of numerical integration grows exponentially with the dimension of the problem.
 
 However, the potential term cannot be separated into a product of one-dimensional integrals, wherefore integration in two dimensions is required for this term. Another issue with the potential is that it is not generally a polynomial and for the calculation to converge, we need a fine enough mesh. 
- 
+
 To calculate the sought eigenvalues and corresponding eigenvectors, i.e., the effective three-body potential curves and the unknown coefficents, I have used the Lapack routine \textit{dsygvd}. To show convergence to the analytical results presented in \cref{table:1}, I numerically calculated the first three eigenvalues $\tilde{U}_{\nu}$ obtained by solving equation \eqref{eq:eigenlambda} using the B-spline collocation method with an increasing number of mesh points $N_{\theta}=N_{\phi}$. The results are presented in \cref{table:2} 
 
 \begin{table}[h!]
 	\centering
+	\footnotesize
+	\begin{adjustwidth}{-0.1cm}{}
+	\tabcolsep=0.10cm
 	\begin{tabular}{||c c c c c c||} 
 		\hline
 		$N_{\theta}$ & $\tilde{U}_0$ & $\tilde{U}_1$ & $\tilde{U}_2$ &  Array(s) & dsygvd(s)
@@ -135,6 +138,7 @@ To calculate the sought eigenvalues and corresponding eigenvectors, i.e., the ef
 		25 & 0.000 000 000 1034 & 32.000 000 000 4178 & 60.000 000 000 1971& 1.73& 0.63 \\ [1ex] 
 		\hline
 	\end{tabular}
+	\end{adjustwidth}
 	\caption{Numerically calculated eigenvalues, problem with precision, look into this.}
 	\label{table:2}
 \end{table}
