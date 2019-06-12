@@ -22,9 +22,9 @@ sorting=none]{biblatex}
 \RequirePackage{amssymb}
 \RequirePackage{standalone}
 \RequirePackage{multirow}
-\RequirePackage{subfigure}
-\RequirePackage{graphicx}
-\RequirePackage{caption}
+\RequirePackage{graphicx,setspace}
+\RequirePackage[font=small,labelfont=bf]{caption}
+\RequirePackage{subcaption}
 \usepackage{dblfloatfix}    % To enable figures at the bottom of page
 \RequirePackage{bm}
 \RequirePackage{gensymb}
@@ -37,10 +37,16 @@ sorting=none]{biblatex}
 \RequirePackage{enumerate}
 \RequirePackage{changepage}
 
+\onehalfspacing
+\captionsetup{font={small,stretch=1.3},subrefformat=parens} 
+%\captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+
+\renewcommand\thesubfigure{\alph{subfigure}}
+
 \Crefformat{figure}{#2Fig.~#1#3}
 \Crefmultiformat{figure}{Figs.~#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
-\Crefformat{equation}{#2Eq.~#1#3}
-\Crefmultiformat{equation}{Eqs.~#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
+\Crefformat{equation}{#2Eq.~(#1#3)}
+\Crefmultiformat{equation}{Eqs.~(#2#1#3)}{ and~(#2#1#3)}{, (#2#1#3)}{ and~(#2#1#3)}
 
 \newcommand{\me}{\mathrm{e}}
 \providecommand{\abs}[1]{\lvert#1\rvert} \providecommand{\norm}[1]{\lVert#1\rVert}
@@ -55,5 +61,12 @@ sorting=none]{biblatex}
 \newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
 	\mathclose{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
 \makeatother
+
+\newcommand{\subfigimg}[3][,]{%
+	\setbox1=\hbox{\includegraphics[#1]{#3}}% Store image in box
+	\leavevmode\rlap{\usebox1}% Print image
+	\rlap{\hspace*{10pt}\raisebox{\dimexpr\ht1-2\baselineskip}{#2}}% Print label
+	\phantom{\usebox1}% Insert appropriate spcing
+}
 
 \endinput

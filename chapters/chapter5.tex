@@ -1,12 +1,12 @@
 \chapter{Numerical Approach}\label{chapter:5}
-I have used the B-spline collocation method, with spatial discretization at Gauss points in each subinterval of the mesh and integration using the Gauss-Legendre quadrature rule, to find the numerical solution of the adiabatic equation given in \eqref{adiabatic}. The outline of this method is described in the following sections. 
+To find numerical solutions of \Cref{adiabatic}, I have used the B-spline collocation method, with spatial discretization at Gauss points in each subinterval of the mesh and integration using the Gauss-Legendre quadrature rule. The outline of this method is described in the following sections. 
 
-\Cref{section:BSexpansion} contains a hands-on mapping scheme for setting up the two-dimensonal Hamiltonian and overlap matrices. Two key features of these matrices are that they are sparse and banded\footnote{A matrix is considered sparse if its sparsity ratio $\big(=1 - \frac{\# \text{non-zero entries}}{\#\text{entries}}\big)$ is close to one. Additionally, if all non-zero entries are confined to a diagonal band located about the main diagonal and its bandwidth -- i.e. the maximum distance of non-zero elements from the main diagonal -- is small, then it is called banded.}, which means that most of the entrices in the two matrices are zero. This is beneficial since Gaussian elemination can be perfomed in fewer operations than normal and there are several numerical routines especially designed to treat these kinds of matrices when solving generalized eigenvalue problems. 
+\Cref{section:BSexpansion} contains a hands-on mapping scheme for setting up the two-dimensional Hamiltonian and overlap matrices. Two key features of these matrices are that they are sparse and banded\footnote{A matrix is considered sparse if its sparsity ratio $\big(=1 - \frac{\# \text{non-zero entries}}{\#\text{entries}}\big)$ is close to one. Additionally, if all non-zero entries are confined to a diagonal band located about the main diagonal and its bandwidth -- i.e., the maximum distance of non-zero elements from the main diagonal -- is small, then it is called banded.}, which means that most of the entries in the two matrices are zero. This is beneficial since Gaussian elemination can be perfomed in fewer operations than normal and there are several numerical routines specifically designed to treat these kinds of matrices when solving generalized eigenvalue problems. 
 
 The structure of these matrices and how different mappings affect their bandwidth, and hence the numerical efficiency, has been discussed in detail by Esry \cite{Esry_thesis}.   
 
-\section{Basis splines expansion}\label{section:BSexpansion}
-The first step in solving the adiabatic equation is to expand the solution, i.e. the channel functions $\Phi_{\nu}$, in a suitable basis. For this I use B-splines. These basis functions are piecewise polynomial functions, which are defined using the \emph{Cox-de Boor recursion formula}, see \cref{B-splines}. 
+\section{Basis Splines Expansion}\label{section:BSexpansion}
+The first step in solving the adiabatic equation is to expand the solution, i.e., the channel functions $\Phi_{\nu}$, in a suitable basis. For this I use B-splines. These basis functions are piecewise polynomial functions, which are defined using the \emph{Cox-de Boor recursion formula}, see \cref{B-splines}. 
 
 A base function in two dimensions can be generated from one-dimensional B-splines. If $\varphi_{1l}, \ l= 1,\ldots,L$ is a basis for representing the functional dependency on $\theta$ and $\varphi_{2m}, \ m= 1,\ldots,M$ is a basis for $\phi$, then the tensor product of the two base functions is defined by
 
@@ -16,43 +16,30 @@ A base function in two dimensions can be generated from one-dimensional B-spline
 A two-dimensional basis can thus be built as a product of one-dimensional B-splines. The channel functions are then represented as an expansion in this basis through  
 
 \begin{equation}\label{expansion}
-\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m}^{L,M} c_{lm}\varphi_{lm} (\theta,\phi),
+\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m}^{L,M} c_{lm}(\rho)\varphi_{lm} (\theta,\phi),
 \end{equation}
-where $c_{lm}$ are the sought expansion coefficients, which characterize our solution. We then choose collocation at the knot points and require that \eqref{expansion} is a solution to \eqref{adiabatic} at those points.  If we use B-splines of order $k$, defined as piecewise polynomials of order $(k-1)$ and define a mesh containing $N_{\theta}$ physical points in the $\theta$-direction and $N_{\phi}$ physical points in the $\phi$-direction, then we need to construct two knot point sequences, where $k$ ghost points are put in the first and last physical point on each grid. The number of knot points needed for each coordinate are thus
+where $c_{lm}$ are the sought expansion coefficients, which characterize our solution. If we use B-splines of order $k$, defined as piecewise polynomials of order $(k-1)$ and define a mesh containing $N_{\theta}$ physical points in the $\theta$-direction and $N_{\phi}$ physical points in the $\phi$-direction, then we need to construct two knot point sequences, where $k$ ghost points are put in the first and last physical point on each grid, see \Cref{B-splines}. 
 
-\begin{equation}
-\begin{aligned}
-P_{\theta}=N_{\theta}+2(k-1),\\
-P_{\phi}=N_{\phi}+2(k-1).
-\end{aligned}
-\end{equation}
-This means that the number of B-splines in each dimension are
+Boundary conditions are easily enforced by placing the ghost-points at the end-points of the two grids. Since only the first and last B-spline is non-zero at its respective boundary, implementing the boundary condition with the requirement that the solution must vanish at that boundary simply means that you remove that non-zero B-spline from the expansion. Similarly, only the first two or the last two B-splines have non-zero first derivatives at the boundaries. Thus, to implement the requirement that the derivative of the solution must vanish at a boundary one replaces the B-spline in that place in the expansion with the sum of the two first B-splines if the first physical point is considered or the two last B-splines if the last point is considered.
 
-\begin{equation}
-\begin{aligned}
-L = P_{\theta}-k=N_{\theta}+k-2,\\
-M = P_{\phi}-k = N_{\phi}+k-2.
-\end{aligned}
-\end{equation}
-There are thus $LM$ B-splines and an equal number of unknown coefficents but only $N_{\theta}N_{\phi}$ equations. Since only $(k-1)^2$ B-splines are non-zero at the knot points, it means that each equation involves $(k-1)^2$ B-splines
+For a second order partial differential equation the B-splines must be twice differentiable everywhere on the knot sequence and have continuous second order derivatives. With the B-spline definitions given in \cref{B-splines}, the above requirements are fullfilled for B-splines of order $k\geq 4$. 
 
-\begin{equation}
-\Phi_{\nu}(\rho;\theta_i,\phi_j) = \sum_{l=i-k+1}^{i-1}\sum_{m=j-k+1}^{j-1} c_{lm}\varphi_{lm} (\theta_{i},\phi_{j}),
-\end{equation}
-in which $i = k,\ldots,L+k$ and $j = k,\ldots,M+k$.
-The limits $L$ and $M$ can be reduced by placing boundary conditions on $\Phi_{\nu}(\rho;\theta,\phi)$. For each boundary condition on the coordinate in question, we get an additional equation and reduce the number of B-splines in that dimension by one. The upper limits $L$ and $M$ are thus determined from 
+The upper limits of the sum in \Cref{expansion} are determined from the order of the B-splines and the number of mesh points for each coordinate through $L=N_{\theta}+k-2$ and $M=N_{\phi}+k-2$, if no boundary conditions are placed on the coordinates. However, since for each boundary condition, we get an additional equation and reduce the number of B-splines in that dimension by one, the limits $L$ and $M$ are given by 
 
 \begin{align}
 L = N_{\theta}+k-2-c_L,\\
 M = N_{\phi}+k-2-c_M,
 \end{align}
-where $c_{L/M}$ denotes the number of boundary conditions for each coordinate. The number of unknowns are now $(N_{\theta}+k-2-c_L)(N_{\phi}+k-2-c_M)$ and the number of equations are $(N_{\theta}+c_L)(N_{\phi}+c_M)$. Thus, if, for exemple, $k=6$ we need two boundary conditions for each dimension. 
+where $c_{L/M}$ denotes the number of boundary conditions for the coordinate in question.
 
-Boundary conditions are easily implemented by placing the ghost-points at the end-points of the two grids. Since only the first and last B-spline is non-zero at its respective boundary, implementing the boundary condition with the requirement that the solution must vanish at that boundary simply means that you remove that non-zero B-spline from the expansion. Similarly, only the first two or the last two B-splines have non-zero first derivatives at the boundaries. Thus, to implent the requirement that the derivative of the solution must vanish at a boundary one replaces the B-spline in that place in the expansion with the sum of the two first B-splines if the first physical point is considered or the two last B-splines if the last point is considered.
+Thereafter we choose collocation at the knot points and require that \Cref{expansion} is a solution to \Cref{adiabatic} at those points. Since only $(k-1)^2$ B-splines are non-zero at the knot points, it means that each equation involves $(k-1)^2$ B-splines
 
-For a second order partial differential equation the B-splines must be twice differentiable everywhere on the knot sequence and have continuous second order derivatives. With the B-spline definitions given in \cref{B-splines}, the above requirements are fullfilled for B-splines of order $k\geq 4$. 
+\begin{equation}
+\Phi_{\nu}(\rho;\theta_i,\phi_j) = \sum_{l=i-k+1}^{i-1}\sum_{m=j-k+1}^{j-1} c_{lm}(\rho)\varphi_{lm} (\theta_{i},\phi_{j}),
+\end{equation}
+in which $i = k,\ldots,L+k$ and $j = k,\ldots,M+k$.
 
-The next step is to substitute the solution \eqref{expansion} into the adiabatic equation \eqref{adiabatic} and projecting out $\varphi_{l'm'}(\theta,\phi)$. If the two indicies $l$ and $m$ are mapped into a single index $i$, where
+The next step is to substitute the solution in \Cref{expansion} into the adiabatic equation \eqref{adiabatic} and projecting out $\varphi_{l'm'}(\theta,\phi)$. If the two indicies $l$ and $m$ are mapped into a single index $i$, where
 
 \begin{equation}
 \begin{aligned}
@@ -117,11 +104,11 @@ in which
 \end{aligned}
 \end{equation}
 
-Since the B-splines are piecewise polynomial functions of order $(k-1)$, it is in principle possible to evaluate the overlap matrix elements and the kinetic terms in the adiabatic Hamiltonian exactly, i.e. to within machine precision, using Gauss-Legendre quadrature. These terms can also be separated into a product of one-dimensional integrals, which is advantageous since the computational cost of numerical integration grows exponentially with the dimension of the problem.
+Since the B-splines are piecewise polynomial functions of order $(k-1)$, it is in principle possible to evaluate the overlap matrix elements and the kinetic terms in the adiabatic Hamiltonian exactly, i.e., to within machine precision, using Gauss-Legendre quadrature. These terms can also be separated into a product of one-dimensional integrals, which is advantageous since the computational cost of numerical integration grows exponentially with the dimension of the problem.
 
-However, the potential term cannot be separated into a product of one-dimensional integrals, wherefore integration in two dimensions is required for this term. Another issue with the potential is that it is not generally a polynomial and for the calculation to converge, we need a fine enough mesh. 
+However, the potential term cannot be separated into a product of one-dimensional integrals, wherefore integration in two dimensions is required for this term. Another issue with the potential is that it is not generally a polynomial, so for the calculation to converge, we need a fine enough mesh. 
 
-To calculate the sought eigenvalues and corresponding eigenvectors, i.e., the effective three-body potential curves and the unknown coefficents, I have used the Lapack routine \textit{dsygvd}. To show convergence to the analytical results presented in \cref{table:1}, I numerically calculated the first three eigenvalues $\tilde{U}_{\nu}$ obtained by solving equation \eqref{eq:eigenlambda} using the B-spline collocation method with an increasing number of mesh points $N_{\theta}=N_{\phi}$. The results are presented in \cref{table:2} 
+To calculate the sought eigenvalues and corresponding eigenvectors, i.e., the effective three-body potential curves and the unknown coefficents, I have used the Lapack routine \textit{dsygvd}. To show convergence to the analytical results presented in \Cref{table:1}, I numerically calculated the first three eigenvalues $\tilde{U}_{\nu}$ obtained by solving \Cref{eq:eigenlambda} using the B-spline collocation method with an increasing number of mesh points $N_{\theta}=N_{\phi}$. The results are presented in \Cref{table:2}. Convergence of all three eigenvalues have been reached at $N_{\theta}=15$, since there is no further improvement of the calculated values when the mesh size is increased to $N_{\theta}=25$ in each direction.
 
 \begin{table}[h!]
 	\centering
@@ -133,12 +120,12 @@ To calculate the sought eigenvalues and corresponding eigenvectors, i.e., the ef
 		$N_{\theta}$ & $\tilde{U}_0$ & $\tilde{U}_1$ & $\tilde{U}_2$ &  Array(s) & dsygvd(s)
 		\Tstrut\Bstrut \\ [0.7ex]
 		\hline\hline
-		5	   & 0.000 000 000 0109   & 32.000 000 071 3049 & 60.000 002 031 0280 & 0.03 & 0.00  \\
-		15     & -0.000 000 000 0267 & 32.000 000 000 4180 & 59.999 999 999 9067  & 0.53 & 0.05 \\
-		25 & 0.000 000 000 1034 & 32.000 000 000 4178 & 60.000 000 000 1971& 1.73& 0.63 \\ [1ex] 
+		5	   & 0.000 000 000 0043   & 32.000 000 071 3239 & 60.000 002 030 9903 & 0.05 & 0.00  \\
+		15     & $-$0.000 000 000 0259 & 32.000 000 000 1938 & 59.999 999 999 9500  & 0.82 & 0.05 \\
+		25 & 0.000 000 000 1771 & 32.000 000 000 3968 & 60.000 000 000 1787& 2.71& 0.65 \\ [1ex] 
 		\hline
 	\end{tabular}
 	\end{adjustwidth}
-	\caption{Numerically calculated eigenvalues, problem with precision, look into this.}
+	\caption{The three lowest numerical eigenvalues $\tilde{U}_n$ calculated with an increasing number of B-splines in each hyperangular coordinate. All three eigenvalues have converged at $N_{\theta}=15$. The analytical eigenvalues are $U_{00}=0$, $U_{20}=32$ and $U_{03}=60$, see \Cref{table:1}.}
 	\label{table:2}
 \end{table}

@@ -32,11 +32,30 @@ and the second derivative
 
 The approach of placing the ghost points in the end-points is common because at the first physical point only the first B-spline non-zero and only the first two B-splines will have non-zero derivatives. Likewise, at the last physical point only the last B-spline will be non-zero and only the two last B-splines will have non-zero derivatives. Consequently, this choice favors implementation of boundary conditions which require the function or it's derivative to be zero at the boundary.
 
-\begin{figure*}[!b]
-	\centering  
-	\subfigure[$k=1$]{\includegraphics[width=0.45\linewidth]{Bsp1.pdf}}
-	\subfigure[$k=2$]{\includegraphics[width=0.45\linewidth]{Bsp2.pdf}}
-	\subfigure[ $k=3$]{\includegraphics[width=0.45\linewidth]{Bsp3.pdf}}
-	\subfigure[ $k=4$]{\includegraphics[width=0.45\linewidth]{Bsp4.pdf}}
+\begin{figure*}[htbp!]
+	\centering
+	\begin{adjustwidth}{-1cm}{-1cm}
+	\begin{subfigure}{0.6\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{Bsp1.pdf}
+	\caption{$k=1$}
+\end{subfigure}%
+\begin{subfigure}{0.6\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{Bsp2.pdf}
+	\caption{$k=2$}
+\end{subfigure}%
+
+\begin{subfigure}{0.6\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{Bsp3.pdf}
+	\caption{$k=3$}
+\end{subfigure}%
+\begin{subfigure}{0.6\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{Bsp4.pdf}
+	\caption{$k=4$}
+\end{subfigure}%
+	\end{adjustwidth}
 	\caption{The subfigures above show the B-splines $B_{i,k}(x)$ of different orders $k$ on a one dimensional mesh.}\label{fig:B-spline}
 \end{figure*}

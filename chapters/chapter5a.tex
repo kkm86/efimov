@@ -10,8 +10,7 @@ Since a general feature of the Efimov effect is that it is insensitive to the de
 \begin{equation}\label{eq:two_b_potential}
 v(r) = -d\cosh^{-2}{(r/r_0)},
 \end{equation}
-where $d$ controls the depth and $r_0$ the range of the potential.
-This potential is particularly useful since the eigenfunctions and energies are known analytically \cite{Landau1965Quantum}. The scattering length can be calculated at different $d$ numerically as described in \cref{sec:zero_energy_scat}, or can be expressed analytically as a function of $d$ through 
+where $d$ controls the depth and $r_0$ the range of the potential. This potential is particularly useful since the eigenfunctions and energies are known analytically \cite{Landau1965Quantum}. The scattering length can be calculated at different $d$ numerically as described in \cref{sec:zero_energy_scat}, or can be expressed analytically as a function of $d$ through 
 
 \begin{equation}
 a = \lim_{k \to 0} \frac{1}{ik} \frac{S(k)-1}{S(k)+1}
@@ -36,3 +35,13 @@ The scattering length is plotted as a function of the potential depth in \cref{f
 	\caption{The two-body scattering length as a function of the potential depth $d$. Three poles can be recognized in the figure, labelled $\mathrm{I},\mathrm{II}$ and $\mathrm{III}$. For values of $d$ that lie between the poles $\mathrm{I}$ and $\mathrm{II}$, the potential is deep enough to support a single $s$-wave bound state.}
 	\label{fig:res_1}
 \end{figure*}
+
+The two-body potential surfaces $V(\rho,\theta,\phi)$ for two different hyperradii $\rho$ are shown in \Cref{fig:surfaces}. The potential surface can be seen to change more rapidly near the hyperangular configurations $(\theta,\phi)=(\pi/2,\phi)$ for larger $\rho$. 
+
+\begin{figure}[htbp!]
+	\centering
+	\subcaptionbox{The potential surface for $\rho=r_0$.}{\includegraphics[width=0.5\textwidth]{surface_small.pdf}}%
+	\hfill % <-- Seperation
+	\subcaptionbox{The potential surface for $\rho=3r_0$.}{\includegraphics[width=0.5\textwidth]{surface_large.pdf}}%
+	\caption{Illustration of the two-body potential surfaces at two different hyperradii $\rho$. The potential surface change more rapidly at the hyperangular configuration $(\theta,\phi)=(\pi/2,\phi)$ for larger $\rho$.}\label{fig:surfaces}
+\end{figure}
