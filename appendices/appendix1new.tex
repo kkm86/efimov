@@ -1,6 +1,9 @@
 \chapter{Hyperspherical Coordinates}
 This appendix contains mapping procedures, derivations and implementation details for \Cref{chap:4}. Some of the definitions presented in \cref{MNJC} will be repeated here in order for this appendix to be complete.
 
+\section{Mass Normalized Jacobi Coordinates}
+Prior to the introduction of either non-symmetric or symmetric coordinates  we introduce a set of mass normalized Jacobi coordinates, which will be used in combination with both Delves and modified Smith--Whitten coordinates. 
+
 Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are given by
 
 \begin{align}
@@ -8,14 +11,14 @@ M &= \sum_{i=1}^{3}m_i, \\
 \mu^2 &= \frac{1}{M}\prod_{i=1}^{3}m_i,\\
 d_k^2 &= \frac{m_k}{\mu}\frac{(m_i+m_j)}{M},
 \end{align}
-then the set of mass-scaled Jacobi vectors and the center of mass coordinate can be defined as
+then the set of mass-scaled Jacobi vectors and the centre-of-mass coordinate can be defined as
 
 \begin{align}
-\mathbf{r}_k &= d^{-1}_k(\mathbf{x}_{j}-\mathbf{x}_{i}), \\
-\mathbf{R}_k &= d_k\Big[\mathbf{x}_{k}-\frac{(m_{i}\mathbf{x}_{i}+m_{j}\mathbf{x}_{j})}{m_{i}+m_{j}}\Big],\\
+\mathbf{r}_k &= d^{-1}_k(\mathbf{x}_{j}-\mathbf{x}_{i}), \label{eq:app_jacobi1} \\
+\mathbf{R}_k &= d_k\Big[\mathbf{x}_{k}-\frac{(m_{i}\mathbf{x}_{i}+m_{j}\mathbf{x}_{j})}{m_{i}+m_{j}}\Big], \label{eq:app_jacobi2}\\
 \mathbf{X}_{CM} &= \frac{1}{M} \sum_{i=1}^{3} m_{i} \mathbf{x}_{i},
 \end{align}   
-in which, the indices $i,j,k$ are cyclic permutations of $(1,2,3)$. The center-of-mass is separated out and will not be considered further. Transformations within the set of coordinates is aided by defining the angle $\beta_{ij}$, which have the following properties
+in which, the indices $i,j,k$ are cyclic permutations of $(1,2,3)$. The centre-of-mass is separated out and will not be considered further. Transformations within the set of coordinates is aided by defining the angle $\beta_{ij}$, which has the following properties
 
 \begin{subequations}
 	\begin{align}
@@ -44,27 +47,34 @@ Orthogonal transformations are then given by
 \end{pmatrix}.
 \end{equation}   
 
-\section{Delves Coordinates}\label{delves}
-This section contains the detailed derivation of the three-body Schr{\"o}dinger equation written in Delves coordinates. The coordinate definitions are the same as in \cref{delvescoord}. Here we simply repeat some previously stated definitions for a clearer overview. The Jacobi vectors in each coordinate set are defined by
+In the following sections I will introduce two of the most commonly used hyperspherical coordinates. The general idea is to combine the two Jacobi vectors into a single six-dimensional position vector $\mathbf{q}$, which represents a point in $\mathbb{R}^6$. The polar coordinates of this point are given by the hyperradius $\rho$ and five hyperangles $\Omega$. The hyperradial coordinate is both rotationally and permutationally invariant and is, regardless of the specific choice of $\Omega$, defined by
 
-\begin{subequations}
-	\begin{align}
-	r_{k} &= \rho \sin{\alpha_{k}},\\
-	R_{k} &= \rho \cos{\alpha_{k}}
-	\end{align}
-\end{subequations}
-and the Delves hyperangle $\alpha_{k}$ is defined by
+\begin{equation}\label{eq:hyperradius}
+\rho = \sqrt{\mathbf{r}^2 + \mathbf{R}^2}.
+\end{equation}
+
+\section{Delves Coordinates}\label{delves}
+This section contains the detailed derivation of the three-body Schr{\"o}dinger equation written in Delves coordinates. To introduce Delves hyperspherical coordinates, we use the Jacobi vectors defined in \cref{eq:app_jacobi1,eq:app_jacobi2} and define Delves' hyperangle $\alpha_{k}$ as the polar angle of the position vector in the $(r_k,R_k)$ plane, i.e., 
 
 \begin{equation}
 \alpha_{k} = \arctan\bigg(\frac{r_{k}}{R_{k}}\bigg), \quad 0\leq \alpha_{k} \leq \frac{\pi}{2}.
 \end{equation}
-The other angle in this coordinate set is the angle between the two vectors $\mathbf{r}_{k}$ and $\mathbf{R}_{k}$, which is given by
+This angle together with \Cref{eq:hyperradius} is then used to map the Jacobi coordinates to a point on the plane in hyperpolar space through 
+
+\begin{subequations}
+	\begin{align}
+	r_{k} &= \rho \sin{\alpha_{k}},\\
+	R_{k} &= \rho \cos{\alpha_{k}}.
+	\end{align}
+\end{subequations}
+
+The four remaining angles can be defined as the spherical angles of $\mathbf{r}_k$ and $\mathbf{R}_k$, which is suitable if we work in the laboratory-frame. However, we are interested in the body-fixed frame and then it is better to instead define three of these angles as the external Euler angles and the fourth angle as the angle between the two vectors $\mathbf{r}_{k}$ and $\mathbf{R}_{k}$, which is given by
 
 \begin{equation}
 \cos{\theta_{k}} = \frac{\mathbf{r}_{k} \cdot \mathbf{R}_{k}}{r_{k} R_{k}}, \quad  0\leq \theta \leq \pi.
 \end{equation}
 
-We choose one arbitary set to work in and suppress the indices from hereon. The mass weighted Schr{\"o}dinger equation for the stationary wavefunction $\Psi$ of a three-body system -- with position vectors $\mathbf{x}_i$ and masses $m_i$, ($i=1,2,3$) -- interacting pairwise through a potential $V$, is given by
+We chose one arbitary set to work in and suppress the indices from hereon. The mass weighted Schr{\"o}dinger equation for the stationary wavefunction $\Psi$ of a three-body system, with position vectors $\mathbf{x}_i$ and masses $m_i$, ($i=1,2,3$), interacting pairwise through a potential $V$, is given by
 
 \begin{equation}
 -\frac{1}{2} \sum_{i=1}^{3} m^{-1}_{i} \nabla^{2}_i \Psi + V\Psi = E \Psi. 
@@ -76,7 +86,7 @@ Where $\nabla_i^{2}$ is the Laplace operator for particle $i$, which in spherica
 \end{equation}
 in which $L_i$ is the angular momentum operator associated with the vector $\mathbf{r}_i$. 
 
-The kinetic energy for three particles in the mass normalized Jacobi coordinates was given in \Cref{eq:6}. Thus, after separating out the center-of-mass coordinate, the Schr{\"o}dinger equation for the internal motion is simply 
+The kinetic energy for three particles in the mass normalized Jacobi coordinates was given in \Cref{eq:6}. Thus, after separating out the centre-of-mass coordinate, the Schr{\"o}dinger equation for the internal motion is simply 
 
 \begin{equation}
 -\frac{1}{2\mu} \bigg(\nabla^{2}_{\mathbf{r}} + \nabla^{2}_{\mathbf{R}}\bigg) \Psi + V\Psi = E \Psi. 
@@ -90,27 +100,24 @@ L^{2}_r = L^{2}_{R} = -\frac{1}{\sin{\theta}} \frac{\partial}{\partial{\theta}} 
 Change of coordinates subsequently results in the following transformations for the partial derivatives of the vector $\mathbf{r}$
 
 \begin{align}
-	\frac{\partial}{\partial r}        &= \frac{\partial\alpha}{\partial r} \frac{\partial}{\partial\alpha} +  \frac{\partial\rho}{\partial r} \frac{\partial}{\partial\rho} = \frac{1}{\rho}\cos{\alpha}\frac{\partial}{\partial \alpha} + \sin{\alpha}\frac{\partial}{\partial \rho}, \\
-	\frac{\partial^2}{\partial r^2} &= \bigg( \frac{1}{\rho} \cos\alpha \frac{\partial}{\partial\alpha} + \sin\alpha \frac{\partial}{\partial\rho}\bigg) \bigg( \frac{1}{\rho} \cos\alpha \frac{\partial}{\partial\alpha} + \sin\alpha \frac{\partial}{\partial\rho}\bigg) \nonumber \\
-	&= \frac{1}{\rho^2} \cos^2\alpha \frac{\partial^2}{\partial\alpha^{2}} - \frac{1}{\rho^2} \sin(2\alpha) \frac{\partial}{\partial\alpha} + \sin^2\alpha \frac{\partial^2}{\partial\rho^{2}} \nonumber \\
-	&+ \frac{1}{\rho} \cos^2\alpha \frac{\partial}{\partial\rho} + \frac{1}{\rho} \sin(2\alpha) \frac{\partial^2}{\partial\alpha \partial\rho}.
+	\frac{\partial}{\partial r}  &= \frac{1}{\rho}\cos{\alpha}\frac{\partial}{\partial \alpha} + \sin{\alpha}\frac{\partial}{\partial \rho}, \\
+	\frac{\partial^2}{\partial r^2} &=\frac{1}{\rho^2} \cos^2\alpha \frac{\partial^2}{\partial\alpha^{2}} - \frac{1}{\rho^2} \sin 2\alpha \frac{\partial}{\partial\alpha} + \sin^2\alpha \frac{\partial^2}{\partial\rho^{2}} \nonumber \\
+	&+ \frac{1}{\rho} \cos^2\alpha \frac{\partial}{\partial\rho} + \frac{1}{\rho} \sin 2\alpha \frac{\partial^2}{\partial\alpha \partial\rho}.
 \end{align}
 Similarly, the partial derivatives with respect to the vector $\mathbf{R}$ transform as
 
 \begin{align}
-	\frac{\partial}{\partial R}        &= \frac{\partial\alpha}{\partial R} \frac{\partial}{\partial\alpha} +  \frac{\partial\rho}{\partial R} \frac{\partial}{\partial\rho} = -\frac{1}{\rho}\sin{\alpha}\frac{\partial}{\partial \alpha} + \cos{\alpha}\frac{\partial}{\partial \rho},  \\
-	\frac{\partial^2}{\partial R^2}&= \bigg( -\frac{1}{\rho} \sin\alpha \frac{\partial}{\partial\alpha} + \cos\alpha \frac{\partial}{\partial\rho}\bigg)  \bigg( -  \sin\alpha \frac{\partial}{\partial\alpha} + \cos\alpha \frac{\partial}{\partial\rho}\bigg) \nonumber \\
-	&= \frac{1}{\rho^2} \sin^2\alpha\frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho^2} \sin(2\alpha)\frac{\partial}{\partial\alpha} + \cos^2\alpha \frac{\partial^2}{\partial \rho^2} \nonumber \\
-	&+\frac{1}{\rho}\sin^2\alpha\frac{\partial}{\partial \rho}- \frac{1}{\rho} \sin(2\alpha) \frac{\partial^2}{\partial\alpha \partial\rho}.
+	\frac{\partial}{\partial R} &= -\frac{1}{\rho}\sin{\alpha}\frac{\partial}{\partial \alpha} + \cos{\alpha}\frac{\partial}{\partial \rho},  \\
+	\frac{\partial^2}{\partial R^2}&= \frac{1}{\rho^2} \sin^2\alpha\frac{\partial^2}{\partial\alpha^{2}} + \frac{1}{\rho^2} \sin 2\alpha \frac{\partial}{\partial\alpha} + \cos^2\alpha \frac{\partial^2}{\partial \rho^2} \nonumber \\
+	&+\frac{1}{\rho}\sin^2\alpha\frac{\partial}{\partial \rho}- \frac{1}{\rho} \sin 2\alpha \frac{\partial^2}{\partial\alpha \partial\rho}.
 \end{align}
 Finally, the sum of the two Laplacian operators now reads 
 
 \begin{align}
 \nabla^2_{\mathbf{r}} + \nabla^2_{\mathbf{R}} &= \frac{2}{r}\frac{\partial}{\partial r} +  \frac{2}{R} \frac{\partial}{\partial R}  +\frac{\partial^2}{\partial r^{2}} + \frac{\partial^2}{\partial R^{2}} - \frac{L^{2}_{r}}{r^2} - \frac{L^{2}_{R}}{R^2} \nonumber \\
-&= \frac{4}{\rho^2} \cot(2\alpha) \frac{\partial}{\partial\alpha} + \frac{5}{\rho} \frac{\partial}{\partial\rho} + \frac{1}{\rho^2} \frac{\partial^2}{\partial\alpha^2} + \frac{\partial^2}{\partial\rho^2} \nonumber \\
-&+ \frac{4}{\rho^2 \sin^2(2\alpha)\sin(\theta)} \frac{\partial}{\partial\theta} \bigg( \sin(\theta) \frac{\partial}{\partial{\theta}} \bigg) \nonumber \\
-&= \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \bigg( \rho^5 \frac{\partial}{\partial\rho} \bigg) + \frac{1}{\rho^2 \sin^2(2\alpha)}  \bigg( \frac{\partial}{\partial\alpha} \sin^2(2\alpha) \frac{\partial}{\partial\alpha} + \frac{4}{\sin\theta} \frac{\partial}{\partial\theta} \bigg).
+&= \frac{1}{\rho^5}\frac{\partial}{\partial\rho} \bigg( \rho^5 \frac{\partial}{\partial\rho} \bigg) + \frac{1}{\rho^2 \sin^2 2\alpha}  \bigg( \frac{\partial}{\partial\alpha} \sin^2 2\alpha \frac{\partial}{\partial\alpha} + \frac{4}{\sin\theta} \frac{\partial}{\partial\theta} \bigg).
 \end{align}
+
 The original Hamiltonian operator written in Delves coordinates can thus be expressed as 
 
 \begin{equation}
@@ -125,8 +132,7 @@ T_{\rho} &= -\frac{1}{2\mu} \Big[ \frac{1}{\rho^5}\frac{\partial}{\partial\rho} 
 &= -\frac{1}{2\mu} \rho^{-5/2} \Big[  -\frac{15}{4} \frac{1}{\rho^2} + \frac{\partial^2}{\partial\rho^2} \Big] \rho^{5/2}
 \end{aligned}
 \end{equation}
-
-and let the kinetic energy operators for the hyperangles -- that is, the kinetic energy operator for the Delves angle $T_{\alpha}$ and the kinetic energy operator for the angular momentum of the Jacobi vectors $T_{\theta}$ -- be expressed as 
+and let the kinetic energy operators for the hyperangles, i.e., the kinetic energy operator for the Delves angle $T_{\alpha}$ and the kinetic energy operator for the angular momentum of the Jacobi vectors $T_{\theta}$, be expressed as 
 
 \begin{equation}\label{eq:kinetic_alpha}
 \begin{aligned}
@@ -141,7 +147,7 @@ and
 
 \begin{align}                  
 T_{\theta} &= -\frac{1}{2\mu} \bigg[ \frac{4}{\rho^2 \sin^2(2\alpha)\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg]\nonumber\\ 
-&= -\frac{1}{2\mu} \bigg[ \frac{1}{\rho^2 \sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg]
+&= -\frac{1}{2\mu} \bigg[ \frac{1}{\rho^2 \sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta} \bigg) \bigg],
 \end{align}
 respectively. Removal of first derivatives with respect to $\rho$ and $\alpha$ is now possible by rescaling the total wave function such that $\Psi = \rho^{-5/2}(\sin(2\alpha))^{-1}\psi$. The corresponding transformation of the Hamiltonian is then
 
@@ -154,14 +160,14 @@ H&= \rho^{5/2}\sin(2\alpha) H_0 \rho^{-5/2}(\sin(2\alpha))^{-1}\nonumber\\
 where $\Lambda^2$ contains all the hyperangular kinetic energy variables. The squared grand angular momentum is in this case given by 
 
 \begin{equation}
-\Lambda^2 = -\frac{\partial^2}{\partial\alpha^2} - \frac{1}{\sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta}\bigg).
+\Lambda^2 = -\frac{\partial^2}{\partial\alpha^2} - \frac{1}{\sin^2\alpha\cos^2\alpha\sin\theta} \frac{\partial}{\partial\theta} \bigg( \sin\theta \frac{\partial}{\partial\theta}\bigg)
 \end{equation}
-The Schr{\"o}dinger equation can thus be written
+and the Schr{\"o}dinger equation takes the final form
 
 \begin{equation}
 \bigg(-\frac{1}{2\mu}\frac{\partial^2}{\partial\rho^2} + \frac{\Lambda^2 - 1/4}{2\mu\rho^2} + V(\rho,\alpha,\theta)\bigg) \psi(\rho,\alpha,\theta) = E \psi(\rho,\alpha,\theta),
 \end{equation}
-where $E$ is the internal energy. The corresponding volume element is proportional to $\rho^5\sin^2\alpha\cos^2\alpha\sin\theta\, d\rho\, d\alpha\, d\theta$. Since the rescaled wavefunction needs to be square-integrable for a bound state, the boundary conditions are given by
+where $E$ is the internal energy and where the corresponding volume element is proportional to $\rho^5\sin^2\alpha\cos^2\alpha\sin\theta\, d\rho\, d\alpha\, d\theta$. Since the rescaled wavefunction needs to be square-integrable for a bound state, the boundary conditions are given by
 
 \begin{align}
 	\psi(0,\alpha,\theta) &= 0,\\
@@ -171,15 +177,15 @@ where $E$ is the internal energy. The corresponding volume element is proportion
 
 \section{Modified Smith--Whitten Coordinates}\label{smith}
 \subsection{Coordinate Mapping}\label{Appendix_2_1}
-Johnson has given a detailed description of how the three-body system can be represented in a symmetric way \cite{Johnson1980}. In this section we present the main procedures used to retrieve a mapping for the three-dimensional triatomic potential energy surface to a point in configuration space. This mapping will treat the different arrangement channels equally, which enables permutation symmetries for three identical particles to be imposed exactly. Performing a second mapping of the original representation presented in \cite{Smith1962,Smith_Whitten1968} yields the resulting set of modified Smith-Whitten coordinates. The derivation of the Hamiltonian for this representation is then described in \cref{Appendix_2_2}. 
+Johnson has given a detailed description of how the three-body system can be represented in a symmetric way \cite{Johnson1980}. In this section we present the main procedures used to retrieve a mapping for the three-dimensional triatomic potential energy surface to a point in configuration space. This mapping will treat the different arrangement channels equally, which enables permutation symmetries for three identical particles to be imposed exactly. Performing a second mapping of the original representation presented in \cite{Smith1962,Smith_Whitten1968} yields the resulting set of modified Smith--Whitten coordinates. The derivation of the Hamiltonian for this representation is then described in \cref{Appendix_2_2}. 
 
-To define a symmetric coordinate system, one starts by separating the external and internal coordinates of the configuration. For the external coordinates we use the Euler angles, these are used to relate rotations of the three-body system in space. Since the potential energy only depends on the internal coordinates we will focus on them here. The internal coordinates $\rho$, $\Theta$, and $\Phi_k$ determine the size, shape and particle arrangement of the triangle formed by the three-body system, respectively. Starting from the definition for the internal coordinates given by Smith and Whitten \cite{Smith_Whitten1968}
+To define a symmetric coordinate system, one starts by separating the external and internal coordinates of the configuration. At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the $xy$-plane, and define the internal motion of the particles within this plane in terms of hyperspherical coordinates $(\rho, \Theta, \Phi_k)$, our coordinate system must rotate in this plane. That is, we use a body-fixed axis system $xyz$, which rotates with respect to the space-fixed axis system $x'y'z'$. The orientation of the body-fixed frame is related to the space-fixed frame by the Euler angles, which are the external coordinates of the three-body configuration. Since the potential energy only depends on the internal coordinates we will focus on them here. The internal coordinates $\rho$, $\Theta$, and $\Phi_k$ determine the size, shape and particle arrangement of the triangle formed by the three-body system, respectively. With the $z$-axis perpendicular to the plane and with the positive axis in the direction of the vector $\mathbf{r}_k \times \mathbf{R}_k$, Smith and Whitten \cite{Smith_Whitten1968} defined these as  
 
-\begin{equation}
+\begin{equation}\label{eq:SW}
 \begin{aligned}
 (\mathbf{r}_k)_x &= \rho \cos\Theta\cos\Phi_k,\\
 (\mathbf{r}_k)_y &= -\rho \sin\Theta\sin\Phi_k,\\
-(\mathbf{r}_k)_z &= 0\\
+(\mathbf{r}_k)_z &= 0,\\
 (\mathbf{R}_k)_x &= \rho \cos\Theta\sin\Phi_k,\\
 (\mathbf{R}_k)_y &= \rho \sin\Theta\cos\Phi_k,\\
 (\mathbf{R}_k)_z &= 0,
@@ -187,23 +193,23 @@ To define a symmetric coordinate system, one starts by separating the external a
 \end{equation}
 where $\Phi_k$ is in the range $0 \leq \Phi_k < 2\pi$ and $\Theta$ is in the range $0 \leq \Theta \leq \pi/4$. The distances between the particles $ij$ are related through 
 
-\begin{equation}
+\begin{equation}\label{eq:distance}
 r_{ij} = \abs{\mathbf{x}_j - \mathbf{x}_i} = d_k \abs{\mathbf{r}_k} = \frac{d_k\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi_k)\big]^{1/2}.
 \end{equation}
 The kinematic rotations \eqref{eq:kinematic_rot} correspond to the following transformation in hyperspherical space 
 
-\begin{equation}
+\begin{equation}\label{eq:kinematic_phi_rot}
 \Phi_j = \Phi_i-\beta_{ij}.
 \end{equation}
-This is easily shown by performing transformations within the coordinate set. From now on, we choose $k=3$ and transform all $r_{ij}$ to the coordinates $(\rho,\Theta,\Phi_3)$. 
+This is easily shown by performing transformations within the coordinate set. From now on, we chose $k=3$ and transform all $r_{ij}$ to the coordinates $(\rho,\Theta,\Phi_3)$. 
 
 \begin{equation}
 \begin{aligned}
-r_{12} = d_3 \mid\mathbf{r}_{3}\mid &= \frac{\rho d_3}{\sqrt{2}}\big[1+\cos(2\Theta)\cos(2\Phi_3)\big]^{1/2}\\
+r_{12} = d_3 \mid\mathbf{r}_{3}\mid &= \frac{\rho d_3}{\sqrt{2}}\big[1+\cos(2\Theta)\cos(2\Phi_3)\big]^{1/2},\\
 r_{23} = d_1 \mid\mathbf{r}_{1}\mid &= \frac{d_1\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi_1)\big]^{1/2}\\ 
 &= d_1 \big[\cos^2\beta_{31}\mathbf{r}^2_{3} + \sin^2\beta_{31}\mathbf{R}^2_3 + 2\sin\beta_{31}\cos\beta_{31}\mathbf{r}_3\cdot\mathbf{R}_3\big]^{1/2}\\
 &= \frac{d_1\rho}{\sqrt{2}} \big[1 + \cos(2\Theta)\big(\cos(\Phi_3)\cos(2\beta_{31}) + \sin(2\Phi_3)\sin(2\beta_{31})\big)\big]^{1/2}\\ 
-&= \frac{d_1\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi_3 - 2\beta_{31})\big]^{1/2}\\ 
+&= \frac{d_1\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi_3 - 2\beta_{31})\big]^{1/2},\\ 
 r_{31} = d_2 \mid\mathbf{r}_{2}\mid &= \frac{d_2\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi_2)\big]^{1/2} \\
 &= d_2 \big[\cos^2\beta_{23}\mathbf{r}^2_{3} + \sin^2\beta_{23}\mathbf{R}^2_3 - 2\sin\beta_{23}\cos\beta_{23}\mathbf{r}_3\cdot\mathbf{R}_3\big]^{1/2}\\ 
 &= \frac{d_2\rho}{\sqrt{2}} \big[1 + \cos(2\Theta)\big(\cos(\Phi_3)\cos(2\beta_{23}) - \sin(2\Phi_3)\sin(2\beta_{23})\big)\big]^{1/2}\\ 
@@ -214,24 +220,24 @@ By defining
 
 \begin{equation}
 \begin{aligned}
-\epsilon_1 &= -2\tan^{-1}(-m_2/\mu)\\
-\epsilon_2 &= 2\tan^{-1}(-m_1/\mu).
+\epsilon_1 &= -2\tan^{-1}(-m_2/\mu),\\
+\epsilon_2 &= 2\tan^{-1}(-m_1/\mu),
 \end{aligned}
 \end{equation} 
-These the distances are given by 
+these the distances are given by 
 
 \begin{equation}
 \begin{aligned}
-r_{12} &= \frac{d_3\rho}{\sqrt{2}}\big[1+\cos(2\Theta)\cos(2\Phi)\big]^{1/2}\\
-r_{23} &= \frac{d_1\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi + \epsilon_1)\big]^{1/2}\\
-r_{31} &= \frac{d_2\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi + \epsilon_2)\big]^{1/2}
+r_{12} &= \frac{d_3\rho}{\sqrt{2}}\big[1+\cos(2\Theta)\cos(2\Phi)\big]^{1/2},\\
+r_{23} &= \frac{d_1\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi + \epsilon_1)\big]^{1/2},\\
+r_{31} &= \frac{d_2\rho}{\sqrt{2}}\big[1 + \cos(2\Theta)\cos(2\Phi + \epsilon_2)\big]^{1/2},
 \end{aligned}
 \end{equation}
-where the indice $3$ is surpressed.
+where index $3$ is suppressed.
 
 Kuppermann pointed out that there are some disadvantages with this representation \cite{KUPPERMANN1975374}. For the mapping of the triatomic potential energy surface to configuration space, we require that every internal configuration corresponds to one point only and that a transformation of $\Phi_k$ and $\Theta$ should rotate, but not distort, the equipotential surface about the $z$-axis. Because each particle arrangement corresponds to two points in the hyperspherical coordinate space within the range of the hyperangles, we perform a second mapping
 
-\begin{equation}
+\begin{equation}\label{eq:SW_trans}
 \begin{aligned}
 \theta &= \pi/2-2\Theta,\\
 \tilde{\phi}_k &= \pi/2-2\Phi_k,
@@ -239,40 +245,41 @@ Kuppermann pointed out that there are some disadvantages with this representatio
 \end{equation}
 where the ranges of these new coordinates are 
 
-\begin{equation}
+\begin{equation}\label{eq:range}
 \begin{aligned}
 0  &\leq \theta \leq \pi/2,\\
 -7\pi/2 &\leq \tilde{\phi}_k < \pi/2,
 \end{aligned}
 \end{equation} 
-and the distances are subsequently given by
+and the distances from \Cref{eq:distance} are subsequently given by
 
 \begin{equation}
 r_{ij} = \frac{d_k\rho}{\sqrt{2}}\big[1 + \sin\theta\sin\tilde{\phi}_k\big]^{1/2}.
 \end{equation}
-To get a more conveinient range we redefine $\phi_k = \tilde{\phi}_k+7\pi/2$, so that the range is $0 \leq \phi_k < 4\pi$. Then we finally get
+To get a more convenient range we redefine $\phi_k = \tilde{\phi}_k+7\pi/2$, so that the range is $0 \leq \phi_k < 4\pi$. Then we finally get
 
 \begin{equation}
 r_{ij} = \frac{d_k\rho}{\sqrt{2}}\big[1 + \sin\theta\cos\phi_k\big]^{1/2},
 \end{equation}
-where the corresponding kinetic rotations are $\phi_j=\phi_i-2\eta_{ij}$, in which the angle $\eta_{ij}$ $(2\eta_{ij} = -2\beta_{ij})$ is in the range $0 \leq \eta_{ij} \leq \pi/2$ and have the properties
+where the corresponding kinetic rotations, which follow from \Cref{eq:kinematic_phi_rot} are $\phi_j=\phi_i+2\beta_{ij}$.
 
-\begin{subequations}
-	\begin{align}
-	&\eta_{ij} = -\eta_{ji}, \quad \eta_{ii} = 0,\\
-	&\tan\eta_{ij} = m_k/\mu,\\
-	&\eta_{12}+\eta_{23}+\eta_{31} = \pi.
-	\end{align} 
-\end{subequations}
-
-If the cartesian coordinates of this point in configuration space is defined to be the regular spherical polar coordinates, then all configurations will map to the upper half-space $z \geq 0$ (since $z_k=\rho\cos\theta$ and $0\leq \theta \leq \pi/2$). Since $\phi_k$ and $\phi_k + 2\pi$ represent the same internal configuration and also points to the same point in configuration space, each point in the upper half-space represent a unique arrangement of the three-body system. Exchanging two of the particles will generate a new arrangement, which corrseponds to a new point in configuration space. 
-
-We can choose one of the branches of $\phi_k$ by restricting the range to $0 \leq \phi_k < 2\pi$. Finally, we choose the Jacobi coordinates where $k=3$ and subsequently get the expression for our hyperspherical coordinates
+If the internal coordinates $\rho$, $\theta$ and $\phi_k$, which represent the three-body system by a point in configuration space, are defined as the regular spherical polar coordinates, then the Cartesian coordinates of this point in configuration space is defined by
 
 \begin{equation}
 \begin{aligned}
-r_{12} &= \frac{d_3\rho}{\sqrt{2}}\big[1+\sin\theta\cos\phi\big]^{1/2}\\
-r_{23} &= \frac{d_1\rho}{\sqrt{2}}\big[1 + \sin\theta\cos(\phi-\varphi_1)\big]^{1/2}\\
+x_k &= \rho \sin\theta\cos\phi_k,\\
+y_k &= \rho \sin\theta\sin\phi_k,\\
+z &= \rho \cos\theta.
+\end{aligned}
+\end{equation}
+Because the polar angle $\theta$ has the range $[0,\pi/2]$, it means that all configurations will map to the upper half-space, $z \geq 0$. Since $\phi_k$ and $\phi_k + 2\pi$ represent the same internal configuration and also points to the same point in configuration space, each point in the upper half-space represents a unique arrangement of the three-body system. Exchanging two of the particles will generate a new arrangement, which corresponds to a new point in configuration space. 
+
+We can chose one of the branches of $\phi_k$ by restricting the range to $0 \leq \phi_k < 2\pi$. Finally, we chose the Jacobi coordinates where $k=3$ and subsequently get the expression for our hyperspherical coordinates
+
+\begin{equation}
+\begin{aligned}
+r_{12} &= \frac{d_3\rho}{\sqrt{2}}\big[1+\sin\theta\cos\phi\big]^{1/2},\\
+r_{23} &= \frac{d_1\rho}{\sqrt{2}}\big[1 + \sin\theta\cos(\phi-\varphi_1)\big]^{1/2},\\
 r_{31} &= \frac{d_2\rho}{\sqrt{2}}\big[1 + \sin\theta\cos(\phi + \varphi_2)\big]^{1/2},
 \end{aligned}
 \end{equation}
@@ -286,9 +293,9 @@ where
 \end{equation}
 which for three identical particles is $\varphi_1=\varphi_2=2\pi/3$.
 
-In \cref{fig:potential} the triatomic potential energy surface for the model potential used in \cref{smith_whitten}, see \cref{eq:two_b_potential,eq:potential_sum}, is shown for three identical particles. As seen in the figure, the translation and reflection symmetries reduce the range of $\phi$ once more to $0 \leq \phi < \pi/3$ for identical particles. 
+In \cref{fig:potential} the triatomic potential energy surface for the model potential used in \cref{smith_whitten}, defined by \cref{eq:two_b_potential,eq:potential_sum}, is shown for three identical particles. As seen in the figure, the translation and reflection symmetries reduce the range of $\phi$ once more to be within $[0, \pi/3]$ for identical particles. Note that on this interval we only have one point that represents a two particle overlap ($r_{31}=0$), i.e., a coalescence point; at $(\theta,\phi)=(\pi/2,\pi/3$), the other two coalescence points ($r_{12}=0$ and $r_{23}=0$) are given through symmetry transformations.
 
-\begin{figure*}[!b]
+\begin{figure*}[htbp!]
 	\centering
 	\includegraphics[width=0.60\linewidth]{potential.pdf}
 	\caption{Potential surface for three identical particles. Symmetries due to translations and reflections are seen at $\phi = n\pi/3, \ (n = 1-5)$.}
@@ -306,7 +313,7 @@ where $g^{ij}$ is the inverse, or contravariant, metric tensor and $g$ is the de
 \begin{equation}
 g_{ij} = \sum_{\lambda = 1}^{N} \frac{\partial x_{\lambda}}{\partial q_{i}} \frac{\partial x_{\lambda}}{\partial q_{j}},
 \end{equation}
-where $x_{\lambda} = x_{\lambda}(q_1,\ldots,q_N)$. The metric is usefull for generalizing the concept of distance to general curvilinear coordinate frames and hence maintain the invariance of distance in different coordinate systems. Invariance of the square of the line element $d s^2$ under coordinate transformations can also be considered to define the metric itself since
+where $x_{\lambda} = x_{\lambda}(q_1,\ldots,q_N)$. The metric is useful for generalizing the concept of distance to general curvilinear coordinate frames and hence maintaining the invariance of distance in different coordinate systems. Invariance of the square of the line element $d s^2$ under coordinate transformations can also be considered to define the metric itself, since
 
 \begin{equation}
 d s^2 = d\mathbf{x} \cdot d\mathbf{x} = \sum_{i,j}^{N} g_{ij}  d q_{i} d q_{j} = g.
@@ -318,7 +325,7 @@ d\mathbf{x} = \frac{\partial \mathbf{x}}{\partial q_{i}} d q_{i},
 \end{equation} 
 where $\mathbf{x}$ is the position vector.
 
-The tranformation of interest for us is that from the mass weighted Jacobi coordinates $\mathbf{r}_k$ and $\mathbf{R}_k$ to a set of symmetric coordinates. Here we choose to work with one of the pair of the Jacobi coordinate sets $(i,j,k)=(1,2,3)$ and surpress the subscript $3$. Since the three-body system has $N=6$ dimensions after separating out the center-of-mass we collect the Cartesian components of the mass-weighted Jacobian vectors into the $6$-position
+The transformation of interest for us is that from the mass weighted Jacobi coordinates $\mathbf{r}_k$ and $\mathbf{R}_k$ to a set of symmetric coordinates. Here we chose to work with one of the pair of the Jacobi coordinate sets $(i,j,k)=(1,2,3)$ and suppress the subscript. Since the three-body system has $N=6$ dimensions after separating out the centre-of-mass we collect the Cartesian components of the mass-weighted Jacobian vectors into the $6$-position
 
 \begin{equation}
 \mathbf{x} = 
@@ -336,20 +343,7 @@ R_z\\
 \end{pmatrix}.
 \end{equation}
 
-At any instant, three particles form a plane in $\mathbb{R}^3$. If we consider this plane to be the $xy$-plane -- and define the internal motion of the particles within this plane in terms of hyperspherical coordinates $(\rho, \Theta, \Phi)$ -- our coordinate system must rotate in this plane. That is, we use a body-fixed axis system $xyz$, which rotates with respect to the space-fixed axis system $x'y'z'$. The orientation of the body-fixed frame is related to the space-fixed frame by the Euler angles. With the $z$-axis perpendicular to the plane and with the positive axis in the direction of the vector $\mathbf{r} \times \mathbf{R}$, Smith and Whitten \cite{Smith_Whitten1968} defined these as   
-
-\begin{equation}
-\begin{aligned}
-r_x &= \rho \cos\Theta\cos\Phi,\\
-r_y &= -\rho \sin\Theta\sin\Phi,\\
-r_z &= 0\\
-R_x &= \rho \cos\Theta\sin\Phi,\\
-R_y &= \rho \sin\Theta\cos\Phi,\\
-R_z &= 0.
-\end{aligned}   
-\end{equation}
-
-To describe how rotations of the body-fixed frame affects the derivatives in the space-fixed frame it is enough to consider infinitesimal rotations.  Let $d\mathbf{\Omega}$ be the angular displacement differential vector of the rotating axes $xyz$ with respect to the fixed axes $x'y'z'$
+We start from the definition of the internal coordinates given in \Cref{eq:SW}. To describe how rotations of the body-fixed frame affects the derivatives in the space-fixed frame it is enough to consider infinitesimal rotations.  Let $d\mathbf{\Omega}$ be the angular displacement differential vector of the rotating axes $xyz$ with respect to the fixed axes $x'y'z'$
 
 \begin{equation}
 d\mathbf{\Omega} =
@@ -446,7 +440,7 @@ Here the metric tensor
 \mathbf{C}^\mathrm{T} & \mathbf{K}
 \end{pmatrix}
 \end{equation}
-is partitioned into the submatrices $\mathbf{G}$, $\mathbf{K}$ and $\mathbf{C}$, which are given by 
+is partitioned into the submatrices $\mathbf{G}$, $\mathbf{K}$ and $\mathbf{C}$, which from \Cref{eq:matrix} are given by 
 
 \begin{align}
 \mathbf{G} &=
@@ -529,9 +523,9 @@ respectively. Now, if the momentum vector is given by
 \partial/\partial q_1\\
 \vdots\\
 \partial/\partial q_N\\
-\end{pmatrix}
+\end{pmatrix},
 \end{equation}
-we can express the kinetic energy operator given in \eqref{eq:kinetic_e_op} in terms of this vector and the metric
+then we can express the kinetic energy operator given in \eqref{eq:kinetic_e_op} in terms of this vector and the metric
 
 \begin{equation}\label{eq:T_SW}
 \begin{aligned}
@@ -546,7 +540,9 @@ we can express the kinetic energy operator given in \eqref{eq:kinetic_e_op} in t
 \end{aligned}
 \end{equation}
 
-Now, as have been mentioned previously, we use the Euler angles $\alpha,\beta,\gamma$ to relate the body-fixed axes $xyz$ with the space-fixed axes $x'y'z'$. Any coordinate frame that coincide with the space-fixed frame can be made to coincide with the body-fixed frame by performing a series of three basic rotations (right-handed). There are several ways for defining the Euler angles, the convention used by Johnson \cite{Johnson_1983} is adopted here and the method is decribed in detail in \cite{arfken_weber_harris_2013}. If the line of nodes $\xi$ are the intersection of the planes $x'y'$ and $xy$, then $\alpha$ is the angle between the $y'$-axis and the line of nodes. The operational sequence are the following:
+To understand the last term in the kinetic energy operator we need to make a detour and discuss the spatial orientation of the triangle formed by the three particles in terms of Euler angles. However, for $J=0$ states this last term vanishes and then \Cref{eq:T_SW} reduces to the kinetic energy term in the Hamiltonian in \Cref{eq:hamiltonian_0}. 
+
+As has been mentioned previously, we use the Euler angles $\alpha,\beta,\gamma$ to relate the body-fixed axes $xyz$ with the space-fixed axes $x'y'z'$. Any coordinate frame that coincides with the space-fixed frame can be made to coincide with the body-fixed frame as well by performing a series of three basic rotations (right-handed). There are several ways for defining the Euler angles; the convention used by Johnson \cite{Johnson_1983} is adopted here and the method is described in detail in \cite{arfken_weber_harris_2013}. If the line of nodes $\xi$ is the intersection of the planes $x'y'$ and $xy$, then $\alpha$ is the angle between the $y'$-axis and the line of nodes. The operational sequence is the following:
 
 \begin{enumerate}[(i)]  
 	\item First rotate the coordinates $x'y'z'$ counterclockwise through an angle $\alpha$ in the range $0 \leq \alpha < 2\pi$ about the $z'$-axis, using $\mathbf{S}_{\alpha}$, into the new coordinates $\bar{x}'\xi z'$.
@@ -591,12 +587,12 @@ and
 \sin\beta \cos\alpha & \sin\beta \sin\alpha & \cos\beta
 \end{pmatrix}.
 \end{equation}
-The cartesian coordinates $\mathbf{x}$ and $\mathbf{x}'$ of a point $P$ in the two frames are thus related through
+The Cartesian coordinates $\mathbf{x}$ and $\mathbf{x}'$ of a point $P$ in the two frames are thus related through
 
 \begin{equation}
 \mathbf{x} = \mathbf{S}\mathbf{x}'. 
 \end{equation}
-Now, the general angular displacement differential  $d\mathbf{\Omega}$ can be considered as consisting of three consecutive infinitesimal rotations where $d\Omega_{\alpha} = d\alpha$, $d\Omega_{\beta} = d\beta$ and $d\Omega_{\gamma} = d\gamma$. The vector $d\mathbf{\Omega}$ can be obtained as the sum of three different angular displacement differential vectors; $d\mathbf{\Omega_{\alpha}}$ is along the space-fixed $z'$-axis, $d\mathbf{\Omega_{\beta}}$ is along the line of nodes and $d\mathbf{\Omega_{\gamma}}$ is along the body-fixed $z$-axis \cite{goldstein_poole_safko_2000}. Since $d\mathbf{\Omega_{\alpha}}$ is along the $z'$-axis, its components are obtained by the applying the total rotation matrix. Thus, if the total rotation matrix is written
+Now, the general angular displacement differential  $d\mathbf{\Omega}$ can be considered to consist of three consecutive infinitesimal rotations where $d\Omega_{\alpha} = d\alpha$, $d\Omega_{\beta} = d\beta$ and $d\Omega_{\gamma} = d\gamma$. The vector $d\mathbf{\Omega}$ can be obtained as the sum of three different angular displacement differential vectors; $d\mathbf{\Omega_{\alpha}}$ is along the space-fixed $z'$-axis, $d\mathbf{\Omega_{\beta}}$ is along the line of nodes and $d\mathbf{\Omega_{\gamma}}$ is along the body-fixed $z$-axis \cite{goldstein_poole_safko_2000}. Since $d\mathbf{\Omega_{\alpha}}$ is along the $z'$-axis, its components are obtained by applying the total rotation matrix. Thus, if the total rotation matrix is written
 
 \begin{equation}
 \mathbf{S} = [\mathbf{S}_1 \quad \mathbf{S}_2 \quad \mathbf{S}_3],
@@ -611,7 +607,7 @@ then the body-fixed displacement differential angles $d\mathbf{\Omega}_{\alpha}$
 \cos\beta
 \end{pmatrix} d\alpha.
 \end{equation}
-Next, because $d\mathbf{\Omega_{\beta}}$ is along the line of nodes, we only need to apply the last transformation $\mathbf{S}_{\gamma}$ to retreive
+Next, because $d\mathbf{\Omega_{\beta}}$ is along the line of nodes, we only need to apply the last transformation $\mathbf{S}_{\gamma}$ to retrieve
 
 \begin{equation}
 (\mathbf{\Omega}_{\beta})_{\mathbf{x}} = \mathbf{S}_{\gamma_2} d\beta= 
@@ -669,12 +665,12 @@ d\beta\\
 d\gamma\\
 \end{pmatrix}
 \end{equation}
-correspond to a transformation of the metric, which is easily derived from the squared line element, where
+corresponds to a transformation of the metric, which is easily derived from the squared line element, where
 
 \begin{equation}
 d s^2 = d \mathbf{q}^{\mathrm{T}}\mathbf{g}d \mathbf{q} = (d \mathbf{q}')^\mathrm{T}\mathbf{g}'d\mathbf{q}'.
 \end{equation}
-The metric thus transform as 
+The metric thus transforms as 
 
 \begin{equation}
 \mathbf{g}'=\mathbf{B}^{\mathrm{T}}\mathbf{g}\mathbf{B},
@@ -688,13 +684,13 @@ in which
 0      & \tilde{\mathbf{S}}
 \end{pmatrix}.
 \end{equation}
-Subsequently, the square root of the determinant transform into
+Subsequently, the square root of the determinant transforms into
 
 \begin{equation}
 g'^{1/2}=(\mid\mathbf{B}\mid^2 \mid\mathbf{g}\mid)^{1/2} = (\mid\tilde{\mathbf{S}}\mid^2 \mid\mathbf{g}\mid)^{1/2}
 = \frac{\rho^5}{4}\sin(4\Theta)\sin\beta.
 \end{equation}
-Since a general curvilinear coordinate system of $N$ dimensions have a volume element
+Since a general curvilinear coordinate system of $N$ dimensions has a volume element
 
 \begin{equation}
 d ^Nv = g^{1/2}\prod_{i=1}^{N} d q_i,
@@ -705,15 +701,7 @@ the sought volume element is
 d^6v = g^{1/2}\prod_{i=1}^{6} d q_i = \frac{\rho^5}{4}\sin(4\Theta)\sin\beta \,d\rho \,d\Theta \, d\Phi \, d\alpha \,d\beta \,d\gamma.
 \end{equation}
 Lastly, to produce a representation of the entire internal configuration
-space that is unbiased by the particular choice of the three Jacobi coordinate sets, we follow Kuppermann's mapping procedure \cite{KUPPERMANN1975374} and make the following modification of the internal angles
-
-\begin{equation}
-\begin{aligned}
-\Theta &= \frac{\pi}{4}-\frac{\theta}{2} \implies \frac{\partial}{\partial\Theta} = -2\frac{\partial}{\partial\theta},\\
-\Phi &= \frac{\pi}{4}-\frac{\phi}{2} \implies \frac{\partial}{\partial\Phi} = -2\frac{\partial}{\partial\phi}.
-\end{aligned}
-\end{equation}
-Now, define
+space that is unbiased by the particular choice of the three Jacobi coordinate sets, we follow Kuppermann's mapping procedure \cite{KUPPERMANN1975374} and make the modification of the internal angles described in \Cref{eq:SW_trans}. Now, define
 
 \begin{equation}
 \mathbf{P} = 
@@ -792,13 +780,11 @@ Now, using the relations
 &\sin^2\Theta    =\frac{1}{2}(1-\sin\theta)
 \end{aligned}
 \end{equation}
-in conjunction with \eqref{eq:J_vector} the kinetic energy operator \eqref{eq:T_SW} becomes
+in conjunction with \eqref{eq:J_vector}, the kinetic energy operator \eqref{eq:T_SW} becomes
 
 \begin{equation}
 \begin{aligned}
-T &=-\frac{\hbar^2}{2\mu}\Bigg[\frac{1}{\rho^5}\frac{\partial}{\partial\rho}\rho^5\frac{\partial}{\partial\rho} + \frac{4}{\rho^2}\Bigg(\frac{1}{\sin(2\theta)}\frac{\partial}{\partial\theta}\sin(2\theta)\frac{\partial}{\partial\theta}\\
-&+\frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial\phi^2} \Bigg)\Bigg]-\frac{1}{\mu\rho^2}\Bigg[\frac{J^2_x}{(1-\sin\theta)} + \frac{J^2_y}{(1+\sin\theta)} +\frac{J^2_z}{2\sin^2\theta}\Bigg]\\
-&+ \frac{4i\hbar\cos\theta J_z}{2\mu\rho^2\sin^2\theta}\frac{\partial}{\partial\phi},
+T &=-\frac{1}{2\mu}\Bigg[\frac{1}{\rho^5}\frac{\partial}{\partial\rho}\rho^5\frac{\partial}{\partial\rho} + \frac{4}{\rho^2}\Bigg(\frac{1}{\sin 2\theta}\frac{\partial}{\partial\theta}\sin 2\theta\frac{\partial}{\partial\theta} +\frac{1}{\sin^2 \theta}\frac{\partial^2}{\partial\phi^2} \Bigg)\Bigg]\\ &-\frac{1}{\mu\rho^2}\Bigg[\frac{J^2_x}{(1-\sin\theta)} + \frac{J^2_y}{(1+\sin\theta)} +\frac{J^2_z}{2\sin^2\theta}\Bigg]+ \frac{4i\cos\theta J_z}{2\mu\rho^2\sin^2\theta}\frac{\partial}{\partial\phi},
 \end{aligned}
 \end{equation}
 with the corresponding volume element
@@ -809,9 +795,9 @@ d^6 v = \frac{1}{8}\rho^5 \sin\theta\cos\theta\sin\beta \, d\rho \, d\theta \, d
 If we only consider $J=0$ states, the Hamiltonian reduces to 
 
 \begin{equation}
-H_{0} = -\frac{1}{2 \mu} \Bigg[ \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} + \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi).
+H_{0} = -\frac{1}{2 \mu} \Bigg[ \frac{1}{\rho^{5}} \frac{\partial}{\partial \rho} \rho^{5} \frac{\partial}{\partial \rho} + \frac{4}{\rho^{2}}\bigg( \frac{1}{\sin 2\theta} \frac{\partial}{\partial \theta} \sin 2\theta \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}\theta} \frac{\partial^{2}}{\partial \phi^{2}} \bigg) \Bigg] + V(\rho, \theta, \phi).\label{eq:hamiltonian_0}
 \end{equation}
-By rescaling the wave function $\psi = \rho^{5/2} \Psi$ the Schr{\"o}dinger equation becomes
+By rescaling the wavefunction $\psi = \rho^{5/2} \Psi$ the Schr{\"o}dinger equation becomes
 
 \begin{equation}
 H \psi = E \psi,
@@ -821,10 +807,14 @@ where the transformed Hamiltonian operator is given by
 \begin{equation}
 H = \rho^{5/2}H_{0} \rho^{-5/2}. 
 \end{equation}
-This transformation removes the first derivative in the hyper radial kinetic-energy operator and we get the final expression for the Hamiltonian
+This transformation removes the first derivative in the hyperradial kinetic energy operator and we get the final expression for the Hamiltonian
 
 \begin{align}
-H &= -\frac{\hbar^{2}}{2 \mu} \Bigg[ -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}+ \frac{4}{\rho^{2}}\Big( \frac{1}{\sin(2\theta)} \frac{\partial}{\partial \theta} \sin(2\theta) \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}(\theta)} \frac{\partial^{2}}{\partial \phi^{2}} \Big) \Bigg] + V(\rho, \theta, \phi)\\
+H &= -\frac{\hbar^{2}}{2 \mu} \Bigg[ -\frac{15}{4} \frac{1}{\rho^{2}} + \frac{\partial^{2}}{\partial \rho^{2}}+ \frac{4}{\rho^{2}}\bigg( \frac{1}{\sin 2\theta} \frac{\partial}{\partial \theta} \sin 2\theta \frac{\partial}{\partial \theta} + \frac{1}{\sin^{2}\theta} \frac{\partial^{2}}{\partial \phi^{2}} \bigg) \Bigg] + V(\rho, \theta, \phi)\\
 &= -\frac{\hbar^{2}}{2 \mu}\frac{\partial^2}{\partial \rho^2} + \frac{\hbar^{2}}{2 \mu \rho^{2} } \Bigg(\Lambda^2 + \frac{15}{4}\Bigg)+ V(\rho, \theta, \phi),
 \end{align}
-where $\Lambda^2$ is the grand angular momentum operator.   
+where $\Lambda^2$ is the squared grand angular momentum operator, which is given by
+
+\begin{equation}
+\Lambda^2 = -\frac{4}{\sin 2\theta} \frac{\partial}{\partial \theta} \sin 2\theta \frac{\partial}{\partial \theta} - \frac{4}{\sin^{2}\theta} \frac{\partial^{2}}{\partial \phi^{2}}.
+\end{equation}   

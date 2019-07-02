@@ -789,6 +789,112 @@
       \endverb
       \keyw{Condensed Matter - Quantum Gases,Physics - Atomic Physics,Quantum Physics}
     \endentry
+    \entry{WANG20131}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=a44af477e42cc4d9bbc346304bdd8525}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Yujun},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=5360f4175f2349053df00d6f04a61c29}{%
+           family={Incao},
+           family_i={I\bibinitperiod},
+           given={Jose\bibnamedelimb P.\bibnamedelimi D'},
+           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=ceca3cde1cdebb7e2d96d5e9c4d06ad3}{%
+           family={Esry},
+           family_i={E\bibinitperiod},
+           given={Brett\bibnamedelima D.},
+           given_i={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=716162a89477925f8fb11e6ca3992074}{%
+           family={Arimondo},
+           family_i={A\bibinitperiod},
+           given={Ennio},
+           given_i={E\bibinitperiod}}}%
+        {{hash=02d9b991d102ba11f19f12dc78348878}{%
+           family={Berman},
+           family_i={B\bibinitperiod},
+           given={Paul\bibnamedelima R.},
+           given_i={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=917896baed3ff38d2f8afcf8a617a2af}{%
+           family={Lin},
+           family_i={L\bibinitperiod},
+           given={Chun\bibnamedelima C.},
+           given_i={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{ce50a8d216d45f6b61f89c4585143eb6}
+      \strng{fullhash}{ce50a8d216d45f6b61f89c4585143eb6}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Atomic, Molecular, and Optical Physics}
+      \field{issn}{1049-250X}
+      \field{series}{Advances In Atomic, Molecular, and Optical Physics}
+      \field{title}{Chapter 1 - Ultracold Few-Body Systems}
+      \field{volume}{62}
+      \field{year}{2013}
+      \field{pages}{1\bibrangedash 115}
+      \range{pages}{115}
+      \verb{doi}
+      \verb https://doi.org/10.1016/B978-0-12-408090-4.00001-3
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/B9780124080904000013
+      \endverb
+    \endentry
+    \entry{3BP_origin}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e453927e646e355f3edb61c5518de1d1}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Jia},
+           given_i={J\bibinitperiod}}}%
+        {{hash=bda4d20c196b78e0e235739de41fb9ec}{%
+           family={D'Incao},
+           family_i={D\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=4d9235f1975196320c77d6fab2bd1122}{%
+           family={Esry},
+           family_i={E\bibinitperiod},
+           given={B.\bibnamedelimi D.},
+           given_i={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d8b86c7bb4389e7f80274f0f31dce0fd}{%
+           family={Greene},
+           family_i={G\bibinitperiod},
+           given={Chris\bibnamedelima H.},
+           given_i={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{b51edf14e24c461ba431d8ac8b55042c}
+      \strng{fullhash}{3b969dda0c4670f039e286b9dc853d96}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{26}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{06}
+      \field{title}{Origin of the Three-Body Parameter Universality in Efimov Physics}
+      \field{volume}{108}
+      \field{year}{2012}
+      \field{pages}{263001}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.108.263001
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.108.263001
+      \endverb
+    \endentry
     \entry{Lim1977}{article}{}
       \name{author}{3}{}{%
         {{hash=0c40fd33c03d8ce3caab66ff875a267a}{%
@@ -1309,65 +1415,6 @@
       \verb https://doi.org/10.1063/1.4937138
       \endverb
     \endentry
-    \entry{WANG20131}{incollection}{}
-      \name{author}{3}{}{%
-        {{hash=a44af477e42cc4d9bbc346304bdd8525}{%
-           family={Wang},
-           family_i={W\bibinitperiod},
-           given={Yujun},
-           given_i={Y\bibinitperiod}}}%
-        {{hash=5360f4175f2349053df00d6f04a61c29}{%
-           family={Incao},
-           family_i={I\bibinitperiod},
-           given={Jose\bibnamedelimb P.\bibnamedelimi D'},
-           given_i={J\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=ceca3cde1cdebb7e2d96d5e9c4d06ad3}{%
-           family={Esry},
-           family_i={E\bibinitperiod},
-           given={Brett\bibnamedelima D.},
-           given_i={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \name{editor}{3}{}{%
-        {{hash=716162a89477925f8fb11e6ca3992074}{%
-           family={Arimondo},
-           family_i={A\bibinitperiod},
-           given={Ennio},
-           given_i={E\bibinitperiod}}}%
-        {{hash=02d9b991d102ba11f19f12dc78348878}{%
-           family={Berman},
-           family_i={B\bibinitperiod},
-           given={Paul\bibnamedelima R.},
-           given_i={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=917896baed3ff38d2f8afcf8a617a2af}{%
-           family={Lin},
-           family_i={L\bibinitperiod},
-           given={Chun\bibnamedelima C.},
-           given_i={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Academic Press}%
-      }
-      \strng{namehash}{ce50a8d216d45f6b61f89c4585143eb6}
-      \strng{fullhash}{ce50a8d216d45f6b61f89c4585143eb6}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in Atomic, Molecular, and Optical Physics}
-      \field{issn}{1049-250X}
-      \field{series}{Advances In Atomic, Molecular, and Optical Physics}
-      \field{title}{Chapter 1 - Ultracold Few-Body Systems}
-      \field{volume}{62}
-      \field{year}{2013}
-      \field{pages}{1\bibrangedash 115}
-      \range{pages}{115}
-      \verb{doi}
-      \verb https://doi.org/10.1016/B978-0-12-408090-4.00001-3
-      \endverb
-      \verb{url}
-      \verb http://www.sciencedirect.com/science/article/pii/B9780124080904000013
-      \endverb
-    \endentry
     \entry{rimondo_berman_lin}{misc}{}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
@@ -1672,6 +1719,71 @@
       \endverb
       \verb{url}
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.83.1751
+      \endverb
+    \endentry
+    \entry{arpack}{misc}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{journaltitle}{ARPACK - Arnoldi Package}
+      \verb{url}
+      \verb https://www.caam.rice.edu/software/ARPACK/
+      \endverb
+    \endentry
+    \entry{Wacker_2018}{article}{}
+      \name{author}{6}{}{%
+        {{hash=ef37f7125688c265e23f9f61d60931cb}{%
+           family={Wacker},
+           family_i={W\bibinitperiod},
+           given={L.\bibnamedelimi J.},
+           given_i={L\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=53d23572f6ecb701d23688b52a730410}{%
+           family={Jørgensen},
+           family_i={J\bibinitperiod},
+           given={N.\bibnamedelimi B.},
+           given_i={N\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=86d307b7c8a97ae483d3d80c02659796}{%
+           family={Skalmstang},
+           family_i={S\bibinitperiod},
+           given={K.\bibnamedelimi T.},
+           given_i={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=2e316cc1bd1e1535421e6b4d7c2cf5ad}{%
+           family={Skou},
+           family_i={S\bibinitperiod},
+           given={M.\bibnamedelimi G.},
+           given_i={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=6a24bd7fa21be51e7a03d0ff2ed29fdb}{%
+           family={Volosniev},
+           family_i={V\bibinitperiod},
+           given={A.\bibnamedelimi G.},
+           given_i={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=a19d86c32298f8e2f116965335fd9fcb}{%
+           family={Arlt},
+           family_i={A\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           given_i={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{deca58982d50698a6e68d60567a961c2}
+      \strng{fullhash}{30569e92dbb4af16547f96dd28e62444}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{5}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{11}
+      \field{title}{Temperature dependence of an Efimov resonance in ${}^{39}\mathrm{K}$}
+      \field{volume}{98}
+      \field{year}{2018}
+      \field{pages}{052706}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.98.052706
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.98.052706
       \endverb
     \endentry
     \entry{KUPPERMANN1975374}{article}{}

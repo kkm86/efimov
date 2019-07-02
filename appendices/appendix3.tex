@@ -1,5 +1,5 @@
 \chapter{Basis Splines}\label{B-splines}
-A basis spline, or B-spline, of order $k$ is a piecewise polynomial function of degree $(k-1)$ defined on a collection of points, $t_i$, called \textit{knot points}. The array formed by these knot points are refered to as \textit{knot sequence}, or knot vector, where $t_i\leq t_{i+1}$. B-splines of order $k$ can be defined recursively by the Cox-de Boor formula. With a given knot sequence, the B-splines of order $k=1$ is defined as
+A basis spline, or B-spline, of order $k$ is a piecewise polynomial function of degree $(k-1)$ defined on a collection of points, $t_i$, called \textit{knot points}. The array formed by these knot points are referred to as \textit{knot sequence}, or knot vector, where $t_i\leq t_{i+1}$. B-splines of order $k$ can be defined recursively by the Cox-de Boor formula. With a given knot sequence, the B-splines of order $k=1$ are defined as
 
 \begin{equation}
 B_{i,k=1}(x) \doteq
@@ -23,14 +23,14 @@ By placing $(k-1)$ additional points, called \text{ghost points}, at the end-poi
 \begin{equation}
 \frac{\partial}{\partial x}B_{i,k}(x) = (k-1)\bigg(\frac{B_{i,k-1}(x)}{t_{i+k-1}-t_i} + \frac{B_{i+1,k-1}(x)}{t_{i+k}-t_{i+1}}\bigg),
 \end{equation}
-and the second derivative
+and the second derivative by
 
 \begin{align}
 \frac{\partial^2}{\partial x^2}B_{i,k}(x) &= \frac{(k-1)(k-2)B_{i,k-2}(x)}{(t_{i+k-1}-t_i)(t_{i+k-2}-t_i)} - \frac{(k-1)(k-2)B_{i+1,k-2}(x)}{(t_{i+k-1}-t_i)(t_{i+k-1}-t_{i+1})}\nonumber\\
 &- \frac{(k-1)(k-2)B_{i+1,k-2}(x)}{(t_{i+k}-t_{i+1})(t_{i+k-1}-t_{i+1})} +  \frac{(k-1)(k-2)B_{i+2,k-2}(x)}{(t_{i+k}-t_{i+1})(t_{i+k}-t_{i+2})}.
 \end{align}
 
-The approach of placing the ghost points in the end-points is common because at the first physical point only the first B-spline non-zero and only the first two B-splines will have non-zero derivatives. Likewise, at the last physical point only the last B-spline will be non-zero and only the two last B-splines will have non-zero derivatives. Consequently, this choice favors implementation of boundary conditions which require the function or it's derivative to be zero at the boundary.
+The approach of placing the ghost points in the end-points is common because at the first physical point only the first B-spline will be non-zero and only the first two B-splines will have non-zero derivatives. Likewise, at the last physical point only the last B-spline will be non-zero and only the two last B-splines will have non-zero derivatives. Consequently, this choice favours implementation of boundary conditions which require the function or its derivative to be zero at the boundary.
 
 \begin{figure*}[htbp!]
 	\centering

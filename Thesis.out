@@ -1,5 +1,5 @@
-\BOOKMARK [0][-]{chapter*.2}{List of Figures}{}% 1
-\BOOKMARK [0][-]{chapter*.3}{List of Tables}{}% 2
+\BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 1
+\BOOKMARK [0][-]{chapter*.4}{List of Tables}{}% 2
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 3
 \BOOKMARK [1][-]{section.1.1}{Background}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.2}{The Birth of Efimov Physics}{chapter.1}% 5
@@ -25,17 +25,20 @@
 \BOOKMARK [2][-]{subsection.4.3.2}{Three-body Effective Potentials}{section.4.3}% 25
 \BOOKMARK [1][-]{section.4.4}{Hyperangular Coordinates}{chapter.4}% 26
 \BOOKMARK [2][-]{subsection.4.4.1}{Delves Coordinates}{section.4.4}% 27
-\BOOKMARK [2][-]{subsection.4.4.2}{Smith-Whitten Coordinates}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.2}{Smith\205Whitten Coordinates}{section.4.4}% 28
 \BOOKMARK [0][-]{chapter.5}{Numerical Approach}{}% 29
 \BOOKMARK [1][-]{section.5.1}{Basis Splines Expansion}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.2}{Gauss-Legendre Quadrature}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.2}{Gauss\205Legendre Quadrature}{chapter.5}% 31
 \BOOKMARK [0][-]{chapter.6}{Scattering Model}{}% 32
 \BOOKMARK [0][-]{chapter.7}{Results and Discussion}{}% 33
-\BOOKMARK [0][-]{chapter.8}{Outlook}{}% 34
-\BOOKMARK [0][-]{chapter.9}{Outlook}{}% 35
-\BOOKMARK [0][-]{appendix.A}{Hyperspherical Coordinates}{}% 36
-\BOOKMARK [1][-]{section.A.1}{Delves Coordinates}{appendix.A}% 37
-\BOOKMARK [1][-]{section.A.2}{Modified Smith\205Whitten Coordinates}{appendix.A}% 38
-\BOOKMARK [2][-]{subsection.A.2.1}{Coordinate Mapping}{section.A.2}% 39
-\BOOKMARK [2][-]{subsection.A.2.2}{Transformation of the Kinetic Energy Operator}{section.A.2}% 40
-\BOOKMARK [0][-]{appendix.B}{Basis Splines}{}% 41
+\BOOKMARK [1][-]{section.7.1}{Convergence and Accuracy}{chapter.7}% 34
+\BOOKMARK [1][-]{section.7.2}{Comparison to the Analytical Model}{chapter.7}% 35
+\BOOKMARK [1][-]{section.7.3}{Analysis of Structural Features}{chapter.7}% 36
+\BOOKMARK [0][-]{chapter.8}{Conclusions and Outlook}{}% 37
+\BOOKMARK [0][-]{appendix.A}{Hyperspherical Coordinates}{}% 38
+\BOOKMARK [1][-]{section.A.1}{Mass Normalized Jacobi Coordinates}{appendix.A}% 39
+\BOOKMARK [1][-]{section.A.2}{Delves Coordinates}{appendix.A}% 40
+\BOOKMARK [1][-]{section.A.3}{Modified Smith\205Whitten Coordinates}{appendix.A}% 41
+\BOOKMARK [2][-]{subsection.A.3.1}{Coordinate Mapping}{section.A.3}% 42
+\BOOKMARK [2][-]{subsection.A.3.2}{Transformation of the Kinetic Energy Operator}{section.A.3}% 43
+\BOOKMARK [0][-]{appendix.B}{Basis Splines}{}% 44

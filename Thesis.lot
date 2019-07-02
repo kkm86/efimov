@@ -5,13 +5,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Analytically derived eigenvalues together with numerically calculated eigenvalues for three identical bosons.\relax }}{43}{table.caption.13}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Analytically derived eigenvalues together with numerically calculated eigenvalues for three identical bosons.\relax }}{43}{table.caption.14}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces The three lowest numerical eigenvalues $\mathaccentV {tilde}07E{U}_n$ calculated with an increasing number of B-splines in each hyperangular coordinate. All three eigenvalues have converged at $N_{\theta }=15$. The analytical eigenvalues are $U_{00}=0$, $U_{20}=32$ and $U_{03}=60$, see \Cref {table:1}.\relax }}{50}{table.caption.14}
+\contentsline {table}{\numberline {5.1}{\ignorespaces The three lowest numerical eigenvalues $\mathaccentV {tilde}07E{U}_n$ calculated with an increasing number of B-splines in each hyperangular coordinate. All three eigenvalues have converged at $N_{\theta }=15$. The analytical eigenvalues are $U_{00}=0$, $U_{20}=32$ and $U_{03}=60$, see \Cref {table:1}.\relax }}{50}{table.caption.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Three-body effective potential energy values $\xi (\rho )$ at different hyperradii for $a_1 = -2702020$ a.u. and $a_1 = 1966590$ a.u. The potential for $a<0$ has converged, while the potential for $a>0$ tends to converge to the universal value $-s_0^2 \simeq -1.01251$ at hyperradii close to $\rho =15000$ a.u.\relax }}{57}{table.caption.17}
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Three-body effective potential energy values $\xi (\rho )$ at different hyperradii for $a_1 = -2702020$ a.u. and $a_1 = 1966590$ a.u. The potential for $a<0$ has converged, while the potential for $a>0$ tends to converge to the universal value $-s_0^2 \simeq -1.01251$ at hyperradii close to $\rho =15000$ a.u.\relax }}{57}{table.caption.18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

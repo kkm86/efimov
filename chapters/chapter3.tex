@@ -1,6 +1,6 @@
 \chapter{Scattering Theory}\label{chap:3}
 \section{Two-body Scattering} \label{Two-body scattering}
-A collision between a pair of particles can be described in their centre-of-mass frame as the scattering of a particle with reduced mass $\mu_{2b}$ ($\mu_{2b} = m_1m_2/(m_1 + m_2)$) by the potential $V(\mathbf{r})$. The time-independent  Schr{\"o}dinger equation for the relative motion is then given by 
+A collision between a pair of particles can be described in their centre-of-mass frame as the scattering of a particle with reduced mass $\mu_{2\mathrm{b}}$ ($\mu_{2\mathrm{b}} = m_1m_2/(m_1 + m_2)$) by the potential $V(\mathbf{r})$. The time-independent  Schr{\"o}dinger equation for the relative motion is then given by 
 
 \begin{equation} \label{eq:22}
 \bigg[-\frac{\hbar^2}{2\mu}\nabla^2 + V(\mathbf{r})\bigg]\psi(\mathbf{r}) = \frac{\hbar^2 k^2}{2 \mu}\psi(\mathbf{r}),
@@ -83,12 +83,12 @@ in which $c_l$ are unknown coefficients. The asymptotic behaviour of \eqref{eq:2
 \begin{equation}\label{eq:31}
 \psi(\mathbf{r}) \xrightarrow{r \to \infty} \frac{1}{2ikr} \sum_{l=0}^{\infty} c_l P_l(\cos\theta) e^{-i\delta_l(k)} \big((-1)^{l+1}e^{-ikr} + e^{2i\delta_l(k)}e^{ikr}\big).
 \end{equation} 
-By comparing the asymptotic form of the incoming waves expressed in \cref{eq:30,eq:31} it is evident that the coefficents $c_l = (2l+1)e^{i\delta_l(k)}$, and the asymptotic scattered wave is therefore given by
+By comparing the asymptotic form of the incoming waves expressed in \cref{eq:30,eq:31} it is evident that the coefficients $c_l = (2l+1)e^{i\delta_l(k)}$, and the asymptotic scattered wave is therefore given by
 
 \begin{equation}\label{eq:33}
 \psi(\mathbf{r}) \xrightarrow{r \to \infty} \frac{1}{2ikr} \sum_{l=0}^{\infty} (2l+1) P_l(\cos\theta)\big((-1)^{l+1}e^{-ikr} + e^{2i\delta_l(k)}e^{ikr}\big).
 \end{equation}
-For elastic scattering the flux of incoming and outgoing waves is conserved. The presence of a scattering potential will modify the plane wave by changing the relative phase of the incoming and outgoing waves by a phase shift $\delta_l(k)$ for each partial wave with angular momentum $l$. The phase shift $\delta_l(k)$ is thus a measure of the distortion of $u_l(r)$ from the free solution due to the presence of a scattering potential. Depending on whether the potential is attractive or repulsive, the scattered wave will either be pulled in or pushed out, respectively, by the scatterer. The scattering amplitude $f(k,\theta)$ is determined by comparing the outgoing waves in \cref{eq:30,eq:33}, resluting in
+For elastic scattering the flux of incoming and outgoing waves is conserved. The presence of a scattering potential will modify the plane wave by changing the relative phase of the incoming and outgoing waves by a phase shift $\delta_l(k)$ for each partial wave with angular momentum $l$. The phase shift $\delta_l(k)$ is thus a measure of the distortion of $u_l(r)$ from the free solution due to the presence of a scattering potential. Depending on whether the potential is attractive or repulsive, the scattered wave will either be pulled in or pushed out, respectively, by the scatterer. The scattering amplitude $f(k,\theta)$ is determined by comparing the outgoing waves in \cref{eq:30,eq:33}, resulting in
 
 \begin{equation}
 f(k,\theta) = \sum_{l=0}^{\infty} (2l+1)f_l(k)P_l(\cos\theta),
@@ -108,7 +108,7 @@ and
 \begin{equation}
 \sigma(k)= \sum_{l=0}^{\infty} \sigma_l(k) = \frac{4\pi}{k^2}\sum_{l=0}^{\infty}(2l+1)\sin^2\delta_l(k),
 \end{equation}
-in which $\sigma_l$ is the scattering cross-section for each partial wave. So far, we have assumed that the particles are distinguishable and that scattering in the direction $\theta$ could be discriminated from that of scattering in the direction $\pi-\theta$. However, for identical particles these collisional processes will lead to the same final state. Interchaning the spatial coordinates of the particles $\mathbf{r}_1 \leftrightarrow \mathbf{r}_2$ corresponds to replacing the relative position vector $\mathbf{r}$ by $-\mathbf{r}$, which in polar coordinates corresponds to replacing ($r,\theta,\phi$) by ($r,\pi-\theta,\phi+\pi$). Thus, to accurately describe scattering of identical particles the quantum statistics of the particles must be taken into account to assure that the wave function of the total system has the correct symmetry properties. The wave function given in \Cref{eq:26} does, however, not fulfill this requirement. Instead, the correct two-body wave function in the centre-of-mass frame for indistinguishable particles is retrieved by symmetrization (bosons, $\epsilon = 1$) or antisymmetrization (fermions, $\epsilon = -1$), leading to
+in which $\sigma_l$ is the scattering cross-section for each partial wave. So far, we have assumed that the particles are distinguishable and that scattering in the direction $\theta$ could be discriminated from that of scattering in the direction $\pi-\theta$. However, for identical particles these collisional processes will lead to the same final state. Interchanging the spatial coordinates of the particles $\mathbf{r}_1 \leftrightarrow \mathbf{r}_2$ corresponds to replacing the relative position vector $\mathbf{r}$ by $-\mathbf{r}$, which in polar coordinates corresponds to replacing ($r,\theta,\phi$) by ($r,\pi-\theta,\phi+\pi$). Thus, to accurately describe scattering of identical particles the quantum statistics of the particles must be taken into account to assure that the wave function of the total system has the correct symmetry properties. The wave function given in \Cref{eq:26} does, however, not fulfill this requirement. Instead, the correct two-body wave function in the centre-of-mass frame for indistinguishable particles is retrieved by symmetrization (bosons, $\epsilon = 1$) or antisymmetrization (fermions, $\epsilon = -1$), leading to
 
 \begin{equation}
 \psi(\mathbf{r}) \xrightarrow{r \to \infty} \frac{e^{ikz} + \epsilon e^{-ikz}}{\sqrt{2}} + \frac{f(k,\theta)+\epsilon f(k,(\pi-\theta))}{\sqrt{2}}\frac{e^{ikr}}{r}.
@@ -201,7 +201,7 @@ in which $r_c$ and $c_w$ are tuning parameters for the distance to the nadir and
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{scattapp.pdf}
-	\caption{Illustration of three potentials and their coorsponding radial wave functions.}
+	\caption{Illustration of three potentials and their corresponding radial wave functions (the dashed curves).}
 	\label{fig:scattapp}
 \end{figure}
 

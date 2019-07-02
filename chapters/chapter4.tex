@@ -1,9 +1,9 @@
 \chapter{The Three-body Problem}\label{chap:4}
-Two-body scattering processes basically concern two different situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmenation channels (1+2). This makes the construction of permutation-symmetric wavefunctions highly non-trivial. 
+Two-body scattering processes basically concern two different situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmentation channels (1+2). This makes the construction of permutation-symmetric wavefunctions highly non-trivial. 
 
 There are different routes for solving the three-body problem and they involve either solving the three-body Schr{\"o}dinger equation or solving the corresponding set of three Faddeev equations. Irrespective of the specific method of choice for solving the three-body system, most approaches start with the same steps. These include separating out the centre-of-mass motion and then defining a set of relative coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since this removes the mass factors in the kinetic energy operator. Introducing hyperspherical coordinates in combination with an adiabatic representation is then used to reduce the problem of three colliding atoms to dynamics on a set of coupled adiabatic hyperspherical potentials.
 
-Atomic units\footnote{There are four fundamental atomic units -- the electron rest mass $m_e$, the elementary charge $e$, the reduced Planck's constant $\hbar$, and the Coulomb force constant $k_e$ -- whose numerical values are unity by definition, i.e. $m_e = e = \hbar = k_e = 1$. Derived atomic units include dimensions of length and energy, which are expressed in terms of the Bohr radius $a_0$ and the Hartree $E_h$.} (a.u.) will be used in the following chapters. 
+Atomic units\footnote{There are four fundamental atomic units -- the electron rest mass $m_e$, the elementary charge $e$, the reduced Planck's constant $\hbar$, and the Coulomb force constant $k_e$ -- whose numerical values are unity by definition, i.e., $m_e = e = \hbar = k_e = 1$. Derived atomic units include dimensions of length and energy, which are expressed in terms of the Bohr radius $a_0$ and the Hartree $E_h$.} (a.u.) will be used in the following chapters. 
 
 \section{Mass Normalized Jacobi Coordinates}\label{MNJC}
 The spatial position of three particles in $\mathbb{R}^3$ is fixed by nine coordinates $x_{\alpha}^{i}$, where $i(=1,2,3)$ labels the particles, and $\alpha(=1,2,3)$ their Cartesian space coordinates. Let $\mathbf{x}_i$ and $m_{i}$ be the position vector and mass of the $i$th particle in the laboratory frame. If the total mass $M$, the three particle reduced mass $\mu$, and the normalizing constants $d_{k}$ $(k=1,2,3)$ are defined by
@@ -50,7 +50,8 @@ so that
 Henceforth, we will only consider the internal motion part of the  Schr{\"o}dinger equation. To clarify the notations, from now on wavefunctions and energies labelled $\Psi$ and $E$ refer to the internal eigenstates and eigenenergies, which were labelled $\psi$ and $E^{int}$ previously. 
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{jacobii.pdf}
+	\centering
+	\input{jacobi.tex}
 	\caption{Illustration of the three different Jacobi coordinate sets.}
 	\label{fig:2}
 \end{figure}
@@ -85,7 +86,7 @@ Orthogonal transformations within the coordinate set are then given by
 \end{equation}
 
 \section{The Hyperspherical Method}\label{sec:hyperspherical}
-The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these angles $\alpha, \beta, \gamma$ are usually chosen as the Euler angles that specify the  orientation of the body-fixed axis system -- i.e. the triangle formed by the three particles -- relative to a space-fixed coordinate frame. These are the external coordinates of the system. The internal coordinates are the hyperradius, which describes the overall size of the system, and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
+The next common step in the theoretical framework to describe systems of three particles is to introduce hyperspherical coordinates. The components of the two vectors $\mathbf{r}$ and $\mathbf{R}$ are combined into a single, six-dimensional position vector $\mathbf{q}$. The components of this vector can be regarded as the cartesian components of a point in $\mathbb{R}^{6}$. The motion of a three particle system is thus equivalent to the motion of a single particle, with the reduced mass $\mu$, in six-dimensional Euclidean space. The polar coordinates of this point particle are given by one hyperradial coordinate $\rho$, and five hyperangular coordinates, collectively labelled $\Omega$. Three of these angles $\alpha, \beta, \gamma$ are usually chosen as the Euler angles that specify the  orientation of the body-fixed axis system, i.e., the triangle formed by the three particles, relative to a space-fixed coordinate frame. These are the external coordinates of the system. The internal coordinates are the hyperradius, which describes the overall size of the system, and the remaining two hyperangles, which describe the shape of the triangle formed by the  three particles. 
 
 Hyperspherical coordinates are useful for describing fragmentation problems. Fragmentation processes of the system into any one of the possible channels are described by the hyperradius becoming very large $(\rho \rightarrow \infty)$, while the hyperangles distinguish between the different fragmentation channels. The hyperradius is invariant under both rotations and particle permutations, and for the three-body problem it is defined by
 
@@ -93,9 +94,9 @@ Hyperspherical coordinates are useful for describing fragmentation problems. Fra
 \rho = \Big(\mathbf{r}^{2} + \mathbf{R}^{2}\Big)^{1/2}, \quad 0\leq \rho < \infty.
 \end{equation} 
 
-In contrast to the hyperradius there is no unique way to define the hyperangles and the various definitions are not in general invariant under particle permutations. The most common choises of parametrizing the hypersphere fall into two distinct categories: Delves coordinates, and (democratic) Smith-Whitten coordinates. A brief overview of these coordinates is given in \cref{delvescoord,smith_whitten} and a more thorough description can be found in \cref{delves,smith}.
+In contrast to the hyperradius there is no unique way to define the hyperangles and the various definitions are not in general invariant under particle permutations. The most common choices of parametrizing the hypersphere fall into two distinct categories: Delves coordinates, and (democratic) Smith-Whitten coordinates. A brief overview of these coordinates is given in \cref{delvescoord,smith_whitten} and a more thorough description can be found in \cref{delves,smith}.
 
-Independent of the specific choise of hyperangular coordinates, after scaling the total wave function by a factor $\rho^{5/2}$ the three-body Schr{\"o}dinger equation in terms of general hyperspherical coordinates is written
+Independent of the specific choice of hyperangular coordinates, after scaling the total wave function by a factor $\rho^{5/2}$ the three-body Schr{\"o}dinger equation in terms of general hyperspherical coordinates is written
 
 \begin{equation}\label{eq:schrodinger_general}
 \bigg(-\frac{1}{2 \mu}\frac{\partial^2}{\partial \rho^2} + \frac{ \Lambda^2 + \frac{15}{4}}{2 \mu \rho^{2}}+ V(\rho,\Omega)\bigg)\psi(\rho,\Omega) = E\psi(\rho,\Omega),
@@ -108,12 +109,12 @@ The first step in solving \Cref{eq:schrodinger_general} is to introduce the adia
 \begin{equation}\label{adiabatic}
 H_{ad}\Phi_{\nu}{(\rho;\Omega)} = U_{\nu}{(\rho)}\Phi_{\nu}(\rho;\Omega), 
 \end{equation}
-where the eigenvalues $U_{\nu}(\rho)$ are the resulting effective potental curves obtained by solving this eigenvalue equation at a number of different hyperradii, and $H_{ad}$ is the adiabatic Hamiltonian given by
+where the eigenvalues $U_{\nu}(\rho)$ are the resulting effective potential curves obtained by solving this eigenvalue equation at a number of different hyperradii, and $H_{ad}$ is the adiabatic Hamiltonian given by
 
 \begin{equation}\label{eq:adiabitic_hamiltonian}
 H_{ad} = \frac{\Lambda^2+\frac{15}{4}}{2 \mu \rho^2} + V(\rho,\Omega).
 \end{equation}
-The adiabatic hyperspherical potentials $U_{\nu}$ contain most of the three-body physics and can be regarded as the three-body equivalent to the Born-Oppenheimer potential in the two-body problem. The zero potential, $V(\rho,\Omega)=0$, eigenfunctions $\Phi_{\nu}$ of \Cref{adiabatic} for three identical bosons are the Gegenbauer polynomials with eigenvalues
+The adiabatic hyperspherical potentials $U_{\nu}$ contain most of the three-body physics and can be regarded as the three-body equivalent to the Born--Oppenheimer potential in the two-body problem. The zero potential, $V(\rho,\Omega)=0$, eigenfunctions $\Phi_{\nu}$ of \Cref{adiabatic} for three identical bosons are the Gegenbauer polynomials with eigenvalues
 
 \begin{equation}\label{eq:gegenbauer}
 U(\rho) = \frac{\lambda(\lambda + 4) + \frac{15}{4}}{2\mu \rho^2},
@@ -154,7 +155,7 @@ P^2_{\mu \nu} &= \sum_{\sigma}P_{\mu \sigma}P_{\sigma \nu} = \sum_{\sigma}\llang
 The antisymmetry of $P_{\mu\nu}$ together with $P_{\mu\nu}^2 = P_{\nu\mu}^2$ leads to $P_{\nu\nu} = 0$ and $Q_{\nu \nu} = P_{\nu\nu}^2$. A mathematical description of the nonadiabatic couplings and the operational procedures needed to numerically calculate them are given in \cref{section:Hellmann_Feynman}.
 
 \subsection{The Hellmann--Feynman Theorem}\label{section:Hellmann_Feynman}
-This subsection concerns the mathematical description of the nonadiabatic coupling matrices. The nonadiabatic coupling terms defined in  \cref{couplingP,couplingQ} can be determined analytically by means of the Hellmann--Feynman (HF) theorem \cite{Hellmann1933,Feynman}. In this setting, the theorem relates the derivative of the adiabatic potential $U_{\nu}$ with respect to the parametrized hyperradius, with the expectation value of the  hyperradial derivative of the adaibatic Hamiltonian. Consider the $\nu$ adiabatic eigenstates $\Phi_{\nu}$ obtained in \Cref{adiabatic}. Using the identities 
+This subsection concerns the mathematical description of the nonadiabatic coupling matrices. The nonadiabatic coupling terms defined in  \cref{couplingP,couplingQ} can be determined analytically by means of the Hellmann--Feynman (HF) theorem \cite{Hellmann1933,Feynman}. In this setting, the theorem relates the derivative of the adiabatic potential $U_{\nu}$ with respect to the parametrized hyperradius, with the expectation value of the  hyperradial derivative of the adiabatic Hamiltonian. Consider the $\nu$ adiabatic eigenstates $\Phi_{\nu}$ obtained in \Cref{adiabatic}. Using the identities 
 
 \begin{align}
 \llangle[\big]  \Phi_{\mu} \big\rvert  \Phi_{\nu}  \rrangle[\big] &\equiv \delta_{\mu \nu} \label{eq:orthogonality}\\
@@ -194,7 +195,7 @@ If it is assumed that the channel functions can be expressed as a series of basi
 \begin{equation}
 \Phi_{\nu} = \sum_{j}C_{\nu}^j \varphi_j,
 \end{equation} 
-where $C_{\nu}^{j}$ are expansion coeffients, which characterize the channel functions and the Hamiltonian operator takes the matrical form with elements $H_{ij}$, then the diagonal elements are obtained from the following matrical expression \cite{Sanz-Sanz}
+where $C_{\nu}^{j}$ are expansion coefficients, which characterize the channel functions and the Hamiltonian operator takes the matrical form with elements $H_{ij}$, then the diagonal elements are obtained from the following matrical expression \cite{Sanz-Sanz}
 
 \begin{equation}
 \frac{\partial U_{\nu}}{\partial \rho} = \sum_{ij}(C_{\nu}^i)^{\dagger}C_{\nu}^j \frac{\partial H_{ij}}{\partial \rho}
@@ -277,7 +278,7 @@ This coordinate set corresponds to the reactant arrangement when particle $k$ sc
 \begin{equation}
 \cos{\theta_{k}} = \frac{\mathbf{r}_{k} \cdot \mathbf{R}_{k}}{r_{k} R_{k}}, \quad  0\leq \theta \leq \pi.
 \end{equation}
-For simplicity, the indicies labelling each coordinate set will be suppressed from hereon. 
+For simplicity, the indices labelling each coordinate set will be suppressed from hereon. 
 
 The full derivation of the three-body Schr{\"o}dinger equation written in Delves coordinates is given in \Cref{delves}; here we simply state the results. After rescaling the total wave function, $\psi = \rho^{5/2}\sin2\alpha\Psi$, the Schr{\"o}dinger equation can be written
 
@@ -346,7 +347,7 @@ Fedorov and Jensen showed \cite{Fedorov1993} that for $\rho \gg r_0$ the adiabat
 \sqrt{\nu_n} \cos{\bigg(\sqrt{\nu_n} \frac{\pi}{2}\bigg)} - \frac{8}{\sqrt{3}}\sin{\bigg(\sqrt{\nu_n} \frac{\pi}{6}\bigg)} = \sqrt[\leftroot{-3}\uproot{3}4]{\frac{4}{3}}\frac{\rho}{a}\sin{\bigg(\sqrt{\nu_n} \frac{\pi}{2}\bigg)}, 
 \end{equation}
 for different scattering lengths $a$. In the limit $\abs{a} \rightarrow \infty$ the right hand side vanishes and the resulting transcendental equation has the solutions $\sqrt{-\nu_0(0)}=s_0$ and $\sqrt{\nu_n}=s_n$.
-\subsection{Smith-Whitten Coordinates}\label{smith_whitten}
+\subsection{Smith--Whitten Coordinates}\label{smith_whitten}
 The motion of three particles can be represented in a symmetric way by using so called democratic coordinates. The main advantage with these kinds of coordinates is that permutation symmetries for three identical particles can be imposed exactly. To define the two hyperangles $\theta$ and $\phi$ I use the mapping procedure described by Johnson \cite{Johnson1980} to produce a modified set of the coordinates first introduced by Smith and Whitten \cite{Smith_Whitten1968}, see \Cref{Appendix_2_1}. Here I am content with presenting the results. The two hyperangles are defined by
 
 \begin{equation}
@@ -400,7 +401,7 @@ For three identical particles the range is reduced to $[0,2\pi/3]$ and
 \begin{equation}
 \Phi_{\nu}(\rho;\theta,\phi = 0) = \pm \Phi_{\nu}(\rho;\theta,\phi = 2\pi/3), \qquad \text{for} \qquad \Pi = \pm 1.\\
 \end{equation}
-Moreover, by defining the hyperangles in this way, the interaction potential for three indistinguishable particles becomes invariant under reflection about $\phi=\pi/3$, see \Cref{fig:potential} in \Cref{Appendix_2_1}. The solutions to the Schr{\"o}dinger equation are therefore either symmetric (for bosons) or antisymmetric (for fermions) under exchange of any two particles in this restricted domain. The original range of $\phi$ is thus reduced by a factor $3!$ for three identical particles and for $J^{\pi} = 0^+$  symmetry\footnote{For a three-body system, the number and kind of identical particles for each partial wave are denoted $J^{\pi}$, where $J$ is the total angular momentum and $\pi$ is the parity. For exemple, the bosonic state for three identical particles is therefore denoted $0^+$.} to be fullfilled the $\phi$ derivative of the wave function must vanish at $0$ and $\pi/3$ \cite{EsryGreeneSuno2001}.
+Moreover, by defining the hyperangles in this way, the interaction potential for three indistinguishable particles becomes invariant under reflection about $\phi=\pi/3$, see \Cref{fig:potential} in \Cref{Appendix_2_1}. The solutions to the Schr{\"o}dinger equation are therefore either symmetric (for bosons) or antisymmetric (for fermions) under exchange of any two particles in this restricted domain. The original range of $\phi$ is thus reduced by a factor $3!$ for three identical particles and for $J^{\pi} = 0^+$  symmetry\footnote{For a three-body system, the number and kind of identical particles for each partial wave are denoted $J^{\pi}$, where $J$ is the total angular momentum and $\pi$ is the parity. For example, the bosonic state for three identical particles is therefore denoted $0^+$.} to be fulfilled the $\phi$ derivative of the wave function must vanish at $0$ and $\pi/3$ \cite{EsryGreeneSuno2001}.
 
 To derive boundary conditions for the hyperangle $\theta$ it is convenient to write the eigenfunctions of the squared angular momentum as basis functions on the form
 
@@ -437,7 +438,7 @@ and assume that $g_l(\theta) \propto \theta^s$. Then to leading order
 \begin{equation}
 \Lambda^{2} g_l(\theta) = 0,  
 \end{equation}
-where the leading order coefficents imply
+where the leading order coefficients imply
 
 \begin{equation}
 s(s-1)+s-m^2 = 0 \quad \Rightarrow \quad s=\pm m.
@@ -456,7 +457,7 @@ s(s-1)+s = 0 \quad \Rightarrow \quad s=0.
 \end{equation}
 Since $s=0$ the function $g_l(\pi/2)$ approaches some constant in the limit $\theta \rightarrow \pi/2$, which implies that the $\theta$ derivative of the wave function must vanish at this boundary as well.
 
-Identical particle symmeries can therefore easily be built into the adiabatic equation \eqref{adiabatic} when using these kinds of symmetrized hyperangular coordinates. For three identical particles with $0^+$ symmetry the boundary conditions are  
+Identical particle symmetries can therefore easily be built into the adiabatic equation \eqref{adiabatic} when using these kinds of symmetrized hyperangular coordinates. For three identical particles with $0^+$ symmetry the boundary conditions are  
 
 \begin{align}
 \frac{\partial\Phi_{\nu}(\rho;0,\phi)}{\partial \theta} = \frac{\partial\Phi_{\nu}(\rho;\frac{\pi}{2},\phi)}{\partial \theta} = 0,\\

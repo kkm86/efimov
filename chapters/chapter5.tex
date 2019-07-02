@@ -1,7 +1,7 @@
 \chapter{Numerical Approach}\label{chapter:5}
 To find numerical solutions of \Cref{adiabatic}, I have used the B-spline collocation method, with spatial discretization at Gauss points in each subinterval of the mesh and integration using the Gauss-Legendre quadrature rule. The outline of this method is described in the following sections. 
 
-\Cref{section:BSexpansion} contains a hands-on mapping scheme for setting up the two-dimensional Hamiltonian and overlap matrices. Two key features of these matrices are that they are sparse and banded\footnote{A matrix is considered sparse if its sparsity ratio $\big(=1 - \frac{\# \text{non-zero entries}}{\#\text{entries}}\big)$ is close to one. Additionally, if all non-zero entries are confined to a diagonal band located about the main diagonal and its bandwidth -- i.e., the maximum distance of non-zero elements from the main diagonal -- is small, then it is called banded.}, which means that most of the entries in the two matrices are zero. This is beneficial since Gaussian elemination can be perfomed in fewer operations than normal and there are several numerical routines specifically designed to treat these kinds of matrices when solving generalized eigenvalue problems. 
+\Cref{section:BSexpansion} contains a hands-on mapping scheme for setting up the two-dimensional Hamiltonian and overlap matrices. Two key features of these matrices are that they are sparse and banded\footnote{A matrix is considered sparse if its sparsity ratio $\big(=1 - \frac{\# \text{non-zero entries}}{\#\text{entries}}\big)$ is close to one. Additionally, if all non-zero entries are confined to a diagonal band located about the main diagonal and its bandwidth -- i.e., the maximum distance of non-zero elements from the main diagonal -- is small, then it is called banded.}, which means that most of the entries in the two matrices are zero. This is beneficial since Gaussian elimination can be performed in fewer operations than normal and there are several numerical routines specifically designed to treat these kinds of matrices when solving generalized eigenvalue problems. 
 
 The structure of these matrices and how different mappings affect their bandwidth, and hence the numerical efficiency, has been discussed in detail by Esry \cite{Esry_thesis}.   
 
@@ -22,7 +22,7 @@ where $c_{lm}$ are the sought expansion coefficients, which characterize our sol
 
 Boundary conditions are easily enforced by placing the ghost-points at the end-points of the two grids. Since only the first and last B-spline is non-zero at its respective boundary, implementing the boundary condition with the requirement that the solution must vanish at that boundary simply means that you remove that non-zero B-spline from the expansion. Similarly, only the first two or the last two B-splines have non-zero first derivatives at the boundaries. Thus, to implement the requirement that the derivative of the solution must vanish at a boundary one replaces the B-spline in that place in the expansion with the sum of the two first B-splines if the first physical point is considered or the two last B-splines if the last point is considered.
 
-For a second order partial differential equation the B-splines must be twice differentiable everywhere on the knot sequence and have continuous second order derivatives. With the B-spline definitions given in \cref{B-splines}, the above requirements are fullfilled for B-splines of order $k\geq 4$. 
+For a second order partial differential equation the B-splines must be twice differentiable everywhere on the knot sequence and have continuous second order derivatives. With the B-spline definitions given in \cref{B-splines}, the above requirements are fulfilled for B-splines of order $k\geq 4$. 
 
 The upper limits of the sum in \Cref{expansion} are determined from the order of the B-splines and the number of mesh points for each coordinate through $L=N_{\theta}+k-2$ and $M=N_{\phi}+k-2$, if no boundary conditions are placed on the coordinates. However, since for each boundary condition, we get an additional equation and reduce the number of B-splines in that dimension by one, the limits $L$ and $M$ are given by 
 
@@ -32,7 +32,7 @@ M = N_{\phi}+k-2-c_M,
 \end{align}
 where $c_{L/M}$ denotes the number of boundary conditions for the coordinate in question.
 
-Thereafter we choose collocation at the knot points and require that \Cref{expansion} is a solution to \Cref{adiabatic} at those points. Since only $(k-1)^2$ B-splines are non-zero at the knot points, it means that each equation involves $(k-1)^2$ B-splines
+Thereafter we chose collocation at the knot points and require that \Cref{expansion} is a solution to \Cref{adiabatic} at those points. Since only $(k-1)^2$ B-splines are non-zero at the knot points, it means that each equation involves $(k-1)^2$ B-splines
 
 \begin{equation}
 \Phi_{\nu}(\rho;\theta_i,\phi_j) = \sum_{l=i-k+1}^{i-1}\sum_{m=j-k+1}^{j-1} c_{lm}(\rho)\varphi_{lm} (\theta_{i},\phi_{j}),
@@ -65,7 +65,7 @@ B_{i'i} = \iint \varphi_{l'm'}(\theta,\phi)\varphi_{lm}(\theta,\phi)\,d\theta\,d
 
 The potential term in the adiabatic Hamiltonian cannot be separated into a product of two one-dimensional integrals and must therefore be integrated in two angular dimensions. 
 
-\section{Gauss-Legendre Quadrature}
+\section{Gauss--Legendre Quadrature}
 In this work, all integrals have been calculated with Gaussian quadrature. Quadrature rules are used for numerically approximating the definite integral of a function. An $n$-point Gaussian quadrature rule is constructed to exactly\footnote{To within machine precision.} integrate polynomials of degree $2n-1$ or less if the abscissas $x_i$ and weights $w_i$ for $i=1,\ldots,n$ are appropriately chosen. 
 
 If the integrand $f(x,y)$ is well approximated by the monomials $x^{i}y^{j}$ of degree $i = 2n-1, \, j = 2m-1$ or less, then the Gauss-Legendre quadrature rule for integration on an arbitrary interval is formulated by first changing the variables
@@ -108,7 +108,7 @@ Since the B-splines are piecewise polynomial functions of order $(k-1)$, it is i
 
 However, the potential term cannot be separated into a product of one-dimensional integrals, wherefore integration in two dimensions is required for this term. Another issue with the potential is that it is not generally a polynomial, so for the calculation to converge, we need a fine enough mesh. 
 
-To calculate the sought eigenvalues and corresponding eigenvectors, i.e., the effective three-body potential curves and the unknown coefficents, I have used the Lapack routine \textit{dsygvd}. To show convergence to the analytical results presented in \Cref{table:1}, I numerically calculated the first three eigenvalues $\tilde{U}_{\nu}$ obtained by solving \Cref{eq:eigenlambda} using the B-spline collocation method with an increasing number of mesh points $N_{\theta}=N_{\phi}$. The results are presented in \Cref{table:2}. Convergence of all three eigenvalues have been reached at $N_{\theta}=15$, since there is no further improvement of the calculated values when the mesh size is increased to $N_{\theta}=25$ in each direction.
+To calculate the sought eigenvalues and corresponding eigenvectors, i.e., the effective three-body potential curves and the unknown coefficients, I have used the Lapack routine \textit{dsygvd}. To show convergence to the analytical results presented in \Cref{table:1}, I numerically calculated the first three eigenvalues $\tilde{U}_{\nu}$ obtained by solving \Cref{eq:eigenlambda} using the B-spline collocation method with an increasing number of mesh points $N_{\theta}=N_{\phi}$. The results are presented in \Cref{table:2}. Convergence of all three eigenvalues has been reached at $N_{\theta}=15$, since there is no further improvement of the calculated values when the mesh size is increased to $N_{\theta}=25$ in each direction.
 
 \begin{table}[h!]
 	\centering
