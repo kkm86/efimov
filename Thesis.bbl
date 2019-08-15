@@ -189,6 +189,35 @@
       \field{pages}{589}
       \range{pages}{1}
     \endentry
+    \entry{pethick_smith_2008}{book}{}
+      \name{author}{2}{}{%
+        {{hash=10e8bf6100d6ce795cc5d29e17933374}{%
+           family={Pethick},
+           family_i={P\bibinitperiod},
+           given={C.\bibnamedelimi J.},
+           given_i={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1b18ba500802986ffa0e7b2f90b2a78c}{%
+           family={Smith},
+           family_i={S\bibinitperiod},
+           given={H.},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{5289ac6a46d4e33cb896d627d90bf48d}
+      \strng{fullhash}{5289ac6a46d4e33cb896d627d90bf48d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Bose–Einstein Condensation in Dilute Gases}
+      \field{year}{2008}
+      \verb{doi}
+      \verb 10.1017/CBO9780511802850
+      \endverb
+    \endentry
     \entry{vanderWaals}{article}{}
       \name{author}{4}{}{%
         {{hash=82f5a7e2e1d839e54ffed40436583fcd}{%
