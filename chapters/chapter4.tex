@@ -1,7 +1,7 @@
 \chapter{The Three-body Problem}\label{chap:4}
 Two-body scattering processes basically concern two different situations, elastic and inelastic collisions. For the three-body problem, solving the three-body Schr{\"o}dinger equation is more involved. The enhanced complexity is mainly due to the increased number of fragmentation channels in the scattering processes. In addition to the triatomic fragmentation channel (1+1+1), there are three possible atom-dimer fragmentation channels (1+2). This makes the construction of permutation-symmetric wavefunctions highly non-trivial. 
 
-There are different routes for solving the three-body problem and they involve either solving the three-body Schr{\"o}dinger equation or solving the corresponding set of three Faddeev equations. Irrespective of the specific method of choice for solving the three-body system, most approaches start with the same steps. These include separating out the centre-of-mass motion and then defining a set of relative coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates, since this removes the mass factors in the kinetic energy operator. Introducing hyperspherical coordinates in combination with an adiabatic representation is then used to reduce the problem of three colliding atoms to dynamics on a set of coupled adiabatic hyperspherical potentials.
+There are different routes for solving the three-body problem and they involve either solving the three-body Schr{\"o}dinger equation or solving the corresponding set of three Faddeev equations. Irrespective of the specific method of choice for solving the three-body system, most approaches start with the same steps. These include separating out the centre-of-mass motion and then defining a set of relative coordinates. A convenient choice for the three-body problem is mass normalized Jacobi coordinates\footnote{Jacobi coordinates are commonly used when modelling many-body systems and can be constructed for $n$ interacting particles, generating $n-1$ Jacobi vectors plus the position of the centre of mass. However, for $n \geq 4$ there are several possible topological configurations of Jacobi coordinates that do not transform into each other by particle permutations \cite{WANG20131}.}, since this removes the mass factors in the kinetic energy operator. Introducing hyperspherical coordinates in combination with an adiabatic representation is then used to reduce the problem of three colliding atoms to dynamics on a set of coupled adiabatic hyperspherical potentials.
 
 Atomic units\footnote{There are four fundamental atomic units -- the electron rest mass $m_e$, the elementary charge $e$, the reduced Planck's constant $\hbar$, and the Coulomb force constant $k_e$ -- whose numerical values are unity by definition, i.e., $m_e = e = \hbar = k_e = 1$. Derived atomic units include dimensions of length and energy, which are expressed in terms of the Bohr radius $a_0$ and the Hartree $E_h$.} (a.u.) will be used in the following chapters. 
 
@@ -262,7 +262,7 @@ where $s_{\nu}$ is a real constant.
 To solve \Cref{adiabatic} we need to introduce some explicit form of the hyperangles $\Omega$ and express $\Lambda^2$ and $V$ in these coordinates. As mentioned in \Cref{sec:hyperspherical} two different forms of coordinates are commonly used.
 
 \subsection{Delves Coordinates}\label{delvescoord}
-Delves coordinates are adapted to collinear atom-diatom collisions and are regular polar coordinates. They where originally developed to treat nuclear three-body problems. Each coordinate set is defined by the Jacobi vectors in \cref{eq:4_1,eq:4_2}, and 
+Delves coordinates \cite{DELVES1958,DELVES1960} are adapted to collinear atom-diatom collisions and are regular polar coordinates. They where originally developed to treat nuclear three-body problems. Each coordinate set is defined by the Jacobi vectors in \cref{eq:4_1,eq:4_2}, and 
 
 \begin{align}
 r_{k} &= \rho \sin{\alpha_{k}},\\
@@ -298,7 +298,7 @@ The corresponding volume element is proportional to $\rho^5\sin^2\alpha\cos^2\al
 \frac{\partial\psi}{\partial\theta}\bigg\rvert_{\theta = 0} &= \frac{\partial\psi}{\partial\theta}\bigg\rvert_{\theta = \pi} = 0.
 \end{align} 
 
-Numerical difficulties arise with these coordinates when permutation symmetries for three identical particles are considered \cite{rimondo_berman_lin}. 
+Numerical difficulties arise with these coordinates when permutation symmetries for three identical particles are considered \cite{WANG20131}. 
 
 In the context of Efimov physics, Delves coordinates are often used for derivations in conjunction with the Faddeev equations. The three-body wave equation is then expressed as a sum of components, which each uses a different set of Jacobi coordinates to express the three atom-dimer configurations. The total wave function is thus given by
 

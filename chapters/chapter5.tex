@@ -1,5 +1,5 @@
 \chapter{Numerical Approach}\label{chapter:5}
-To find numerical solutions of \Cref{adiabatic}, I have used the B-spline collocation method, with spatial discretization at Gauss points in each subinterval of the mesh and integration using the Gauss-Legendre quadrature rule. The outline of this method is described in the following sections. 
+To find numerical solutions of \Cref{adiabatic}, I have used the B-spline collocation method, with spatial discretization at Gauss points in each subinterval of the mesh and integration using the Gauss--Legendre quadrature rule. The outline of this method is described in the following sections. 
 
 \Cref{section:BSexpansion} contains a hands-on mapping scheme for setting up the two-dimensional Hamiltonian and overlap matrices. Two key features of these matrices are that they are sparse and banded\footnote{A matrix is considered sparse if its sparsity ratio $\big(=1 - \frac{\# \text{non-zero entries}}{\#\text{entries}}\big)$ is close to one. Additionally, if all non-zero entries are confined to a diagonal band located about the main diagonal and its bandwidth -- i.e., the maximum distance of non-zero elements from the main diagonal -- is small, then it is called banded.}, which means that most of the entries in the two matrices are zero. This is beneficial since Gaussian elimination can be performed in fewer operations than normal and there are several numerical routines specifically designed to treat these kinds of matrices when solving generalized eigenvalue problems. 
 
@@ -68,7 +68,7 @@ The potential term in the adiabatic Hamiltonian cannot be separated into a produ
 \section{Gauss--Legendre Quadrature}
 In this work, all integrals have been calculated with Gaussian quadrature. Quadrature rules are used for numerically approximating the definite integral of a function. An $n$-point Gaussian quadrature rule is constructed to exactly\footnote{To within machine precision.} integrate polynomials of degree $2n-1$ or less if the abscissas $x_i$ and weights $w_i$ for $i=1,\ldots,n$ are appropriately chosen. 
 
-If the integrand $f(x,y)$ is well approximated by the monomials $x^{i}y^{j}$ of degree $i = 2n-1, \, j = 2m-1$ or less, then the Gauss-Legendre quadrature rule for integration on an arbitrary interval is formulated by first changing the variables
+If the integrand $f(x,y)$ is well approximated by the monomials $x^{i}y^{j}$ of degree $i = 2n-1, \, j = 2m-1$ or less, then the Gauss--Legendre quadrature rule for integration on an arbitrary interval is formulated by first changing the variables
 
 \begin{equation}
 \begin{aligned}
@@ -104,7 +104,7 @@ in which
 \end{aligned}
 \end{equation}
 
-Since the B-splines are piecewise polynomial functions of order $(k-1)$, it is in principle possible to evaluate the overlap matrix elements and the kinetic terms in the adiabatic Hamiltonian exactly, i.e., to within machine precision, using Gauss-Legendre quadrature. These terms can also be separated into a product of one-dimensional integrals, which is advantageous since the computational cost of numerical integration grows exponentially with the dimension of the problem.
+Since the B-splines are piecewise polynomial functions of order $(k-1)$, it is in principle possible to evaluate the overlap matrix elements and the kinetic terms in the adiabatic Hamiltonian exactly, i.e., to within machine precision, using Gauss--Legendre quadrature. These terms can also be separated into a product of one-dimensional integrals, which is advantageous since the computational cost of numerical integration grows exponentially with the dimension of the problem.
 
 However, the potential term cannot be separated into a product of one-dimensional integrals, wherefore integration in two dimensions is required for this term. Another issue with the potential is that it is not generally a polynomial, so for the calculation to converge, we need a fine enough mesh. 
 

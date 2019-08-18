@@ -218,6 +218,40 @@
       \verb 10.1017/CBO9780511802850
       \endverb
     \endentry
+    \entry{BRAATEN2006}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fa96bca49e8ea68fb5bce2da11ba52bf}{%
+           family={Braaten},
+           family_i={B\bibinitperiod},
+           given={Eric},
+           given_i={E\bibinitperiod}}}%
+        {{hash=faec9125a2f7a412107a90a798bed19b}{%
+           family={Hammer},
+           family_i={H\bibinitperiod},
+           given={H.-W.},
+           given_i={H\bibinithyphendelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{5324ce27f465ffaf2678631dc78e6a3a}
+      \strng{fullhash}{5324ce27f465ffaf2678631dc78e6a3a}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0370-1573}
+      \field{journaltitle}{Physics Reports}
+      \field{number}{5}
+      \field{title}{Universality in few-body systems with large scattering length}
+      \field{volume}{428}
+      \field{year}{2006}
+      \field{pages}{259\bibrangedash 390}
+      \range{pages}{132}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.physrep.2006.03.001
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0370157306000822
+      \endverb
+    \endentry
     \entry{vanderWaals}{article}{}
       \name{author}{4}{}{%
         {{hash=82f5a7e2e1d839e54ffed40436583fcd}{%
@@ -1444,14 +1478,61 @@
       \verb https://doi.org/10.1063/1.4937138
       \endverb
     \endentry
-    \entry{rimondo_berman_lin}{misc}{}
+    \entry{DELVES1958}{article}{}
+      \name{author}{1}{}{%
+        {{hash=132a2b6382a06f08addedcee9f212754}{%
+           family={Delves},
+           family_i={D\bibinitperiod},
+           given={L.M.},
+           given_i={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{132a2b6382a06f08addedcee9f212754}
+      \strng{fullhash}{132a2b6382a06f08addedcee9f212754}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Advances In Atomic, Molecular, and Optical Physics | Advances in Atomic, Molecular, and Optical Physics | ScienceDirect.com}
-      \field{title}{Advances In Atomic, Molecular, and Optical Physics}
+      \field{issn}{0029-5582}
+      \field{journaltitle}{Nuclear Physics}
+      \field{number}{3}
+      \field{title}{Tertiary and general-order collisions}
+      \field{volume}{9}
+      \field{year}{1958}
+      \field{pages}{391\bibrangedash 399}
+      \range{pages}{9}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0029-5582(58)90372-9
+      \endverb
       \verb{url}
-      \verb https://www.sciencedirect.com/bookseries/advances-in-atomic-molecular-and-optical-physics/vol/62/suppl/C
+      \verb http://www.sciencedirect.com/science/article/pii/0029558258903729
+      \endverb
+    \endentry
+    \entry{DELVES1960}{article}{}
+      \name{author}{1}{}{%
+        {{hash=132a2b6382a06f08addedcee9f212754}{%
+           family={Delves},
+           family_i={D\bibinitperiod},
+           given={L.M.},
+           given_i={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{132a2b6382a06f08addedcee9f212754}
+      \strng{fullhash}{132a2b6382a06f08addedcee9f212754}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0029-5582}
+      \field{journaltitle}{Nuclear Physics}
+      \field{title}{Tertiary and general-order collisions (II)}
+      \field{volume}{20}
+      \field{year}{1960}
+      \field{pages}{275\bibrangedash 308}
+      \range{pages}{34}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0029-5582(60)90174-7
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/0029558260901747
       \endverb
     \endentry
     \entry{Fedorov1993}{article}{}
@@ -1963,6 +2044,28 @@
       \verb{url}
       \verb https://detritus.fundacioace.com/pub/books/Classical_Mechanics_Goldstein_3ed.pdf
       \endverb
+    \endentry
+    \entry{deboor}{book}{}
+      \name{author}{1}{}{%
+        {{hash=abb230770a0f77d524201117d09b3dec}{%
+           prefix={d.},
+           prefix_i={d\bibinitperiod},
+           family={Boor},
+           family_i={B\bibinitperiod},
+           given={Carl},
+           given_i={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \strng{namehash}{abb230770a0f77d524201117d09b3dec}
+      \strng{fullhash}{abb230770a0f77d524201117d09b3dec}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Practical Guide to Splines}
+      \field{year}{1978}
     \endentry
   \endsortlist
 \endrefsection

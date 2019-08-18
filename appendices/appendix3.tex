@@ -1,5 +1,5 @@
 \chapter{Basis Splines}\label{B-splines}
-A basis spline, or B-spline, of order $k$ is a piecewise polynomial function of degree $(k-1)$ defined on a collection of points, $t_i$, called \textit{knot points}. The array formed by these knot points are referred to as \textit{knot sequence}, or knot vector, where $t_i\leq t_{i+1}$. B-splines of order $k$ can be defined recursively by the Cox-de Boor formula. With a given knot sequence, the B-splines of order $k=1$ are defined as
+A basis spline, or B-spline, of order $k$ is a piecewise polynomial function of degree $(k-1)$ defined on a collection of points, $t_i$, called \textit{knot points}. The array formed by these knot points are referred to as \textit{knot sequence}, or knot vector, where $t_i\leq t_{i+1}$. B-splines of order $k$ can be defined recursively by the Cox-de Boor formula \cite{deboor}. With a given knot sequence, the B-splines of order $k=1$ are defined as
 
 \begin{equation}
 B_{i,k=1}(x) \doteq
