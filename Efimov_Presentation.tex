@@ -73,6 +73,8 @@
 %\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 %\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
+\setbeamertemplate{navigation symbols}{\hskip6pt\raisebox{2pt}{\color{black}\insertframenumber/ \inserttotalframenumber}}
+
 %\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
 \usefonttheme[onlysmall]{structurebold}
@@ -174,16 +176,16 @@ Stockholms Universitet \\ % Your institution for the title page
 \end{block}}
 
 \only<3->{
+\hypertarget{dimer}
+{\hyperlink{lastres}{\beamergotobutton{Results}}}
 \begin{block}{Example: 2-b binding energy for 2 identical bosons}
 	\begin{equation*}
 	E_D = \frac{\hbar^2}{m a^2}
 	\end{equation*}
 \end{block}}
-
 \note[item]<1>{Particles with large scattering lengths in the low-energy regime are interesting because they have universal properties. }
 \note[item]<2>{What do we mean by universal? It means that they depend on the scattering alone and not on the details of the short-range interction, which means all bosons behave in the same way it does not matter what atomic species we look at}
 \note[item]<3>{For example: }
-
 \end{frame}
 
 %-------------------------------------------
@@ -304,7 +306,7 @@ The hyperspherical SE:
 \item<4-> Trick: Treat $\rho$ as an adiabatic parameter! 
 
 \item<5->{
-\hypertarget{supplemental}
+\hypertarget<5>{supplemental}
 Solve the adiabatic eq.
 \begin{equation*}
 \alert<5>{H_{ad}}\Phi_{\nu}{(\rho;\Omega)} = \alert<6>{U_{\nu}{(\rho)}}\Phi_{\nu}(\rho;\Omega)
@@ -461,19 +463,25 @@ Solve the adiabatic eq.
 	Task = Find \alert<2>{$W_{\nu}(\rho)$}!}
 \invisible<-2>{
 \parallelcontent
-{\begin{description} \item<3->[First:] Find a Basis \end{description}}
+{\begin{description} \item<3->[First:] Choose a basis \end{description}}
 {\begin{itemize}\item<4->$\varphi_{lm} = \varphi_{1l}(\theta)\varphi_{2m}(\phi)$\end{itemize}}
 \parallelcontent
 {\begin{description} \item<5->[Then:] Expand \end{description}}
 {\begin{itemize}\item<6->$\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m}^{L,M} c_{lm}\varphi_{lm}$\end{itemize}}
 \parallelcontent
-{\begin{description} \item<7->[Next:] Substitute $\Phi_{\nu}$ into
-		\hyperlink<7->{supplemental}{\beamerbutton{Eq. (4)}
+{\begin{description} \item<7->[Next:] Substitute $\Phi_{\nu}$ into the
+		\hyperlink<7->{supplemental}{\beamerbutton{Adiabatic Eq.}
 		\hypertarget<7->{matrix}}  \end{description}}
 {\begin{itemize}\item<8->$\mathbf{H}_{\mathrm{ad}}\mathbf{c} = U\mathbf{B}\mathbf{c}$\end{itemize}}
 \parallelcontent
 {\begin{description} \item<9->[Finally:] Solve the Generalized Eigenvalue Eq. \end{description}}
 {\begin{itemize}\item<10->$W(\rho) \approx U(\rho)$\end{itemize}}}
+\note[item]<1>{So what what was task?}
+\note[item]<2>{Well, a good start is to find the 3-b effective potentials}
+\note[item]<3>{To do this I have choosen two work with a B-spline basis for the two angular coordinates}
+\note[item]<4>{We expand the solutions in this basis}
+\note[item]<5>{And put it into the adiabatic eq.}
+\note[item]<6>{And finally solve the Generalized eigenvalue eq.}
 \end{frame}
 
 %------------------------------------------------
@@ -495,29 +503,40 @@ Solve the adiabatic eq.
 	$r_0 = 55$ a.u.
 \end{block}
 \column{0.6\textwidth}
+\only<3->{
 %\begin{figure}
-	\includegraphics[width=1.0\linewidth]{scattering_new.pdf}
+	\includegraphics[width=1.0\linewidth]{scattering_new.pdf}}
 %\end{figure}
 \end{columns}
+\note[item]<1>{For the scattering model I have used masses corresponding to Rb-87 (boson)(Z=37, N=50)}
+\note[item]<2>{I have used the assumption that the total potential can be written as a sum of 2-b potentials}
+\note[item]<3>{I have used the following model potential because I can calculate the scattering length from it}
+\note[item]<4>{And set the interaction range to 55 a.u.}
 \end{frame}
 %------------------------------------------------
 
 \section{Results}
 \subsection{Convergence and Accuracy}
-\begin{frame}[label=Results]
+\begin{frame}
 \frametitle{Convergence and Accuracy}
 \begin{itemize}
-	\item<1-> For $a \rightarrow \pm \infty$ we expect that the lowest effective potential curve will converge towards
-	\hyperlink{W}{\beamerbutton{the Efimovian form}}
-	\item This behaviour is easier to recognize if the potentials are multiplied by $2 \mu \rho^2$ and plotted as 
+	\item<1->{
+	\hypertarget{Results}
+	For $a \rightarrow \pm \infty$ we expect convergence towards
+	\hyperlink{W}{\beamerbutton{the Efimovian form}}}
+	\item<2-> Easier to recognize if the potentials are multiplied by $2 \mu \rho^2$ and plotted as 
 	
-	\begin{equation}\label{eq:lambda}
+	\begin{equation*}
 	\xi(\rho) = 2 \mu \rho^2 W_{\nu}(\rho) + \frac{1}{4}
-	\end{equation}
-	since these curves should approach the universal value $-s_0^2 (\simeq -1.0125$) in the intermediate region
+	\end{equation*}
+	\item<3-> Should approach the universal value $-s_0^2 (\simeq -1.0125$) in the intermediate region
 \end{itemize}
 \vfill
 \hyperlink{finite}{\beamerbutton{To Figures}}
+\note<1>{And now to the results!}
+\note<1>{For $a \rightarrow \pm \infty$ we expect that the lowest effective potential curve will converge towards the Efimovian form}
+\note<2>{This behaviour is easier to recognize if the potentials are multiplied by this factor $2 \mu \rho^2$ and plot them as}
+\note<2>{Since these curves should approach the universal value $-s_0^2 (\simeq -1.0125$) in the intermediate region}
 \end{frame}
 
 \begin{frame}[label=finite]
@@ -527,35 +546,41 @@ Solve the adiabatic eq.
 	\column{0.5\textwidth}
 	\only<1>{
 	\centering
-	\includegraphics[width=1.0\linewidth]{infty.pdf}}
+	\includegraphics[width=1.0\linewidth]{infty_p.pdf}}
 	\only<2-5>{
 	\centering
 	\includegraphics[width=1.0\linewidth]{infty_opac.pdf}}
 	\only<1-2,5>{
 	\centering
-	\includegraphics[width=1.0\linewidth]{finite_positive_a_opac.pdf}}
+	\includegraphics[width=1.0\linewidth]{finite_positive_opac.pdf}}
 	\only<3-4>{
 	\centering
-	\includegraphics[width=1.0\linewidth]{finite_positive_a.pdf}}
+	\includegraphics[width=1.0\linewidth]{finite_positive_p.pdf}}
 	\column{0.5\textwidth} %New column
 	\only<1,3-5>{
 	\centering
-	\includegraphics[width=1.0\linewidth]{finite_negative_a_opac.pdf}}
+	\includegraphics[width=1.0\linewidth]{finite_negative_opac.pdf}}
 	\only<2>{
 	\centering
-	\includegraphics[width=1.0\linewidth]{finite_negative_a.pdf}}
+	\includegraphics[width=1.0\linewidth]{finite_negative_p.pdf}}
 	\only<4>{
 	\centering
 	\includegraphics[width=.97\linewidth]{finite_conv_asym.pdf}}
 	\only<5>{
 	\centering
-	\includegraphics[width=1.0\linewidth]{finite_conv.pdf}}
+	\includegraphics[width=1.0\linewidth]{finite_conv_p.pdf}}
 	\only<1-3>{
 	\centering
 	\includegraphics[width=1.0\linewidth]{finite_conv_opac.pdf}}
 	\end{columns}
 \hyperlink{asymptotic}{\beamerbutton{Effective Potentials}}
 \hyperlink{Results}{\beamerbutton{$\xi(\rho)$}}
+\note[item]<1>{When the scattering length diverge we see that the potential curve $\xi$ converge to the expected value at large hyperradii (note the log scale on the $\rho$-axis)}
+\note[item]<1>{For two-body potentials where $|a|$ is large but finite we expect that the effective potentials are to some extent affected by Efimov physics in the intermediate range ($r_0 \ll \rho \ll |a|$) and that the lowest effective potentials obtained with a larger magnitude of a exhibit closer resemblance with the true Efimov potential}
+\note[item]<2>{This is indeead what we see for negative $a$. Here I have plotted 4 curves with $|a|$ ranging from 2000 to 3 M a.u. (the curves start to converge to the kinetic energy in the asymptotic limit)}
+\note[item]<3>{This is also the case for large positive $a$. We see a flattening behaviour of the curves from below which tend to get closer to the universal value as $a$ increase.However, here the curves will start to converge to the energy of the two body bound state. Here I have plotted 4 curves with $|a|$ ranging from 2000 to 3 M a.u. (the curves start to converge to the kinetic energy in the asymptotic limit)}
+\note[item]<4>{However, in this case the curves will start to converge to the energy of the two body bound state. Which here corresponds to}
+\note[item]<5>{Here I have plotted the two curves with lowest $a$ together with the curves $\xi$ corresponding to the 2-b energies and we observe that the curves indeed converge to the 2-b energy in the asymptotic limit.}
 \end{frame}
 
 %--------------------------------------------------------------------------------------
@@ -576,12 +601,16 @@ Solve the adiabatic eq.
 	\centering
 	\includegraphics[width=1.0\linewidth]{faddeev3.pdf}}
 \visible<1-4>{
-\begin{textblock*}{9cm}(-0.2\textwidth,-0.07\textheight)%
+\begin{textblock*}{9cm}(0mm,1.15\textheight)
 		\hyperlink{faddeev}{\beamerreturnbutton{Analytic Potential}}
 		\hyperlink{neg2}{\beamergotobutton{$a<0$}}
 		\hyperlink{pos1}{\beamergotobutton{$a>0$}}         
 \end{textblock*}}
-	%\hyperlink{faddeev}{\beamerbutton{Faddeev}}
+%\hyperlink{faddeev}{\beamerbutton{Faddeev}}
+\note[item]<1>{With this figure I want to show the equivalent lowest potentials for positive and negative $a$ calculated from the transcendental Faddeev eq.}
+\note[item]<2>{The universal value is shown as a this dotted line. And we can se that when $a>\rho$, the adiabatic potential for both positive and negative $a$ converge to this universal value.}
+\note[item]<3>{When $\rho>|a|$ we can observe that the curve for negative $a$ approach the value corresponding to the kinetic energy for three particles.}
+\note[item]<4>{For postive $a$, we intead observe a parabolic behaviour like that corresponding to the form of the energy of the 2-b bound state when $\rho>a$.}
 \end{frame}
 
 \begin{frame}
@@ -609,12 +638,27 @@ Solve the adiabatic eq.
 	\hspace*{-0.2cm}
 	\includegraphics[width=1.0\linewidth]{pos2.pdf}}
 	\only<5>{
+	\hypertarget{lastres}
 	\centering
 	\vspace*{-0.1cm}
 	\hspace*{-0.2cm}
 	\includegraphics[width=1.0\linewidth]{pos3.pdf}}
-	\begin{textblock*}{3cm}(.\textwidth,-0.05\textheight)%
-	\hyperlink{R_faddeev}{\beamerreturnbutton{$\nu_0(\rho/a)$}}     \end{textblock*}
+	\begin{textblock*}{3cm}(12mm,1.15\textheight)%
+	\hyperlink{R_faddeev}{\beamerreturnbutton{$\nu_0(\rho/a)$}}
+	\hyperlink{dimer}{\beamerbutton{$E_{\mathrm{D}}$}}
+   \end{textblock*}
+
+\note[item]<1>{I have compared my numerically calculate potentials with the potential obtained solving the transcendental Faddeev eq.}
+\note[item]<1>{I will show you the results for two negative and two positive $a$.}
+\note[item]<1>{In this figure I have plotted the analytic potential (black dotted line) for negative $a$. The colored curves are numerical potentials calculated with an increasing number of B-splines in each direction. As might be expected the range of convergence is larger for potentials calculated with a largest number of B-splines.}
+\note[item]<2>{We can observe that for larger magitudes of $a$ the range of convergence decreases.}
+\note[item]<3>{No we look at positive $a$. Here we have the analytic curve in black. All numerically calculated potentials have converged over the whole hyppreradial range apart from the one calculated with the least number of B-splines.}
+\note[item]<3>{However, there seem to be a small difference between the numerical and analytical results.}
+\note[item]<4>{For larger $a$ the anlytical and numerical results show greater similarity.}
+\note[item]<4>{However, again the hyperradial range of convergence have become smaller.}
+\note[item]<4>{By comparing the panels to left and right, it appears that the hyperradial range for convergence generally is larger for the states with smaller $|a|$. We suspect that this discrepancy is due to the knot point placement, but this has not been verified yet.}
+\note[item]<5>{Now, how do we this?}
+\note[item]<5>{Well, the slightly different form in the parabolic divergency of the curves is due to a discrepancy between the exact two-body energy and the energy of the universal dimer.}
 \end{frame}
 
 
@@ -624,12 +668,9 @@ Solve the adiabatic eq.
 \frametitle{Comparison to the Analytical Model (3)}
 \centering
 \includegraphics[width=1.0\linewidth]{twobodyenergy.pdf}
-\begin{textblock*}{9cm}(.\textwidth,0.\textheight)%
-	\hyperlink{faddeev}{\beamerreturnbutton{Analytic Potential}}
-	\hyperlink{neg2}{\beamergotobutton{$a<0$}}
-	\hyperlink{pos1}{\beamergotobutton{$a>0$}}         
-\end{textblock*}
 %\hyperlink{faddeev}{\beamerbutton{Faddeev}}
+\note[item]<1->{Here I have plotted the actual three-body effective potentials $W$, the corresponding analytic potential together with the two-body energy $E_{2b}$ and the energy of the universal dimer.}
+\note[item]<1>{We can see that the analytic potential goes to}
 \end{frame}
 
 \end{document} 

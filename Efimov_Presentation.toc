@@ -16,4 +16,4 @@
 \beamer@sectionintoc {5}{Scattering Model}{78}{0}{5}
 \beamer@sectionintoc {6}{Results}{82}{0}{6}
 \beamer@subsectionintoc {6}{1}{Convergence and Accuracy}{82}{0}{6}
-\beamer@subsectionintoc {6}{2}{Comparison to the Analytical Model}{88}{0}{6}
+\beamer@subsectionintoc {6}{2}{Comparison to the Analytical Model}{90}{0}{6}
