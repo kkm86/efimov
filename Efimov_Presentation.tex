@@ -2,6 +2,7 @@
 \usepackage{pgfpages}
 \usepackage[absolute,overlay]{textpos}
 \usepackage[makeroom]{cancel}
+\usepackage{mathtools}
 \setbeameroption{show notes on second screen=right}
 
 
@@ -17,58 +18,12 @@
 	{\begin{itemize} \item #2 \end{itemize}}
 }
 
+\newcommand{\me}{\mathrm{e}}
+
 \mode<presentation> {
 
-% The Beamer class comes with a number of default slide themes
-% which change the colors and layouts of slides. Below this is a list
-% of all the themes, uncomment each in turn to see what they look like.
-
-%\usetheme{default}
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-%\usetheme{Berlin}
-%\usetheme{Boadilla}
-%\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{Dresden}
-%\usetheme{Frankfurt}
-%\usetheme{Goettingen}
-%\usetheme{Hannover}
-%\usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
-%\usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
 \usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
-
-% As well as themes, the Beamer class has a number of color themes
-% for any slide theme. Uncomment each of these in turn to see how it
-% changes the colors of your current slide theme.
-
-%\usecolortheme{albatross}
-%\usecolortheme{beaver}
-%\usecolortheme{beetle}
-%\usecolortheme{crane}
-%\usecolortheme{dolphin}
-%\usecolortheme{dove}
-%\usecolortheme{fly}
-%\usecolortheme{lily}
-%\usecolortheme{orchid}
-%\usecolortheme{rose}
-%\usecolortheme{seagull}
 \usecolortheme{seahorse}
-%\usecolortheme{whale}
-%\usecolortheme{wolverine}
 
 %\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 %\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
@@ -81,6 +36,7 @@
 \usepackage{textpos}
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -102,30 +58,44 @@ Stockholms Universitet \\ % Your institution for the title page
 	
 \begin{frame}
 	\titlepage
-	\note[item]{Hi, my name is Kajsa-My Blomdahl, I study Efimov Physics, which is encapsulte a number of effects that appear in the quantum 3BP.}
+	\note[item]{Hi! So the topic of my talk is "Theoretical and numerical studies of Efimov states"}
+	\note[item]{Efimov states are the central part of Efimov Physics, which is the physical theory of a quantum effect that appears in systems of three particles.}
 \end{frame}
 
-%\section[Outline]{Outline}
-\frame{\tableofcontents[hideallsubsections]
-\note[item]{To understand important features of the quantum 3BP I will start by introduce a few concepts from quantum scattering of 2 particles.}}
+
+\frame[shrink]
+{\frametitle{Outline}\tableofcontents[hideallsubsections]
+\note[item]{You can find and follow the outline of my presentation in the margin during my talk.}}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
+\begin{frame}{Objective}
+\begin{description}
+	\item[Efimov states:]<1->Giant trimers with universal properties
+	\item[Aim:]<2->{Build a program that calculates these states}
+	\item[Purpose:]<3->{Investigate the limitations of the analytical theory}
+\end{description}
+\note[item]<1>{Efimov states are giant trimers with universal properties, which can be formed even when all three of the two-body subsystems are unbound.}
+\note[item]<2->{My aim has so far been to build a program that calculates these states numerically ...}
+\note[item]<2->{... for the purpose of investigating the limitations of the analytical theory of Efimov physics.}
+\end{frame}
+
 \subsection{Two-body Interactions}
 \begin{frame}
 \frametitle{Two-body (2-b) Interactions}
 \begin{itemize}
-	\item<1-> Atomic collisions in the ultra cold regime
-	\item<2-> Quantized orbital angular momenta $l=0,1,2$, are referred to as \alert<3>{$s$-waves}, $p$-waves and $d$-waves etc.
-	\item<4-> 2-b scattering in this regime is governed by a parameter called the \alert{s-wave scattering length $a$}
+	\item<2-> Atomic collisions in the ultra cold regime
+	\item<3-> Quantized orbital angular momenta $l=0,1,2$, are referred to as \alert<4>{$s$-waves}, $p$-waves and $d$-waves etc.
+	\item<5-> 2-b scattering in this regime is governed by a parameter called the \alert{s-wave scattering length $a$}
 \end{itemize}
-\note[item]<1>{Atomic interactions are, essentially, pair-wise and short-ranged, which means that they interact when they are close to each other.}
-\note[item]<2>{At very low energies, atoms behave like point particles and have quantized orbital angular momenta l. The quantum numbers l = 0,1,2, associated with an atom, are referred to as s-waves, p-waves and d-waves, and so on}
-\note[item]<3>{In the ultracold regime s-wave collisions dominate (because higher partial waves are reflected by the centrifugal barrier in the SE)}
-\note[item]<4>{Two-body scattering in this regime is solely governed by a single parameter called the s-wave scattering length a, or just scattering length for short}
+\note[item]<1>{To understand important features of the quantum 3BP I will introduce a few concepts from the theory of quantum scattering of 2 particles.}
+\note[item]<2>{Atomic interactions are, essentially, pair-wise and short-ranged, which means that they interact when they are close to each other.}
+\note[item]<3>{At very low energies, atoms behave like point particles and have quantized orbital angular momenta l. The quantum numbers l = 0,1,2, associated with an atom, are referred to as s-waves, p-waves and d-waves, and so on}
+\note[item]<4>{In the ultracold regime s-wave collisions dominate (because higher partial waves are reflected by the centrifugal barrier in the SE)}
+\note[item]<5>{Two-body scattering in this regime is solely governed by a single parameter called "the s-wave scattering length" a, or just "the scattering length" for short}
 \end{frame}
 
 %-------------------------------------------
@@ -133,31 +103,51 @@ Stockholms Universitet \\ % Your institution for the title page
 \subsection{Scattering Length}
 \begin{frame}
 \frametitle{Scattering Length}
-\invisible<5>{
+\invisible<7>{
 \begin{itemize}
-	\item<1-4,6->Definition:
+	\item<2-6,8->Definition:
 	\begin{equation*}
-	a = \lim_{k \to 0} -\frac{\tan\alert<2>{\delta_0(k)}}{k}
+	a = \lim_{k \to 0} -\frac{\tan\alert<3>{\delta_0(k)}}{k}
 	\end{equation*}
-	\item<3-4,6-> Characterizes the strength of the interparticle interaction
-	\item<4,6-> The sign of $a$ and the effective interaction
-	\item<6-> \alert<6>{Negative} $a$ $\rightarrow$ \alert<6>{attractive} effective interactions
-	\item<7-> \alert<7>{Positive} $a$ $\rightarrow$ \alert<7>{repulsive} effective interactions
-	\item<8-> For \alert<8>{$|a| \rightarrow \infty$} the interaction is called \alert<8>{resonant} 
+	\item<5-6,8-> Characterizes the strength of the interparticle interaction
+	\item<6,8-> The sign of $a$ and the \textit{effective} interaction
+	\item<8-> \alert<8>{Negative} $a$ $\rightarrow$ \alert<8>{attractive} effective interactions
+	\item<9-> \alert<9>{Positive} $a$ $\rightarrow$ \alert<9>{repulsive} effective interactions
+	\item<10-> For \alert<10>{$|a| \rightarrow \infty$} the interaction is called \alert<10>{resonant} 
 \end{itemize}}
-\only<5>{
+\only<4>{
+	\vspace*{-2.5cm}
+	\centering
+	\includegraphics[width=0.8\linewidth]{tangent.pdf}}
+\only<7>{
 	\vspace*{-4.5cm}
 	\centering
 	\includegraphics[width=1.0\linewidth]{scattering_new.pdf}}
+\only<8>{
+	\centering
+	\includegraphics[width=0.6\linewidth]{phase_neg_p.pdf}}
+\only<9>{
+	\centering
+	\includegraphics[width=0.6\linewidth]{phase_pos_p.pdf}}
 
-\note[item]<1>{The s-wave scattering length is defined in the low-energy limit as}
-\note[item]<2>{where $\delta$ is the s-wave phase shift of the outgoing wave (and $k$ is the wave number $=\sqrt{2\mu E}/\hbar$)}
-\note[item]<3>{The scattering length characterizes the strength of the interaction In the absence of an interaction, the phase shift is simply zero and the outgoing scattered wave is in phase with the incoming wave. Any interaction will cause a dephasing between the outgoing and incoming waves. The strongest dephasing occur when is $\pi/2$ $a$ will then diverge.}
-\note[item]<4>{The sign of $a$ carries information about wether the effective interaction is attractive or repulsive. If the two-body interaction has no bound states $a$ is negative. However if the interaction has one or more bound state $a$ can be both positve and negative.}
-\note[item]<5>{To illustrate this I have finetuned a model two body potential by changing the depth of the potential. Here we have $a$ on the y-axis and the depth $d$ of the attractive 2b-potential on the x-axis.}
-\note[item]<6>{Negative scattering lengths correspond to attractive effective interactions, meaning the scattered wave is being pulled in by the potential}
-\note[item]<7>{Positive scattering lengths correspond to repulsive effective interactions, meaning the scattered wave is being pushed out by the potential}
-\note[item]<8>{When the magnitude of $a$ $\rightarrow \infty$ we say that the interaction is resonant. In this case the interaction is fully characterized by the scattering length, which is much larger than the interaction range of the particles.}
+
+\note[item]<1-2>{The scattering length is defined in the low-energy limit by the following ...}
+\note[item]<3>{... Here $\delta$ is the s-wave phase shift of the outgoing scattered wave (and $k$ is the wave number $=\sqrt{2\mu E}/\hbar$)}
+\note[item]<4>{For zero-energy scattering, $a$ is simply the distance to the intercept of the tangent of the radial wave-function}
+\note[item]<5>{The scattering length characterizes the strength of the interaction ...}
+\note[item]<5>{In the absence of an interaction, the phase shift is simply zero and the outgoing scattered wave is in phase with the incoming wave.}
+\note[item]<5>{Any interaction will cause a dephasing between the outgoing and incoming waves. The strongest dephasing occurs when $\delta$ is $\pi/2$ and $a$ will then diverge.}
+\note[item]<6>{The sign of $a$ carries information about wether the effective interaction is attractive or repulsive.}
+\note[item]<6>{If the two-body interaction has no bound states $a$ is negative ...}
+\note[item]<6>{However if the interaction has one or more bound states $a$ can be both positive and negative.}
+\note[item]<7>{To illustrate this, I have used a model two-body potential and fine-tuned $a$ by changing the depth of this potential. Here we have $a$ on the vertical axis and the depth $d$ of the attractive 2b-potential on the horizontal axis.}
+\note[item]<7>{The asymptotes in this figure represent resonances }
+\note[item]<7>{First we have the case when there are no 2-b bound states and $a$ is negative. When the depth is increased the magnitude of $a$ increases.}
+\note[item]<7>{When we move across the resonance a weakly bound dimer is formed and the scattering length changes sign.}
+\note[item]<7>{If we now increase the depth further $a$ will decrease until it reach zero, where it again changes sign and the process is repeated.}
+\note[item]<8>{Negative scattering lengths correspond to an attractive effective interaction, meaning that the scattered wave is being pulled in by the potential}
+\note[item]<9>{Positive scattering lengths correspond to  a repulsive effective interaction, meaning that the scattered wave is being pushed out by the potential}
+\note[item]<10>{When the magnitude of $a$ $\rightarrow \infty$ we say that the interaction is resonant. In this case the interaction is fully characterized by the scattering length, which is much larger than the interaction range of the particles.}
 \end{frame}
 
 %-------------------------------------------
@@ -180,12 +170,14 @@ Stockholms Universitet \\ % Your institution for the title page
 {\hyperlink{lastres}{\beamergotobutton{Results}}}
 \begin{block}{Example: 2-b binding energy for 2 identical bosons}
 	\begin{equation*}
-	E_D = \frac{\hbar^2}{m a^2}
+	E_D = \frac{\hbar^2}{m \alert<4>{a^2}}
 	\end{equation*}
 \end{block}}
 \note[item]<1>{Particles with large scattering lengths in the low-energy regime are interesting because they have universal properties. }
-\note[item]<2>{What do we mean by universal? It means that they depend on the scattering alone and not on the details of the short-range interction, which means all bosons behave in the same way it does not matter what atomic species we look at}
-\note[item]<3>{For example: }
+\note[item]<2>{What do we mean by universal? Well we mean that they depend on the scattering length alone and not on the details of the short-range interaction.}
+\note[item]<2>{... which turn means that all bosons behave in the same way, it does not matter what specific atomic species we are looking at}
+\note[item]<3>{One of the universal properties is for example the binding energy of the dimer ...}
+\note[item]<3-4>{... which has a $1/a^2$ dependency on the scattering length}
 \end{frame}
 
 %-------------------------------------------
@@ -196,23 +188,29 @@ Stockholms Universitet \\ % Your institution for the title page
 \begin{columns}
 	\column{0.4\textwidth}
 	\begin{itemize}
-	\only<1>{\item Resonant 2-b forces give rise to bound energy levels in 3-particle systems}
-	\only<2>{\item When $|a| \rightarrow \infty$ a universal long-range 3-body attraction emerge}
-	\only<3->{\item<3-> Scale transformation constant $$\lambda=e^{\pi/\alert<4>{s_0}} \approx 22.7$$
-	\item<4-> \alert<4>{$s_0 \approx 1.00624$} 
-	\item<5-> Size scaling: $$\rho^{n+1}/\rho^{n} \approx \lambda$$
-	\item<6-> Energy scaling: $$E_T^{n+1}/E_T^{n} \approx \lambda^2 \approx 515$$}
+	\only<1-2>{\item Resonant 2-b forces give rise to bound energy levels in 3-particle systems}
+	\only<3>{\item When $|a| \rightarrow \infty$ a universal long-range 3-body attraction emerge}
+	\only<4->{\item<3-> Scale transformation constant $$\lambda=\me^{\pi/\alert<5>{s_0}} \approx 22.7$$
+	\item<5-> \alert<5>{$s_0 \approx 1.00624$} 
+	\item<6-> Size $\langle\rho\rangle$ scaling: $$\langle \rho \rangle ^{n+1}/\langle \rho \rangle^{n} \approx \lambda$$
+	\item<7-> Energy scaling: $$E_T^{n+1}/E_T^{n} \approx \lambda^{-2} \approx 1/515$$}
 \end{itemize}
 \column{0.6\textwidth}
-\only<1,3->{\includegraphics[width=1.0\linewidth]{efimov1}}
-\only<2>{\includegraphics[width=1.0\linewidth]{efimov2}}
+\only<1-2,4->{\includegraphics[width=1.0\linewidth]{efimov1}}
+\only<3>{\includegraphics[width=1.0\linewidth]{efimov2}}
 \end{columns}
-\note[item]<1>{In the 1970 Vitaly Efimov predicted that resonant can give rise to a series of bound energy levels in 3-particle systems, which we now call Efimov states}
-\note[item]<2>{When the short-ranged two-body forces approached resonance, he found a universal long-range three-body attraction emerging, giving rise to an infinite number of trimer states with binding energies obeying a discrete scaling law at resonance.}
-\note[item]<3>{The Efimov states have universal properties. For three identical bosons are that the size and energy of successive trimer states in the resonant limit are related by a scale transformation with a constant $\lambda=e^{\pi/s_0} \approx 22.7$}
-\note[item]<4>{Is a universal constant in Efimov physics, which I will return to later}
-\note[item]<5>{The ratio of the size of two succesive Efimov states is given by the constant lambda}
-\note[item]<6>{while the ratio of the energy of two succesive Efimov states scale geometrically with lambda}
+\note[item]<1>{In the 1970 Vitaly Efimov predicted that resonant 2-b forces can give rise to a series of bound energy levels in the 3-particle spectra. These bound states are now called Efimov states.}
+\note[item]<2>{In the figure to the right we have a three-body energy spectrum, which I have plotted with the inverse of the scattering length on the horizontal axis and the energy on the vertical axis ...}
+\note[item]<2>{We can identify three different regions in this figure}
+\note[item]<2>{... above the zero-energy line we have 3 free particles. The black parabolic curve is the energy of the universal dimer. Below the zero-energy line, in the white region, we have states where two particles form a dimer and one is far away.}
+\note[item]<2>{... and the grey region is the trimers region, where we have 3-b bound states... In the middle we are at resonance.}
+\note[item]<3>{Approaching resonance, Efimov found a universal long-range three-body attraction emerging ...}
+\note[item]<3>{... giving rise to an infinite number of trimer states with binding energies obeying a discrete scaling law at resonance.}
+\note[item]<4>{The Efimov states have universal properties. For three identical bosons, the size and energy of each successive trimer state are related by a scale transformation with a constant, which in the resonant limit is given by $\lambda=e^{\pi/s_0} \approx 22.7$}
+\note[item]<5>{Later on when I talk about the universal constant, it is most often this $s_0$ that is referred to, and it will appear in the equations I will show later.}
+\note[item]<6->{The symmetry of the asymptotic Efimov spectrum is characterized by a discrete scale invariance where the size and binding energies each form a geometric progression ..}
+\note[item]<6->{the size of an excited state is larger than the previous state by the factor $\lambda$ ... }
+\note[item]<6->{and the binding energies of two consecutive states scale like one over lambda squared}
 \end{frame}
 
 %-----------------------------------------------
@@ -255,7 +253,7 @@ Stockholms Universitet \\ % Your institution for the title page
 \frametitle{Step 1: Relative Coordinates}
 \begin{itemize}
 	\item<1->{Separate out CoM by introducing relative coordinates}
-	\item<3->{Choice: Mass-normalized \alert<4>{Jacobi coordinates}}
+	\item<3->{Choice: Hyperspherical coordinates \textit{via} mass-normalized \alert<4>{Jacobi coordinates}}
 	\item<2->{CS $\rightarrow$ 6D}
 \end{itemize}
 \vspace*{1cm}
@@ -264,9 +262,9 @@ Stockholms Universitet \\ % Your institution for the title page
 	\includegraphics[width=0.9\linewidth]{jacobi_p.pdf}}
 \note[item]<1>{The first step to reduce the number of D is to separate out the CoM by introducing relative coordinates.}
 \note[item]<2>{CoM motion decouples from the internal motion in the SE the configuration space is effectively reduced to 6D}
-\note[item]<3>{For internal coordinates we choose a Mass-Normalized Jacobi coordinates}
-\note[item]<4>{$\mathbf{r}$ is the vector that connects two of the particles and $\mathbf{R}$ connects the CoM of these two particles with the third particle}
-\note[item]<4>{Particle permutations are easily performed using these coord.}
+\note[item]<3>{To later introduce internal coordinates we will go via the relative mass-normalized Jacobi coordinates}
+\note[item]<4>{(lower case) $\mathbf{r}$ is the vector that connects two of the particles and (upper case) $\mathbf{R}$ connects the CoM of these two particles with the third particle}
+\note[item]<4>{why? particle permutations are easily performed using these coord.}
 \end{frame}
 
 %---------------------------------------------------------
@@ -282,10 +280,10 @@ Stockholms Universitet \\ % Your institution for the title page
 \end{itemize}
 \note[item]<1>{Step 2 in simplifying the problem of three particles is to introduce hyperspherical coordinates}
 \note[item]<2>{The general idea is to combine the components of the two Jacobi vectors into a single six-dimensional position vector q, which represents a point in R6.}
-\note[item]<3>{The hyperspherical coord. of this point are given by the hyperradius ρ and five hyperangles $\Omega$.}
+\note[item]<3>{The hyperspherical coord. of this point are given by the hyperradius $\rho$ and five hyperangles $\Omega$.}
 \note[item]<3>{The hyperradial coordinate is both rotationally and permutationally invariant and is defined as the square root of the sum of the squared Jacobi vectors.}
-\note[item]<3>{The hyperangles can be defined in many ways and  I will not go in to the details here.}
-\note[item]<4>{At any instant, three particles form a plane in R3. We can define the internal motion of the particles within this plane in terms of the hyperradial coordinate (size) and two of the angles(shape and particle permutation). The three other angles relate rotations of this plane in a space fixed system.}
+\note[item]<3>{The hyperangles can be defined in many ways and I will not go in to the details here.}
+\note[item]<4>{At any instant, three particles form a plane in R3. We can define the internal motion of the particles within this plane in terms of the hyperradial coordinate (size) and two of the angles(shape and particle permutation)}
 \note[item]<4>{The three other angles relate rotations of this plane in a space fixed system.}
 \note[item]<5>{When the orbital angular momenta J=0 only the internal coordinates matter and we are left with a 3D SE for the internal motion}
 \end{frame}
@@ -300,28 +298,29 @@ Stockholms Universitet \\ % Your institution for the title page
 \hypertarget{SE}
 The hyperspherical SE:
 \begin{equation*}
-\bigg(-\frac{1}{2 \mu}\frac{\partial^2}{\partial \rho^2} +\alert<5>{ \frac{ \alert<3>{\Lambda}^2 + \frac{15}{4}}{2 \mu \rho^{2}}+ V}\bigg)\psi = E\psi
+\bigg(-\frac{1}{2 \mu}\frac{\partial^2}{\partial \rho^2} +\alert<6>{ \frac{ \alert<3>{\Lambda^2} + \frac{15}{4}}{2 \mu \rho^{2}}+ \alert<4>{V}}\bigg)\psi = E\psi
 \end{equation*}}
 
-\item<4-> Trick: Treat $\rho$ as an adiabatic parameter! 
+\item<5-> Trick: Treat $\rho$ as an adiabatic parameter! 
 
-\item<5->{
-\hypertarget<5>{supplemental}
+\item<6->{
+\hypertarget<6->{supplemental}
 Solve the adiabatic eq.
 \begin{equation*}
-\alert<5>{H_{ad}}\Phi_{\nu}{(\rho;\Omega)} = \alert<6>{U_{\nu}{(\rho)}}\Phi_{\nu}(\rho;\Omega)
+\alert<6>{H_{ad}}\Phi_{\nu}{(\rho;\Omega)} = \alert<7>{U_{\nu}{(\rho)}}\Phi_{\nu}(\rho;\Omega)
 \end{equation*}}
-\item<6->$\rightarrow$ \alert<6>{3-body BO-like potential}
+\item<7->$\rightarrow$ \alert<7>{3-body BO-like potential}
 \end{itemize}
 \hyperlink{matrix}{\beamerbutton{Numerical Approach}}
 \hyperlink{sum}{\beamerbutton{Exact rep.}}
-\note[item]<1>{Now we move on to the final step (in the simplification of the 3BP)}
-\note[item]<2>{After a clever rescaling of the wfn, the hyperspherical SE can be written like this}
-\note[item]<3>{Where lambda is the generalized angular momenta}
-\note[item]<4>{Now, the trick is to treat the hyperradius as an adiabatic parameter!}
-\note[item]<4>{That is, we fix $\rho$ in a Born-Oppenheimer like manner}
-\note[item]<5>{And solve the remaining adiabatic eigenvalue equation}
-\note[item]<6>{In this way we obtain the three-body equivalent of a BO potential.}
+\note[item]<1-2>{Now we move on to the final step (in the simplification of the 3BP)}
+\note[item]<1-2>{After a clever rescaling of the wfn, the hyperspherical SE can be written in the following way:}
+\note[item]<3>{Here the operator lambda squared is the so called squared grand angular momentum operator, which contains dependencies of the two hyperangular coordinates}
+\note[item]<4>{and V are the two-body interactions which depend on both the hyperradial and hyperangular coordinates}
+\note[item]<5>{Now, the trick is to treat the hyperradius as an adiabatic parameter!}
+\note[item]<5>{That is, we fix $\rho$ in a Born-Oppenheimer like manner}
+\note[item]<6>{And solve the remaining adiabatic eigenvalue equation}
+\note[item]<7>{In this way we obtain the three-body equivalent of a BO potential.}
 \end{frame}
 
 %------------------------------------
@@ -333,7 +332,7 @@ Solve the adiabatic eq.
 	\psi_{n}(\rho,\Omega) = \alert<3>{\sum_{\nu=0}^{\infty} F_{n\nu}(\rho)\alert<2>{\Phi_{\nu}(\rho;\Omega)}}
 	\end{equation*}}
 	\item<4->{
-	\hypertarget{sum}	
+	\hypertarget<4->{sum}
 	The hyperradial eigenvalue equation 
 	\scriptsize
 	\begin{equation*}
@@ -357,14 +356,17 @@ Solve the adiabatic eq.
 		\end{exampleblock}
 \end{textblock*}}
 \hyperlink{SE}{\beamerbutton{SE}}
+\hyperlink{CO}{\beamerbutton{C\&O}}
 \note[item]<1>{Now, in this way the total wfn can be represented by a sum of adiabatic states}
 \note[item]<2>{(shown in red)}
 \note[item]<3>{If we substitute this sum into the 3-b SE (klick on link)}
-\note[item]<4>{We will get an exact representation of the 3-body SE if all couplings are included}
+\note[item]<4>{We will obtain the this hyperradial eq.}
+\note[item]<4>{Here, the objects P and Q are non-adiabatic couplings.}
+\note[item]<4>{This is an exact representation of the 3-body SE if all couplings are included.}
 \note[item]<5>{The focus of my work has been on this part of this eq.}
-\note[item]<6>{In the adiabatic approximation we define the three-body effective potentials are defined as}
-\note[item]<6>{These potentials are used for determining the single channel solutions of (below)}
-\note[item]<7>{In this talk I will not explain how the second term is calculated, in the calculations I have performed it is small and we will ignore it from here on}
+\note[item]<6>{In the adiabatic approximation these three-body effective potentials W are defined in the following way}
+\note[item]<6>{These effective potentials can be used to determine the single channel solutions of the equation below}
+\note[item]<7>{In this talk I will not explain how the second term is calculated, for large hyperradii it is small and we will ignore it from here on}
 \end{frame}
 
 %------------------------------------------------------
@@ -400,7 +402,7 @@ Solve the adiabatic eq.
 \end{frame}
 
 \subsection{Intermediate Region}
-\begin{frame}[label=W]
+\begin{frame}
 \frametitle{Convergence In the Intermediate Region}
 	\visible<1->{\begin{block}{Intermediate Interaction Range}
 \begin{equation*}
@@ -408,8 +410,11 @@ Solve the adiabatic eq.
 	\end{equation*}
 \end{block}}
 	
-\visible<2->{\begin{block}{The Lowest Potential's Convergent Form (3 Identical Bosons)}
-		\alert<3->{\begin{equation*}\label{eq:efimov_channel}
+\visible<2->{
+	\begin{block}{The Lowest Potential's Convergent Form (3 Identical Bosons)}
+		\only<3>{\hypertarget{W}}
+		\alert<3->{
+		\begin{equation*}
 		W_{\nu}(\rho) = -\frac{s_0^2+\frac{1}{4}}{2\mu \rho^2}
 		\end{equation*}} 
 \end{block}}
@@ -430,23 +435,44 @@ Solve the adiabatic eq.
 %------------------------------------------------
 
 \subsection{Analytical Model}
-\begin{frame}[label=faddeev]
+\begin{frame}
 \frametitle{Analytic Model}
 \begin{itemize}
-\item<2->The adiabatic potentials $\nu_n$ can be determined analytically through the transcendental equation
+\item<2-> The analytical formulation yields similar adiabatic potentials $\nu_n$ through:
 
 \begin{equation*}
 \sqrt{\nu_n} \cos{\bigg(\sqrt{\nu_n} \frac{\pi}{2}\bigg)} - \frac{8}{\sqrt{3}}\sin{\bigg(\sqrt{\nu_n} \frac{\pi}{6}\bigg)} = \sqrt{2}\alert<3>{\frac{\rho}{a}}\sin{\bigg(\sqrt{\nu_n} \frac{\pi}{2}\bigg)}
 \end{equation*}
+\end{itemize}
 
-\item<4-> Three-body effective potential $$W_{\nu}(\rho/a)=\frac{(\nu_n(\rho/a)-\frac{1}{4})}{2\mu \rho^2}$$
+\only<4->{
+\begin{center}
+\begin{minipage}{6cm}
+\begin{block}{Solution for $|a|\rightarrow\infty$}
+	\centering
+	\smallskip
+	\alert<5>{$\sqrt{-\nu_0(0)}=s_0$} and $\sqrt{\nu_n(0)}=s_n$ 
+	\smallskip
+\end{block}
+\end{minipage}
+\end{center}}
+
+\begin{itemize}
+\item<6->
+\hypertarget<6>{faddeev}
+Correponding three-body effective potentials
+ $$\widetilde{W}_{\nu}(\rho/a)=\frac{(\nu_n(\rho/a)-\frac{1}{4})}{2\mu \rho^2}$$
 \end{itemize}
 \hyperlink{R_faddeev}{\beamerbutton{Jump to Results}}
-\note[item]<1>{We can obtain a similair result analytically by instead of solving the SE we solve the coupled Faddeev equations}
-\note[item]<2>{We then obtain the adiabatic potential $\nu$ through the transcendental eq.}
-\note[item]<3>{This adiabatic potential is a function of $\rho/a$}
-\note[item]<4>{It is related to the 3-body potential}
-\note[item]<4>{In the result section I will compare these solutions to my numerically calculated potentials.}
+\note[item]<1>{I indicated in the beginning that we can obtain a similar result analytically. If we instead of solving the SE solve the coupled Faddeev equations..}
+\note[item]<2>{..we obtain the adiabatic potentials $\nu$ through this transcendental eq.}
+\note[item]<3>{These adiabatic potentials are functions of $\rho/a$}
+\note[item]<3>{In the intermediate region, when $a$ is much larger than $\rho$, the right hand side of this equation vanish and the resulting transcendental equation has the following solutions}
+\note[item]<4>{(Solutions shown on screen)}
+\note[item]<5>{Where the lowest adiabatic potential takes on the value of the universal constant $s_0$.}
+\note[item]<6>{So, the adiabatic potentials $\nu$ can be related to the 3-body effective potentials in the following way}
+\note[item]<6>{Okey, so if there is an analytical solution why do we want to solve this numerically? Well the reason is that the analytical formulation is valid only at large hyperradii, while the numerical potentials are valid over the whole hyperradial range.}
+\note[item]<6>{In the result section I will compare these solutions to my numerically calculated potentials.}
 \end{frame}
 
 %------------------------------------------------
@@ -463,25 +489,31 @@ Solve the adiabatic eq.
 	Task = Find \alert<2>{$W_{\nu}(\rho)$}!}
 \invisible<-2>{
 \parallelcontent
-{\begin{description} \item<3->[First:] Choose a basis \end{description}}
-{\begin{itemize}\item<4->$\varphi_{lm} = \varphi_{1l}(\theta)\varphi_{2m}(\phi)$\end{itemize}}
+{\begin{description} \item<5->[Basis:] \hyperlink<5->{Bsplines}{\beamerbutton{B-splines}
+\hypertarget<5>{numerical}} \end{description}}
+{\begin{itemize}\item<6->$\varphi_{lm} = \varphi_{1l}(\theta)\varphi_{2m}(\phi)$\end{itemize}}
 \parallelcontent
-{\begin{description} \item<5->[Then:] Expand \end{description}}
-{\begin{itemize}\item<6->$\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m}^{L,M} c_{lm}\varphi_{lm}$\end{itemize}}
+{\begin{description} \item<3->[First:] Expand $\Phi_{\nu}(\rho;\theta,\phi)$ \end{description}}
+{\begin{itemize}\item<4->$\Phi_{\nu}(\rho;\theta,\phi) = \sum_{l,m}^{L,M} c_{lm}\varphi_{lm}$\end{itemize}}
 \parallelcontent
-{\begin{description} \item<7->[Next:] Substitute $\Phi_{\nu}$ into the
+{\begin{description} \item<7->[Then:] Substitute $\Phi_{\nu}$ into the
 		\hyperlink<7->{supplemental}{\beamerbutton{Adiabatic Eq.}
 		\hypertarget<7->{matrix}}  \end{description}}
 {\begin{itemize}\item<8->$\mathbf{H}_{\mathrm{ad}}\mathbf{c} = U\mathbf{B}\mathbf{c}$\end{itemize}}
 \parallelcontent
 {\begin{description} \item<9->[Finally:] Solve the Generalized Eigenvalue Eq. \end{description}}
 {\begin{itemize}\item<10->$W(\rho) \approx U(\rho)$\end{itemize}}}
-\note[item]<1>{So what what was task?}
-\note[item]<2>{Well, a good start is to find the 3-b effective potentials}
-\note[item]<3>{To do this I have choosen two work with a B-spline basis for the two angular coordinates}
-\note[item]<4>{We expand the solutions in this basis}
-\note[item]<5>{And put it into the adiabatic eq.}
-\note[item]<6>{And finally solve the Generalized eigenvalue eq.}
+\note[item]<1>{So what was task?}
+\note[item]<1>{Well, to solve the quantum 3BP!}
+\note[item]<1>{And how do we do this?}
+\note[item]<2>{A good start is to find the 3-b effective potentials!}
+\note[item]<2>{This means that we need to solve the adiabatic eigenvalue eq.}
+\note[item]<3-4>{The first step in solving this equation is to expand the solutions (the angular wave functions) in a suitable basis.}
+\note[item]<5-6>{I have used a tensor product of one-dimensional B-splines for generating a base function in the two angular dimensions}
+\note[item]<7>{The next step is to substitute this expansion it into the adiabatic eq.}
+\note[item]<7-8>{The adiabatic equation can then be written in the following matrix form}
+\note[item]<9->{And lastly we solve this Generalized eigenvalue eq.}
+\note[item]<9->{and retrieve the eigenvalues, which are our effective 3-body potentials}
 \end{frame}
 
 %------------------------------------------------
@@ -491,7 +523,7 @@ Solve the adiabatic eq.
 \begin{columns}
 	\column{0.4\textwidth}
 \begin{block}<1->{Masses} 
-	$m = m(Rubidium-87)$
+	$m = m(\prescript{87}{}{\mathrm{Rb}})$
 \end{block}
 \begin{block}<2->{Assumption}
 	$V(\rho,\theta,\psi) = v(r_{12}) + v(r_{23}) + v(r_{31})$
@@ -504,9 +536,7 @@ Solve the adiabatic eq.
 \end{block}
 \column{0.6\textwidth}
 \only<3->{
-%\begin{figure}
 	\includegraphics[width=1.0\linewidth]{scattering_new.pdf}}
-%\end{figure}
 \end{columns}
 \note[item]<1>{For the scattering model I have used masses corresponding to Rb-87 (boson)(Z=37, N=50)}
 \note[item]<2>{I have used the assumption that the total potential can be written as a sum of 2-b potentials}
@@ -533,10 +563,10 @@ Solve the adiabatic eq.
 \end{itemize}
 \vfill
 \hyperlink{finite}{\beamerbutton{To Figures}}
-\note<1>{And now to the results!}
-\note<1>{For $a \rightarrow \pm \infty$ we expect that the lowest effective potential curve will converge towards the Efimovian form}
-\note<2>{This behaviour is easier to recognize if the potentials are multiplied by this factor $2 \mu \rho^2$ and plot them as}
-\note<2>{Since these curves should approach the universal value $-s_0^2 (\simeq -1.0125$) in the intermediate region}
+\note[item]<1>{And now to the results!}
+\note[item]<1>{For $a \rightarrow \pm \infty$ we expect that the lowest effective potential curve will converge towards the Efimovian form}
+\note[item]<2->{This behaviour is easier to recognize if the potentials are multiplied by this factor $2 \mu \rho^2$ and plot them as}
+\note[item]<2->{Since these curves should approach the universal value $-s_0^2 (\simeq -1.0125$) in the intermediate region}
 \end{frame}
 
 \begin{frame}[label=finite]
@@ -577,10 +607,11 @@ Solve the adiabatic eq.
 \hyperlink{Results}{\beamerbutton{$\xi(\rho)$}}
 \note[item]<1>{When the scattering length diverge we see that the potential curve $\xi$ converge to the expected value at large hyperradii (note the log scale on the $\rho$-axis)}
 \note[item]<1>{For two-body potentials where $|a|$ is large but finite we expect that the effective potentials are to some extent affected by Efimov physics in the intermediate range ($r_0 \ll \rho \ll |a|$) and that the lowest effective potentials obtained with a larger magnitude of a exhibit closer resemblance with the true Efimov potential}
-\note[item]<2>{This is indeead what we see for negative $a$. Here I have plotted 4 curves with $|a|$ ranging from 2000 to 3 M a.u. (the curves start to converge to the kinetic energy in the asymptotic limit)}
-\note[item]<3>{This is also the case for large positive $a$. We see a flattening behaviour of the curves from below which tend to get closer to the universal value as $a$ increase.However, here the curves will start to converge to the energy of the two body bound state. Here I have plotted 4 curves with $|a|$ ranging from 2000 to 3 M a.u. (the curves start to converge to the kinetic energy in the asymptotic limit)}
-\note[item]<4>{However, in this case the curves will start to converge to the energy of the two body bound state. Which here corresponds to}
-\note[item]<5>{Here I have plotted the two curves with lowest $a$ together with the curves $\xi$ corresponding to the 2-b energies and we observe that the curves indeed converge to the 2-b energy in the asymptotic limit.}
+\note[item]<2>{This is indeead what we see for negative $a$. Here I have plotted 4 curves with $|a|$ ranging from 2000 to 3 M a.u. At large hyperradii (in the asymptotic limit) the curves start to converge to 4 which corresponds to the first eigenvalue of the angular kinetic energy operator.}
+\note[item]<3>{For large positive $a$ we see a flattening behaviour of the curves from below which tend to get closer to the universal value as $a$ increase.}
+\note[item]<4>{However, in this case the curves become parabolic in the asymptotic range since the effective potential converge to the energy of the two body bound state.}
+\note[item]<5>{To show that this is indeed the case I have plotted the corresponding $E_{2b}$ curves for two of the $\xi$ potentials.}
+\note[item]<5>{Show the curves on the screen.}
 \end{frame}
 
 %--------------------------------------------------------------------------------------
@@ -609,7 +640,7 @@ Solve the adiabatic eq.
 %\hyperlink{faddeev}{\beamerbutton{Faddeev}}
 \note[item]<1>{With this figure I want to show the equivalent lowest potentials for positive and negative $a$ calculated from the transcendental Faddeev eq.}
 \note[item]<2>{The universal value is shown as a this dotted line. And we can se that when $a>\rho$, the adiabatic potential for both positive and negative $a$ converge to this universal value.}
-\note[item]<3>{When $\rho>|a|$ we can observe that the curve for negative $a$ approach the value corresponding to the kinetic energy for three particles.}
+\note[item]<3>{When $\rho>|a|$ we can observe that the curve for negative $a$ approach the value 4, which again corresponds to the eigenvalues of the angular kinetic energy operator for three particles.}
 \note[item]<4>{For postive $a$, we intead observe a parabolic behaviour like that corresponding to the form of the energy of the 2-b bound state when $\rho>a$.}
 \end{frame}
 
@@ -650,15 +681,15 @@ Solve the adiabatic eq.
 
 \note[item]<1>{I have compared my numerically calculate potentials with the potential obtained solving the transcendental Faddeev eq.}
 \note[item]<1>{I will show you the results for two negative and two positive $a$.}
-\note[item]<1>{In this figure I have plotted the analytic potential (black dotted line) for negative $a$. The colored curves are numerical potentials calculated with an increasing number of B-splines in each direction. As might be expected the range of convergence is larger for potentials calculated with a largest number of B-splines.}
-\note[item]<2>{We can observe that for larger magitudes of $a$ the range of convergence decreases.}
+\note[item]<1>{In this figure I have plotted the analytic potential (black dotted line) for negative $a$. The coloured curves are numerical potentials calculated with an increasing number of B-splines in each direction. As might be expected the range of convergence is larger for potentials calculated with a largest number of B-splines.}
+\note[item]<2>{We can observe that for larger magnitudes of $a$ the range of convergence decreases.}
 \note[item]<3>{No we look at positive $a$. Here we have the analytic curve in black. All numerically calculated potentials have converged over the whole hyppreradial range apart from the one calculated with the least number of B-splines.}
 \note[item]<3>{However, there seem to be a small difference between the numerical and analytical results.}
-\note[item]<4>{For larger $a$ the anlytical and numerical results show greater similarity.}
+\note[item]<4>{For larger $a$ the analytical and numerical results show greater similarity.}
 \note[item]<4>{However, again the hyperradial range of convergence have become smaller.}
 \note[item]<4>{By comparing the panels to left and right, it appears that the hyperradial range for convergence generally is larger for the states with smaller $|a|$. We suspect that this discrepancy is due to the knot point placement, but this has not been verified yet.}
 \note[item]<5>{Now, how do we this?}
-\note[item]<5>{Well, the slightly different form in the parabolic divergency of the curves is due to a discrepancy between the exact two-body energy and the energy of the universal dimer.}
+\note[item]<5>{Well, the slightly different form in the parabolic divergence of the curves is due to a discrepancy between the exact two-body energy and the energy of the universal dimer.}
 \end{frame}
 
 
@@ -671,6 +702,100 @@ Solve the adiabatic eq.
 %\hyperlink{faddeev}{\beamerbutton{Faddeev}}
 \note[item]<1->{Here I have plotted the actual three-body effective potentials $W$, the corresponding analytic potential together with the two-body energy $E_{2b}$ and the energy of the universal dimer.}
 \note[item]<1>{We can see that the analytic potential goes to}
+\end{frame}
+
+%---------------------------------------------------------------------------------
+\section{Conclusion and Outlook}
+\begin{frame}
+\frametitle{Conclusion and Outlook}
+\begin{description}
+	\item<1->[Conclusion:] The program works! But convergence at large hyperradii can be improved ...
+	\item<2->[Outlook:]{ 
+	\begin{itemize}
+		\item<3->{ 
+		\hypertarget<3->{CO}
+		Use $W(\rho)$ to solve the 
+		\hyperlink<3->{sum}{\beamerbutton{Hyperradial eq.}}
+		$\rightarrow$ $E_{\mathrm{T}}$}
+		\item<4->{Implement with a van der Waals potential} 
+		\item<5->{Explore the temperature dependences of Efimov states in $ \prescript{39}{}{\mathrm{K}}$}
+	\end{itemize}}
+\end{description}
+\note[item]<1>{In conclusion, the program works! However, the convergence at large hyperradii can be improved. We need to look closer into how the placement of the B-splines on the angular grid can be used to optimize the numerical convergence. (coalescences points)}
+\note[item]<2>{And now to the outlook..}
+\note[item]<3-4>{First of all, I want to extend the program so that it calculates the actual three-body energy eigenvalues. To do this I will use the three-body effective potentials to solve the hyperradial eigenvalue eq.}
+\note[item]<3-4>{And secondly, I want implement a two-body potential model with van der Waals-tail that resembles alkali atoms}
+\note[item]<4>{And now to the final questions: what can we use this for?}
+\note[item]<5->{I want to explore the temperature dependences of Efimov states in systems of Potassium-39 (19 protons 20 neutrons) }
+\note[item]<5->{And why do I want to study K-39? Well, most experimental findings concerning of Efimov states has been carried out using ultra cold clouds of alkali atoms and for all elements apart from K-39, experiment and theory goes hand in hand.}
+\note[item]<5->{However, K-39 behaves differently in several ways. And very resent experimental findings (concerning the temperature dependency of the shape and position of an Efimov resonance) are even in stark contrast with the current theory. (So there is room for new insights to be gained in the interesting realm of universal three-body physics.)}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\centering
+Thank you for listening!
+\end{frame}
+
+\section{Supplemental}
+\begin{frame}[label=Bsplines]
+\frametitle{B-splines}
+\begin{itemize}
+	\item<1-> $B_{i,k}$ $\rightarrow$ piecewise polynomial function of degree $k-1$ 
+	\item<2-> \alert<2>{Knot points: $t_i$}, where $t_i<t_{i+1}$
+	\item<3-> B-splines are local
+	\item<4-> Definition, $k=1$:
+		\begin{equation*}
+		B_{i,k=1}(x) \doteq
+		\begin{cases}
+		1, \quad \text{if} \quad & t_i \leq x < t_{i+1}\\
+		0,& \text{otherwise} 
+		\end{cases}
+		\end{equation*}
+	\item<5-> Cox-de-Boor recursion formula:
+		\begin{equation*}
+		B_{i,k}(x) \doteq \frac{x-t_i}{t_{i+k-1}-t_i}B_{i,k-1}(x) + \frac{t_{i+k}-x}{t_{i+k}-t_{i+1}}B_{i+1,k-1}(x)
+		\end{equation*}
+\end{itemize}
+\note[item]<1-2>{A basis spline, or B-spline, of order $k$ is a piecewise polynomial function of degree $(k-1)$ defined on a collection of points, which we call knot points.}
+\note[item]<3>{The B-splines are local in the sense that they will be non-zero only in a limited region of space.}
+\note[item]<4->{B-splines of the first order are defined by the following}
+\note[item]<5->{The higher order B-splines can be generated recursively by the Cox-de-Boor recursion formula}
+\end{frame}
+
+\begin{frame}
+\frametitle{B-splines; Pros and cons}
+\begin{block}{Pros}
+	\begin{itemize}
+	\item Can be generated anywhere on the grid
+	\item Easy to differentiate
+	\end{itemize}
+\end{block}
+
+\begin{block}{Cons}
+	\begin{itemize}
+		\item Knot-point placement greatly affect convergence
+	\end{itemize}
+\end{block}
+\note[item]<1>{B-splines are flexible to use since they can be generated anywhere on the grid and..}
+\note[item]<1>{..they are easy to differentiate}
+\note[item]<1>{Main difficulty when using B-splines is to determine the number of knots to use and where they should be placed on the grid to get good numerical convergence}
+\end{frame}
+
+\begin{frame}
+\frametitle{B-splines, $k=1-4$}
+\begin{columns}
+	\column{0.5\textwidth}
+	\centering
+	\includegraphics[width=1.0\linewidth]{bsp1.pdf}\\
+	\includegraphics[width=1.0\linewidth]{bsp3.pdf}
+	\column{0.5\textwidth} %New column
+	\centering
+	\includegraphics[width=1.0\linewidth]{bsp2.pdf}\\
+	\includegraphics[width=1.0\linewidth]{bsp4.pdf}
+\end{columns}
+\hyperlink{numerical}{\beamerbutton{Numerical methods}}
+\note[item]{In this figure I have plotted B-splines of order $k=1-4$}
 \end{frame}
 
 \end{document} 
